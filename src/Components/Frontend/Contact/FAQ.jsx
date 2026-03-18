@@ -68,7 +68,7 @@ const FAQ = () => {
 
     </Row>
 
-<div style={{display:'flex',justifyContent:'flex-end',marginRight:'10%',gap:'1%',marginTop:'1%',marginBottom:'8%'}}>
+<div style={{display:'flex',justifyContent:'flex-end',marginRight:'10%',gap:'1%',marginTop:'1%',marginBottom:'8g%'}}>
 
 
      <Button>Clear</Button>
