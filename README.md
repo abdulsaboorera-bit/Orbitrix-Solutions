@@ -2,6 +2,10 @@
 
 Official frontend project for Orbitrix Solutions, built with React and Vite.
 
+
+## Live Demo
+Check the live version here: [Orbitrix Solutions](https://orbitrix-solutions.vercel.app/)
+
 ## Overview
 
 This repository contains a multi-page company website with the following core pages:
