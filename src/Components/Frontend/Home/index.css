@@ -1,0 +1,250 @@
+/* Home  styles */
+*{
+
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+
+
+
+}
+
+
+.header_container0{
+
+    display:flex;
+
+
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+.header_container1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: #000000;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    margin-top: 0%;
+    width: 100%;
+    background-color: #1a8187;
+}
+
+.hero_text {
+    flex: 1;
+  
+}
+
+.header_container2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2% 4%;
+}
+
+.header_container2 img {
+    max-width: 200%;
+    height: auto;
+    border-radius: 8px;
+}
+
+
+.header_container1 h1{
+
+   color:#184832;
+
+
+}
+
+.p_container1 {
+
+ color: #ffffff;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+
+}
+
+
+
+.hb1{
+
+
+    background-color: #184832;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-left: 35px;
+
+
+
+}
+
+.btns{
+
+display: flex;
+margin-left:7%;
+margin-bottom: 4%;
+gap: 12px;
+
+}
+
+.header_container1 h1 {
+
+   padding-top: 4%;
+margin-left: 10%;
+font-size: 80px;
+
+}
+
+.p_container1 {
+
+    margin-left: 10%;
+    padding-bottom: 4%;
+font-size: 80%;
+
+}
+
+.nab-btns{
+
+  display:'flex';
+
+}
+
+.btn{
+
+  
+    margin-left: 12%;
+    margin-right: 12%; 
+    size:large;
+border: 2px solid #184832;
+color: white;
+background-color: #1a8187;
+
+}
+
+.hb1{
+
+    padding: 20px;
+    font-size: 2.0rem;
+
+}
+
+
+
+.services{
+
+    display:flex;
+    justify-content:space-between;
+    gap:8%;
+
+
+}
+
+
+.ser2{
+
+margin-top: 15%;
+
+font-size: 1.3rem;
+
+}
+
+.s1, .s2, .s3, .s4, .s5 {
+    flex: 1;
+    padding: 0 10px;
+}
+
+
+
+.Services-2 {
+
+display:flex;
+flex-direction:row;
+justify-content:space-between;
+margin-top: 12%;
+font-size:1.3rem;
+gap:8%;
+
+
+}
+
+
+.accordian{
+
+/* background-color: #fdfaf3; */
+background-color: #1a8187;
+
+width: 50%;
+margin: 20px auto;
+
+
+padding: 20px;
+cursor: pointer;
+
+font-weight: 400;
+
+}
+
+.question{
+
+    display: flex;
+    justify-content: space-between;
+
+padding: 0px;
+margin-bottom: 20px;
+
+
+
+}
+
+
+.question h4{
+
+    font-size: 1.6rem;
+   color: rgb(255, 255, 255);
+
+}
+
+.answer{
+
+    display: none;
+   overflow: hidden;
+
+
+}
+
+
+.answer.active {
+
+    display: block;
+    font-size: 1.5rem;
+color: black;
+
+}
+
+.drop_icon{
+
+    font-size: 1.7rem;
+    color: #000000;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+
+
+}
+
+
+.drop_icon.active{
+font-size: 1.7rem;
+    color: #ffffff;
+    transform: rotate(180deg);
+
+
+}
