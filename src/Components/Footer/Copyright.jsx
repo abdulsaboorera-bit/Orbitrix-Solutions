@@ -1,123 +1,62 @@
 import React from 'react';
-import { Col, Row, Typography } from 'antd';
+import { Typography } from 'antd';
+import { Link } from 'react-router-dom';
 
 import logo from '../../Images/logo.png'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedin, faGithub, faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
-import { Button } from 'antd';
-
-
 
 const Copyright = () => {
   return (
-    <>
-    
-    <footer className="bg-secondary py-2" >
+    <footer className="site-footer">
+      <div className="footer-inner">
+        <div className="footer-brand">
+          <img src={logo} alt="Orbitrix Logo" />
+          <p>
+            Orbitrix Solutions helps businesses grow through premium web development, digital marketing, and IT consulting.
+          </p>
+          <div className="footer-socials">
+            <a className="footer-social" href="https://www.linkedin.com/in/abdul-saboor-5677643b4/" target="_blank" rel="noreferrer">
+              <FontAwesomeIcon icon={faLinkedin} />
+            </a>
+            <a className="footer-social" href="https://github.com/abdulsaboorera-bit" target="_blank" rel="noreferrer">
+              <FontAwesomeIcon icon={faGithub} />
+            </a>
+            <a className="footer-social" href="https://www.instagram.com/orbitrix_solutions?igsh=ZGcydzJpMWFteHN6" target="_blank" rel="noreferrer">
+              <FontAwesomeIcon icon={faInstagram} />
+            </a>
+            <a className="footer-social" href="https://wa.me/qr/7GSRQFMD6AMZG1" target="_blank" rel="noreferrer">
+              <FontAwesomeIcon icon={faWhatsapp} />
+            </a>
+          </div>
+        </div>
 
+        <div className="footer-links">
+          <h4>Main Links</h4>
+          <ul>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/about">About</Link></li>
+            <li><Link to="/contact">Contact Us</Link></li>
+            <li><a href="https://github.com/abdulsaboorera-bit" target="_blank" rel="noreferrer">Github</a></li>
+            <li><a href="https://www.linkedin.com/in/abdul-saboor-5677643b4/" target="_blank" rel="noreferrer">LinkedIn</a></li>
+          </ul>
+        </div>
 
-<div className="container" >
+        <div className="footer-newsletter">
+          <h4>Newsletter</h4>
+          <p>Monthly insights on design, development, and growth.</p>
+          <div className="footer-form">
+            <input className="footer-input" type="text" placeholder="Enter your email" />
+            <button className="footer-button" type="button">Subscribe</button>
+          </div>
+        </div>
+      </div>
 
-
-<Row style={{display:'flex' , justifyContent:"space-between" , padding:'5%'}}>
-
-<Col span={8}>
-
-<Typography.Title level={3} >
-
-<img src={logo} alt="Orbitrix Logo" style={{ maxWidth: '180px', height: 'auto', backgroundColor: '#Fdfaf3', marginRight:'50%'}} />
-
-
-<p style={{ width:'fullwidth', height: 'auto',color:'#Fdfaf3',marginTop:'5%', marginRight:'50%'}}>
-
-At Orbitrix Solutions, we help businesses grow in the digital world through 
-expert web development, digital marketing, and IT consulting services.
-
-</p>
-
-<div style={{color:'#Fdfaf3',marginRight:'50%'}}>
-
-
-  <FontAwesomeIcon icon={faLinkedin} />
-  <FontAwesomeIcon icon={faGithub} />
-  <FontAwesomeIcon icon={faInstagram} />
-  <FontAwesomeIcon icon={faWhatsapp} />
-
-
-
-
-</div>
-
-
-</Typography.Title>
-
-</Col>
-
-<Col span={8}>
-
-<Typography.Title level={3} style={{color:"#fdfaf3"}}>Main Links</Typography.Title>
-
-<div style={{display:'flex', flexDirection:'column', listStyleType:'none',color:"#fdfaf3",gap:'30px',fontSize:'20px' , cursor:'pointer'}}>
-
-<li>Home </li>
-<li>About</li>
-<li>Contact Us</li>
-<li>Github</li>
-<li>LinkedIn</li>
-
-
-
-</div>
-
-
-
-</Col>
-
-
-<Col span={8}>
-
-
-<Typography.Title level={3} style={{color:'#Fdfaf3'}}>NewsLetter</Typography.Title>
-
-<br />
-
-<div style={{display:'flex', flexDirection:'row', alignItems:'center', gap:'20px',marginLeft:"30%"} }>
-
-
-<input type='text' placeholder='Enter your email' style={{padding:'5px' , border:' 1px solid white', borderRadius:'45px'}}></input>
-<Button style={{color:'#1a8187'}}>Subscribe</Button>
-
-
-</div>
-
-
-
-</Col>
-
-
-</Row>
-
-
-
-
-<Row>
-
-
-
-<Col span={24} >
-
-<Typography.Paragraph className='text-center text-white'  style={{ fontSize: '20px' }} >&copy; {new Date().getFullYear()}. All Rights Reserved By Orbitrix Solutions</Typography.Paragraph>
-
-</Col>
-
-</Row>
-
-
-</div>
-
+      <div className="footer-bottom">
+        <Typography.Text>&copy; {new Date().getFullYear()} Orbitrix Solutions. All rights reserved.</Typography.Text>
+      </div>
     </footer>
-    
-    </>
   )
 }
 

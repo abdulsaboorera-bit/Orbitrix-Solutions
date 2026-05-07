@@ -6,13 +6,24 @@ const FAQ = () => {
 
 
  useEffect(() => {
-
-  const accordians = document.querySelectorAll('.accordian');
+   const accordians = document.querySelectorAll('.accordian');
 
    accordians.forEach((accordian) => {
+      const answer = accordian.querySelector('.answer');
+      if (answer) {
+         answer.style.maxHeight = '0px';
+      }
+
       accordian.onclick = () => {
-         accordian.querySelector('.drop_icon')?.classList.toggle('active');
-         accordian.querySelector('.answer')?.classList.toggle('active');
+         const icon = accordian.querySelector('.drop_icon');
+         icon?.classList.toggle('active');
+
+         if (!answer) {
+            return;
+         }
+
+         const isActive = answer.classList.toggle('active');
+         answer.style.maxHeight = isActive ? `${answer.scrollHeight}px` : '0px';
       };
    });
 
@@ -21,7 +32,6 @@ const FAQ = () => {
          accordian.onclick = null;
       });
    };
-
  }, [])
 
 
@@ -31,7 +41,7 @@ const FAQ = () => {
 return (
 <>
 <div className="container">
-<Typography.Title level={1} style={{width:'100%',margin:'auto',backgroundColor:'#1a8187' , textAlign:'center', marginTop:'30px' ,marginBottom:'0px'}}>Frequently Asked Questions</Typography.Title>
+<Typography.Title level={1} className="faq-title">Frequently Asked Questions</Typography.Title>
 </div>
 
 
@@ -44,7 +54,7 @@ return (
 
    <div className='question'>
 
-      <h4>How can I get in touch with Orbitrix Soliton?</h4>
+      <h4>How do I start a project with Orbitrix Solutions?</h4>
 
 <div className="drop_icon">
 
@@ -57,7 +67,7 @@ return (
 
    <div className='answer'>
       
-      <p>You can contact us through the contact form on our website, email us directly at [abdulsaboormercedes@gmail.com], or call our support number. We aim to respond to all inquiries within 24 hours.</p>
+      <p>Share your goals through the contact form, WhatsApp, or email. We reply within 24 hours with next steps and a clear plan.</p>
     
    </div>
 
@@ -70,7 +80,7 @@ return (
 
    <div className='question'>
 
-      <h4>How can I get in touch with Orbitrix Soliton?</h4>
+      <h4>What services do you offer?</h4>
 
 
 <div className="drop_icon">
@@ -85,7 +95,7 @@ return (
 
    <div className='answer'>
       
-      <p>You can contact us through the contact form on our website, email us directly at [abdulsaboormercedes@gmail.com], or call our support number. We aim to respond to all inquiries within 24 hours.</p>
+      <p>We deliver WordPress and React development, SEO, digital marketing, AI ads, and social media growth services.</p>
     
    </div>
 
@@ -103,7 +113,7 @@ return (
 
    <div className='question'>
 
-      <h4>How can I get in touch with Orbitrix Soliton?</h4>
+      <h4>How long does a typical website take?</h4>
 
 
 <div className="drop_icon " >
@@ -118,7 +128,7 @@ return (
 
    <div className='answer'>
       
-      <p>You can contact us through the contact form on our website, email us directly at [abdulsaboormercedes@gmail.com], or call our support number. We aim to respond to all inquiries within 24 hours.</p>
+      <p>Most websites launch in 2 to 6 weeks, depending on scope and content readiness. We confirm a timeline after discovery.</p>
     
    </div>
 
@@ -134,7 +144,7 @@ return (
 
    <div className='question'>
 
-      <h4>How can I get in touch with Orbitrix Soliton?</h4>
+      <h4>Do you provide ongoing support?</h4>
 
 
 <div className="drop_icon " >
@@ -149,7 +159,7 @@ return (
 
    <div className='answer '>
       
-      <p>You can contact us through the contact form on our website, email us directly at [abdulsaboormercedes@gmail.com], or call our support number. We aim to respond to all inquiries within 24 hours.</p>
+      <p>Yes. We offer maintenance, optimization, and marketing support after launch with flexible monthly plans.</p>
     
    </div>
 

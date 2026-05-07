@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Col, Row , Typography,Button} from 'antd'
+import { Typography, Button } from 'antd'
 
 
 const Services = () => {
@@ -62,72 +62,59 @@ setSocialtxt(!social_txt);
 
 
   return (
-    <div className="container">
+    <section className="services-section">
+      <div className="services-header">
+        <Typography.Title level={1}>Our Services</Typography.Title>
+        <Typography.Paragraph>
+          A focused menu of growth services, designed to scale with your business. Each service blends strategy, design,
+          and execution to deliver measurable results.
+        </Typography.Paragraph>
+      </div>
 
-<br /><br /><br />
-<Typography.Title level={1} style={{width:'100%',margin:'auto',backgroundColor:'#1a8187' , textAlign:'center', marginTop:'30px' ,marginBottom:'0px'}}>Our Services</Typography.Title>
-
-
-<br /><br /><br />
-
-<div className="services">
-
-<div className="s1">
-
-  <Typography.Title  style={{backgroundColor:'#1a8187' ,textAlign:'center'}} >Wordpress</Typography.Title>
-
-<Typography.Paragraph className='ser2'  style={{backgroundColor:'#fdfaf3' ,textAlign:'center'}} >
+      <div className="services-grid">
+        <article className="service-card">
+          <div className="service-title">
+            <span>01</span>
+            <h3>WordPress</h3>
+          </div>
+          <Typography.Paragraph className={`ser2 ${showFull ? 'expanded' : ''}`}>
 
   {showFull ? (
   <>
-We build fast, secure WordPress websites that are easy to manage<br/>
-and fully customizable, including custom themes, plugins, and e-commerce stores.<br/>
-Our solutions are SEO-friendly, responsive, and optimized for performance,<br/>
-helping your business grow online and deliver seamless user experiences.
+We build fast, secure WordPress sites with custom themes, plugins, and ecommerce.
+Every build is responsive, SEO-ready, and optimized for speed so your team can publish confidently.
 </>
   ) : (
   <>
-  We build fast, secure WordPress websites<br/>
-that are easy to manage and fully customizable.
+Fast, secure WordPress sites with custom themes, plugins, and easy content management.
 </>
   )}
 
-</Typography.Paragraph>
+          </Typography.Paragraph>
+          <div className="service-actions">
+            <Button onClick={toggle}>{showFull ? 'Show Less' : 'Learn More'}</Button>
+          </div>
+        </article>
 
-<br />
-
-<Button onClick={toggle}>
-  {showFull ? 'Show Less' : 'Learn More'}
-</Button>
-
-</div>
-
-
-<div className="s2">
-
-  <Typography.Title  style={{backgroundColor:'#1a8187' ,textAlign:'center'}} >React Websites</Typography.Title>
-
-<Typography.Paragraph className='ser2' style={{backgroundColor:'#fdfaf3' ,textAlign:'center'}}>
+        <article className="service-card">
+          <div className="service-title">
+            <span>02</span>
+            <h3>React Websites</h3>
+          </div>
+          <Typography.Paragraph className={`ser2 ${react_txt ? 'expanded' : ''}`}>
 
 {
 
   react_txt ? (
     <>
-    
-   We develop modern React websites that are fully responsive, interactive, and user-friendly.<br/>
-Our team creates clean, scalable components with optimized performance<br/>
-and seamless integration to deliver an engaging and smooth online experience for all users.
-    
-    
+We craft modern React experiences with clean component architecture, smooth interactions, and scalable code.
+Performance-first builds ensure fast load times and seamless user journeys.
     </>
 
   ) : (
 
 <>
-
-We develop modern React websites<br/>
-that are fully responsive, interactive, and provide a smooth, seamless user experience for everyone.
-
+Modern React websites with smooth interactions, fast performance, and scalable components.
 </>
 
 
@@ -137,45 +124,32 @@ that are fully responsive, interactive, and provide a smooth, seamless user expe
 }
 
 
-</Typography.Paragraph>
+          </Typography.Paragraph>
+          <div className="service-actions">
+            <Button onClick={toggleReact}>{react_txt ? 'Show Less' : 'Learn More'}</Button>
+          </div>
+        </article>
 
-<br />
-
-
-<Button onClick={toggleReact}>
-  {react_txt ? 'Show Less' : 'Learn More'}
-</Button>
-
-</div>
-
-
-<div className="s3">
-
-  <Typography.Title  style={{backgroundColor:'#1a8187' ,textAlign:'center'}} >SEO Optimization</Typography.Title>
-
-<Typography.Paragraph className='ser2' style={{backgroundColor:'#fdfaf3' ,textAlign:'center'}} >
+        <article className="service-card">
+          <div className="service-title">
+            <span>03</span>
+            <h3>SEO Optimization</h3>
+          </div>
+          <Typography.Paragraph className={`ser2 ${seo_txt ? 'expanded' : ''}`}>
 
 
 {
 
   seo_txt ? (
     <>
-
-
-We improve website SEO with advanced strategies that increase search visibility<br/>
-and attract more organic traffic.<br/>
-Our approach includes keyword research, on-page optimization, technical fixes,<br/>
-and link-building to grow your business effectively and measurably.
-    
-    
+We improve visibility with technical audits, keyword strategy, on-page optimization, and quality link building.
+The result is higher rankings, more qualified traffic, and measurable growth.
     </>
 
   ) : (
 
 <>
-
-We improve website SEO<br/>
-to increase search visibility and attract more organic traffic online effectively.
+SEO strategy and technical optimization to lift rankings and qualified traffic.
 </>
 
 
@@ -186,82 +160,55 @@ to increase search visibility and attract more organic traffic online effectivel
 
 
 
-</Typography.Paragraph>
+          </Typography.Paragraph>
+          <div className="service-actions">
+            <Button onClick={toggleSeo}>{seo_txt ? 'Show Less' : 'Learn More'}</Button>
+          </div>
+        </article>
 
-<br /><br />
-
-
-<Button onClick={toggleSeo}>
-  {seo_txt ? 'Show Less' : 'Learn More'}
-</Button>
-
-
-</div>
-
-</div>
-
-
-<div className='Services-2'>
-
-<div className="s4">
-
-  <Typography.Title  style={{backgroundColor:'#1a8187' ,textAlign:'center'}} >AI Ads</Typography.Title>
-
-<Typography.Paragraph className='ser2' style={{backgroundColor:'#fdfaf3' ,textAlign:'center'}}>
+        <article className="service-card">
+          <div className="service-title">
+            <span>04</span>
+            <h3>AI Ads</h3>
+          </div>
+          <Typography.Paragraph className={`ser2 ${ai_txt ? 'expanded' : ''}`}>
 
 {
 
 ai_txt ? (
 <>
-We create AI-powered advertising campaigns that target the right audience<br/>
-using intelligent, data-driven strategies and optimized ad creatives.<br/>
-Our solutions increase engagement, improve conversions,<br/>
-and maximize measurable business growth across digital platforms.
+We design AI-assisted ad campaigns that target the right audiences, iterate creative quickly, and optimize spend.
+Expect higher engagement, better conversion rates, and clearer ROI.
  </>
 )  : (
 <>
-We create AI-powered advertising campaigns<br/>
-that target the right audience effectively,<br/>
-increase engagement, improve conversions,<br/>
-and deliver measurable business results.
+AI-assisted ad campaigns that target the right audience and optimize results.
 </>
 )
 }
 
 
 
-</Typography.Paragraph>
+          </Typography.Paragraph>
+          <div className="service-actions">
+            <Button onClick={toggleai}>{ai_txt ? 'Show Less' : 'Learn More'}</Button>
+          </div>
+        </article>
 
-<br />
-
-
-
-<Button onClick={toggleai}>
-  {ai_txt ? 'Show Less' : 'Learn More'}
-</Button>
-
-
-</div>
-
-
-<div className="s5">
-
-  <Typography.Title  style={{backgroundColor:'#1a8187' ,textAlign:'center'}}> Marketing</Typography.Title>
-
-<Typography.Paragraph className='ser2' style={{backgroundColor:'#fdfaf3' ,textAlign:'center'}}>
+        <article className="service-card">
+          <div className="service-title">
+            <span>05</span>
+            <h3>Marketing</h3>
+          </div>
+          <Typography.Paragraph className={`ser2 ${marketing_txt ? 'expanded' : ''}`}>
 
 {
 
 marketing_txt ? (
 
 <>
-
-We provide comprehensive digital marketing services<br/>
-to help your business grow online,<br/>
-reach more customers, increase engagement,<br/>
-boost sales, enhance brand visibility,<br/>
-improve customer loyalty, and achieve long-term<br/>
-success effectively with measurable results and insights.
+We deliver full-funnel digital marketing, from positioning and content to conversion-focused campaigns.
+You get clear reporting, smarter spend, and consistent growth.
 
 </>
 )
@@ -269,12 +216,7 @@ success effectively with measurable results and insights.
 
 
 <>
-
-We provide full digital marketing services<br/>
-to help your business grow online,<br/>
-reach more customers, increase engagement,<br/>
-boost sales, and strengthen your brand presence.
-
+Full-funnel digital marketing to grow visibility, engagement, and revenue.
 </>
 
 )
@@ -286,45 +228,26 @@ boost sales, and strengthen your brand presence.
 
 
 
-</Typography.Paragraph>
+          </Typography.Paragraph>
+          <div className="service-actions">
+            <Button onClick={togglemarketing}>{marketing_txt ? 'Show Less' : 'Learn More'}</Button>
+          </div>
+        </article>
 
-<br />
-
-
-<Button onClick={togglemarketing}>
-  {marketing_txt ? 'Show Less' : 'Learn More'}
-</Button>
-
-
-</div>
-
-
-<div className="s6">
-
-  <Typography.Title style={{backgroundColor:'#1a8187' ,textAlign:'center'}}>Social Media</Typography.Title>
-
-<Typography.Paragraph className='ser2'style={{backgroundColor:'#fdfaf3' ,textAlign:'center'}} >
+        <article className="service-card">
+          <div className="service-title">
+            <span>06</span>
+            <h3>Social Media</h3>
+          </div>
+          <Typography.Paragraph className={`ser2 ${social_txt ? 'expanded' : ''}`}>
 
 {
 
 social_txt ?(
 
 <>
-
-We provide<br/>
-digital marketing<br/>
-services to grow<br/>
-your business<br/>
-reach more customers<br/>
-and increase engagement,<br/>
-boost sales<br/>
-effectively.<br/>
-Our strategies include<br/>
-targeted campaigns,<br/>
-performance tracking,<br/>
-and audience insights<br/>
-to deliver<br/>
-measurable results.
+We plan content, manage campaigns, and track performance across key platforms.
+Our strategy builds community, drives traffic, and supports your sales goals.
 
 </> 
 )
@@ -335,16 +258,7 @@ measurable results.
 
 
 <>
-
-We provide digital<br/>
-marketing services<br/>
-to grow your business<br/>
-online,<br/>
-reach more customers,<br/>
-increase engagement,<br/>
-and boost sales<br/>
-effectively worldwide.
-
+Social media strategy and management that builds community and drives traffic.
 </>
 
 
@@ -359,24 +273,13 @@ effectively worldwide.
 
 }
 
-</Typography.Paragraph>
-
-<br />
-
-
-
-<Button onClick={togglesocial}>
-  {social_txt ? 'Show Less' : 'Learn More'}
-</Button>
-
-
-
-</div>
-
-</div>
-
-
-</div>
+          </Typography.Paragraph>
+          <div className="service-actions">
+            <Button onClick={togglesocial}>{social_txt ? 'Show Less' : 'Learn More'}</Button>
+          </div>
+        </article>
+      </div>
+    </section>
 
   )
 }

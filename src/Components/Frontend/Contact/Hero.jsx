@@ -1,24 +1,17 @@
 import React from 'react'
-import { Col, Row , Typography} from 'antd'
+import { Typography } from 'antd'
 
 const Hero = () => {
   return (
-<>
-
-
-<div className="container1" style={{ backgroundColor: '#1a8187', width: "100%", height: "300px" , display: "flex", justifyContent: "center", alignItems: "center" }}>
-  <Typography.Title>Contact Us</Typography.Title>
- 
-</div>
-
- <Typography.Paragraph style={{color:'#ffffff', marginTop:'-5%',marginLeft:'32%',fontSize:'1.1rem'}}>
-   Fill out the contact form with your name, email, and message,and our team will  respond  <br />
-  shortly. We look forward to hearing from you and helping you achieve your goals.
-
-  </Typography.Paragraph>
-
-</>
-
+    <section className="contact-hero">
+      <div className="contact-hero-inner">
+        <Typography.Title className="contact-hero-title">Let us build your next digital milestone.</Typography.Title>
+        <Typography.Paragraph className="contact-hero-copy">
+          Share your goals and we will respond with a clear plan, timeline, and the right mix of services. We keep
+          communication transparent, fast, and focused on outcomes.
+        </Typography.Paragraph>
+      </div>
+    </section>
   )
 }
 
