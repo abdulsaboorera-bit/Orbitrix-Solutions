@@ -17,7 +17,7 @@
 
 .contact-hero-copy {
   max-width: 680px;
-  color: rgba(15, 47, 45, 0.82);
+  color: var(--orbit-muted-strong);
   font-size: 1.1rem;
 }
 

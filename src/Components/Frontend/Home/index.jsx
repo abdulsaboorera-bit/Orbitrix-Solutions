@@ -1,9 +1,12 @@
-import { Typography } from 'antd'
 import React from 'react'
 import Hero from './Hero'
+import Highlights from './Highlights'
 import Services from './Services'
+import Portfolio from './Portfolio'
+import Process from './Process'
+import Testimonials from './Testimonials'
 import FAQ from './FAQ'
-import Map from './Map'
+import Cta from './Cta'
 import Footer from '../../Footer'
 
 const index = () => {
@@ -11,9 +14,14 @@ const index = () => {
 
     <>
       <Hero/>
+      <Highlights/>
       <Services/>
-      <FAQ/> 
-     <Footer/> 
+      <Portfolio/>
+      <Process/>
+      <Testimonials/>
+      <FAQ/>
+      <Cta/>
+      <Footer/>
     </>
 
 

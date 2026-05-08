@@ -36,7 +36,7 @@
 
 .footer-brand p {
   margin-top: 16px;
-  color: rgba(15, 47, 45, 0.8);
+  color: var(--orbit-muted);
   max-width: 420px;
   line-height: 1.6;
 }
@@ -77,7 +77,7 @@
   margin: 0;
   display: grid;
   gap: 10px;
-  color: rgba(15, 47, 45, 0.8);
+  color: var(--orbit-muted);
 }
 
 .footer-links li {
@@ -94,7 +94,7 @@
 }
 
 .footer-newsletter p {
-  color: rgba(15, 47, 45, 0.75);
+  color: var(--orbit-muted);
 }
 
 .footer-form {
@@ -114,7 +114,7 @@
 }
 
 .footer-input::placeholder {
-  color: rgba(15, 47, 45, 0.55);
+  color: var(--orbit-muted-faint);
 }
 
 .footer-button {
@@ -139,7 +139,7 @@
   padding-top: 20px;
   border-top: 1px solid rgba(26, 129, 135, 0.2);
   text-align: center;
-  color: rgba(15, 47, 45, 0.7);
+  color: var(--orbit-muted-light);
   position: relative;
   z-index: 1;
 }

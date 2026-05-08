@@ -32,7 +32,7 @@
 
 .about-hero-copy {
   max-width: 680px;
-  color: rgba(15, 47, 45, 0.82);
+  color: var(--orbit-muted-strong);
   font-size: 1.1rem;
 }
 
@@ -90,6 +90,162 @@
   align-items: center;
 }
 
+.about-workflow {
+  align-items: stretch;
+}
+
+.about-workflow-content {
+  background: linear-gradient(135deg, rgba(26, 129, 135, 0.12), rgba(253, 250, 243, 0.9));
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 18px 40px rgba(11, 92, 97, 0.12);
+  border: 1px solid rgba(26, 129, 135, 0.12);
+}
+
+.workflow-steps {
+  margin-top: 20px;
+  display: grid;
+  gap: 16px;
+}
+
+.workflow-step {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 14px;
+  align-items: center;
+  background: var(--orbit-white);
+  border-radius: 16px;
+  padding: 16px 18px;
+  border: 1px solid rgba(26, 129, 135, 0.12);
+}
+
+.workflow-step span {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(26, 129, 135, 0.12);
+  color: var(--orbit-teal-strong);
+  font-weight: 700;
+}
+
+.workflow-step h4 {
+  margin: 0 0 6px;
+  color: var(--orbit-deep);
+}
+
+.workflow-step p {
+  margin: 0;
+  color: var(--orbit-muted);
+}
+
+.workflow-outcomes {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.workflow-outcomes div {
+  background: var(--orbit-white);
+  border-radius: 18px;
+  padding: 16px;
+  border: 1px solid rgba(26, 129, 135, 0.12);
+}
+
+.workflow-outcomes h3 {
+  margin: 0 0 6px;
+  color: var(--orbit-teal-strong);
+  font-size: 1.1rem;
+}
+
+.workflow-outcomes p {
+  margin: 0;
+  color: var(--orbit-muted);
+}
+
+.about-workflow-media {
+  display: grid;
+  gap: 18px;
+}
+
+.workflow-card {
+  background: var(--orbit-white);
+  border-radius: 20px;
+  padding: 20px 24px;
+  border: 1px solid rgba(26, 129, 135, 0.12);
+  box-shadow: 0 16px 32px rgba(11, 92, 97, 0.12);
+}
+
+.workflow-card h4 {
+  margin: 0 0 12px;
+  color: var(--orbit-deep);
+}
+
+.workflow-card ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--orbit-muted);
+  display: grid;
+  gap: 8px;
+}
+
+.about-ceo {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 40px;
+  align-items: center;
+}
+
+.about-ceo-content {
+  background: var(--orbit-white);
+  border-radius: 24px;
+  padding: 32px;
+  border: 1px solid rgba(26, 129, 135, 0.12);
+  box-shadow: 0 18px 40px rgba(11, 92, 97, 0.12);
+}
+
+.about-ceo-content p {
+  color: var(--orbit-muted);
+}
+
+.about-ceo-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.about-ceo-highlights span {
+  background: rgba(26, 129, 135, 0.12);
+  color: var(--orbit-teal-strong);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.about-ceo-image {
+  border-radius: 28px;
+  overflow: hidden;
+  border: 12px solid rgba(26, 129, 135, 0.2);
+  box-shadow: 0 20px 50px rgba(24, 72, 50, 0.2);
+  max-width: 520px;
+  width: 100%;
+  justify-self: center;
+}
+
+.about-ceo-image img {
+  width: 100%;
+  height: 100%;
+  max-height: 420px;
+  display: block;
+  object-fit: cover;
+}
+
 .about-story-image {
   border-radius: 28px;
   overflow: hidden;
@@ -138,7 +294,7 @@
 
 .about-team-card p {
   margin-bottom: 4px;
-  color: rgba(15, 47, 45, 0.7);
+  color: var(--orbit-muted-light);
 }
 
 @media (max-width: 992px) {
@@ -149,6 +305,14 @@
   }
 
   .about-story {
+    grid-template-columns: 1fr;
+  }
+
+  .workflow-outcomes {
+    grid-template-columns: 1fr;
+  }
+
+  .about-ceo {
     grid-template-columns: 1fr;
   }
 }

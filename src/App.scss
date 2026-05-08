@@ -10,6 +10,10 @@
   --orbit-sand: #fdfaf3;
   --orbit-white: #ffffff;
   --orbit-shadow: 0 24px 60px rgba(8, 34, 34, 0.18);
+  --orbit-muted-strong: rgba(15, 47, 45, 0.82);
+  --orbit-muted: rgba(15, 47, 45, 0.78);
+  --orbit-muted-light: rgba(15, 47, 45, 0.7);
+  --orbit-muted-faint: rgba(15, 47, 45, 0.55);
 }
 
 html, body, #root {
@@ -26,10 +30,39 @@ body {
     var(--orbit-sand);
 }
 
+body[data-theme='dark'] {
+  --orbit-ink: #e7f2ef;
+  --orbit-deep: #d7efe6;
+  --orbit-teal: #63c6b8;
+  --orbit-teal-strong: #49a79c;
+  --orbit-mint: #8fd9cc;
+  --orbit-sand: #0c1c1a;
+  --orbit-white: #132422;
+  --orbit-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  --orbit-muted-strong: rgba(231, 242, 239, 0.85);
+  --orbit-muted: rgba(231, 242, 239, 0.8);
+  --orbit-muted-light: rgba(231, 242, 239, 0.72);
+  --orbit-muted-faint: rgba(231, 242, 239, 0.6);
+  background: radial-gradient(1200px 600px at 10% -10%, rgba(26, 129, 135, 0.22), transparent 65%),
+    radial-gradient(900px 500px at 90% 0%, rgba(24, 72, 50, 0.25), transparent 60%),
+    #0a1816;
+}
+
 h1, h2, h3, h4, h5, h6, .ant-typography {
   font-family: "Playfair Display", "Times New Roman", serif;
   color: var(--orbit-deep);
   letter-spacing: 0.02em;
+}
+
+body[data-theme='dark'] h1,
+body[data-theme='dark'] h2,
+body[data-theme='dark'] h3,
+body[data-theme='dark'] h4,
+body[data-theme='dark'] h5,
+body[data-theme='dark'] h6,
+body[data-theme='dark'] .ant-typography,
+body[data-theme='dark'] .ant-typography-title {
+  color: var(--orbit-ink) !important;
 }
 
 #root {
@@ -71,15 +104,22 @@ footer .container {
   background-color: var(--orbit-sand);
   border-bottom: 1px solid rgba(15, 47, 45, 0.08);
   box-shadow: 0 12px 24px rgba(15, 47, 45, 0.08);
+  padding: 8px 0;
+}
+
+body[data-theme='dark'] .site-nav {
+  border-bottom-color: rgba(231, 242, 239, 0.08);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
 .site-nav .navbar-brand img {
-  max-width: 280px;
+  max-width: 220px;
   height: auto;
+  max-height: 56px;
 }
 
 .site-nav .nav-link {
-  font-size: 1.2rem;
+  font-size: 1.05rem;
   font-weight: 600;
   color: var(--orbit-deep);
   position: relative;
@@ -113,10 +153,26 @@ footer .container {
   border: 2px solid var(--orbit-deep);
   color: var(--orbit-white);
   background: linear-gradient(135deg, var(--orbit-teal), var(--orbit-teal-strong));
-  padding: 10px 20px;
+  padding: 8px 16px;
   font-weight: 600;
   border-radius: 999px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.theme-toggle {
+  border: 1px solid rgba(26, 129, 135, 0.35);
+  background: transparent;
+  color: var(--orbit-teal-strong);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus {
+  transform: translateY(-2px);
+  background: rgba(26, 129, 135, 0.12);
 }
 
 .nav-btns .nav-cta {

@@ -1,8 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from "../../Images/logo.png";
 
 const Navbar = () => {
+  const [theme, setTheme] = useState('light');
+
+  useEffect(() => {
+    const saved = localStorage.getItem('orbitrix-theme');
+    const nextTheme = saved === 'dark' ? 'dark' : 'light';
+    setTheme(nextTheme);
+    document.body.setAttribute('data-theme', nextTheme);
+  }, []);
+
+  const toggleTheme = () => {
+    const nextTheme = theme === 'dark' ? 'light' : 'dark';
+    setTheme(nextTheme);
+    document.body.setAttribute('data-theme', nextTheme);
+    localStorage.setItem('orbitrix-theme', nextTheme);
+  };
+
   return (
     <header>
       <nav className="site-nav navbar navbar-expand-lg w-100">
@@ -22,11 +38,17 @@ const Navbar = () => {
                 <Link className="nav-link" to="/about">About</Link>
               </li>
               <li className="nav-item">
+                <Link className="nav-link" to="/projects">Projects</Link>
+              </li>
+              <li className="nav-item">
                 <Link className="nav-link" to="/contact">Contact</Link>
               </li>
             </ul>
 
-            <div className="nav-btns d-flex ms-lg-3">
+            <div className="nav-btns d-flex ms-lg-3 align-items-center gap-2">
+              <button className="theme-toggle" type="button" onClick={toggleTheme} aria-label="Toggle theme">
+                {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
+              </button>
               <Link className="btn nav-cta" to="/contact">Get a Quote</Link>
             </div>
           </div>

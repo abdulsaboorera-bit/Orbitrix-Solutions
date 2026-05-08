@@ -1,6 +1,7 @@
 import React from 'react'
 import { Typography } from 'antd'
 import meeting from '../../../Images/meeting.png'
+import ceoPic from '../../../Images/ceo pic.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHandshakeAngle, faBrain, faAward } from '@fortawesome/free-solid-svg-icons'
 
@@ -27,20 +28,97 @@ const Services = () => {
         </div>
       </div>
 
-      <div className="about-story">
-        <div className="about-story-image">
-          <img src={meeting} alt="Orbitrix team collaborating" />
+      <div className="about-ceo">
+        <div className="about-ceo-image">
+          <img src={ceoPic} alt="Orbitrix CEO" />
         </div>
-        <div className="about-story-content">
-          <Typography.Title level={2}>Our Story</Typography.Title>
+        <div className="about-ceo-content">
+          <Typography.Title level={2}>CEO Story</Typography.Title>
           <Typography.Paragraph>
-            Orbitrix Solutions began as a passion project fueled by curiosity and a love for building on the web. Today, we
-            partner with founders and teams to shape brands, products, and campaigns that feel premium and perform brilliantly.
+            I started my journey with a passion for technology, creativity, and solving real business problems through
+            digital solutions. What began as an interest in web development and AI quickly turned into a mission to help
+            businesses grow with modern technology.
           </Typography.Paragraph>
           <Typography.Paragraph>
-            We blend thoughtful design with modern engineering so every launch feels confident, every experience feels smooth,
-            and every client feels supported long after go-live.
+            Today, I focus on building high-performing websites, AI-powered systems, and digital marketing strategies that
+            help brands stand out online. From WordPress and React development to SEO, AI ads, and social media growth, my
+            goal is to create solutions that are fast, scalable, and results-driven.
           </Typography.Paragraph>
+          <Typography.Paragraph>
+            I believe technology should not only look impressive - it should deliver real impact. That mindset continues
+            to drive every project, partnership, and idea behind the company.
+          </Typography.Paragraph>
+          <div className="about-ceo-highlights">
+            <span>Product + marketing mindset</span>
+            <span>Performance-first delivery</span>
+            <span>AI-assisted growth systems</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="about-story about-workflow">
+        <div className="about-workflow-content">
+          <Typography.Title level={2}>How We Work</Typography.Title>
+          <Typography.Paragraph>
+            A focused delivery system that keeps projects lean, visible, and outcome-driven from day one.
+          </Typography.Paragraph>
+
+          <div className="workflow-steps">
+            <div className="workflow-step">
+              <span>01</span>
+              <div>
+                <h4>Discovery Sprint</h4>
+                <p>Align on goals, users, and the fastest path to impact.</p>
+              </div>
+            </div>
+            <div className="workflow-step">
+              <span>02</span>
+              <div>
+                <h4>Strategy + Design</h4>
+                <p>Define the experience, messaging, and conversion flow.</p>
+              </div>
+            </div>
+            <div className="workflow-step">
+              <span>03</span>
+              <div>
+                <h4>Build + Launch</h4>
+                <p>Ship fast with performance checks and quality gates.</p>
+              </div>
+            </div>
+            <div className="workflow-step">
+              <span>04</span>
+              <div>
+                <h4>Optimize</h4>
+                <p>Measure results, iterate improvements, and scale what works.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="workflow-outcomes">
+            <div>
+              <h3>Clear milestones</h3>
+              <p>Weekly visibility and predictable timelines.</p>
+            </div>
+            <div>
+              <h3>Performance-first</h3>
+              <p>Speed, SEO, and conversion focus on every release.</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="about-workflow-media">
+          <div className="about-story-image">
+            <img src={meeting} alt="Orbitrix team collaborating" />
+          </div>
+          <div className="workflow-card">
+            <h4>What you get</h4>
+            <ul>
+              <li>Dedicated project owner</li>
+              <li>Weekly progress updates</li>
+              <li>Launch-ready QA checklist</li>
+              <li>Post-launch optimization plan</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
