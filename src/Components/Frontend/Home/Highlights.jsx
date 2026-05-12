@@ -17,7 +17,7 @@ const badges = [
 
 const Highlights = () => {
   return (
-    <section className="home-section impact-section">
+    <section className="home-section impact-section reveal">
       <div className="section-header">
         <Typography.Title level={2}>Impact that shows up in results</Typography.Title>
         <Typography.Paragraph>
@@ -26,8 +26,8 @@ const Highlights = () => {
       </div>
 
       <div className="impact-grid">
-        {stats.map((item) => (
-          <div className="impact-card" key={item.label}>
+        {stats.map((item, index) => (
+          <div className="impact-card reveal" key={item.label} style={{ transitionDelay: `${index * 120}ms` }}>
             <h3>{item.value}</h3>
             <p>{item.label}</p>
           </div>

@@ -21,7 +21,7 @@ const projects = [
 
 const Portfolio = () => {
   return (
-    <section className="home-section portfolio-section">
+    <section className="home-section portfolio-section reveal">
       <div className="section-header">
         <Typography.Title level={2}>Featured work</Typography.Title>
         <Typography.Paragraph>
@@ -30,8 +30,8 @@ const Portfolio = () => {
       </div>
 
       <div className="portfolio-grid">
-        {projects.map((project) => (
-          <article className="portfolio-card" key={project.title}>
+        {projects.map((project, index) => (
+          <article className="portfolio-card reveal" key={project.title} style={{ transitionDelay: `${index * 120}ms` }}>
             <h3>{project.title}</h3>
             <p>{project.summary}</p>
             <div className="tag-row">

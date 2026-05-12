@@ -8,14 +8,11 @@ import myPic from '../../../Images/my-pic.png'
 
 
 
-import './index.css'
-
-
 const Hero = () => {
   return (
     <div className="header_container0">
 
-<div className="header_container1">
+<div className="header_container1 reveal">
   <div className="hero_text">
     <Typography.Title>Your partner in digital growth.</Typography.Title>
 
@@ -34,7 +31,7 @@ const Hero = () => {
     </div>
   </div>
 
-  <div className="header_container2">
+  <div className="header_container2 reveal" style={{ transitionDelay: '120ms' }}>
     <img src={myPic} alt="My Picture"/>
 
 

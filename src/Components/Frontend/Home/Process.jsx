@@ -22,7 +22,7 @@ const steps = [
 
 const Process = () => {
   return (
-    <section className="home-section process-section">
+    <section className="home-section process-section reveal">
       <div className="section-header">
         <Typography.Title level={2}>How we deliver</Typography.Title>
         <Typography.Paragraph>
@@ -32,7 +32,7 @@ const Process = () => {
 
       <div className="process-grid">
         {steps.map((step, index) => (
-          <div className="process-card" key={step.title}>
+          <div className="process-card reveal" key={step.title} style={{ transitionDelay: `${index * 120}ms` }}>
             <div className="process-index">{`0${index + 1}`}</div>
             <h3>{step.title}</h3>
             <p>{step.detail}</p>

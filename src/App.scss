@@ -22,6 +22,10 @@ html, body, #root {
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Source Sans 3", "Segoe UI", sans-serif;
   color: var(--orbit-ink);
@@ -187,9 +191,9 @@ body[data-theme='dark'] .site-nav {
   box-shadow: 0 12px 24px rgba(26, 129, 135, 0.25);
 }
 
-.sticky-social {
+.sticky-social,
+.sticky-social-left {
   position: fixed;
-  right: 24px;
   top: 50%;
   transform: translateY(-50%);
   display: flex;
@@ -198,7 +202,16 @@ body[data-theme='dark'] .site-nav {
   z-index: 1100;
 }
 
-.sticky-social a {
+.sticky-social {
+  right: 24px;
+}
+
+.sticky-social-left {
+  left: 24px;
+}
+
+.sticky-social a,
+.sticky-social-left a {
   width: 46px;
   height: 46px;
   border-radius: 50%;
@@ -212,18 +225,34 @@ body[data-theme='dark'] .site-nav {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.sticky-social-left a.call {
+  color: var(--orbit-teal-strong);
+}
+
+.sticky-social-left a.whatsapp {
+  color: #1aa356;
+}
+
 .sticky-social a:hover,
-.sticky-social a:focus {
+.sticky-social a:focus,
+.sticky-social-left a:hover,
+.sticky-social-left a:focus {
   transform: translateY(-2px);
   box-shadow: 0 16px 32px rgba(8, 34, 34, 0.22);
 }
+
 
 @media (max-width: 992px) {
   .sticky-social {
     right: 12px;
   }
 
-  .sticky-social a {
+  .sticky-social-left {
+    left: 12px;
+  }
+
+  .sticky-social a,
+  .sticky-social-left a {
     width: 42px;
     height: 42px;
   }

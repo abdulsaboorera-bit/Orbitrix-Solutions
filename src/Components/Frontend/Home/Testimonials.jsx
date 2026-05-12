@@ -48,7 +48,7 @@ const Testimonials = () => {
   }
 
   return (
-    <section className="home-section testimonial-section">
+    <section className="home-section testimonial-section reveal">
       <div className="section-header">
         <Typography.Title level={2}>Client testimonials</Typography.Title>
         <Typography.Paragraph>
@@ -61,7 +61,7 @@ const Testimonials = () => {
           Prev
         </button>
 
-        <div className="testimonial-card">
+        <div className="testimonial-card reveal">
           <p className="testimonial-quote">"{items[activeIndex].quote}"</p>
           <div className="testimonial-meta">
             <div>

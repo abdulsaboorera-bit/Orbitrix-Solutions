@@ -7,9 +7,34 @@ const Navbar = () => {
 
   useEffect(() => {
     const saved = localStorage.getItem('orbitrix-theme');
-    const nextTheme = saved === 'dark' ? 'dark' : 'light';
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const nextTheme = saved ? saved : (mediaQuery.matches ? 'dark' : 'light');
     setTheme(nextTheme);
     document.body.setAttribute('data-theme', nextTheme);
+
+    const handleChange = (event) => {
+      if (localStorage.getItem('orbitrix-theme')) {
+        return;
+      }
+
+      const systemTheme = event.matches ? 'dark' : 'light';
+      setTheme(systemTheme);
+      document.body.setAttribute('data-theme', systemTheme);
+    };
+
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener('change', handleChange);
+    } else {
+      mediaQuery.addListener(handleChange);
+    }
+
+    return () => {
+      if (mediaQuery.removeEventListener) {
+        mediaQuery.removeEventListener('change', handleChange);
+      } else {
+        mediaQuery.removeListener(handleChange);
+      }
+    };
   }, []);
 
   const toggleTheme = () => {

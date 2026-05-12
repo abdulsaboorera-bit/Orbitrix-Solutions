@@ -6,7 +6,7 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 const Cta = () => {
   return (
-    <section className="home-section cta-section">
+    <section className="home-section cta-section reveal">
       <div className="cta-card">
         <div>
           <Typography.Title level={2}>Ready to build your next growth milestone?</Typography.Title>

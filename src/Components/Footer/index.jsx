@@ -6,7 +6,7 @@ import './index.css';
 const Footer = () => {
   return (
     <>
-    <div style={{width: '100%', backgroundColor: '#f8f9fa', textAlign: 'center'}}>
+    <div className="footer-shell">
       <Copyright/>
     </div>
   

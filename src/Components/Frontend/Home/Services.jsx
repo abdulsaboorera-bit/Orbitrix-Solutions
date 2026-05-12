@@ -62,7 +62,7 @@ setSocialtxt(!social_txt);
 
 
   return (
-    <section className="services-section">
+    <section className="services-section reveal">
       <div className="services-header">
         <Typography.Title level={1}>Our Services</Typography.Title>
         <Typography.Paragraph>
@@ -72,7 +72,7 @@ setSocialtxt(!social_txt);
       </div>
 
       <div className="services-grid">
-        <article className="service-card">
+        <article className="service-card reveal" style={{ transitionDelay: '0ms' }}>
           <div className="service-title">
             <span>01</span>
             <h3>WordPress</h3>
@@ -96,7 +96,7 @@ Fast, secure WordPress sites with custom themes, plugins, and easy content manag
           </div>
         </article>
 
-        <article className="service-card">
+        <article className="service-card reveal" style={{ transitionDelay: '120ms' }}>
           <div className="service-title">
             <span>02</span>
             <h3>React Websites</h3>
@@ -130,7 +130,7 @@ Modern React websites with smooth interactions, fast performance, and scalable c
           </div>
         </article>
 
-        <article className="service-card">
+        <article className="service-card reveal" style={{ transitionDelay: '240ms' }}>
           <div className="service-title">
             <span>03</span>
             <h3>SEO Optimization</h3>
@@ -166,7 +166,7 @@ SEO strategy and technical optimization to lift rankings and qualified traffic.
           </div>
         </article>
 
-        <article className="service-card">
+        <article className="service-card reveal" style={{ transitionDelay: '360ms' }}>
           <div className="service-title">
             <span>04</span>
             <h3>AI Ads</h3>
@@ -195,7 +195,7 @@ AI-assisted ad campaigns that target the right audience and optimize results.
           </div>
         </article>
 
-        <article className="service-card">
+        <article className="service-card reveal" style={{ transitionDelay: '480ms' }}>
           <div className="service-title">
             <span>05</span>
             <h3>Marketing</h3>
@@ -234,7 +234,7 @@ Full-funnel digital marketing to grow visibility, engagement, and revenue.
           </div>
         </article>
 
-        <article className="service-card">
+        <article className="service-card reveal" style={{ transitionDelay: '600ms' }}>
           <div className="service-title">
             <span>06</span>
             <h3>Social Media</h3>

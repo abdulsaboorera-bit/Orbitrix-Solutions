@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Typography } from 'antd';
 import { Link } from 'react-router-dom';
 
@@ -7,7 +7,55 @@ import logo from '../../Images/logo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedin, faGithub, faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
 const Copyright = () => {
+  const [email, setEmail] = useState('')
+  const [error, setError] = useState('')
+  const [toast, setToast] = useState('')
+  const timeoutRef = useRef(null)
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current)
+      }
+    }
+  }, [])
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+
+    const trimmed = email.trim()
+    if (!trimmed) {
+      setError('Please enter your email.')
+      return
+    }
+
+    if (!emailPattern.test(trimmed)) {
+      setError('Enter a valid email address.')
+      return
+    }
+
+    setError('')
+    setToast('Thanks! You are subscribed.')
+    setEmail('')
+
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current)
+    }
+
+    timeoutRef.current = setTimeout(() => {
+      setToast('')
+    }, 3000)
+  }
+
+  const handleChange = (event) => {
+    setEmail(event.target.value)
+    if (error) {
+      setError('')
+    }
+  }
   return (
     <footer className="site-footer">
       <div className="footer-inner">
@@ -46,10 +94,26 @@ const Copyright = () => {
         <div className="footer-newsletter">
           <h4>Newsletter</h4>
           <p>Monthly insights on design, development, and growth.</p>
-          <div className="footer-form">
-            <input className="footer-input" type="text" placeholder="Enter your email" />
-            <button className="footer-button" type="button">Subscribe</button>
-          </div>
+          <form className="footer-form" onSubmit={handleSubmit} noValidate>
+            <div className="footer-input-wrapper">
+              <input
+                className={`footer-input ${error ? 'has-error' : ''}`}
+                type="email"
+                placeholder="Enter your email"
+                value={email}
+                onChange={handleChange}
+                aria-invalid={Boolean(error)}
+                aria-describedby={error ? 'newsletter-error' : undefined}
+              />
+              {error ? (
+                <span className="footer-error" id="newsletter-error">
+                  {error}
+                </span>
+              ) : null}
+            </div>
+            <button className="footer-button" type="submit">Subscribe</button>
+          </form>
+          {toast ? <div className="footer-toast" role="status">{toast}</div> : null}
         </div>
       </div>
 
