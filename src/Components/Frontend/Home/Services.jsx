@@ -15,28 +15,28 @@ const servicesData = [
   },
   {
     id: '02',
-    title: 'React Websites',
+    title: 'React Web Development',
     icon: faCode,
     summary: 'Modern React websites with smooth interactions, fast performance, and scalable components.',
     details: 'We create blazing-fast React single-page applications with component-based architecture, API integration, real-time data handling, and responsive design across all devices. Every build is SEO-optimized and production-ready.',
   },
   {
     id: '03',
-    title: 'SEO Optimization',
+    title: 'SEO Services',
     icon: faSearch,
     summary: 'SEO strategy and technical optimization to lift rankings and qualified traffic.',
     details: 'We run comprehensive technical audits, keyword research, on-page optimization, content strategy, and authority-building link campaigns. Monthly reports with actionable insights ensure your rankings keep climbing.',
   },
   {
     id: '04',
-    title: 'AI Ads',
+    title: 'AI Ads & Marketing',
     icon: faRobot,
     summary: 'AI-assisted ad campaigns that target the right audience and optimize results.',
     details: 'We leverage machine learning for audience targeting, automated bid optimization, A/B testing with AI-driven creative variations, and predictive analytics for budget allocation across Google and Meta platforms.',
   },
   {
     id: '05',
-    title: 'Marketing',
+    title: 'Digital Marketing',
     icon: faBullhorn,
     summary: 'Full-funnel digital marketing to grow visibility, engagement, and revenue.',
     details: 'We deliver complete marketing strategy including brand positioning, email marketing funnels, content marketing, conversion rate optimization, and analytics dashboards to track every metric that matters.',
@@ -84,7 +84,7 @@ const Services = () => {
   return (
     <section className="services-section reveal">
       <div className="services-header">
-        <Typography.Title level={1}>Our Services</Typography.Title>
+        <Typography.Title level={2}>Our Services</Typography.Title>
         <Typography.Paragraph>
           A focused menu of growth services, designed to scale with your business. Each service blends strategy, design,
           and execution to deliver measurable results.

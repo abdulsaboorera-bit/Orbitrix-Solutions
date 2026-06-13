@@ -27,7 +27,7 @@ const FAQ = () => {
    return (
       <>
          <div className="container">
-            <Typography.Title level={1} className="faq-title">
+            <Typography.Title level={2} className="faq-title">
                Frequently Asked Questions
             </Typography.Title>
          </div>

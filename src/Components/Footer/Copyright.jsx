@@ -85,6 +85,7 @@ const Copyright = () => {
           <ul>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/about">About</Link></li>
+            <li><Link to="/projects">Projects</Link></li>
             <li><Link to="/contact">Contact Us</Link></li>
             <li><a href="https://github.com/abdulsaboorera-bit" target="_blank" rel="noreferrer">Github</a></li>
             <li><a href="https://www.linkedin.com/in/abdul-saboor-5677643b4/" target="_blank" rel="noreferrer">LinkedIn</a></li>

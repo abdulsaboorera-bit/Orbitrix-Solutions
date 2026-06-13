@@ -50,7 +50,7 @@ const Hero = () => {
           </Typography.Title>
 
           <Typography.Paragraph className="p_container1">
-            Orbitrix Solutions helps businesses thrive with premium web development, digital marketing, and IT consulting. We
+            Orbitrix Solutions helps businesses thrive with premium web development, professional SEO services, digital marketing, and modern IT solutions. We
             focus on measurable outcomes, clean execution, and long-term performance so your brand stays ahead.
           </Typography.Paragraph>
 

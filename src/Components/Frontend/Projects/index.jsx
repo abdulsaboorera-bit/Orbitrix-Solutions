@@ -1,5 +1,6 @@
 import React from 'react'
 import { Typography } from 'antd'
+import SEO from '../../SEO'
 import Footer from '../../Footer'
 import './index.css'
 
@@ -68,6 +69,10 @@ const projects = [
 const Projects = () => {
   return (
     <>
+      <SEO 
+        title="Our Projects | Portfolio - Orbitrix Solutions" 
+        description="Explore our web development and SEO projects. See how Orbitrix Solutions helps businesses scale with custom web platforms and performance-driven results." 
+      />
       <section className="projects-page">
         <div className="projects-hero">
           <Typography.Title>Projects that turn strategy into results.</Typography.Title>

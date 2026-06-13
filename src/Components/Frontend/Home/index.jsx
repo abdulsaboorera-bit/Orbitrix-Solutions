@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from '../../SEO';
 import Hero from './Hero';
 import Highlights from './Highlights';
 import Services from './Services';
@@ -15,6 +16,10 @@ import './index.css';
 const index = () => {
   return (
     <>
+      <SEO 
+        title="Orbitrix Solutions | Web Development & Digital Marketing Agency" 
+        description="Orbitrix Solutions builds high-performance websites, custom web development, SEO services, and digital marketing strategies to accelerate business growth." 
+      />
       <Hero />
       <Highlights />
       <Services />

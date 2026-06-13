@@ -47,9 +47,7 @@ const App = () => {
   <div className="sticky-social-left">
     <a
       className="call"
-      href="http://localhost:5173/contact"
-      target="_blank"
-      rel="noreferrer"
+      href="/contact"
       aria-label="Book a call"
     >
       <FontAwesomeIcon icon={faPhone} />

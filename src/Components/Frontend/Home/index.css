@@ -519,7 +519,7 @@
     margin: 0 auto 56px;
 }
 
-.services-header h1 {
+.services-header h2 {
     font-size: clamp(2rem, 4vw, 3rem);
     color: var(--orbit-deep);
     margin-bottom: 16px;

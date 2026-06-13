@@ -8,7 +8,7 @@ import { faHandshakeAngle, faBrain, faAward } from '@fortawesome/free-solid-svg-
 const Services = () => {
   return (
     <section className="about-section">
-      <Typography.Title className="text-center">Our Core Values</Typography.Title>
+      <Typography.Title level={2} className="text-center">Our Core Values</Typography.Title>
 
       <div className="about-values-grid">
         <div className="about-card">
@@ -30,7 +30,7 @@ const Services = () => {
 
       <div className="about-ceo">
         <div className="about-ceo-image">
-          <img src={ceoPic} alt="Orbitrix CEO" />
+          <img src={ceoPic} alt="Abdul Saboor - Orbitrix Solutions Founder and CEO" />
         </div>
         <div className="about-ceo-content">
           <Typography.Title level={2}>CEO Story</Typography.Title>
