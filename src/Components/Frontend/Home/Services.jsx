@@ -52,6 +52,30 @@ const servicesData = [
 
 const Services = () => {
   const [expandedId, setExpandedId] = useState(null);
+  const [revealedIds, setRevealedIds] = useState({});
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('data-id');
+            if (id) {
+              setRevealedIds((prev) => ({ ...prev, [id]: true }));
+            }
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elements = document.querySelectorAll('.service-card');
+    elements.forEach((el) => observer.observe(el));
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   const toggleExpand = (id) => {
     setExpandedId(expandedId === id ? null : id);
@@ -70,11 +94,13 @@ const Services = () => {
       <div className="services-grid">
         {servicesData.map((service, index) => {
           const isExpanded = expandedId === service.id;
+          const isRevealed = revealedIds[service.id];
           return (
             <article 
-              className={`service-card reveal ${isExpanded ? 'expanded-card' : ''}`} 
+              className={`service-card reveal ${isRevealed ? 'is-visible' : ''} ${isExpanded ? 'expanded-card' : ''}`} 
               style={{ transitionDelay: `${index * 80}ms` }}
               key={service.id}
+              data-id={service.id}
             >
               <div className="service-title">
                 <div className="service-icon-num">

@@ -65,7 +65,7 @@ const Testimonials = () => {
           </button>
 
           <div className="testimonial-card-wrapper">
-            <div className="testimonial-card reveal">
+            <div className="testimonial-card">
               <div className="quote-icon-container">
                 <FontAwesomeIcon icon={faQuoteLeft} className="quote-icon" />
               </div>
