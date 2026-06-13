@@ -1,65 +1,61 @@
 
 import React, { useState } from 'react';
-import { Typography, Button } from 'antd'
+import { Typography, Button } from 'antd';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch, faCode, faShareAlt, faBullseye, faBullhorn, faRobot } from '@fortawesome/free-solid-svg-icons';
+import { faWordpress } from '@fortawesome/free-brands-svg-icons';
 
+const servicesData = [
+  {
+    id: '01',
+    title: 'WordPress',
+    icon: faWordpress,
+    summary: 'Fast, secure WordPress sites with custom themes, plugins, and easy content management.',
+    details: 'We build fully custom WordPress websites tailored to your brand — from theme design and plugin integration to WooCommerce setup, speed optimization, and security hardening. Your team gets full CMS training so managing content is effortless.',
+  },
+  {
+    id: '02',
+    title: 'React Websites',
+    icon: faCode,
+    summary: 'Modern React websites with smooth interactions, fast performance, and scalable components.',
+    details: 'We create blazing-fast React single-page applications with component-based architecture, API integration, real-time data handling, and responsive design across all devices. Every build is SEO-optimized and production-ready.',
+  },
+  {
+    id: '03',
+    title: 'SEO Optimization',
+    icon: faSearch,
+    summary: 'SEO strategy and technical optimization to lift rankings and qualified traffic.',
+    details: 'We run comprehensive technical audits, keyword research, on-page optimization, content strategy, and authority-building link campaigns. Monthly reports with actionable insights ensure your rankings keep climbing.',
+  },
+  {
+    id: '04',
+    title: 'AI Ads',
+    icon: faRobot,
+    summary: 'AI-assisted ad campaigns that target the right audience and optimize results.',
+    details: 'We leverage machine learning for audience targeting, automated bid optimization, A/B testing with AI-driven creative variations, and predictive analytics for budget allocation across Google and Meta platforms.',
+  },
+  {
+    id: '05',
+    title: 'Marketing',
+    icon: faBullhorn,
+    summary: 'Full-funnel digital marketing to grow visibility, engagement, and revenue.',
+    details: 'We deliver complete marketing strategy including brand positioning, email marketing funnels, content marketing, conversion rate optimization, and analytics dashboards to track every metric that matters.',
+  },
+  {
+    id: '06',
+    title: 'Social Media',
+    icon: faShareAlt,
+    summary: 'Social media strategy and management that builds community and drives traffic.',
+    details: 'We plan platform-specific content calendars, manage communities, run paid social campaigns, coordinate influencer outreach, and deliver growth analytics to expand your brand\'s organic footprint.',
+  },
+];
 
 const Services = () => {
+  const [expandedId, setExpandedId] = useState(null);
 
-const [showFull,setShowFull] = useState(false);
-
-const [react_txt,setReactTxt] = useState(false);
-
-const [seo_txt,setSeoTxt] = useState(false);
-
-const [ai_txt,setAiTxt] = useState(false);
-
-const [marketing_txt,setMarketingtxt] = useState(false);
-
-const [social_txt,setSocialtxt] = useState(false);
-
-
-
-const toggle = () => {
-  setShowFull(!showFull);
-};
-
-const toggleReact = () => {
-  setReactTxt(!react_txt);
-}
-
-const toggleSeo = () => {
-
-    setSeoTxt(!seo_txt);
-
-}
-
-
-const toggleai = () => {
-
-setAiTxt(!ai_txt);
-
-
-}
-
-
-const togglemarketing = () => {
-
-setMarketingtxt(!marketing_txt);
-
-}
-
-
-
-
-const togglesocial = () => {
-
-setSocialtxt(!social_txt);
-
-
-
-}
-
-
+  const toggleExpand = (id) => {
+    setExpandedId(expandedId === id ? null : id);
+  };
 
   return (
     <section className="services-section reveal">
@@ -72,215 +68,41 @@ setSocialtxt(!social_txt);
       </div>
 
       <div className="services-grid">
-        <article className="service-card reveal" style={{ transitionDelay: '0ms' }}>
-          <div className="service-title">
-            <span>01</span>
-            <h3>WordPress</h3>
-          </div>
-          <Typography.Paragraph className={`ser2 ${showFull ? 'expanded' : ''}`}>
-
-  {showFull ? (
-  <>
-We build fast, secure WordPress sites with custom themes, plugins, and ecommerce.
-Every build is responsive, SEO-ready, and optimized for speed so your team can publish confidently.
-</>
-  ) : (
-  <>
-Fast, secure WordPress sites with custom themes, plugins, and easy content management.
-</>
-  )}
-
-          </Typography.Paragraph>
-          <div className="service-actions">
-            <Button onClick={toggle}>{showFull ? 'Show Less' : 'Learn More'}</Button>
-          </div>
-        </article>
-
-        <article className="service-card reveal" style={{ transitionDelay: '120ms' }}>
-          <div className="service-title">
-            <span>02</span>
-            <h3>React Websites</h3>
-          </div>
-          <Typography.Paragraph className={`ser2 ${react_txt ? 'expanded' : ''}`}>
-
-{
-
-  react_txt ? (
-    <>
-We craft modern React experiences with clean component architecture, smooth interactions, and scalable code.
-Performance-first builds ensure fast load times and seamless user journeys.
-    </>
-
-  ) : (
-
-<>
-Modern React websites with smooth interactions, fast performance, and scalable components.
-</>
-
-
-
-  )
-
-}
-
-
-          </Typography.Paragraph>
-          <div className="service-actions">
-            <Button onClick={toggleReact}>{react_txt ? 'Show Less' : 'Learn More'}</Button>
-          </div>
-        </article>
-
-        <article className="service-card reveal" style={{ transitionDelay: '240ms' }}>
-          <div className="service-title">
-            <span>03</span>
-            <h3>SEO Optimization</h3>
-          </div>
-          <Typography.Paragraph className={`ser2 ${seo_txt ? 'expanded' : ''}`}>
-
-
-{
-
-  seo_txt ? (
-    <>
-We improve visibility with technical audits, keyword strategy, on-page optimization, and quality link building.
-The result is higher rankings, more qualified traffic, and measurable growth.
-    </>
-
-  ) : (
-
-<>
-SEO strategy and technical optimization to lift rankings and qualified traffic.
-</>
-
-
-
-  )
-
-}
-
-
-
-          </Typography.Paragraph>
-          <div className="service-actions">
-            <Button onClick={toggleSeo}>{seo_txt ? 'Show Less' : 'Learn More'}</Button>
-          </div>
-        </article>
-
-        <article className="service-card reveal" style={{ transitionDelay: '360ms' }}>
-          <div className="service-title">
-            <span>04</span>
-            <h3>AI Ads</h3>
-          </div>
-          <Typography.Paragraph className={`ser2 ${ai_txt ? 'expanded' : ''}`}>
-
-{
-
-ai_txt ? (
-<>
-We design AI-assisted ad campaigns that target the right audiences, iterate creative quickly, and optimize spend.
-Expect higher engagement, better conversion rates, and clearer ROI.
- </>
-)  : (
-<>
-AI-assisted ad campaigns that target the right audience and optimize results.
-</>
-)
-}
-
-
-
-          </Typography.Paragraph>
-          <div className="service-actions">
-            <Button onClick={toggleai}>{ai_txt ? 'Show Less' : 'Learn More'}</Button>
-          </div>
-        </article>
-
-        <article className="service-card reveal" style={{ transitionDelay: '480ms' }}>
-          <div className="service-title">
-            <span>05</span>
-            <h3>Marketing</h3>
-          </div>
-          <Typography.Paragraph className={`ser2 ${marketing_txt ? 'expanded' : ''}`}>
-
-{
-
-marketing_txt ? (
-
-<>
-We deliver full-funnel digital marketing, from positioning and content to conversion-focused campaigns.
-You get clear reporting, smarter spend, and consistent growth.
-
-</>
-)
-:(
-
-
-<>
-Full-funnel digital marketing to grow visibility, engagement, and revenue.
-</>
-
-)
-
-
-}
-
-
-
-
-
-          </Typography.Paragraph>
-          <div className="service-actions">
-            <Button onClick={togglemarketing}>{marketing_txt ? 'Show Less' : 'Learn More'}</Button>
-          </div>
-        </article>
-
-        <article className="service-card reveal" style={{ transitionDelay: '600ms' }}>
-          <div className="service-title">
-            <span>06</span>
-            <h3>Social Media</h3>
-          </div>
-          <Typography.Paragraph className={`ser2 ${social_txt ? 'expanded' : ''}`}>
-
-{
-
-social_txt ?(
-
-<>
-We plan content, manage campaigns, and track performance across key platforms.
-Our strategy builds community, drives traffic, and supports your sales goals.
-
-</> 
-)
-: 
-
-(
-
-
-
-<>
-Social media strategy and management that builds community and drives traffic.
-</>
-
-
-
-
-)
-
-
-
-
-
-
-}
-
-          </Typography.Paragraph>
-          <div className="service-actions">
-            <Button onClick={togglesocial}>{social_txt ? 'Show Less' : 'Learn More'}</Button>
-          </div>
-        </article>
+        {servicesData.map((service, index) => {
+          const isExpanded = expandedId === service.id;
+          return (
+            <article 
+              className={`service-card reveal ${isExpanded ? 'expanded-card' : ''}`} 
+              style={{ transitionDelay: `${index * 80}ms` }}
+              key={service.id}
+            >
+              <div className="service-title">
+                <div className="service-icon-num">
+                  <span className="num-badge">{service.id}</span>
+                  <FontAwesomeIcon icon={service.icon} className="service-icon-glyph" />
+                </div>
+                <h3>{service.title}</h3>
+              </div>
+              
+              <Typography.Paragraph className={`ser2 ${isExpanded ? 'expanded' : ''}`}>
+                {isExpanded ? service.details : service.summary}
+              </Typography.Paragraph>
+              
+              <div className="service-actions">
+                <Button 
+                  type="text" 
+                  onClick={() => toggleExpand(service.id)}
+                  className="learn-more-btn"
+                >
+                  {isExpanded ? 'Show Less' : 'Learn More'}
+                </Button>
+              </div>
+            </article>
+          );
+        })}
       </div>
     </section>
+  );
+};
 
-  )
-}
-export default Services
+export default Services;

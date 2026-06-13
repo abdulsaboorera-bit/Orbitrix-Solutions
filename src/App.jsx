@@ -47,7 +47,7 @@ const App = () => {
   <div className="sticky-social-left">
     <a
       className="call"
-      href="https://wa.me/qr/7GSRQFMD6AMZG1"
+      href="http://localhost:5173/contact"
       target="_blank"
       rel="noreferrer"
       aria-label="Book a call"

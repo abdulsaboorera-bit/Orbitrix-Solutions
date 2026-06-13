@@ -1,49 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from "../../Images/logo.png";
 
 const Navbar = () => {
-  const [theme, setTheme] = useState('light');
-
-  useEffect(() => {
-    const saved = localStorage.getItem('orbitrix-theme');
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    const nextTheme = saved ? saved : (mediaQuery.matches ? 'dark' : 'light');
-    setTheme(nextTheme);
-    document.body.setAttribute('data-theme', nextTheme);
-
-    const handleChange = (event) => {
-      if (localStorage.getItem('orbitrix-theme')) {
-        return;
-      }
-
-      const systemTheme = event.matches ? 'dark' : 'light';
-      setTheme(systemTheme);
-      document.body.setAttribute('data-theme', systemTheme);
-    };
-
-    if (mediaQuery.addEventListener) {
-      mediaQuery.addEventListener('change', handleChange);
-    } else {
-      mediaQuery.addListener(handleChange);
-    }
-
-    return () => {
-      if (mediaQuery.removeEventListener) {
-        mediaQuery.removeEventListener('change', handleChange);
-      } else {
-        mediaQuery.removeListener(handleChange);
-      }
-    };
-  }, []);
-
-  const toggleTheme = () => {
-    const nextTheme = theme === 'dark' ? 'light' : 'dark';
-    setTheme(nextTheme);
-    document.body.setAttribute('data-theme', nextTheme);
-    localStorage.setItem('orbitrix-theme', nextTheme);
-  };
-
   return (
     <header>
       <nav className="site-nav navbar navbar-expand-lg w-100">
@@ -71,9 +30,6 @@ const Navbar = () => {
             </ul>
 
             <div className="nav-btns d-flex ms-lg-3 align-items-center gap-2">
-              <button className="theme-toggle" type="button" onClick={toggleTheme} aria-label="Toggle theme">
-                {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
-              </button>
               <Link className="btn nav-cta" to="/contact">Get a Quote</Link>
             </div>
           </div>
