@@ -84,9 +84,9 @@ const Services = () => {
   return (
     <section className="services-section reveal">
       <div className="services-header">
-        <Typography.Title level={2}>Our Services</Typography.Title>
+        <Typography.Title level={2}>Our Digital Services</Typography.Title>
         <Typography.Paragraph>
-          A focused menu of growth services, designed to scale with your business. Each service blends strategy, design,
+          A focused menu of growth services from our web development agency and SEO services agency, designed to scale with your business. Each service blends strategy, design,
           and execution to deliver measurable results.
         </Typography.Paragraph>
       </div>

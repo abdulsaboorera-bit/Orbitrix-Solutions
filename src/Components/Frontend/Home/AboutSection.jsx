@@ -9,7 +9,7 @@ const AboutSection = () => {
   const lettersLine3 = 'EXCELLENCE'.split('');
 
   return (
-    <section className="home-section about-home-section bg-black relative overflow-hidden reveal">
+    <section className="home-section about-home-section bg-black relative overflow-hidden reveal" id="about">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <header className="text-center mb-12 lg:mb-16">
           <span className="text-xs md:text-sm font-semibold text-orange-500 uppercase tracking-[0.3em] block mb-4">
@@ -44,7 +44,7 @@ const AboutSection = () => {
           <div className="relative group reveal-left reveal">
             <div className="relative overflow-hidden rounded-2xl shadow-2xl image-container-border">
               <img
-                alt="Digital growth and strategy team collaborating"
+                alt="Orbitrix Solutions web development agency team collaborating on digital strategy"
                 className="w-full h-auto object-cover team-img-zoom"
                 src={meetingPic}
               />
@@ -60,7 +60,7 @@ const AboutSection = () => {
               <span className="text-orange-500">Relax </span>Orbitrix is with you
             </h3>
             <p className="text-md sm:text-xl text-neutral-300 text-center lg:text-left leading-relaxed">
-              We’re architects of digital experiences, trusted by 100+ clients over 2+ years, combining strategic thinking with innovative design and flawless execution. Every pixel, every line of code, every interaction is crafted to elevate your brand and captivate your audience.
+              We are a web development agency and digital marketing company trusted by 100+ clients over 2+ years, combining strategic thinking with innovative design and flawless execution. Every pixel, every line of code, every interaction is crafted to elevate your brand and captivate your audience.
             </p>
             <div className="flex justify-center lg:justify-start">
               <Link to="/about" className="discover-story-btn">

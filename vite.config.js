@@ -13,4 +13,16 @@ export default defineConfig({
       // '@': path.resolve(__dirname, 'src'), 
     },
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        silenceDeprecations: [
+          'import',
+          'global-builtin',
+          'color-functions',
+          'if-function',
+        ],
+      },
+    },
+  },
 });

@@ -4,7 +4,7 @@ import './App.scss';
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faInstagram, faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { faInstagram, faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { useLocation } from 'react-router-dom';
 import Navbar from './Components/Header/Navbar';
@@ -44,30 +44,12 @@ const App = () => {
   <>
   <Navbar />
   <Routes/>
-  <div className="sticky-social-left">
-    <a
-      className="call"
-      href="/contact"
-      aria-label="Book a call"
-    >
-      <FontAwesomeIcon icon={faPhone} />
-    </a>
-    <a
-      className="whatsapp"
-      href="https://wa.me/qr/7GSRQFMD6AMZG1"
-      target="_blank"
-      rel="noreferrer"
-      aria-label="WhatsApp"
-    >
-      <FontAwesomeIcon icon={faWhatsapp} />
-    </a>
-  </div>
   <div className="sticky-social">
     <a href="https://www.linkedin.com/in/abdul-saboor-5677643b4/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
       <FontAwesomeIcon icon={faLinkedin} />
     </a>
-    <a href="https://github.com/abdulsaboorera-bit" target="_blank" rel="noreferrer" aria-label="GitHub">
-      <FontAwesomeIcon icon={faGithub} />
+    <a href="https://wa.me/qr/7GSRQFMD6AMZG1" target="_blank" rel="noreferrer" aria-label="Call us on WhatsApp">
+      <FontAwesomeIcon icon={faPhone} />
     </a>
     <a href="https://www.instagram.com/orbitrix_solutions?igsh=ZGcydzJpMWFteHN6" target="_blank" rel="noreferrer" aria-label="Instagram">
       <FontAwesomeIcon icon={faInstagram} />

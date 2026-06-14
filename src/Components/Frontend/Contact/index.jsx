@@ -7,14 +7,14 @@ import './index.css'
 
 const index = () => {
   return (
-    <>
+    <main>
       <SEO 
         title="Contact Us | Orbitrix Solutions - Get a Quote" 
         description="Get in touch with Orbitrix Solutions today. Contact our team for customized web development, digital marketing, and IT solutions tailored to your business." 
       />
       <Hero/>
       <FAQ/> 
-    </>
+    </main>
   )
 }
 

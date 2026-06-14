@@ -1,5 +1,6 @@
 import React from 'react'
 import { Typography } from 'antd'
+import { Link } from 'react-router-dom'
 
 const projects = [
   {
@@ -21,11 +22,11 @@ const projects = [
 
 const Portfolio = () => {
   return (
-    <section className="home-section portfolio-section reveal">
+    <section className="home-section portfolio-section reveal" id="case-studies">
       <div className="section-header">
-        <Typography.Title level={2}>Featured work</Typography.Title>
+        <Typography.Title level={2}>Case Studies & Projects</Typography.Title>
         <Typography.Paragraph>
-          A snapshot of the outcomes we build for ambitious teams. Each engagement is tailored to growth goals.
+          A snapshot of outcomes we build as a web development agency and SEO services agency. Each engagement is tailored to growth goals.
         </Typography.Paragraph>
       </div>
 
@@ -41,6 +42,12 @@ const Portfolio = () => {
             </div>
           </article>
         ))}
+      </div>
+
+      <div style={{ textAlign: 'center', marginTop: '32px' }}>
+        <Link to="/projects" className="pricing-cta" style={{ display: 'inline-block', padding: '14px 32px', textDecoration: 'none' }}>
+          View All Projects
+        </Link>
       </div>
     </section>
   )

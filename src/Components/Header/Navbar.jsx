@@ -27,6 +27,9 @@ const Navbar = () => {
               <li className="nav-item">
                 <Link className="nav-link" to="/contact">Contact</Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/terms-and-conditions">Terms</Link>
+              </li>
             </ul>
 
             <div className="nav-btns d-flex ms-lg-3 align-items-center gap-2">

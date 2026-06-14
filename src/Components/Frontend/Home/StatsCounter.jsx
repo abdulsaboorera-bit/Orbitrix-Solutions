@@ -62,7 +62,7 @@ const StatsCounter = () => {
     <section className="home-section stats-counter-section reveal">
       <div className="section-header">
         <Typography.Title level={2}>
-          Building brands, boosting businesses, and redefining possibilities.
+          Client Results – Our Track Record as a Web Development Agency
         </Typography.Title>
       </div>
 
@@ -72,11 +72,11 @@ const StatsCounter = () => {
             <FontAwesomeIcon icon={faPlus} className="stat-icon" />
           </div>
           <h3 className="stat-number">
-            <CountUp end="250+" />
+            <CountUp end="80+" />
           </h3>
           <h4 className="stat-title">Projects Delivered</h4>
           <p className="stat-desc">
-            You’re joining 250+ businesses who’ve launched successful projects with us, and we’re ready to build yours next.
+            You're joining 80+ businesses who've launched successful web development and SEO projects with us, and we're ready to build yours next.
           </p>
         </div>
 
@@ -89,7 +89,7 @@ const StatsCounter = () => {
           </h3>
           <h4 className="stat-title">Business Growth</h4>
           <p className="stat-desc">
-            Our strategies help clients like you achieve real growth and success, up to 70% more revenue in just a year.
+            Our SEO services and digital marketing strategies help clients achieve real growth — up to 70% more revenue in just a year.
           </p>
         </div>
 
@@ -102,7 +102,7 @@ const StatsCounter = () => {
           </h3>
           <h4 className="stat-title">Happy Clients</h4>
           <p className="stat-desc">
-            Over 100 brands trust us to bring ideas to life. You’ll love the results, growth and success just as much as they did.
+            Over 100 brands trust our web development agency and digital marketing company to bring ideas to life. You'll love the results.
           </p>
         </div>
       </div>

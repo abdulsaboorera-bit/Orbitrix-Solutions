@@ -68,7 +68,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <>
+    <main>
       <SEO 
         title="Our Projects | Portfolio - Orbitrix Solutions" 
         description="Explore our web development and SEO projects. See how Orbitrix Solutions helps businesses scale with custom web platforms and performance-driven results." 
@@ -176,7 +176,7 @@ const Projects = () => {
       </section>
 
       <Footer />
-    </>
+    </main>
   )
 }
 

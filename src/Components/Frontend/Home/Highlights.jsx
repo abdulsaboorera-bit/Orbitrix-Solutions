@@ -71,11 +71,11 @@ const badges = [
 
 const Highlights = () => {
   return (
-    <section className="home-section impact-section reveal">
+    <section className="home-section impact-section reveal" id="why-choose-us">
       <div className="section-header">
-        <Typography.Title level={2}>Impact that shows up in results</Typography.Title>
+        <Typography.Title level={2}>Why Choose Orbitrix Solutions</Typography.Title>
         <Typography.Paragraph>
-          We blend strategy, execution, and performance optimization to help brands grow and stay ahead.
+          As a trusted web development agency and digital marketing company, we blend strategy, execution, and performance optimization to help brands grow and stay ahead.
         </Typography.Paragraph>
       </div>
 

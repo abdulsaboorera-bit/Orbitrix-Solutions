@@ -7,34 +7,32 @@ const faqItems = [
    {
       question: 'How do I start a project with Orbitrix Solutions?',
       answer:
-         'Share your goals through the contact form, WhatsApp, or email. We reply within 24 hours with next steps and a clear plan.',
+         'Share your goals through our <a href="/contact">contact page</a>, WhatsApp, or email. We reply within 24 hours with next steps and a clear plan.',
    },
    {
-      question: 'What services do you offer?',
-      answer: 'We deliver WordPress and React development, SEO, digital marketing, AI ads, and social media growth services.',
+      question: 'What services does your web development agency offer?',
+      answer: 'We deliver WordPress and React web development, SEO services, AI automation, digital marketing, and social media growth services as a full-service digital marketing company.',
    },
    {
       question: 'How long does a typical website take?',
-      answer: 'Most websites launch in 2 to 6 weeks, depending on scope and content readiness. We confirm a timeline after discovery.',
+      answer: 'Most websites launch in 2 to 6 weeks, depending on scope and content readiness. We confirm a timeline after a discovery call.',
    },
    {
       question: 'Do you provide ongoing support?',
-      answer: 'Yes. We offer maintenance, optimization, and marketing support after launch with flexible monthly plans.',
+      answer: 'Yes. We offer maintenance, optimization, and marketing support after launch with flexible monthly plans. Visit our <a href="/about">about page</a> to learn more.',
    },
 ]
 
 const FAQ = () => {
    return (
-      <>
+      <section className="home-section" id="faq">
          <div className="container">
             <Typography.Title level={2} className="faq-title">
                Frequently Asked Questions
             </Typography.Title>
          </div>
 
-         <br />
-         <br />
-         <br />
+         <div style={{ height: '24px' }} />
 
          {faqItems.map((item) => (
             <details className="accordian" key={item.question}>
@@ -45,15 +43,13 @@ const FAQ = () => {
                   </span>
                </summary>
                <div className="answer">
-                  <p>{item.answer}</p>
+                  <p dangerouslySetInnerHTML={{ __html: item.answer }} />
                </div>
             </details>
          ))}
 
-         <br />
-         <br />
-         <br />
-      </>
+         <div style={{ height: '24px' }} />
+      </section>
    )
 }
 

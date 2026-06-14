@@ -1,5 +1,6 @@
 import React from 'react'
 import { Typography } from 'antd'
+import { Link } from 'react-router-dom'
 
 const plans = [
   {
@@ -24,9 +25,9 @@ const Pricing = () => {
   return (
     <section className="home-section pricing-section reveal">
       <div className="section-header">
-        <Typography.Title level={2}>Simple pricing</Typography.Title>
+        <Typography.Title level={2}>Simple Pricing for Web Development & SEO Services</Typography.Title>
         <Typography.Paragraph>
-          Choose a plan that fits your stage. We tailor scopes quickly after a discovery call.
+          Choose a plan that fits your stage. Our digital marketing company tailors scopes quickly after a discovery call.
         </Typography.Paragraph>
       </div>
 
@@ -46,14 +47,12 @@ const Pricing = () => {
                 <li key={feature}>{feature}</li>
               ))}
             </ul>
-            <a
+            <Link
+              to="/contact"
               className="pricing-cta"
-              href="https://wa.me/qr/7GSRQFMD6AMZG1"
-              target="_blank"
-              rel="noreferrer"
             >
               Book a call
-            </a>
+            </Link>
           </article>
         ))}
       </div>

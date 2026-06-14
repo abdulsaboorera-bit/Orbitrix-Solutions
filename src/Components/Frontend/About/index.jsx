@@ -7,7 +7,7 @@ import './index.css'
 
 const index = () => {
   return (
-    <>
+    <main>
       <SEO 
         title="About Us | Orbitrix Solutions - Web Development & IT Solutions" 
         description="Learn about Orbitrix Solutions. We are a results-driven digital agency offering premier web development, IT consulting, and performance marketing." 
@@ -15,10 +15,7 @@ const index = () => {
       <Hero/>
       <Services/>
       <FAQ/> 
-    </>
-
-
-
+    </main>
   )
 }
 

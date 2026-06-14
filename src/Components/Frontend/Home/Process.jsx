@@ -58,9 +58,9 @@ const Process = () => {
   return (
     <section className="home-section process-section reveal">
       <div className="section-header">
-        <Typography.Title level={2}>Behind Every Brand We Build</Typography.Title>
+        <Typography.Title level={2}>How We Work – Our Web Development Process</Typography.Title>
         <Typography.Paragraph>
-          Dive into the journey we take together to grow your brand. Step by step, moving it closer to its best version.
+          Dive into the journey we take together to grow your brand. Our digital marketing company and web development agency follow a proven step-by-step process, moving your brand closer to its best version.
         </Typography.Paragraph>
       </div>
 

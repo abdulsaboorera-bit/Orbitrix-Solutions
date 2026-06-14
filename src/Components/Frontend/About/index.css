@@ -57,7 +57,7 @@
 }
 
 .about-section {
-  padding: 40px 6%;
+  padding: 40px 6% 80px;
 }
 
 .about-values-grid {
@@ -314,5 +314,104 @@
 
   .about-ceo {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    padding: 60px 5% 30px;
+  }
+
+  .about-hero-inner {
+    padding: 40px 6%;
+    border-radius: 24px;
+  }
+
+  .about-hero-title {
+    font-size: clamp(1.8rem, 6vw, 2.8rem);
+  }
+
+  .about-hero-stats {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .about-section {
+    padding: 30px 5% 60px;
+  }
+
+  .about-values-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .about-card {
+    padding: 24px;
+  }
+
+  .about-story {
+    gap: 24px;
+  }
+
+  .about-story-image,
+  .about-ceo-image {
+    border-width: 6px;
+  }
+
+  .about-team-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .workflow-outcomes {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero {
+    padding: 48px 4% 20px;
+  }
+
+  .about-hero-inner {
+    padding: 28px 5%;
+  }
+
+  .about-hero-title {
+    font-size: clamp(1.5rem, 7vw, 2rem);
+  }
+
+  .about-hero-copy {
+    font-size: 0.95rem;
+  }
+
+  .about-section {
+    padding: 24px 4% 48px;
+  }
+
+  .about-card {
+    padding: 20px 16px;
+    text-align: center;
+  }
+
+  .about-story-image,
+  .about-ceo-image {
+    border-width: 4px;
+  }
+
+  .about-ceo-content {
+    padding: 24px;
+  }
+
+  .about-workflow-content {
+    padding: 24px;
+  }
+
+  .workflow-step {
+    padding: 12px;
+  }
+
+  .about-team-card {
+    padding: 14px;
   }
 }

@@ -39,26 +39,18 @@ const Hero = () => {
       <div className="header_container1 reveal relative z-10">
         <div className="hero_text">
           <Typography.Title level={1}>
-            We turn{' '}
-            <span className="word-rotator-wrapper">
-              <span className={`word-rotator-text ${fadeState}`}>
-                {words[wordIndex]}
-              </span>
-            </span>
-            <br />
-            into digital realities.
+            Orbitrix Solutions – Web Development, SEO &amp; AI Automation Agency
           </Typography.Title>
 
           <Typography.Paragraph className="p_container1">
-            Orbitrix Solutions helps businesses thrive with premium web development, professional SEO services, digital marketing, and modern IT solutions. We
-            focus on measurable outcomes, clean execution, and long-term performance so your brand stays ahead.
+            Orbitrix Solutions is a full-service digital marketing company and web development agency helping businesses scale with professional SEO services, AI automation, custom web development, and data-driven digital marketing strategies. We focus on measurable outcomes, clean execution, and long-term performance so your brand stays ahead.
           </Typography.Paragraph>
 
           <div className="btns">
             <a className="hb1 hb1-whatsapp" href="https://wa.me/qr/7GSRQFMD6AMZG1" target="_blank" rel="noreferrer">
               <FontAwesomeIcon icon={faWhatsapp} /> WhatsApp
             </a>
-            <a className="hb1 hb1-email" href="mailto:abdulsaboormercedes@gmail.com">
+            <a className="hb1 hb1-email" href="mailto:info@orbitrixsolutions.com">
               <FontAwesomeIcon icon={faEnvelope} /> Email
             </a>
           </div>
@@ -66,7 +58,7 @@ const Hero = () => {
 
         <div className="header_container2 reveal" style={{ transitionDelay: '120ms' }}>
           <div className="hero-img-wrapper">
-            <img src={myPic} alt="Orbitrix Web Development and Digital Growth" />
+            <img src={myPic} alt="Orbitrix Solutions web development and SEO agency team delivering digital growth" />
             <div className="floating-badge">⚡</div>
           </div>
         </div>

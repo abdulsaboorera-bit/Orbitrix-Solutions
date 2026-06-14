@@ -52,9 +52,9 @@ const Testimonials = () => {
   return (
     <section className="home-section testimonial-section reveal">
       <div className="section-header">
-        <Typography.Title level={2}>How Our Clients Value Our Work</Typography.Title>
+        <Typography.Title level={2}>What Our Clients Say</Typography.Title>
         <Typography.Paragraph>
-          Don't just take our word for it - hear directly from our satisfied clients. Businesses are growing fast because of their smart marketing strategies.
+          Don't just take our word for it — hear directly from businesses growing with our web development, SEO services, and digital marketing strategies.
         </Typography.Paragraph>
       </div>
 

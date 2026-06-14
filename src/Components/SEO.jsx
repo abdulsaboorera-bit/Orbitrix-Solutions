@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-const SEO = ({ title, description, canonicalUrl }) => {
+const SEO = ({ title, description, canonicalUrl, keywords }) => {
   const location = useLocation();
 
   useEffect(() => {
@@ -49,7 +49,18 @@ const SEO = ({ title, description, canonicalUrl }) => {
     let ogUrl = document.querySelector('meta[property="og:url"]');
     if (ogUrl) ogUrl.setAttribute('content', canonical);
 
-  }, [title, description, canonicalUrl, location]);
+    // 5. Update Keywords
+    if (keywords) {
+      let metaKeywords = document.querySelector('meta[name="keywords"]');
+      if (!metaKeywords) {
+        metaKeywords = document.createElement('meta');
+        metaKeywords.setAttribute('name', 'keywords');
+        document.head.appendChild(metaKeywords);
+      }
+      metaKeywords.setAttribute('content', keywords);
+    }
+
+  }, [title, description, canonicalUrl, keywords, location]);
 
   return null;
 };
