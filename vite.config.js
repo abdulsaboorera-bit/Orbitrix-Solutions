@@ -1,17 +1,33 @@
-// vite.config.js (or vite.config.ts)
 import { defineConfig } from 'vite';
-// If using TypeScript and Node.js path module for absolute path resolution
-// import path from 'node:path'; 
+import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  // ... other configurations
+  plugins: [react()],
   resolve: {
     alias: {
-      // Map '@' to the '/src' directory
       '@': '/src',
-      // or using node:path for explicit absolute paths (especially for monorepos)
-      // '@': path.resolve(__dirname, 'src'), 
     },
+  },
+  build: {
+    minify: 'esbuild',
+    cssMinify: true,
+    cssCodeSplit: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'react-router-dom'],
+          antd: ['antd'],
+          bootstrap: ['bootstrap'],
+        },
+      },
+    },
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+      },
+    },
+    sourcemap: false,
   },
   css: {
     preprocessorOptions: {

@@ -38,9 +38,9 @@ const Hero = () => {
 
       <div className="header_container1 reveal relative z-10">
         <div className="hero_text">
-          <Typography.Title level={1}>
-            Orbitrix Solutions – Web Development, SEO &amp; AI Automation Agency
-          </Typography.Title>
+          <h1>
+            We Build Websites &amp; Brands That Grow
+          </h1>
 
           <Typography.Paragraph className="p_container1">
             Orbitrix Solutions is a full-service digital marketing company and web development agency helping businesses scale with professional SEO services, AI automation, custom web development, and data-driven digital marketing strategies. We focus on measurable outcomes, clean execution, and long-term performance so your brand stays ahead.

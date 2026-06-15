@@ -69,15 +69,15 @@ const projects = [
 
 const Projects = () => {
   return (
-    <main>
+    <main id="main-content">
       <SEO 
-        title="Our Projects | Web Development & SEO Portfolio - Orbitrix Solutions" 
-        description="Explore our web development and SEO projects. See how Orbitrix Solutions, a leading web development agency, helps businesses scale with custom web platforms and performance-driven results." 
-        keywords="web development portfolio, SEO projects, web development agency work, React development projects, WordPress development, digital marketing results, Orbitrix Solutions portfolio"
+        title="Our Projects | Web Dev & SEO Portfolio – Orbitrix Solutions" 
+        description="Explore Orbitrix Solutions' web development and SEO projects. Custom websites, React apps, WordPress builds, and data-driven marketing campaigns." 
+        keywords="web development portfolio, SEO projects, React development, WordPress development, Orbitrix Solutions portfolio"
       />
       <section className="projects-page">
         <div className="projects-hero">
-          <Typography.Title level={1}>Our Projects – Web Development & SEO Portfolio | Orbitrix Solutions</Typography.Title>
+          <Typography.Title level={1}>Our Web Development &amp; SEO Portfolio</Typography.Title>
           <Typography.Paragraph>
             A curated selection of recent Orbitrix Solutions web development and SEO projects. Each build pairs crisp 
             design with performance-focused engineering so every brand looks premium and converts better.

@@ -8,11 +8,11 @@ import './index.css'
 
 const index = () => {
   return (
-    <main>
+    <main id="main-content">
       <SEO 
-        title="Contact Us | Orbitrix Solutions - Web Development & Digital Marketing Agency" 
-        description="Get in touch with Orbitrix Solutions. Contact our web development agency for custom web development, SEO services, AI automation, digital marketing, and IT solutions tailored to your business." 
-        keywords="contact Orbitrix Solutions, web development agency contact, SEO services quote, digital marketing company, AI automation agency, custom web development quote"
+        title="Contact Us | Orbitrix Solutions – Web & SEO Agency" 
+        description="Get in touch with Orbitrix Solutions for custom web development, SEO, AI automation, and digital marketing tailored to your business." 
+        keywords="contact Orbitrix Solutions, web development agency, SEO services, digital marketing, AI automation"
       />
       <Hero/>
 

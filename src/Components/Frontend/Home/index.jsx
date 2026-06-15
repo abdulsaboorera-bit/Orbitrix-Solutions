@@ -20,7 +20,7 @@ const SchemaMarkup = () => {
     "name": "Orbitrix Solutions",
     "url": "https://orbitrixsolutions.com",
     "logo": "https://orbitrixsolutions.com/logo.png",
-    "description": "Orbitrix Solutions is a web development agency, SEO services agency, AI automation agency, and digital marketing company offering custom web development, SEO, AI-powered marketing, and IT consulting.",
+    "description": "Orbitrix Solutions: a web development and digital marketing agency offering SEO, AI automation, custom web development, and data-driven marketing.",
     "sameAs": [
       "https://www.linkedin.com/in/abdul-saboor-5677643b4/",
       "https://github.com/abdulsaboorera-bit",
@@ -41,7 +41,19 @@ const SchemaMarkup = () => {
       "@type": "Country",
       "name": "Pakistan"
     },
-    "priceRange": "$$"
+    "priceRange": "$$",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Digital Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Development" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO Services" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Automation & Marketing" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Digital Marketing" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Social Media Management" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "WordPress Development" } }
+      ]
+    }
   };
 
   return (
@@ -54,12 +66,12 @@ const SchemaMarkup = () => {
 
 const index = () => {
   return (
-    <main>
+    <main id="main-content">
       <SchemaMarkup />
       <SEO
-        title="Orbitrix Solutions | Web Development Agency, SEO Services & AI Automation"
-        description="Orbitrix Solutions is a web development agency and digital marketing company offering SEO services, AI automation, custom web development, React & WordPress development, and data-driven marketing strategies to accelerate business growth."
-        keywords="web development agency, SEO services agency, AI automation agency, digital marketing company, custom web development, React development, WordPress development, SEO optimization, digital marketing strategy"
+        title="Orbitrix Solutions | Web Dev, SEO & AI Agency"
+        description="Orbitrix Solutions: a web development &amp; digital marketing agency offering SEO, AI automation, and custom web development to accelerate your business growth."
+        keywords="web development agency, digital marketing company, SEO services, AI automation, custom web development, React development, WordPress development"
       />
       <Hero />
       <Highlights />

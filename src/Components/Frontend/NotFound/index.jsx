@@ -20,7 +20,7 @@ const NotFound = () => {
     };
   }, []);
   return (
-    <section className="not-found">
+    <main id="main-content" className="not-found">
       <div className="not-found-container">
         <div className="not-found-visual">
           <span className="not-found-code">404</span>
@@ -42,7 +42,7 @@ const NotFound = () => {
           </button>
         </div>
       </div>
-    </section>
+    </main>
   );
 };
 

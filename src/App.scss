@@ -16,6 +16,24 @@
   --orbit-muted-faint: rgba(15, 47, 45, 0.55);
 }
 
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  z-index: 10000;
+  padding: 8px 16px;
+  background: var(--orbit-teal);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-radius: 0 0 4px 0;
+  transition: top 0.15s;
+}
+.skip-link:focus {
+  top: 0;
+}
+
 html, body, #root {
   height: 100%;
   margin: 0;

@@ -3,7 +3,7 @@ import Home from './Home';
 
 const Index = () => {
    return (
-      <main>
+      <main id="main-content">
          <Home />
       </main>
    );
