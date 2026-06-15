@@ -31,6 +31,70 @@
     <meta name="twitter:title" content="Orbitrix Solutions | Web Dev, SEO & AI Agency" />
     <meta name="twitter:description" content="Orbitrix Solutions: a web development &amp; digital marketing agency offering SEO, AI automation, and custom web development to accelerate your business growth." />
     <meta name="twitter:image" content="https://orbitrixsolutions.com/logo.png" />
+
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://orbitrixsolutions.com/#organization",
+          "name": "Orbitrix Solutions",
+          "url": "https://orbitrixsolutions.com",
+          "logo": { "@type": "ImageObject", "url": "https://orbitrixsolutions.com/logo.png" },
+          "sameAs": [
+            "https://www.linkedin.com/in/abdul-saboor-5677643b4/",
+            "https://github.com/abdulsaboorera-bit",
+            "https://www.instagram.com/orbitrix_solutions"
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+923284678752",
+            "email": "info@orbitrixsolutions.com",
+            "contactType": "customer service"
+          },
+          "address": { "@type": "PostalAddress", "addressLocality": "Lahore", "addressCountry": "PK" }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://orbitrixsolutions.com/#website",
+          "url": "https://orbitrixsolutions.com",
+          "name": "Orbitrix Solutions | Web Dev, SEO & AI Agency",
+          "description": "Orbitrix Solutions: a web development and digital marketing agency offering SEO, AI automation, and custom web development.",
+          "publisher": { "@id": "https://orbitrixsolutions.com/#organization" },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": { "@type": "EntryPoint", "urlTemplate": "https://orbitrixsolutions.com/?s={search_term_string}" },
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://orbitrixsolutions.com/#service",
+          "name": "Orbitrix Solutions - Web Development & Digital Marketing Agency",
+          "image": "https://orbitrixsolutions.com/logo.png",
+          "url": "https://orbitrixsolutions.com",
+          "telephone": "+923284678752",
+          "priceRange": "$$",
+          "description": "Orbitrix Solutions offers web development, SEO, AI automation, digital marketing, social media management, and WordPress development.",
+          "address": { "@type": "PostalAddress", "addressLocality": "Lahore", "addressCountry": "PK" },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Digital Services",
+            "itemListElement": [
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Development" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO Services" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Automation & Marketing" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Digital Marketing" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Social Media Management" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "WordPress Development" } }
+            ]
+          }
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
