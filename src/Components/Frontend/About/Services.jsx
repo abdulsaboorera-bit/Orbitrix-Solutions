@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { Typography } from 'antd'
 import meeting from '../../../Images/meeting.png'
 import ceoPic from '../../../Images/ceo pic.png'
@@ -53,6 +54,14 @@ const Services = () => {
             <span>Performance-first delivery</span>
             <span>AI-assisted growth systems</span>
           </div>
+          <div style={{ marginTop: '20px', display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+            <Link to="/projects" style={{ padding: '10px 20px', borderRadius: '8px', background: 'var(--orbit-teal)', color: '#fff', textDecoration: 'none', fontWeight: 600, fontSize: '0.9rem' }}>
+              See Our Work
+            </Link>
+            <Link to="/contact" style={{ padding: '10px 20px', borderRadius: '8px', border: '2px solid var(--orbit-teal)', color: 'var(--orbit-teal)', textDecoration: 'none', fontWeight: 600, fontSize: '0.9rem' }}>
+              Get in Touch
+            </Link>
+          </div>
         </div>
       </div>
 
@@ -103,6 +112,15 @@ const Services = () => {
               <h3>Performance-first</h3>
               <p>Speed, SEO, and conversion focus on every release.</p>
             </div>
+          </div>
+
+          <div style={{ marginTop: '24px', display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+            <Link to="/contact" style={{ padding: '10px 20px', borderRadius: '8px', background: 'var(--orbit-teal)', color: '#fff', textDecoration: 'none', fontWeight: 600, fontSize: '0.9rem' }}>
+              Start a Project
+            </Link>
+            <Link to="/projects" style={{ padding: '10px 20px', borderRadius: '8px', border: '2px solid var(--orbit-teal)', color: 'var(--orbit-teal)', textDecoration: 'none', fontWeight: 600, fontSize: '0.9rem' }}>
+              See Our Work
+            </Link>
           </div>
         </div>
 

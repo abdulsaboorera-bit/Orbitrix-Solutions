@@ -6,10 +6,11 @@ const Hero = () => {
     <section className="about-hero">
       <div className="about-hero-inner">
         <span className="about-hero-badge">Orbitrix Solutions</span>
-        <Typography.Title className="about-hero-title">Designing digital momentum for ambitious brands.</Typography.Title>
+        <Typography.Title level={1} className="about-hero-title">About Orbitrix Solutions – Web Development & Digital Marketing Agency</Typography.Title>
         <Typography.Paragraph className="about-hero-copy">
-          We blend strategy, design, and engineering to help modern businesses launch faster, scale with confidence, and
-          deliver premium digital experiences that perform.
+          Orbitrix Solutions is a results-driven web development agency and digital marketing company helping businesses 
+          launch faster, scale with confidence, and deliver premium digital experiences. We blend strategy, design, and 
+          engineering to create websites, SEO campaigns, and AI-powered automation systems that perform.
         </Typography.Paragraph>
 
         <div className="about-hero-stats">

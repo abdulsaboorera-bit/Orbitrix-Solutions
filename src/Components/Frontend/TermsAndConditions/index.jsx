@@ -156,8 +156,9 @@ const TermsAndConditions = () => {
   return (
     <main>
       <SEO
-        title="Terms & Conditions | Orbitrix Solutions"
-        description="Read the Terms and Conditions governing all services provided by Orbitrix Solutions. Learn about our policies on payments, refunds, intellectual property, and more."
+        title="Terms & Conditions | Orbitrix Solutions - Web Development & Digital Marketing Agency"
+        description="Read the Terms and Conditions governing all web development, SEO, and digital marketing services provided by Orbitrix Solutions. Learn about our policies on payments, refunds, intellectual property, and more."
+        keywords="Orbitrix Solutions terms, web development agency terms, SEO services conditions, digital marketing contract, IT solutions policy"
       />
 
       <ProgressBar />
@@ -169,8 +170,9 @@ const TermsAndConditions = () => {
         <div className="tc-hero-content">
           <span className="tc-hero-badge">Legal Documentation</span>
           <h1 className="tc-hero-title">
-            Terms &amp;<br />
-            <span className="tc-hero-gradient">Conditions</span>
+            Terms &amp; Conditions – Orbitrix Solutions
+            <br />
+            <span className="tc-hero-gradient">Web Development & Digital Marketing Agency</span>
           </h1>
           <p className="tc-hero-sub">
             Please read these Terms and Conditions carefully before engaging

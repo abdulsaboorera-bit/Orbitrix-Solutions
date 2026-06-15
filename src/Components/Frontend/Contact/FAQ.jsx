@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react"
+import { Link } from "react-router-dom"
 import { Typography, Input, Button } from "antd"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faHouse, faPhone, faEnvelope, faSpinner, faCheckCircle, faExclamationCircle } from "@fortawesome/free-solid-svg-icons"
@@ -172,6 +173,28 @@ const FAQ = () => {
             </form>
           </div>
 
+        </div>
+      </section>
+
+      {/* Internal links for SEO */}
+      <section style={{ padding: '40px 20px', textAlign: 'center', background: 'var(--orbit-cream)' }}>
+        <Typography.Title level={2} style={{ marginBottom: '16px' }}>
+          Explore More from Orbitrix Solutions
+        </Typography.Title>
+        <Typography.Paragraph style={{ maxWidth: '560px', margin: '0 auto 24px', color: 'var(--text-muted)' }}>
+          Learn about our team, see our work, or review our terms. Orbitrix Solutions is your trusted 
+          partner for web development, SEO, and digital marketing.
+        </Typography.Paragraph>
+        <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
+          <Link to="/about" style={{ padding: '12px 28px', borderRadius: '8px', background: 'var(--orbit-teal)', color: '#fff', textDecoration: 'none', fontWeight: 600 }}>
+            About Us
+          </Link>
+          <Link to="/projects" style={{ padding: '12px 28px', borderRadius: '8px', border: '2px solid var(--orbit-teal)', color: 'var(--orbit-teal)', textDecoration: 'none', fontWeight: 600 }}>
+            Our Projects
+          </Link>
+          <Link to="/terms-and-conditions" style={{ padding: '12px 28px', borderRadius: '8px', border: '2px solid var(--orbit-sand)', color: 'var(--orbit-teal)', textDecoration: 'none', fontWeight: 600 }}>
+            Terms & Conditions
+          </Link>
         </div>
       </section>
 

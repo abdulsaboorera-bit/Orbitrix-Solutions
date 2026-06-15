@@ -15,7 +15,8 @@ import './index.css';
 const SchemaMarkup = () => {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": "ProfessionalService",
+    "@id": "https://orbitrixsolutions.com/#agency",
     "name": "Orbitrix Solutions",
     "url": "https://orbitrixsolutions.com",
     "logo": "https://orbitrixsolutions.com/logo.png",
@@ -33,13 +34,14 @@ const SchemaMarkup = () => {
     "contactPoint": {
       "@type": "ContactPoint",
       "email": "info@orbitrixsolutions.com",
-      "contactType": "customer service"
+      "contactType": "customer service",
+      "telephone": "+923284678752"
     },
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://orbitrixsolutions.com/search?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
+    "areaServed": {
+      "@type": "Country",
+      "name": "Pakistan"
+    },
+    "priceRange": "$$"
   };
 
   return (

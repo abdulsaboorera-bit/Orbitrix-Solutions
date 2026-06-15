@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { Typography } from 'antd'
 import SEO from '../../SEO'
 import Footer from '../../Footer'
@@ -70,15 +71,16 @@ const Projects = () => {
   return (
     <main>
       <SEO 
-        title="Our Projects | Portfolio - Orbitrix Solutions" 
-        description="Explore our web development and SEO projects. See how Orbitrix Solutions helps businesses scale with custom web platforms and performance-driven results." 
+        title="Our Projects | Web Development & SEO Portfolio - Orbitrix Solutions" 
+        description="Explore our web development and SEO projects. See how Orbitrix Solutions, a leading web development agency, helps businesses scale with custom web platforms and performance-driven results." 
+        keywords="web development portfolio, SEO projects, web development agency work, React development projects, WordPress development, digital marketing results, Orbitrix Solutions portfolio"
       />
       <section className="projects-page">
         <div className="projects-hero">
-          <Typography.Title>Projects that turn strategy into results.</Typography.Title>
+          <Typography.Title level={1}>Our Projects – Web Development & SEO Portfolio | Orbitrix Solutions</Typography.Title>
           <Typography.Paragraph>
-            A curated selection of recent Orbitrix Solutions work. Each build pairs crisp design with performance-focused
-            engineering so every brand looks premium and converts better.
+            A curated selection of recent Orbitrix Solutions web development and SEO projects. Each build pairs crisp 
+            design with performance-focused engineering so every brand looks premium and converts better.
           </Typography.Paragraph>
         </div>
 
@@ -173,6 +175,26 @@ const Projects = () => {
             <img src={socialMediaImg} alt="Social media visual" />
           </div>
         </div>
+
+        {/* Internal links CTA for SEO */}
+        <div className="projects-cta" style={{ textAlign: 'center', padding: '60px 20px', background: 'var(--orbit-sand)', borderRadius: '16px', marginTop: '48px' }}>
+          <h2 style={{ fontSize: '1.8rem', fontWeight: 700, marginBottom: '12px', color: 'var(--orbit-deep)' }}>
+            Ready to Start Your Project?
+          </h2>
+          <p style={{ maxWidth: '560px', margin: '0 auto 24px', color: 'var(--text-muted)', lineHeight: 1.7 }}>
+            Let Orbitrix Solutions build your next website, SEO campaign, or AI automation system. 
+            We deliver measurable results for businesses across Pakistan and beyond.
+          </p>
+          <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <Link to="/contact" style={{ padding: '12px 28px', borderRadius: '8px', background: 'var(--orbit-teal)', color: '#fff', textDecoration: 'none', fontWeight: 600 }}>
+              Get a Free Quote
+            </Link>
+            <Link to="/about" style={{ padding: '12px 28px', borderRadius: '8px', border: '2px solid var(--orbit-teal)', color: 'var(--orbit-teal)', textDecoration: 'none', fontWeight: 600 }}>
+              About Us
+            </Link>
+          </div>
+        </div>
+
       </section>
 
       <Footer />

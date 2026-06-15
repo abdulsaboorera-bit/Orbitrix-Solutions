@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { Typography } from 'antd'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
@@ -6,8 +7,9 @@ import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
 const faqItems = [
    {
       question: 'How do I start a project with Orbitrix Solutions?',
-      answer:
-         'Share your goals through our <a href="/contact">contact page</a>, WhatsApp, or email. We reply within 24 hours with next steps and a clear plan.',
+      answer: 'Share your goals through our ',
+      link: { to: '/contact', text: 'contact page' },
+      suffix: ', WhatsApp, or email. We reply within 24 hours with next steps and a clear plan.',
    },
    {
       question: 'What services does your web development agency offer?',
@@ -19,7 +21,9 @@ const faqItems = [
    },
    {
       question: 'Do you provide ongoing support?',
-      answer: 'Yes. We offer maintenance, optimization, and marketing support after launch with flexible monthly plans. Visit our <a href="/about">about page</a> to learn more.',
+      answer: 'Yes. We offer maintenance, optimization, and marketing support after launch with flexible monthly plans. Visit our ',
+      link: { to: '/about', text: 'about page' },
+      suffix: ' to learn more.',
    },
 ]
 
@@ -43,7 +47,11 @@ const FAQ = () => {
                   </span>
                </summary>
                <div className="answer">
-                  <p dangerouslySetInnerHTML={{ __html: item.answer }} />
+                  <p>
+                     {item.answer}
+                     {item.link && <Link to={item.link.to}>{item.link.text}</Link>}
+                     {item.suffix || ''}
+                  </p>
                </div>
             </details>
          ))}

@@ -1,10 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import './NotFound.css';
 
 const NotFound = () => {
+  useEffect(() => {
+    document.title = 'Page Not Found | Orbitrix Solutions';
+    let metaRobots = document.querySelector('meta[name="robots"]');
+    if (!metaRobots) {
+      metaRobots = document.createElement('meta');
+      metaRobots.setAttribute('name', 'robots');
+      document.head.appendChild(metaRobots);
+    }
+    metaRobots.setAttribute('content', 'noindex, nofollow');
+
+    return () => {
+      metaRobots.setAttribute('content', 'index, follow');
+    };
+  }, []);
   return (
     <section className="not-found">
       <div className="not-found-container">
