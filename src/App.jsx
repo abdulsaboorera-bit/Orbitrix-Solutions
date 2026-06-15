@@ -9,6 +9,7 @@ import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { useLocation } from 'react-router-dom';
 import Navbar from './Components/Header/Navbar';
 import Routes from './Components/Routes';
+import ScrollToTop from './Components/ScrollToTop';
 
 
 const App = () => {
@@ -42,6 +43,7 @@ const App = () => {
   return (
   
   <>
+  <ScrollToTop />
   <Navbar />
   <Routes/>
   <div className="sticky-social">
