@@ -1,5 +1,4 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { Typography } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight, faQuoteLeft, faStar } from '@fortawesome/free-solid-svg-icons';
 
@@ -54,10 +53,10 @@ const Testimonials = () => {
       <div className="testimonial-layout">
         <div className="testimonial-left reveal-left">
           <span className="about-label">TESTIMONIALS</span>
-          <Typography.Title level={2}>What Our Clients Say</Typography.Title>
-          <Typography.Paragraph>
+          <h2>What Our Clients Say</h2>
+          <p>
             Don't just take our word for it — hear directly from businesses growing with our web development, SEO services, and digital marketing strategies.
-          </Typography.Paragraph>
+          </p>
 
           <div className="testimonial-nav-row">
             <button className="carousel-btn" type="button" onClick={goPrev} aria-label="Previous testimonial">
@@ -110,4 +109,3 @@ const Testimonials = () => {
 };
 
 export default Testimonials;
-

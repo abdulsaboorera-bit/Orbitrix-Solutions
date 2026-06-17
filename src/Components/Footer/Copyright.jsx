@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import logo from '../../Images/logo.png'
+import logo from '../../Images/logo.webp'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedin, faGithub, faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 
@@ -72,7 +72,7 @@ const Footer = () => {
             {/* Col 1 — Brand */}
             <div className="f-brand">
               <div className="f-brand-logo-wrap">
-                <img src={logo} alt="Orbitrix Solutions" className="f-brand-logo" />
+                <img src={logo} alt="Orbitrix Solutions" className="f-brand-logo" width="220" height="81" loading="lazy" />
               </div>
               <p className="f-brand-desc">
                 Orbitrix Solutions helps businesses grow through premium web development, digital marketing, and IT consulting.

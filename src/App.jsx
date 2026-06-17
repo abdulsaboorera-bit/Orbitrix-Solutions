@@ -1,8 +1,7 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, lazy, Suspense } from 'react';
 import './App.scss';
 import './Components/widgets.css';
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
@@ -11,11 +10,18 @@ import { useLocation } from 'react-router-dom';
 import Navbar from './Components/Header/Navbar';
 import Routes from './Components/Routes';
 import ScrollToTop from './Components/ScrollToTop';
-import WhatsAppWidget from './Components/WhatsAppWidget';
 
+const WhatsAppWidget = lazy(() => import('./Components/WhatsAppWidget'));
 
 const App = () => {
   const location = useLocation();
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      import("bootstrap/dist/js/bootstrap.bundle.min.js");
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     const elements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-blur, .reveal-draw, .reveal-flip');
@@ -59,7 +65,9 @@ const App = () => {
       <FontAwesomeIcon icon={faInstagram} />
     </a>
   </div>
-  <WhatsAppWidget />
+  <Suspense fallback={null}>
+    <WhatsAppWidget />
+  </Suspense>
 
   </>
   )

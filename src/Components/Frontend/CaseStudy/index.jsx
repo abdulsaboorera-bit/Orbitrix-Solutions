@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { Typography } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faArrowRight,
@@ -105,12 +104,12 @@ const CaseStudy = () => {
         {/* Hero */}
         <section className="cs-hero" aria-label="Project hero">
           <div className="cs-hero-image">
-            <img src={project.heroImage} alt={`${project.name} hero`} />
+            <img src={project.heroImage} alt={`${project.name} hero`} width="1900" height="900" loading="eager" decoding="async" />
             <div className="cs-hero-overlay"></div>
           </div>
           <div className="cs-hero-content">
             <span className="cs-category-badge">{project.categoryLabel}</span>
-            <Typography.Title level={1}>{project.name}</Typography.Title>
+            <h1>{project.name}</h1>
             <p className="cs-hero-desc">{project.shortDescription}</p>
             {project.url !== '#' && (
               <a href={project.url} target="_blank" rel="noreferrer" className="cs-hero-link">
@@ -353,7 +352,7 @@ const CaseStudy = () => {
                 {related.map((rel) => (
                   <Link to={`/projects/${rel.slug}`} key={rel.slug} className="cs-related-card">
                     <div className="cs-related-thumb">
-                      <img src={rel.thumb} alt={`${rel.name} preview`} loading="lazy" />
+                      <img src={rel.thumb} alt={`${rel.name} preview`} loading="lazy" width="800" height="380" decoding="async" />
                     </div>
                     <div className="cs-related-body">
                       <span className="cs-related-category">{rel.categoryLabel}</span>

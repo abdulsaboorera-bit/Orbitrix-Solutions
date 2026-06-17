@@ -1,5 +1,4 @@
 @use "./Scss/_bootstrap.scss";
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap");
 
 :root {
   --orbit-ink: #0f2f2d;
@@ -54,7 +53,7 @@ body[data-theme='dark'] {
     #0a1816;
 }
 
-h1, h2, h3, h4, h5, h6, .ant-typography {
+h1, h2, h3, h4, h5, h6 {
   font-family: "Playfair Display", "Times New Roman", serif;
   color: var(--orbit-deep);
   letter-spacing: 0.02em;
@@ -65,9 +64,7 @@ body[data-theme='dark'] h2,
 body[data-theme='dark'] h3,
 body[data-theme='dark'] h4,
 body[data-theme='dark'] h5,
-body[data-theme='dark'] h6,
-body[data-theme='dark'] .ant-typography,
-body[data-theme='dark'] .ant-typography-title {
+body[data-theme='dark'] h6 {
   color: var(--orbit-ink) !important;
 }
 
@@ -513,18 +510,16 @@ body[data-theme='dark'] .site-nav {
   transform: scale(1);
 }
 
-/* Fade up with blur (default reveal enhanced) */
+/* Fade up with subtle scale (default reveal enhanced) */
 .reveal-blur {
   opacity: 0;
-  transform: translateY(24px);
-  filter: blur(6px);
-  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1), filter 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(24px) scale(0.98);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal-blur.is-visible {
   opacity: 1;
-  transform: translateY(0);
-  filter: blur(0);
+  transform: translateY(0) scale(1);
 }
 
 /* Stagger children - add to parent, children animate sequentially */

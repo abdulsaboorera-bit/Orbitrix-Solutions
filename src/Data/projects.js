@@ -1,9 +1,9 @@
-import fonalizeImg from '../Images/Fonalize.png';
-import primeSafariImg from '../Images/PrimeSafariDubai.png';
-import royalBeautyImg from '../Images/RoyalBeautySalon.png';
-import stayImg from '../Images/Stay.png';
-import b2bImg from '../Images/b2b-MobileWholesale.png';
-import imranWoodImg from '../Images/imran-wood-working.png';
+import fonalizeImg from '../Images/Fonalize.webp';
+import primeSafariImg from '../Images/PrimeSafariDubai.webp';
+import royalBeautyImg from '../Images/RoyalBeautySalon.webp';
+import stayImg from '../Images/Stay.webp';
+import b2bImg from '../Images/b2b-MobileWholesale.webp';
+import imranWoodImg from '../Images/imran-wood-working.webp';
 
 
 export const categories = [

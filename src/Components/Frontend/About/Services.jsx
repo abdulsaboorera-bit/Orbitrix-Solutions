@@ -1,15 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Typography } from 'antd'
-import meeting from '../../../Images/meeting.png'
-import ceoPic from '../../../Images/ceo pic.png'
+import meeting from '../../../Images/meeting.webp'
+import ceoPic from '../../../Images/ceo pic.webp'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHandshakeAngle, faBrain, faAward } from '@fortawesome/free-solid-svg-icons'
 
 const Services = () => {
   return (
     <section className="about-section">
-      <Typography.Title level={2} className="text-center reveal-blur">Our Core Values</Typography.Title>
+      <h2 className="text-center reveal-blur">Our Core Values</h2>
 
       <div className="about-values-grid">
         <div className="about-card reveal-scale" style={{ transitionDelay: '0ms' }}>
@@ -31,24 +30,24 @@ const Services = () => {
 
       <div className="about-ceo reveal-left">
         <div className="about-ceo-image">
-          <img src={ceoPic} alt="Abdul Saboor - Orbitrix Solutions Founder and CEO" />
+          <img src={ceoPic} alt="Abdul Saboor - Orbitrix Solutions Founder and CEO" width="910" height="886" loading="lazy" decoding="async" />
         </div>
         <div className="about-ceo-content reveal-right">
-          <Typography.Title level={2}>CEO Story</Typography.Title>
-          <Typography.Paragraph>
+          <h2>CEO Story</h2>
+          <p>
             I started my journey with a passion for technology, creativity, and solving real business problems through
             digital solutions. What began as an interest in web development and AI quickly turned into a mission to help
             businesses grow with modern technology.
-          </Typography.Paragraph>
-          <Typography.Paragraph>
+          </p>
+          <p>
             Today, I focus on building high-performing websites, AI-powered systems, and digital marketing strategies that
             help brands stand out online. From WordPress and React development to SEO, AI ads, and social media growth, my
             goal is to create solutions that are fast, scalable, and results-driven.
-          </Typography.Paragraph>
-          <Typography.Paragraph>
+          </p>
+          <p>
             I believe technology should not only look impressive - it should deliver real impact. That mindset continues
             to drive every project, partnership, and idea behind the company.
-          </Typography.Paragraph>
+          </p>
           <div className="about-ceo-highlights">
             <span>Product + marketing mindset</span>
             <span>Performance-first delivery</span>
@@ -67,10 +66,10 @@ const Services = () => {
 
       <div className="about-story about-workflow reveal-blur">
         <div className="about-workflow-content">
-          <Typography.Title level={2}>How We Work</Typography.Title>
-          <Typography.Paragraph>
+          <h2>How We Work</h2>
+          <p>
             A focused delivery system that keeps projects lean, visible, and outcome-driven from day one.
-          </Typography.Paragraph>
+          </p>
 
           <div className="workflow-steps">
             <div className="workflow-step">
@@ -126,7 +125,7 @@ const Services = () => {
 
         <div className="about-workflow-media">
           <div className="about-story-image">
-            <img src={meeting} alt="Orbitrix team collaborating" />
+            <img src={meeting} alt="Orbitrix team collaborating" width="1259" height="844" loading="lazy" decoding="async" />
           </div>
           <div className="workflow-card">
             <h4>What you get</h4>

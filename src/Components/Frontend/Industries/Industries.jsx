@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRocket, faArrowRight, faRocket as faArrow } from '@fortawesome/free-solid-svg-icons';
+import { faRocket, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 const industriesList = [
   {

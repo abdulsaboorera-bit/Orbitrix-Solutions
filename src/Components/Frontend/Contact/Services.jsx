@@ -1,20 +1,20 @@
 import React from 'react'
-import { Col, Row , Typography} from 'antd'
+
 const Services = () => {
   return (
     <div className="container py-5">
 
-<Row>
+<div className="row">
 
 
-<Col span={24}>
+<div className="col">
 
-<Typography.Title className='text-center'>Welcome To Our About Services</Typography.Title>  
+<h2 className='text-center'>Welcome To Our About Services</h2>  
 
-</Col>
+</div>
 
 
-</Row>
+</div>
 
 
 

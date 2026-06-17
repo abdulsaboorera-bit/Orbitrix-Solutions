@@ -1,5 +1,4 @@
 import React from 'react'
-import { Typography } from 'antd'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
@@ -10,10 +9,10 @@ const Cta = () => {
     <section className="home-section cta-section reveal-scale" id="contact">
       <div className="cta-card">
         <div>
-          <Typography.Title level={2}>Start Your Project with Orbitrix Solutions</Typography.Title>
-          <Typography.Paragraph>
+          <h2>Start Your Project with Orbitrix Solutions</h2>
+          <p>
             Ready to work with a web development agency and digital marketing company that delivers results? Share your goals and we will recommend the right plan, timeline, and roadmap within 24 hours.
-          </Typography.Paragraph>
+          </p>
         </div>
         <div className="cta-actions">
           <a className="hb1 hb1-whatsapp" href="https://wa.me/qr/7GSRQFMD6AMZG1" target="_blank" rel="noreferrer">

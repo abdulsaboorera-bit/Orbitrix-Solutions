@@ -1,20 +1,20 @@
 import React from 'react'
-import { Col, Row , Typography} from 'antd'
+
 const Map = () => {
   return (
     <div className="container py-5">
 
-<Row>
+<div className="row">
 
 
-<Col span={24}>
+<div className="col">
 
-<Typography.Title className='text-center'>Welcome To Our Map</Typography.Title>  
+<h2 className='text-center'>Welcome To Our Map</h2>  
 
-</Col>
+</div>
 
 
-</Row>
+</div>
 
 
 

@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Typography } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faPercentage, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
@@ -61,9 +60,9 @@ const StatsCounter = () => {
   return (
     <section className="home-section stats-counter-section reveal-blur">
       <div className="section-header reveal-blur">
-        <Typography.Title level={2}>
+        <h2>
           Client Results – Our Track Record as a Web Development Agency
-        </Typography.Title>
+        </h2>
       </div>
 
       <div className="stats-grid">

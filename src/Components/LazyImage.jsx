@@ -6,6 +6,7 @@ const LazyImage = ({ src, alt, className, style, width, height, ...props }) => {
   const imgRef = useRef(null);
 
   useEffect(() => {
+    if (!imgRef.current) return;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -13,12 +14,10 @@ const LazyImage = ({ src, alt, className, style, width, height, ...props }) => {
           observer.disconnect();
         }
       },
-      { rootMargin: '200px' }
+      { rootMargin: '300px' }
     );
 
-    if (imgRef.current) {
-      observer.observe(imgRef.current);
-    }
+    observer.observe(imgRef.current);
 
     return () => observer.disconnect();
   }, []);
@@ -39,14 +38,17 @@ const LazyImage = ({ src, alt, className, style, width, height, ...props }) => {
         <img
           src={src}
           alt={alt}
+          width={typeof width === 'number' ? width : undefined}
+          height={typeof height === 'number' ? height : undefined}
           loading="lazy"
+          decoding="async"
           onLoad={() => setIsLoaded(true)}
           style={{
             width: '100%',
             height: '100%',
             objectFit: 'cover',
             opacity: isLoaded ? 1 : 0,
-            transition: 'opacity 0.4s ease',
+            transition: 'opacity 0.3s ease',
           }}
           {...props}
         />

@@ -17,10 +17,21 @@ export default defineConfig({
     cssCodeSplit: true,
     rollupOptions: {
       output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom', 'react-router-dom'],
-          antd: ['antd'],
-          bootstrap: ['bootstrap'],
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('react-router') || id.includes('react-dom') || id.includes('react/')) {
+              return 'vendor';
+            }
+            if (id.includes('@fortawesome')) {
+              return 'fontawesome';
+            }
+            if (id.includes('bootstrap')) {
+              return 'bootstrap';
+            }
+            if (id.includes('@emailjs')) {
+              return 'emailjs';
+            }
+          }
         },
         entryFileNames: 'assets/[name]-[hash].js',
         chunkFileNames: 'assets/[name]-[hash].js',
@@ -28,12 +39,12 @@ export default defineConfig({
       },
     },
     esbuild: {
-      drop: ['debugger'],
+      drop: ['debugger', 'console'],
       legalComments: 'none',
     },
     sourcemap: false,
     reportCompressedSize: true,
-    chunkSizeWarningLimit: 600,
+    chunkSizeWarningLimit: 500,
   },
   css: {
     preprocessorOptions: {

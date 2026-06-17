@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope, faCode, faBullhorn, faRobot, faChartLine, faArrowRight, faCalendarCheck } from '@fortawesome/free-solid-svg-icons';
+import { faCode, faBullhorn, faRobot, faChartLine, faArrowRight, faCalendarCheck } from '@fortawesome/free-solid-svg-icons';
 
 const words = ['visions', 'ideas', 'products', 'strategies'];
 

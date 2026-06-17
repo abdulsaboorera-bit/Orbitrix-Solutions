@@ -8,15 +8,13 @@
 .reveal {
     opacity: 0;
     transform: translateY(30px);
-    transition: opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1), transform 1.1s cubic-bezier(0.16, 1, 0.3, 1), filter 1.1s cubic-bezier(0.16, 1, 0.3, 1);
-    filter: blur(4px);
-    will-change: opacity, transform, filter;
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
 }
 
 .reveal.is-visible {
     opacity: 1;
     transform: translateY(0);
-    filter: blur(0);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -24,7 +22,6 @@
         opacity: 1;
         transform: none;
         transition: none;
-        filter: none;
     }
 }
 
@@ -1130,14 +1127,12 @@
 }
 
 .section-header h2,
-.section-header .ant-typography {
     font-size: clamp(1.3rem, 2.2vw, 1.7rem);
     line-height: 1.3;
     margin-bottom: 10px;
 }
 
-.section-header p,
-.section-header .ant-typography p {
+.section-header p {
     color: var(--orbit-muted);
     font-size: 0.92rem;
     line-height: 1.6;
@@ -1409,8 +1404,7 @@
     margin: 0 auto;
 }
 
-.testimonial-left h2,
-.testimonial-left .ant-typography {
+.testimonial-left h2 {
     font-size: clamp(1.5rem, 2.8vw, 2rem);
     color: var(--orbit-deep);
     margin-bottom: 12px;
@@ -1834,7 +1828,6 @@
     }
 
     .testimonial-left h2,
-    .testimonial-left .ant-typography,
     .testimonial-left p {
         text-align: center;
     }
@@ -2124,14 +2117,12 @@
         font-size: 0.88rem;
     }
 
-    .section-header h2,
-    .section-header .ant-typography {
+    .section-header h2 {
         font-size: clamp(1.1rem, 4vw, 1.3rem);
         line-height: 1.35;
     }
 
-    .section-header p,
-    .section-header .ant-typography p {
+    .section-header p {
         font-size: 0.85rem;
     }
 
@@ -2147,8 +2138,7 @@
         padding: 28px 20px;
     }
 
-    .cta-card h2,
-    .cta-card .ant-typography {
+    .cta-card h2 {
         font-size: 1.4rem;
     }
 
@@ -2183,8 +2173,7 @@
         border-radius: 20px;
     }
 
-    .testimonial-left h2,
-    .testimonial-left .ant-typography {
+    .testimonial-left h2 {
         font-size: 1.6rem;
     }
 

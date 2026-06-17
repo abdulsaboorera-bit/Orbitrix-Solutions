@@ -1,5 +1,4 @@
 import React, { useState, useRef } from 'react'
-import { Typography } from 'antd'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSpinner, faCheckCircle, faExclamationCircle, faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 import emailjs from '@emailjs/browser'
@@ -59,7 +58,7 @@ const ContactForm = () => {
   return (
     <div className="cf-form-wrapper">
       <div className="cf-form-header">
-        <Typography.Title level={3}>Get a Free Quote</Typography.Title>
+        <h3>Get a Free Quote</h3>
         <p className="cf-form-subtitle">
           Tell us about your project and we will respond within 24 hours with a clear plan, timeline, and quote.
         </p>

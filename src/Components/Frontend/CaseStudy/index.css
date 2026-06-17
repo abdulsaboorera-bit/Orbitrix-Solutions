@@ -50,8 +50,7 @@
   margin-bottom: 16px;
 }
 
-.cs-hero-content h1,
-.cs-hero-content .ant-typography {
+.cs-hero-content h1 {
   color: #fff !important;
   font-size: clamp(2rem, 4.5vw, 3.2rem);
   margin-bottom: 12px;
@@ -719,7 +718,7 @@
   }
 
   .cs-hero-content h1,
-  .cs-hero-content .ant-typography {
+  .cs-hero-content h1 {
     font-size: clamp(1.6rem, 5vw, 2.2rem);
   }
 
@@ -803,7 +802,7 @@
   }
 
   .cs-hero-content h1,
-  .cs-hero-content .ant-typography {
+  .cs-hero-content h1 {
     font-size: 1.5rem;
   }
 

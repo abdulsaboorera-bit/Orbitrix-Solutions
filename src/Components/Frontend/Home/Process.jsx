@@ -1,5 +1,4 @@
 import React from 'react';
-import { Typography } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLightbulb, faPencilRuler, faCode, faRocket, faHeadset, faArrowDown } from '@fortawesome/free-solid-svg-icons';
 
@@ -65,10 +64,10 @@ const Process = () => {
   return (
     <section className="home-section process-section reveal-blur">
       <div className="section-header reveal-blur">
-        <Typography.Title level={2}>How We Work</Typography.Title>
-        <Typography.Paragraph>
+        <h2>How We Work</h2>
+        <p>
           A proven step-by-step process that keeps your project on track, on time, and built for results.
-        </Typography.Paragraph>
+        </p>
       </div>
 
       <div className="process-flow-container">
@@ -108,4 +107,3 @@ const Process = () => {
 };
 
 export default Process;
-

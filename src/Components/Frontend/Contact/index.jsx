@@ -1,8 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Typography } from 'antd'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHouse, faPhone, faEnvelope, faClock } from '@fortawesome/free-solid-svg-icons'
+import { faHouse, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import SEO from '../../SEO'
 import ContactForm from './ContactForm'
@@ -79,12 +78,12 @@ const Index = () => {
       <section className="contact-hero">
         <div className="contact-hero-inner reveal-blur">
           <span className="contact-hero-badge">Let's Work Together</span>
-          <Typography.Title level={1} className="contact-hero-title">
+          <h1 className="contact-hero-title">
             Ready to Grow Your Business Online?
-          </Typography.Title>
-          <Typography.Paragraph className="contact-hero-copy">
+          </h1>
+          <p className="contact-hero-copy">
             Share your goals with Orbitrix Solutions and we will respond with a clear plan, timeline, and the right mix of services — within 24 hours.
-          </Typography.Paragraph>
+          </p>
         </div>
       </section>
 
@@ -94,7 +93,7 @@ const Index = () => {
           {/* Left: Info Cards */}
           <div className="contact-info-col">
             <div className="contact-info-header reveal-left">
-              <Typography.Title level={2}>Get in Touch</Typography.Title>
+              <h2>Get in Touch</h2>
               <p>Whether you need a new website, SEO strategy, or AI automation — we are here to help you succeed.</p>
             </div>
             <div className="contact-info-cards stagger-children">
@@ -161,12 +160,12 @@ const Index = () => {
 
       {/* Internal Links */}
       <section className="contact-explore reveal-blur">
-        <Typography.Title level={2} style={{ marginBottom: '16px' }}>
+        <h2 style={{ marginBottom: '16px' }}>
           Explore More from Orbitrix Solutions
-        </Typography.Title>
-        <Typography.Paragraph style={{ maxWidth: '560px', margin: '0 auto 24px', color: 'var(--text-muted)' }}>
+        </h2>
+        <p style={{ maxWidth: '560px', margin: '0 auto 24px', color: 'var(--text-muted)' }}>
           Learn about our team, see our work, or review our terms. Orbitrix Solutions is your trusted partner for web development, SEO, and digital marketing.
-        </Typography.Paragraph>
+        </p>
         <div className="contact-explore-links">
           <Link to="/about" className="contact-explore-btn">About Us</Link>
           <Link to="/projects" className="contact-explore-btn outline">Our Projects</Link>

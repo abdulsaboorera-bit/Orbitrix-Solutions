@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Typography } from 'antd'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
 
@@ -35,9 +34,9 @@ const FAQ = () => {
   return (
     <section className="home-section reveal-blur" id="faq" style={{ background: 'var(--orbit-sand)' }}>
       <div className="container">
-        <Typography.Title level={2} className="faq-title">
+        <h2 className="faq-title">
           Frequently Asked Questions
-        </Typography.Title>
+        </h2>
       </div>
 
       <div style={{ height: '24px' }} />

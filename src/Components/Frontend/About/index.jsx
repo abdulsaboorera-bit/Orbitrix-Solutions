@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Typography } from 'antd'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons'
 import SEO from '../../SEO'
@@ -78,7 +77,7 @@ const Index = () => {
         <div className="about-values-container">
           <div className="about-values-header">
             <span className="about-label">OUR VALUES</span>
-            <Typography.Title level={2}>What Drives Everything We Do</Typography.Title>
+            <h2>What Drives Everything We Do</h2>
           </div>
           <div className="about-values-grid stagger-children">
             {values.map((value) => (
@@ -96,10 +95,10 @@ const Index = () => {
         <div className="about-team-container">
           <div className="about-team-header">
             <span className="about-label">OUR TEAM</span>
-            <Typography.Title level={2}>Meet the People Behind Orbitrix</Typography.Title>
-            <Typography.Paragraph>
+            <h2>Meet the People Behind Orbitrix</h2>
+            <p>
               A dedicated team of developers, designers, and strategists committed to delivering exceptional results for every client.
-            </Typography.Paragraph>
+            </p>
           </div>
 
           <div className="about-team-grid stagger-children">
@@ -133,9 +132,9 @@ const Index = () => {
       <section className="about-certs-section reveal-blur">
         <div className="about-certs-container">
           <span className="about-label">CERTIFICATIONS</span>
-          <Typography.Title level={2} style={{ textAlign: 'center', marginTop: '12px' }}>
+          <h2 style={{ textAlign: 'center', marginTop: '12px' }}>
             Trusted & Certified
-          </Typography.Title>
+          </h2>
           <div className="about-certs-grid stagger-children">
             {certifications.map((cert) => (
               <div className="about-cert-badge reveal-scale" key={cert.name}>

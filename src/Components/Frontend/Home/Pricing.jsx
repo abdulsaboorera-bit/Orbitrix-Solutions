@@ -1,5 +1,4 @@
 import React from 'react'
-import { Typography } from 'antd'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck, faArrowRight } from '@fortawesome/free-solid-svg-icons'
@@ -31,10 +30,10 @@ const Pricing = () => {
     <section className="home-section pricing-section reveal-blur" id="pricing">
       <div className="section-header reveal-blur">
         <span className="about-label">PRICING</span>
-        <Typography.Title level={2}>Simple Pricing Plans</Typography.Title>
-        <Typography.Paragraph>
+        <h2>Simple Pricing Plans</h2>
+        <p>
           Choose a plan that fits your stage. We tailor scopes quickly after a discovery call.
-        </Typography.Paragraph>
+        </p>
       </div>
 
       <div className="pricing-grid">

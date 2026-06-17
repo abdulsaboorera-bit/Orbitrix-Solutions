@@ -1,5 +1,4 @@
 import React from 'react'
-import { Typography } from 'antd'
 import { Link } from 'react-router-dom'
 
 const projects = [
@@ -24,10 +23,10 @@ const Portfolio = () => {
   return (
     <section className="home-section portfolio-section reveal" id="case-studies">
       <div className="section-header">
-        <Typography.Title level={2}>Case Studies & Projects</Typography.Title>
-        <Typography.Paragraph>
+        <h2>Case Studies & Projects</h2>
+        <p>
           A snapshot of outcomes we build as a web development agency and SEO services agency. Each engagement is tailored to growth goals.
-        </Typography.Paragraph>
+        </p>
       </div>
 
       <div className="portfolio-grid">

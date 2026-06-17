@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
-import logo from "../../Images/logo.png";
+import logo from "../../Images/logo.webp";
 import { categories } from '../../Data/projects';
 
 const projectSublinks = categories.filter((c) => c.slug !== 'all');
@@ -50,7 +50,7 @@ const Navbar = () => {
       <nav className="site-nav navbar navbar-expand-lg w-100" aria-label="Main navigation">
         <div className="container-fluid px-4">
           <Link className="navbar-brand m-0" to="/" aria-label="Orbitrix Solutions Home">
-            <img src={logo} alt="Orbitrix Solutions logo" />
+            <img src={logo} alt="Orbitrix Solutions logo" width="220" height="81" loading="eager" />
           </Link>
 
           <button

@@ -1,9 +1,8 @@
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Typography, Button } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faCode, faShareAlt, faBullseye, faBullhorn, faRobot, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faCode, faShareAlt, faBullhorn, faRobot, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { faWordpress } from '@fortawesome/free-brands-svg-icons';
 
 const servicesData = [
@@ -85,11 +84,11 @@ const Services = () => {
   return (
     <section id="services" className="services-section reveal">
       <div className="services-header reveal-blur">
-        <Typography.Title level={2}>Our Digital Services</Typography.Title>
-        <Typography.Paragraph>
+        <h2>Our Digital Services</h2>
+        <p>
           A focused menu of growth services from our web development agency and SEO services agency, designed to scale with your business. Each service blends strategy, design,
           and execution to deliver measurable results.
-        </Typography.Paragraph>
+        </p>
       </div>
 
       <div className="services-grid">
@@ -111,18 +110,18 @@ const Services = () => {
                 <h3>{service.title}</h3>
               </div>
               
-              <Typography.Paragraph className={`ser2 ${isExpanded ? 'expanded' : ''}`}>
+              <p className={`ser2 ${isExpanded ? 'expanded' : ''}`}>
                 {isExpanded ? service.details : service.summary}
-              </Typography.Paragraph>
+              </p>
               
               <div className="service-actions">
-                <Button 
+                <button 
                   type="text" 
                   onClick={() => toggleExpand(service.id)}
                   className="learn-more-btn"
                 >
                   {isExpanded ? 'Show Less' : 'Learn More'}
-                </Button>
+                </button>
               </div>
             </article>
           );

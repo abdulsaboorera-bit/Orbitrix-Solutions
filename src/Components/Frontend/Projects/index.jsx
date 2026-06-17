@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { Typography } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faExternalLinkAlt, faCode, faSearch } from '@fortawesome/free-solid-svg-icons';
 import SEO from '../../SEO';
@@ -32,11 +31,11 @@ const Projects = () => {
         <div className="projects-hero reveal-blur">
           <div className="projects-hero-inner">
             <span className="about-label">OUR WORK</span>
-            <Typography.Title level={1}>Our Work Speaks for Itself</Typography.Title>
-            <Typography.Paragraph>
+            <h1>Our Work Speaks for Itself</h1>
+            <p>
               From custom WordPress builds to data-driven SEO campaigns,
               every project we deliver is designed to perform and convert.
-            </Typography.Paragraph>
+            </p>
             <div className="projects-hero-categories">
               <span className="projects-hero-cat">Web Development</span>
               <span className="projects-hero-cat-dot"></span>
@@ -70,7 +69,7 @@ const Projects = () => {
             >
               <Link to={`/projects/${project.slug}`} className="project-card-link" aria-label={`View case study: ${project.name}`}>
                 <div className="project-thumb">
-                  <img src={project.thumb} alt={`${project.name} preview`} loading="lazy" />
+                  <img src={project.thumb} alt={`${project.name} preview`} loading="lazy" width="800" height="380" decoding="async" />
                   <span className={`project-status ${project.status === 'Live' ? 'live' : 'progress'}`}>
                     {project.status}
                   </span>
