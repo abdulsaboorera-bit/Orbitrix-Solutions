@@ -135,14 +135,14 @@ const Navbar = () => {
               </li>
 
               <li className="nav-item" role="none">
-                <Link className={`nav-link ${isActive('/blog') ? 'active' : ''}`} to="/blog" role="menuitem" aria-current={isActive('/blog') ? 'page' : undefined}>
-                  Blog
+                <Link className={`nav-link ${isActive('/contact') ? 'active' : ''}`} to="/contact" role="menuitem" aria-current={isActive('/contact') ? 'page' : undefined}>
+                  Contact
                 </Link>
               </li>
 
               <li className="nav-item" role="none">
-                <Link className={`nav-link ${isActive('/contact') ? 'active' : ''}`} to="/contact" role="menuitem" aria-current={isActive('/contact') ? 'page' : undefined}>
-                  Contact
+                <Link className={`nav-link ${isActive('/blog') ? 'active' : ''}`} to="/blog" role="menuitem" aria-current={isActive('/blog') ? 'page' : undefined}>
+                  Blog
                 </Link>
               </li>
             </ul>
