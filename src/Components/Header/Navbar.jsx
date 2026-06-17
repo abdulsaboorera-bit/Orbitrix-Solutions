@@ -75,6 +75,11 @@ const Navbar = () => {
                   About
                 </Link>
               </li>
+              <li className="nav-item" role="none">
+                <Link className={`nav-link ${isActive('/services') ? 'active' : ''}`} to="/services" role="menuitem" aria-current={isActive('/services') ? 'page' : undefined}>
+                  Services
+                </Link>
+              </li>
 
               {/* Projects Dropdown — hover handled on the wrapper */}
               <li
