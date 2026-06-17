@@ -121,11 +121,13 @@ const Footer = () => {
             <div className="f-col">
               <h4 className="f-col-title">Services</h4>
               <ul className="f-links">
-                <li><span className="f-link">Web Development</span></li>
-                <li><span className="f-link">Mobile Apps</span></li>
-                <li><span className="f-link">UI/UX Design</span></li>
-                <li><span className="f-link">Digital Marketing</span></li>
-                <li><span className="f-link">IT Consulting</span></li>
+                <li><Link to="/services/wordpress-development" className="f-link">WordPress Development</Link></li>
+                <li><Link to="/services/react-development" className="f-link">React Web Development</Link></li>
+                <li><Link to="/services/seo-services" className="f-link">SEO Services</Link></li>
+                <li><Link to="/services/ai-ads-marketing" className="f-link">AI Ads &amp; Marketing</Link></li>
+                <li><Link to="/services/digital-marketing" className="f-link">Digital Marketing</Link></li>
+                <li><Link to="/services/social-media-marketing" className="f-link">Social Media Marketing</Link></li>
+                <li><Link to="/services/ai-automation-services" className="f-link">AI Automation Services</Link></li>
               </ul>
             </div>
 

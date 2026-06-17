@@ -15,16 +15,16 @@ const Hero = () => {
 
         <div className="about-hero-stats">
           <div className="about-hero-stat">
-            <h3>60+</h3>
-            <p>Projects launched with measurable results.</p>
+            <h3>80+</h3>
+            <p>Projects delivered with measurable results.</p>
           </div>
           <div className="about-hero-stat">
-            <h3>8+ years</h3>
-            <p>Building digital systems that last.</p>
+            <h3>2+ years</h3>
+            <p>Building digital systems that perform.</p>
           </div>
           <div className="about-hero-stat">
-            <h3>24/7</h3>
-            <p>Client-first partnership and support.</p>
+            <h3>15+</h3>
+            <p>Countries served globally.</p>
           </div>
         </div>
       </div>

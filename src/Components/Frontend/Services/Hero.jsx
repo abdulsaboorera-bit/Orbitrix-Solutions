@@ -63,7 +63,7 @@ const Hero = () => {
 
         <div className="services-hero-trust">
           <div className="trust-item">
-            <strong>50+</strong> Projects Delivered
+            <strong>80+</strong> Projects Delivered
           </div>
           <div className="trust-divider"></div>
           <div className="trust-item">

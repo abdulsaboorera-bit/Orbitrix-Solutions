@@ -1,5 +1,22 @@
+# Robots.txt for Orbitrix Solutions
+# https://orbitrixsolutions.com
+
 User-agent: *
 Allow: /
-Disallow: /api/
 
+# Sitemap
 Sitemap: https://orbitrixsolutions.com/sitemap.xml
+
+# Disallow internal paths
+Disallow: /node_modules/
+Disallow: /dist/
+
+# Allow all crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /

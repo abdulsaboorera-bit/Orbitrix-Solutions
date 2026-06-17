@@ -10,10 +10,10 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 const stats = [
-  { value: '50+', label: 'Projects Delivered' },
+  { value: '80+', label: 'Projects Delivered' },
+  { value: '2+', label: 'Years Experience' },
   { value: '15+', label: 'Countries Served' },
   { value: '98%', label: 'Client Satisfaction' },
-  { value: '24/7', label: 'Global Support' },
 ];
 
 const highlights = [
