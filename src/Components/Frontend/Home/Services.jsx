@@ -1,8 +1,9 @@
 
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Typography, Button } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faCode, faShareAlt, faBullseye, faBullhorn, faRobot } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faCode, faShareAlt, faBullseye, faBullhorn, faRobot, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { faWordpress } from '@fortawesome/free-brands-svg-icons';
 
 const servicesData = [
@@ -126,6 +127,13 @@ const Services = () => {
             </article>
           );
         })}
+      </div>
+
+      <div className="services-cta-wrap">
+        <Link to="/services" className="services-explore-btn">
+          Explore All Services
+          <FontAwesomeIcon icon={faArrowRight} className="services-explore-btn-arrow" />
+        </Link>
       </div>
     </section>
   );
