@@ -9,6 +9,7 @@ export default defineConfig({
     },
   },
   build: {
+    target: 'es2020',
     minify: 'esbuild',
     cssMinify: true,
     cssCodeSplit: true,
@@ -19,15 +20,19 @@ export default defineConfig({
           antd: ['antd'],
           bootstrap: ['bootstrap'],
         },
+        entryFileNames: 'assets/[name]-[hash].js',
+        chunkFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash].[ext]',
       },
     },
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        drop_debugger: true,
-      },
+    esbuild: {
+      drop: ['console', 'debugger'],
+      pure: ['console.log', 'console.info', 'console.debug'],
+      legalComments: 'none',
     },
     sourcemap: false,
+    reportCompressedSize: true,
+    chunkSizeWarningLimit: 600,
   },
   css: {
     preprocessorOptions: {
@@ -40,5 +45,8 @@ export default defineConfig({
         ],
       },
     },
+  },
+  server: {
+    compress: true,
   },
 });

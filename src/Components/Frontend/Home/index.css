@@ -910,6 +910,7 @@
     max-width: 900px;
     margin: 40px auto 0;
     position: relative;
+    padding: 0 8px;
 }
 
 .process-flow-container::before {
@@ -1762,8 +1763,30 @@
         grid-template-columns: 1fr;
     }
 
+    .process-flow-container {
+        margin-left: 4%;
+        margin-right: 4%;
+    }
+
+    .process-flow-item {
+        gap: 16px;
+    }
+
+    .process-flow-badge {
+        width: 48px;
+        height: 48px;
+    }
+
+    .process-flow-badge .process-flow-icon {
+        font-size: 1rem;
+    }
+
     .process-flow-connector {
-        padding-left: 28px;
+        padding-left: 20px;
+    }
+
+    .process-flow-content {
+        padding: 20px;
     }
 
     .testimonial-section {
@@ -2031,13 +2054,31 @@
         grid-template-columns: 1fr !important;
     }
 
+    .process-flow-container {
+        margin-left: 3%;
+        margin-right: 3%;
+    }
+
+    .process-flow-item {
+        gap: 12px;
+    }
+
+    .process-flow-badge {
+        width: 42px;
+        height: 42px;
+    }
+
+    .process-flow-badge .process-flow-icon {
+        font-size: 0.9rem;
+    }
+
     .process-flow-connector {
-        padding-left: 24px;
+        padding-left: 16px;
         font-size: 0.85rem;
     }
 
     .process-flow-content {
-        padding: 22px;
+        padding: 16px;
     }
 
     .stat-number {
