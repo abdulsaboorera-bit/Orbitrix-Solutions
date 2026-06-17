@@ -1,0 +1,337 @@
+/* ===== LOCATION PAGE ===== */
+.location-hero {
+  padding: 60px 6% 50px;
+  background: linear-gradient(165deg, rgba(26, 129, 135, 0.06) 0%, rgba(253, 250, 243, 0.95) 40%, rgba(99, 198, 184, 0.08) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.location-hero-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.location-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+}
+
+.location-orb.orb-1 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(26, 129, 135, 0.12), transparent 70%);
+  top: -15%;
+  right: -5%;
+}
+
+.location-orb.orb-2 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(99, 198, 184, 0.1), transparent 70%);
+  bottom: -10%;
+  left: -3%;
+}
+
+.location-hero-container {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.location-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--orbit-teal);
+  margin-bottom: 24px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.location-back-link:hover {
+  color: var(--orbit-teal-strong);
+}
+
+.location-back-link svg {
+  transition: transform 0.3s ease;
+}
+
+.location-back-link:hover svg {
+  transform: translateX(-3px);
+}
+
+.location-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(26, 129, 135, 0.08);
+  border: 1px solid rgba(26, 129, 135, 0.15);
+  border-radius: 999px;
+  padding: 8px 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--orbit-teal-strong);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.location-hero-container h1 {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  color: var(--orbit-deep);
+  margin-bottom: 16px;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.location-subtitle {
+  font-size: 1.1rem;
+  color: var(--orbit-muted-strong);
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.location-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.location-stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.location-stat strong {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--orbit-teal);
+}
+
+.location-stat span {
+  font-size: 0.88rem;
+  color: var(--orbit-muted);
+  font-weight: 600;
+}
+
+/* Content */
+.location-content {
+  padding: 60px 6%;
+}
+
+.location-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 48px;
+  align-items: start;
+}
+
+.location-main h2 {
+  font-size: 1.6rem;
+  color: var(--orbit-deep);
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.location-main > p {
+  font-size: 1.08rem;
+  color: var(--orbit-muted-strong);
+  line-height: 1.75;
+  margin-bottom: 32px;
+}
+
+.location-services h3,
+.location-seo-section h3,
+.location-cities h3 {
+  font-size: 1.2rem;
+  color: var(--orbit-deep);
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.location-services ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px;
+  display: grid;
+  gap: 10px;
+}
+
+.location-services li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  color: var(--orbit-muted-strong);
+}
+
+.location-check {
+  color: var(--orbit-teal);
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.location-seo-section p {
+  font-size: 1.02rem;
+  color: var(--orbit-muted-strong);
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.location-cities-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.location-city-tag {
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(26, 129, 135, 0.06);
+  border: 1px solid rgba(26, 129, 135, 0.1);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--orbit-teal-strong);
+}
+
+/* Sidebar */
+.location-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: sticky;
+  top: 100px;
+}
+
+.location-cta-box,
+.location-other-box {
+  background: var(--orbit-white);
+  border: 1px solid rgba(26, 129, 135, 0.1);
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 8px 24px rgba(8, 34, 34, 0.05);
+}
+
+.location-cta-box h3,
+.location-other-box h3 {
+  font-size: 1.1rem;
+  color: var(--orbit-deep);
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.location-cta-box p {
+  font-size: 0.98rem;
+  color: var(--orbit-muted-strong);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.location-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #1aa356, #128c44);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(26, 163, 86, 0.3);
+  transition: all 0.3s ease;
+}
+
+.location-cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px rgba(26, 163, 86, 0.4);
+}
+
+.location-other-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.location-other-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--orbit-teal);
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.location-other-link:hover {
+  background: rgba(26, 129, 135, 0.06);
+}
+
+.location-other-link svg {
+  font-size: 0.75rem;
+  transition: transform 0.3s ease;
+}
+
+.location-other-link:hover svg {
+  transform: translateX(3px);
+}
+
+/* Not Found */
+.location-not-found {
+  text-align: center;
+  padding: 120px 6% 60px;
+}
+
+.location-not-found h1 {
+  font-size: 2rem;
+  color: var(--orbit-deep);
+  margin-bottom: 12px;
+}
+
+.location-not-found p {
+  color: var(--orbit-muted);
+  margin-bottom: 24px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .location-container {
+    grid-template-columns: 1fr;
+  }
+
+  .location-sidebar {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .location-hero {
+    padding: 40px 4% 32px;
+  }
+
+  .location-hero-container h1 {
+    font-size: clamp(1.7rem, 6vw, 2.4rem);
+  }
+
+  .location-stats {
+    gap: 16px;
+  }
+
+  .location-stat strong {
+    font-size: 1.4rem;
+  }
+
+  .location-content {
+    padding: 40px 4%;
+  }
+}

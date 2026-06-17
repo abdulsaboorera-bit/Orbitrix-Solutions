@@ -1,0 +1,347 @@
+/* ===== INDUSTRIES PAGE ===== */
+.industry-hero {
+  padding: 60px 6% 50px;
+  background: linear-gradient(165deg, rgba(26, 129, 135, 0.06) 0%, rgba(253, 250, 243, 0.95) 40%, rgba(99, 198, 184, 0.08) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.industry-hero-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.industry-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+}
+
+.industry-orb.orb-1 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(26, 129, 135, 0.12), transparent 70%);
+  top: -15%;
+  right: -5%;
+}
+
+.industry-orb.orb-2 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(99, 198, 184, 0.1), transparent 70%);
+  bottom: -10%;
+  left: -3%;
+}
+
+.industry-hero-container {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.industry-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--orbit-teal);
+  margin-bottom: 24px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.industry-back-link:hover {
+  color: var(--orbit-teal-strong);
+}
+
+.industry-back-link svg {
+  transition: transform 0.3s ease;
+}
+
+.industry-back-link:hover svg {
+  transform: translateX(-3px);
+}
+
+.industry-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(26, 129, 135, 0.08);
+  border: 1px solid rgba(26, 129, 135, 0.15);
+  border-radius: 999px;
+  padding: 8px 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--orbit-teal-strong);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.industry-hero-container h1 {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  color: var(--orbit-deep);
+  margin-bottom: 16px;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.industry-subtitle {
+  font-size: 1.1rem;
+  color: var(--orbit-muted-strong);
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.industry-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.industry-stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.industry-stat strong {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--orbit-teal);
+}
+
+.industry-stat span {
+  font-size: 0.88rem;
+  color: var(--orbit-muted);
+  font-weight: 600;
+}
+
+/* Content */
+.industry-content {
+  padding: 60px 6%;
+}
+
+.industry-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 48px;
+  align-items: start;
+}
+
+.industry-main h2 {
+  font-size: 1.6rem;
+  color: var(--orbit-deep);
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.industry-main > p {
+  font-size: 1.08rem;
+  color: var(--orbit-muted-strong);
+  line-height: 1.75;
+  margin-bottom: 32px;
+}
+
+.industry-challenges,
+.industry-solutions,
+.industry-services-section {
+  margin-bottom: 32px;
+}
+
+.industry-challenges h3,
+.industry-solutions h3,
+.industry-services-section h3 {
+  font-size: 1.2rem;
+  color: var(--orbit-deep);
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.industry-challenges ul,
+.industry-solutions ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.industry-challenges li,
+.industry-solutions li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 1rem;
+  color: var(--orbit-muted-strong);
+  line-height: 1.6;
+}
+
+.industry-check {
+  color: var(--orbit-teal);
+  font-size: 0.85rem;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.industry-check-problem {
+  color: var(--orbit-muted);
+  font-size: 0.85rem;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.industry-service-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.industry-service-tag {
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(26, 129, 135, 0.06);
+  border: 1px solid rgba(26, 129, 135, 0.1);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--orbit-teal-strong);
+}
+
+/* Sidebar */
+.industry-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: sticky;
+  top: 100px;
+}
+
+.industry-cta-box,
+.industry-other-box {
+  background: var(--orbit-white);
+  border: 1px solid rgba(26, 129, 135, 0.1);
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 8px 24px rgba(8, 34, 34, 0.05);
+}
+
+.industry-cta-box h3,
+.industry-other-box h3 {
+  font-size: 1.1rem;
+  color: var(--orbit-deep);
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.industry-cta-box p {
+  font-size: 0.98rem;
+  color: var(--orbit-muted-strong);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.industry-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #1aa356, #128c44);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(26, 163, 86, 0.3);
+  transition: all 0.3s ease;
+}
+
+.industry-cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px rgba(26, 163, 86, 0.4);
+}
+
+.industry-other-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.industry-other-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--orbit-teal);
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.industry-other-link:hover {
+  background: rgba(26, 129, 135, 0.06);
+}
+
+.industry-other-link svg {
+  font-size: 0.75rem;
+  transition: transform 0.3s ease;
+}
+
+.industry-other-link:hover svg {
+  transform: translateX(3px);
+}
+
+/* Not Found */
+.industry-not-found {
+  text-align: center;
+  padding: 120px 6% 60px;
+}
+
+.industry-not-found h1 {
+  font-size: 2rem;
+  color: var(--orbit-deep);
+  margin-bottom: 12px;
+}
+
+.industry-not-found p {
+  color: var(--orbit-muted);
+  margin-bottom: 24px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .industry-container {
+    grid-template-columns: 1fr;
+  }
+
+  .industry-sidebar {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .industry-hero {
+    padding: 40px 4% 32px;
+  }
+
+  .industry-hero-container h1 {
+    font-size: clamp(1.7rem, 6vw, 2.4rem);
+  }
+
+  .industry-stats {
+    gap: 16px;
+  }
+
+  .industry-stat strong {
+    font-size: 1.4rem;
+  }
+
+  .industry-content {
+    padding: 40px 4%;
+  }
+}
