@@ -20,11 +20,11 @@ html, body, #root {
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 html {
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
@@ -33,7 +33,7 @@ body {
   background: radial-gradient(1200px 600px at 10% -10%, rgba(26, 129, 135, 0.18), transparent 65%),
     radial-gradient(900px 500px at 90% 0%, rgba(24, 72, 50, 0.18), transparent 60%),
     var(--orbit-sand);
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body[data-theme='dark'] {
@@ -76,13 +76,13 @@ body[data-theme='dark'] .ant-typography-title {
   flex-direction: column;
   background-color: transparent;
   min-height: 100vh;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 main {
   flex: 1 0 auto;
   min-height: 1px;
-  overflow-x: hidden;
+  overflow-x: clip;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
