@@ -45,6 +45,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  width: fit-content;
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--orbit-teal);

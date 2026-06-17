@@ -80,16 +80,6 @@ const Navbar = () => {
                   Services
                 </Link>
               </li>
-              <li className="nav-item" role="none">
-                <Link className={`nav-link ${isActive('/blog') ? 'active' : ''}`} to="/blog" role="menuitem" aria-current={isActive('/blog') ? 'page' : undefined}>
-                  Blog
-                </Link>
-              </li>
-              <li className="nav-item" role="none">
-                <Link className={`nav-link ${isActive('/locations/usa') ? 'active' : ''}`} to="/locations/usa" role="menuitem">
-                  Locations
-                </Link>
-              </li>
 
               {/* Projects Dropdown — hover handled on the wrapper */}
               <li
@@ -142,6 +132,12 @@ const Navbar = () => {
                     ))}
                   </ul>
                 )}
+              </li>
+
+              <li className="nav-item" role="none">
+                <Link className={`nav-link ${isActive('/blog') ? 'active' : ''}`} to="/blog" role="menuitem" aria-current={isActive('/blog') ? 'page' : undefined}>
+                  Blog
+                </Link>
               </li>
 
               <li className="nav-item" role="none">
