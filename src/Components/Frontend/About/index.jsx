@@ -154,20 +154,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="about-cta-section reveal-scale">
-        <div className="about-cta-card">
-          <Typography.Title level={2}>Ready to Work With Us?</Typography.Title>
-          <Typography.Paragraph>
-            Let's discuss how Orbitrix Solutions can help your business grow with custom web development, SEO, and digital marketing strategies.
-          </Typography.Paragraph>
-          <div className="about-cta-actions">
-            <Link to="/contact" className="about-cta-btn primary">Get a Free Quote</Link>
-            <Link to="/projects" className="about-cta-btn ghost">View Our Work</Link>
-          </div>
-        </div>
-      </section>
-
       <FAQ />
       <Footer />
     </main>
