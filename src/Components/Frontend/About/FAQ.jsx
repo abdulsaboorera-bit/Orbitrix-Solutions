@@ -10,19 +10,19 @@ const FAQ = () => {
   return (
     <>
       <section className="about-section">
-        <Typography.Title level={2} className="text-center">Meet Our Team</Typography.Title>
+        <Typography.Title level={2} className="text-center reveal-blur">Meet Our Team</Typography.Title>
         <div className="about-team-grid">
-          <div className="about-team-card">
+          <div className="about-team-card reveal-scale" style={{ transitionDelay: '0ms' }}>
             <img src={member3} alt="Orbitrix Solutions Strategy Lead - Team Member" />
             <h4>Strategy Lead</h4>
             <p>Aligns positioning, messaging, and growth goals.</p>
           </div>
-          <div className="about-team-card">
+          <div className="about-team-card reveal-scale" style={{ transitionDelay: '100ms' }}>
             <img src={member2} alt="Orbitrix Solutions Design Director - Team Member" />
             <h4>Design Director</h4>
             <p>Shapes premium visual systems and UX.</p>
           </div>
-          <div className="about-team-card">
+          <div className="about-team-card reveal-scale" style={{ transitionDelay: '200ms' }}>
             <img src={member1} alt="Orbitrix Solutions Engineering Lead - Team Member" />
             <h4>Engineering Lead</h4>
             <p>Delivers high-performance web builds.</p>

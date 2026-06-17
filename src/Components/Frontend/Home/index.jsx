@@ -1,7 +1,6 @@
 import React from 'react';
 import SEO from '../../SEO';
 import Hero from './Hero';
-import Highlights from './Highlights';
 import Services from './Services';
 import Pricing from './Pricing';
 import Process from './Process';
@@ -21,7 +20,6 @@ const index = () => {
         keywords="web development agency, digital marketing company, SEO services, AI automation, custom web development, React development, WordPress development"
       />
       <Hero />
-      <Highlights />
       <Services />
       <Pricing />
       <Process />

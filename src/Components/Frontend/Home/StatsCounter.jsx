@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Typography } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus, faPercentage } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faPercentage, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 const CountUp = ({ end, duration = 2000 }) => {
   const [count, setCount] = useState(0);
@@ -59,15 +59,15 @@ const CountUp = ({ end, duration = 2000 }) => {
 
 const StatsCounter = () => {
   return (
-    <section className="home-section stats-counter-section reveal">
-      <div className="section-header">
+    <section className="home-section stats-counter-section reveal-blur">
+      <div className="section-header reveal-blur">
         <Typography.Title level={2}>
           Client Results – Our Track Record as a Web Development Agency
         </Typography.Title>
       </div>
 
       <div className="stats-grid">
-        <div className="stat-card reveal" style={{ transitionDelay: '0ms' }}>
+        <div className="stat-card reveal-scale" style={{ transitionDelay: '0ms' }}>
           <div className="stat-icon-wrapper">
             <FontAwesomeIcon icon={faPlus} className="stat-icon" />
           </div>
@@ -80,7 +80,7 @@ const StatsCounter = () => {
           </p>
         </div>
 
-        <div className="stat-card reveal" style={{ transitionDelay: '120ms' }}>
+        <div className="stat-card reveal-scale" style={{ transitionDelay: '120ms' }}>
           <div className="stat-icon-wrapper">
             <FontAwesomeIcon icon={faPercentage} className="stat-icon" />
           </div>
@@ -93,7 +93,7 @@ const StatsCounter = () => {
           </p>
         </div>
 
-        <div className="stat-card reveal" style={{ transitionDelay: '240ms' }}>
+        <div className="stat-card reveal-scale" style={{ transitionDelay: '240ms' }}>
           <div className="stat-icon-wrapper">
             <FontAwesomeIcon icon={faPlus} className="stat-icon" />
           </div>
@@ -105,6 +105,13 @@ const StatsCounter = () => {
             Over 100 brands trust our web development agency and digital marketing company to bring ideas to life. You'll love the results.
           </p>
         </div>
+      </div>
+
+      <div className="stats-cta-wrap">
+        <a href="#services" className="why-choose-btn">
+          View All Services
+          <FontAwesomeIcon icon={faArrowRight} className="why-choose-btn-arrow" />
+        </a>
       </div>
     </section>
   );

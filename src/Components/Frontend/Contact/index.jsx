@@ -17,11 +17,11 @@ const index = () => {
       <Hero/>
 
       {/* Services overview section for content depth + internal links */}
-      <section className="contact-services-overview" style={{ padding: '60px 20px', maxWidth: '960px', margin: '0 auto' }}>
+      <section className="contact-services-overview reveal-blur" style={{ padding: '60px 20px', maxWidth: '960px', margin: '0 auto' }}>
         <Typography.Title level={2} style={{ textAlign: 'center', marginBottom: '32px' }}>
           Our Web Development & Digital Marketing Services
         </Typography.Title>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px', marginBottom: '40px' }}>
+        <div className="stagger-children" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px', marginBottom: '40px' }}>
           <div style={{ padding: '24px', borderRadius: '12px', background: 'var(--orbit-sand)', border: '1px solid rgba(26,129,135,0.1)' }}>
             <h3 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '8px', color: 'var(--orbit-teal)' }}>Custom Web Development</h3>
             <p style={{ color: 'var(--text-muted)', lineHeight: 1.6, fontSize: '0.95rem' }}>

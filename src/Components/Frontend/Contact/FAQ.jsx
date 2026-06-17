@@ -61,26 +61,26 @@ const FAQ = () => {
 
   return (
     <>
-      <section className="contact-section">
+      <section className="contact-section reveal-blur">
         <div className="contact-grid">
 
           {/* ── Contact Info Cards ── */}
           <div>
-            <div className="contact-card">
+            <div className="contact-card reveal-left" style={{ transitionDelay: '0ms' }}>
               <div className="contact-card-title">Visit</div>
               <div style={{ display: "flex", alignItems: "center" }}>
                 <span className="contact-icon"><FontAwesomeIcon icon={faHouse} /></span>
                 <Typography.Text strong>Lahore, Pakistan</Typography.Text>
               </div>
             </div>
-            <div className="contact-card">
+            <div className="contact-card reveal-left" style={{ transitionDelay: '80ms' }}>
               <div className="contact-card-title">Call</div>
               <div style={{ display: "flex", alignItems: "center" }}>
                 <span className="contact-icon"><FontAwesomeIcon icon={faPhone} /></span>
                 <Typography.Text strong>03284678752</Typography.Text>
               </div>
             </div>
-            <div className="contact-card">
+            <div className="contact-card reveal-left" style={{ transitionDelay: '160ms' }}>
               <div className="contact-card-title">Email</div>
               <div style={{ display: "flex", alignItems: "center" }}>
                 <span className="contact-icon"><FontAwesomeIcon icon={faEnvelope} /></span>
@@ -90,7 +90,7 @@ const FAQ = () => {
           </div>
 
           {/* ── Contact Form ── */}
-          <div className="contact-form">
+          <div className="contact-form reveal-right">
             <Typography.Title level={3}>Tell us about your project</Typography.Title>
 
             <form ref={formRef} onSubmit={handleSubmit} noValidate>
@@ -176,8 +176,24 @@ const FAQ = () => {
         </div>
       </section>
 
+      {/* Google Maps */}
+      <section className="contact-map-section reveal-scale">
+        <div className="contact-map-container">
+          <iframe
+            title="Orbitrix Solutions Office Location – Lahore"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13604.674541956339!2d74.32692455!3d31.5494934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391904b0c0a1b0b3%3A0x8c1b3e6f2a5d8e0!2sLahore%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1"
+            width="100%"
+            height="320"
+            style={{ border: 0, borderRadius: '16px' }}
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
+      </section>
+
       {/* Internal links for SEO */}
-      <section style={{ padding: '40px 20px', textAlign: 'center', background: 'var(--orbit-cream)' }}>
+      <section className="reveal-blur" style={{ padding: '40px 20px', textAlign: 'center', background: 'var(--orbit-cream)' }}>
         <Typography.Title level={2} style={{ marginBottom: '16px' }}>
           Explore More from Orbitrix Solutions
         </Typography.Title>

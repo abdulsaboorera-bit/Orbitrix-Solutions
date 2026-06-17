@@ -82,8 +82,8 @@ const Services = () => {
   };
 
   return (
-    <section className="services-section reveal">
-      <div className="services-header">
+    <section id="services" className="services-section reveal">
+      <div className="services-header reveal-blur">
         <Typography.Title level={2}>Our Digital Services</Typography.Title>
         <Typography.Paragraph>
           A focused menu of growth services from our web development agency and SEO services agency, designed to scale with your business. Each service blends strategy, design,
@@ -97,8 +97,8 @@ const Services = () => {
           const isRevealed = revealedIds[service.id];
           return (
             <article 
-              className={`service-card reveal ${isRevealed ? 'is-visible' : ''} ${isExpanded ? 'expanded-card' : ''}`} 
-              style={{ transitionDelay: `${index * 80}ms` }}
+              className={`service-card reveal-scale ${isRevealed ? 'is-visible' : ''} ${isExpanded ? 'expanded-card' : ''}`} 
+              style={{ transitionDelay: `${index * 100}ms` }}
               key={service.id}
               data-id={service.id}
             >

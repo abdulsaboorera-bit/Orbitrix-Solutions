@@ -9,31 +9,31 @@ import { faHandshakeAngle, faBrain, faAward } from '@fortawesome/free-solid-svg-
 const Services = () => {
   return (
     <section className="about-section">
-      <Typography.Title level={2} className="text-center">Our Core Values</Typography.Title>
+      <Typography.Title level={2} className="text-center reveal-blur">Our Core Values</Typography.Title>
 
       <div className="about-values-grid">
-        <div className="about-card">
+        <div className="about-card reveal-scale" style={{ transitionDelay: '0ms' }}>
           <FontAwesomeIcon icon={faHandshakeAngle} size="2x" color="#1a8187" />
           <h3>Collaboration</h3>
           <p>We co-create with our clients, align goals early, and stay close through every milestone.</p>
         </div>
-        <div className="about-card">
+        <div className="about-card reveal-scale" style={{ transitionDelay: '100ms' }}>
           <FontAwesomeIcon icon={faBrain} size="2x" color="#1a8187" />
           <h3>Innovation</h3>
           <p>We test, learn, and ship smart solutions that keep you ahead of changing markets.</p>
         </div>
-        <div className="about-card">
+        <div className="about-card reveal-scale" style={{ transitionDelay: '200ms' }}>
           <FontAwesomeIcon icon={faAward} size="2x" color="#1a8187" />
           <h3>Achievement</h3>
           <p>We focus on measurable outcomes that move the business, not just the interface.</p>
         </div>
       </div>
 
-      <div className="about-ceo">
+      <div className="about-ceo reveal-left">
         <div className="about-ceo-image">
           <img src={ceoPic} alt="Abdul Saboor - Orbitrix Solutions Founder and CEO" />
         </div>
-        <div className="about-ceo-content">
+        <div className="about-ceo-content reveal-right">
           <Typography.Title level={2}>CEO Story</Typography.Title>
           <Typography.Paragraph>
             I started my journey with a passion for technology, creativity, and solving real business problems through
@@ -65,7 +65,7 @@ const Services = () => {
         </div>
       </div>
 
-      <div className="about-story about-workflow">
+      <div className="about-story about-workflow reveal-blur">
         <div className="about-workflow-content">
           <Typography.Title level={2}>How We Work</Typography.Title>
           <Typography.Paragraph>

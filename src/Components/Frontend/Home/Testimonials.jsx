@@ -50,58 +50,60 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="home-section testimonial-section reveal">
-      <div className="section-header">
-        <Typography.Title level={2}>What Our Clients Say</Typography.Title>
-        <Typography.Paragraph>
-          Don't just take our word for it — hear directly from businesses growing with our web development, SEO services, and digital marketing strategies.
-        </Typography.Paragraph>
-      </div>
+    <section className="home-section testimonial-section reveal-blur">
+      <div className="testimonial-layout">
+        <div className="testimonial-left reveal-left">
+          <span className="about-label">TESTIMONIALS</span>
+          <Typography.Title level={2}>What Our Clients Say</Typography.Title>
+          <Typography.Paragraph>
+            Don't just take our word for it — hear directly from businesses growing with our web development, SEO services, and digital marketing strategies.
+          </Typography.Paragraph>
 
-      <div className="testimonial-carousel-container relative">
-        <div className="testimonial-carousel">
-          <button className="carousel-btn prev-btn" type="button" onClick={goPrev} aria-label="Previous testimonial">
-            <FontAwesomeIcon icon={faChevronLeft} />
-          </button>
+          <div className="testimonial-nav-row">
+            <button className="carousel-btn" type="button" onClick={goPrev} aria-label="Previous testimonial">
+              <FontAwesomeIcon icon={faChevronLeft} />
+            </button>
+            <div className="testimonial-dots">
+              {items.map((item, index) => (
+                <button
+                  key={item.name}
+                  className={`dot ${index === activeIndex ? 'active' : ''}`}
+                  type="button"
+                  onClick={() => setActiveIndex(index)}
+                  aria-label={`Go to testimonial ${index + 1}`}
+                />
+              ))}
+            </div>
+            <button className="carousel-btn" type="button" onClick={goNext} aria-label="Next testimonial">
+              <FontAwesomeIcon icon={faChevronRight} />
+            </button>
+          </div>
+        </div>
 
-          <div className="testimonial-card-wrapper">
-            <div className="testimonial-card">
-              <div className="quote-icon-container">
-                <FontAwesomeIcon icon={faQuoteLeft} className="quote-icon" />
+        <div className="testimonial-right reveal-right">
+          <div className="testimonial-card-active">
+            <div className="testimonial-quote-mark">
+              <FontAwesomeIcon icon={faQuoteLeft} />
+            </div>
+            <blockquote className="testimonial-quote-text">
+              {items[activeIndex].quote}
+            </blockquote>
+            <div className="testimonial-author-row">
+              <div className="testimonial-avatar">
+                {items[activeIndex].name.charAt(0)}
               </div>
-              <p className="testimonial-quote">"{items[activeIndex].quote}"</p>
-              
-              <div className="testimonial-meta">
-                <div className="meta-left">
-                  <h4>{items[activeIndex].name}</h4>
-                  <span>{items[activeIndex].role}</span>
-                </div>
-                
-                <div className="testimonial-rating">
-                  {[...Array(items[activeIndex].rating)].map((_, i) => (
-                    <FontAwesomeIcon icon={faStar} key={i} className="star-icon" />
-                  ))}
-                </div>
+              <div className="testimonial-author-info">
+                <strong>{items[activeIndex].name}</strong>
+                <span>{items[activeIndex].role}</span>
+              </div>
+              <div className="testimonial-stars">
+                {[...Array(items[activeIndex].rating)].map((_, i) => (
+                  <FontAwesomeIcon icon={faStar} key={i} className="star-icon" />
+                ))}
               </div>
             </div>
           </div>
-
-          <button className="carousel-btn next-btn" type="button" onClick={goNext} aria-label="Next testimonial">
-            <FontAwesomeIcon icon={faChevronRight} />
-          </button>
         </div>
-      </div>
-
-      <div className="carousel-dots">
-        {items.map((item, index) => (
-          <button
-            key={item.name}
-            className={`dot ${index === activeIndex ? 'active' : ''}`}
-            type="button"
-            onClick={() => setActiveIndex(index)}
-            aria-label={`Go to testimonial ${index + 1}`}
-          />
-        ))}
       </div>
     </section>
   );

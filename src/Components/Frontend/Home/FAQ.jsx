@@ -29,7 +29,7 @@ const faqItems = [
 
 const FAQ = () => {
    return (
-      <section className="home-section" id="faq">
+      <section className="home-section reveal-blur" id="faq">
          <div className="container">
             <Typography.Title level={2} className="faq-title">
                Frequently Asked Questions
@@ -38,6 +38,7 @@ const FAQ = () => {
 
          <div style={{ height: '24px' }} />
 
+         <div className="stagger-children">
          {faqItems.map((item) => (
             <details className="accordian" key={item.question}>
                <summary className="question">
@@ -55,6 +56,7 @@ const FAQ = () => {
                </div>
             </details>
          ))}
+         </div>
 
          <div style={{ height: '24px' }} />
       </section>

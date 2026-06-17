@@ -1,9 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Typography } from 'antd';
+import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faCode, faBullhorn, faRobot, faChartLine, faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
 
 const words = ['visions', 'ideas', 'products', 'strategies'];
 
@@ -14,18 +12,10 @@ const services = [
   { icon: faChartLine, label: 'SEO Services' },
 ];
 
-const stats = [
-  { value: '100+', label: 'Clients Served' },
-  { value: '2+', label: 'Years Experience' },
-  { value: '98%', label: 'Client Retention' },
-];
-
 const Hero = () => {
   const [wordIndex, setWordIndex] = useState(0);
   const [fadeState, setFadeState] = useState('fade-in');
   const [activeService, setActiveService] = useState(0);
-  const [countersStarted, setCountersStarted] = useState(false);
-  const statsRef = useRef(null);
 
   useEffect(() => {
     const wordInterval = setInterval(() => {
@@ -43,19 +33,6 @@ const Hero = () => {
       setActiveService((prev) => (prev + 1) % services.length);
     }, 2500);
     return () => clearInterval(serviceInterval);
-  }, []);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setCountersStarted(true);
-        }
-      },
-      { threshold: 0.5 }
-    );
-    if (statsRef.current) observer.observe(statsRef.current);
-    return () => observer.disconnect();
   }, []);
 
   return (
@@ -138,23 +115,6 @@ const Hero = () => {
             <span>info@orbitrixsolutions.com</span>
           </a>
         </div>
-
-        {/* Stats row */}
-        <div className="hero-stats-row" ref={statsRef}>
-          {stats.map((stat, index) => (
-            <div key={stat.label} className="hero-stat-item">
-              <span className="hero-stat-value">{stat.value}</span>
-              <span className="hero-stat-label">{stat.label}</span>
-              {index < stats.length - 1 && <div className="hero-stat-divider"></div>}
-            </div>
-          ))}
-        </div>
-
-        {/* Explore link */}
-        <Link to="/about" className="hero-explore-link">
-          Explore Our Services
-          <FontAwesomeIcon icon={faArrowRight} className="explore-arrow" />
-        </Link>
       </div>
     </section>
   );

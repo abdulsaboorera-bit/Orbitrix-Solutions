@@ -3,11 +3,11 @@ import { Typography } from 'antd'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
 const Cta = () => {
   return (
-    <section className="home-section cta-section reveal" id="contact">
+    <section className="home-section cta-section reveal-scale" id="contact">
       <div className="cta-card">
         <div>
           <Typography.Title level={2}>Start Your Project with Orbitrix Solutions</Typography.Title>
@@ -22,8 +22,8 @@ const Cta = () => {
           <a className="hb1 hb1-email" href="mailto:info@orbitrixsolutions.com">
             <FontAwesomeIcon icon={faEnvelope} /> Email
           </a>
-          <Link to="/contact" className="hb1 hb1-email" style={{ textDecoration: 'none' }}>
-            Contact Page
+          <Link to="/contact" className="hb1 hb1-outline">
+            Contact Page <FontAwesomeIcon icon={faArrowRight} />
           </Link>
         </div>
       </div>

@@ -4,7 +4,7 @@ import { Typography } from 'antd'
 const Hero = () => {
   return (
     <section className="contact-hero">
-      <div className="contact-hero-inner">
+      <div className="contact-hero-inner reveal-blur">
         <Typography.Title level={1} className="contact-hero-title">Contact Orbitrix Solutions – Web Development & Digital Marketing Agency</Typography.Title>
         <Typography.Paragraph className="contact-hero-copy">
           Ready to start your next project? Contact Orbitrix Solutions for custom web development, SEO services, 

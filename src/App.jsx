@@ -16,7 +16,7 @@ const App = () => {
   const location = useLocation();
 
   useEffect(() => {
-    const elements = document.querySelectorAll('.reveal');
+    const elements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-blur, .reveal-draw, .reveal-flip');
     if (!elements.length) {
       return undefined;
     }
@@ -38,7 +38,7 @@ const App = () => {
     return () => {
       observer.disconnect();
     };
-  }, [location.pathname]);
+  }, [location.pathname, location.search]);
 
   return (
   
