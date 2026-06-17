@@ -44,12 +44,14 @@ const Footer = () => {
           </p>
           <div className="f-cta-actions">
             <Link to="/contact" className="f-cta-btn primary">
-              Start a Project
+              Get a Free Quote
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </Link>
-            <Link to="/projects" className="f-cta-btn ghost">View Our Work</Link>
+            <a href="https://wa.me/qr/7GSRQFMD6AMZG1" target="_blank" rel="noopener noreferrer" className="f-cta-btn whatsapp">
+              Book a Consultation
+            </a>
           </div>
         </div>
       </section>

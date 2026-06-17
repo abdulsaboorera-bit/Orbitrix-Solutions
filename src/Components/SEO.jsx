@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-const SEO = ({ title, description, canonicalUrl, keywords }) => {
+const SEO = ({ title, description, canonicalUrl, keywords, schema, type = 'website' }) => {
   const location = useLocation();
 
   useEffect(() => {
@@ -60,7 +60,29 @@ const SEO = ({ title, description, canonicalUrl, keywords }) => {
       metaKeywords.setAttribute('content', keywords);
     }
 
-  }, [title, description, canonicalUrl, keywords, location]);
+    // 6. Update OG type
+    let ogType = document.querySelector('meta[property="og:type"]');
+    if (ogType) ogType.setAttribute('content', type);
+
+    // 7. Inject structured data
+    // Remove existing dynamic schema
+    const existingSchemas = document.querySelectorAll('script[data-dynamic-schema]');
+    existingSchemas.forEach(el => el.remove());
+
+    if (schema) {
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.setAttribute('data-dynamic-schema', 'true');
+      script.textContent = JSON.stringify(schema);
+      document.head.appendChild(script);
+    }
+
+    // Cleanup
+    return () => {
+      const dynamicSchemas = document.querySelectorAll('script[data-dynamic-schema]');
+      dynamicSchemas.forEach(el => el.remove());
+    };
+  }, [title, description, canonicalUrl, keywords, schema, type, location]);
 
   return null;
 };

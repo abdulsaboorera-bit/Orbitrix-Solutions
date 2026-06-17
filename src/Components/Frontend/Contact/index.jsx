@@ -1,65 +1,183 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Typography } from 'antd'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHouse, faPhone, faEnvelope, faClock } from '@fortawesome/free-solid-svg-icons'
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import SEO from '../../SEO'
-import Hero from './Hero'
+import ContactForm from './ContactForm'
 import FAQ from './FAQ'
+import Footer from '../../Footer'
 import './index.css'
 
-const index = () => {
+const contactSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does a website cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our web development projects range from $1,500 for a landing page to $15,000+ for custom web applications. Every project is quoted after a free discovery call."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to build a website?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most websites launch in 2-6 weeks depending on scope. Landing pages can be ready in 5-7 days, while complex custom applications take 8-12 weeks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work with international clients?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. We serve clients across the USA, Canada, UK, Germany, Netherlands, and other countries with our remote-first approach."
+      }
+    }
+  ]
+};
+
+const contactInfo = [
+  {
+    icon: faHouse,
+    title: 'Visit Us',
+    lines: ['Lahore, Pakistan', 'Available Worldwide'],
+  },
+  {
+    icon: faPhone,
+    title: 'Call Us',
+    lines: ['+92 328 467 8752', 'Mon - Sat, 9am - 6pm'],
+  },
+  {
+    icon: faEnvelope,
+    title: 'Email Us',
+    lines: ['info@orbitrixsolutions.com', 'We reply within 24 hours'],
+  },
+  {
+    icon: faWhatsapp,
+    title: 'WhatsApp',
+    lines: ['Chat instantly', 'Quick responses'],
+    link: 'https://wa.me/qr/7GSRQFMD6AMZG1',
+  },
+]
+
+const Index = () => {
   return (
     <main id="main-content">
-      <SEO 
-        title="Contact Us | Orbitrix Solutions – Web & SEO Agency" 
-        description="Get in touch with Orbitrix Solutions for custom web development, SEO, AI automation, and digital marketing tailored to your business." 
-        keywords="contact Orbitrix Solutions, web development agency, SEO services, digital marketing, AI automation"
+      <SEO
+        title="Contact Us | Get a Free Quote – Orbitrix Solutions"
+        description="Get in touch with Orbitrix Solutions for custom web development, SEO, AI automation, and digital marketing. Request a free quote or book a consultation today."
+        keywords="contact Orbitrix Solutions, free quote web development, SEO agency contact, digital marketing consultation, book a call"
+        schema={contactSchema}
       />
-      <Hero/>
 
-      {/* Services overview section for content depth + internal links */}
-      <section className="contact-services-overview reveal-blur" style={{ padding: '60px 20px', maxWidth: '960px', margin: '0 auto' }}>
-        <Typography.Title level={2} style={{ textAlign: 'center', marginBottom: '32px' }}>
-          Our Web Development & Digital Marketing Services
-        </Typography.Title>
-        <div className="stagger-children" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px', marginBottom: '40px' }}>
-          <div style={{ padding: '24px', borderRadius: '12px', background: 'var(--orbit-sand)', border: '1px solid rgba(26,129,135,0.1)' }}>
-            <h3 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '8px', color: 'var(--orbit-teal)' }}>Custom Web Development</h3>
-            <p style={{ color: 'var(--text-muted)', lineHeight: 1.6, fontSize: '0.95rem' }}>
-              We build high-performance websites using React, WordPress, and modern frameworks. 
-              Every project is optimized for speed, SEO, and conversions.
-            </p>
-          </div>
-          <div style={{ padding: '24px', borderRadius: '12px', background: 'var(--orbit-sand)', border: '1px solid rgba(26,129,135,0.1)' }}>
-            <h3 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '8px', color: 'var(--orbit-teal)' }}>SEO Services</h3>
-            <p style={{ color: 'var(--text-muted)', lineHeight: 1.6, fontSize: '0.95rem' }}>
-              Rank higher on Google with data-driven SEO strategies. We handle technical SEO, 
-              content optimization, and ongoing performance tracking.
-            </p>
-          </div>
-          <div style={{ padding: '24px', borderRadius: '12px', background: 'var(--orbit-sand)', border: '1px solid rgba(26,129,135,0.1)' }}>
-            <h3 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '8px', color: 'var(--orbit-teal)' }}>AI Automation</h3>
-            <p style={{ color: 'var(--text-muted)', lineHeight: 1.6, fontSize: '0.95rem' }}>
-              Automate repetitive tasks with AI-powered workflows. From chatbots to content generation, 
-              we build intelligent systems that save time and reduce costs.
-            </p>
-          </div>
-        </div>
-        <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
-          <Link to="/projects" style={{ padding: '12px 28px', borderRadius: '8px', background: 'var(--orbit-teal)', color: '#fff', textDecoration: 'none', fontWeight: 600 }}>
-            View Our Projects
-          </Link>
-          <Link to="/about" style={{ padding: '12px 28px', borderRadius: '8px', border: '2px solid var(--orbit-teal)', color: 'var(--orbit-teal)', textDecoration: 'none', fontWeight: 600 }}>
-            About Us
-          </Link>
-          <Link to="/" style={{ padding: '12px 28px', borderRadius: '8px', border: '2px solid var(--orbit-sand)', color: 'var(--orbit-teal)', textDecoration: 'none', fontWeight: 600 }}>
-            Home
-          </Link>
+      {/* Hero */}
+      <section className="contact-hero">
+        <div className="contact-hero-inner reveal-blur">
+          <span className="contact-hero-badge">Let's Work Together</span>
+          <Typography.Title level={1} className="contact-hero-title">
+            Ready to Grow Your Business Online?
+          </Typography.Title>
+          <Typography.Paragraph className="contact-hero-copy">
+            Share your goals with Orbitrix Solutions and we will respond with a clear plan, timeline, and the right mix of services — within 24 hours.
+          </Typography.Paragraph>
         </div>
       </section>
 
-      <FAQ/> 
+      {/* Contact Info + Form */}
+      <section className="contact-section">
+        <div className="contact-grid">
+          {/* Left: Info Cards */}
+          <div className="contact-info-col">
+            <div className="contact-info-header reveal-left">
+              <Typography.Title level={2}>Get in Touch</Typography.Title>
+              <p>Whether you need a new website, SEO strategy, or AI automation — we are here to help you succeed.</p>
+            </div>
+            <div className="contact-info-cards stagger-children">
+              {contactInfo.map((item, i) => (
+                <div className="contact-card reveal-left" key={item.title} style={{ transitionDelay: `${i * 80}ms` }}>
+                  <div className="contact-card-inner">
+                    <span className="contact-icon">
+                      <FontAwesomeIcon icon={item.icon} />
+                    </span>
+                    <div className="contact-card-text">
+                      <div className="contact-card-title">{item.title}</div>
+                      {item.link ? (
+                        <a href={item.link} target="_blank" rel="noreferrer" className="contact-card-link">
+                          {item.lines.map((l, j) => <span key={j}>{l}</span>)}
+                        </a>
+                      ) : (
+                        item.lines.map((l, j) => <div key={j} className="contact-card-line">{l}</div>)
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Trust indicators */}
+            <div className="contact-trust reveal-left">
+              <div className="contact-trust-item">
+                <span className="contact-trust-num">80+</span>
+                <span className="contact-trust-label">Projects Delivered</span>
+              </div>
+              <div className="contact-trust-item">
+                <span className="contact-trust-num">24h</span>
+                <span className="contact-trust-label">Response Time</span>
+              </div>
+              <div className="contact-trust-item">
+                <span className="contact-trust-num">15+</span>
+                <span className="contact-trust-label">Countries Served</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Right: Form */}
+          <div className="reveal-right">
+            <ContactForm />
+          </div>
+        </div>
+      </section>
+
+      {/* Map */}
+      <section className="contact-map-section reveal-scale">
+        <div className="contact-map-container">
+          <iframe
+            title="Orbitrix Solutions Office Location – Lahore"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13604.674541956339!2d74.32692455!3d31.5494934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391904b0c0a1b0b3%3A0x8c1b3e6f2a5d8e0!2sLahore%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1"
+            width="100%"
+            height="320"
+            style={{ border: 0, borderRadius: '16px' }}
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
+      </section>
+
+      {/* Internal Links */}
+      <section className="contact-explore reveal-blur">
+        <Typography.Title level={2} style={{ marginBottom: '16px' }}>
+          Explore More from Orbitrix Solutions
+        </Typography.Title>
+        <Typography.Paragraph style={{ maxWidth: '560px', margin: '0 auto 24px', color: 'var(--text-muted)' }}>
+          Learn about our team, see our work, or review our terms. Orbitrix Solutions is your trusted partner for web development, SEO, and digital marketing.
+        </Typography.Paragraph>
+        <div className="contact-explore-links">
+          <Link to="/about" className="contact-explore-btn">About Us</Link>
+          <Link to="/projects" className="contact-explore-btn outline">Our Projects</Link>
+          <Link to="/blog" className="contact-explore-btn outline">Blog</Link>
+        </div>
+      </section>
+
+      <FAQ />
+      <Footer />
     </main>
   )
 }
 
-export default index
+export default Index

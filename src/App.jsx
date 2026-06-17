@@ -1,15 +1,17 @@
 
 import React, { useEffect } from 'react';
 import './App.scss';
+import './Components/widgets.css';
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInstagram, faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { useLocation } from 'react-router-dom';
 import Navbar from './Components/Header/Navbar';
 import Routes from './Components/Routes';
 import ScrollToTop from './Components/ScrollToTop';
+import WhatsAppWidget from './Components/WhatsAppWidget';
 
 
 const App = () => {
@@ -56,10 +58,8 @@ const App = () => {
     <a href="https://www.instagram.com/orbitrix_solutions?igsh=ZGcydzJpMWFteHN6" target="_blank" rel="noreferrer" aria-label="Instagram">
       <FontAwesomeIcon icon={faInstagram} />
     </a>
-    <a href="https://wa.me/qr/7GSRQFMD6AMZG1" target="_blank" rel="noreferrer" aria-label="WhatsApp">
-      <FontAwesomeIcon icon={faWhatsapp} />
-    </a>
   </div>
+  <WhatsAppWidget />
 
   </>
   )

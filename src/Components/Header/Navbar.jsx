@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import logo from "../../Images/logo.png";
 import { categories } from '../../Data/projects';
 
@@ -148,7 +149,10 @@ const Navbar = () => {
             </ul>
 
             <div className="nav-btns d-flex ms-lg-3 align-items-center gap-2">
-              <Link className="btn nav-cta" to="/contact">Get a Quote</Link>
+              <Link className="btn nav-cta-primary" to="/contact">Get a Free Quote</Link>
+              <a className="btn nav-cta-whatsapp" href="https://wa.me/qr/7GSRQFMD6AMZG1" target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon icon={faWhatsapp} /> Book a Consultation
+              </a>
             </div>
           </div>
         </div>

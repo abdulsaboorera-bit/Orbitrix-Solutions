@@ -98,6 +98,21 @@
 
 .f-cta-btn.ghost {
   background: transparent;
+  border: 2px solid rgba(26, 129, 135, 0.3);
+  color: var(--orbit-teal);
+}
+
+.f-cta-btn.whatsapp {
+  background: #25D366;
+  color: #fff;
+  border: 2px solid #25D366;
+}
+
+.f-cta-btn.whatsapp:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 16px 40px rgba(37, 211, 102, 0.35);
+  background: #1ebe57;
+}
   color: var(--orbit-teal-strong);
   border: 1.5px solid rgba(26, 129, 135, 0.3);
 }

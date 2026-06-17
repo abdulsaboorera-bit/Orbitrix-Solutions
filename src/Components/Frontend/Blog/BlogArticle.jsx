@@ -37,12 +37,41 @@ const BlogArticle = () => {
     .filter((p) => p.id !== post.id && p.category === post.category)
     .slice(0, 2);
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": post.title,
+    "description": post.excerpt,
+    "datePublished": post.date,
+    "dateModified": post.date,
+    "author": {
+      "@type": "Organization",
+      "name": "Orbitrix Solutions",
+      "url": "https://orbitrixsolutions.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Orbitrix Solutions",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://orbitrixsolutions.com/logo.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://orbitrixsolutions.com/blog/${post.slug}`
+    },
+    "keywords": post.category
+  };
+
   return (
     <main id="main-content">
       <SEO
         title={`${post.title} | Orbitrix Solutions Blog`}
         description={post.excerpt}
         keywords={`${post.title}, ${post.category}, web development, SEO, Orbitrix Solutions`}
+        schema={articleSchema}
+        type="article"
       />
 
       <article className="blog-article">
