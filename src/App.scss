@@ -251,22 +251,33 @@ body[data-theme='dark'] .site-nav {
     width: 42px;
     height: 42px;
   }
+
+  .nav-btns .nav-cta-whatsapp {
+    display: none;
+  }
 }
 
 @media (max-width: 480px) {
   .sticky-social {
-    right: 8px;
-    bottom: 16px;
-    top: auto;
-    transform: none;
-    flex-direction: row;
-    gap: 8px;
+    display: none;
   }
 
-  .sticky-social a {
-    width: 36px;
-    height: 36px;
-    font-size: 0.8rem;
+  .nav-btns {
+    gap: 6px !important;
+    width: 100%;
+    justify-content: center;
+    padding: 8px 0 4px;
+  }
+
+  .nav-btns .btn {
+    padding: 6px 14px;
+    font-size: 0.82rem;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .nav-cta-whatsapp span {
+    display: none;
   }
 }
 
