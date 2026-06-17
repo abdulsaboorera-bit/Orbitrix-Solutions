@@ -26,8 +26,7 @@ export default defineConfig({
       },
     },
     esbuild: {
-      drop: ['console', 'debugger'],
-      pure: ['console.log', 'console.info', 'console.debug'],
+      drop: ['debugger'],
       legalComments: 'none',
     },
     sourcemap: false,
