@@ -82,7 +82,6 @@ body[data-theme='dark'] .ant-typography-title {
 main {
   flex: 1 0 auto;
   min-height: 1px;
-  overflow-x: clip;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -116,10 +115,14 @@ footer .container {
 }
 
 @media (max-width: 991px) {
-  .site-nav {
+  header {
     position: sticky;
     top: 0;
     z-index: 1050;
+  }
+
+  .site-nav {
+    background-color: var(--orbit-sand);
   }
 }
 
