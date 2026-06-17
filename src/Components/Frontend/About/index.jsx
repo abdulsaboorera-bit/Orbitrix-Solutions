@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons'
 import SEO from '../../SEO'
 import Hero from './Hero'
-import FAQ from './FAQ'
 import Footer from '../../Footer'
 import './index.css'
 
@@ -154,7 +153,6 @@ const Index = () => {
         </div>
       </section>
 
-      <FAQ />
       <Footer />
     </main>
   )
