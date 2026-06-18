@@ -1,5 +1,6 @@
 import React, { Suspense, lazy } from 'react';
 import { Routes as RouterRoutes, Route } from 'react-router-dom';
+import ErrorBoundary from './ErrorBoundary';
 
 const Frontend = lazy(() => import('./Frontend'));
 const About = lazy(() => import('./Frontend/About'));
@@ -24,24 +25,26 @@ const PageLoader = () => (
 
 const AppRoutes = () => {
   return (
-    <Suspense fallback={<PageLoader />}>
-      <RouterRoutes>
-        <Route path="/" element={<Frontend />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/services/:slug" element={<ServiceDetail />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/projects/:slug" element={<CaseStudy />} />
-        <Route path="/blog" element={<BlogList />} />
-        <Route path="/blog/:slug" element={<BlogArticle />} />
-        <Route path="/locations/:country" element={<LocationPage />} />
-        <Route path="/industries" element={<Industries />} />
-        <Route path="/industries/:industry" element={<IndustryPage />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
-        <Route path="*" element={<NotFound />} />
-      </RouterRoutes>
-    </Suspense>
+    <ErrorBoundary>
+      <Suspense fallback={<PageLoader />}>
+        <RouterRoutes>
+          <Route path="/" element={<Frontend />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/services/:slug" element={<ServiceDetail />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/:slug" element={<CaseStudy />} />
+          <Route path="/blog" element={<BlogList />} />
+          <Route path="/blog/:slug" element={<BlogArticle />} />
+          <Route path="/locations/:country" element={<LocationPage />} />
+          <Route path="/industries" element={<Industries />} />
+          <Route path="/industries/:industry" element={<IndustryPage />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+          <Route path="*" element={<NotFound />} />
+        </RouterRoutes>
+      </Suspense>
+    </ErrorBoundary>
   );
 };
 

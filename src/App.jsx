@@ -24,27 +24,34 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    const elements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-blur, .reveal-draw, .reveal-flip');
-    if (!elements.length) {
-      return undefined;
-    }
+    const SELECTOR = '.reveal:not(.is-visible), .reveal-left:not(.is-visible), .reveal-right:not(.is-visible), .reveal-scale:not(.is-visible), .reveal-blur:not(.is-visible), .reveal-draw:not(.is-visible), .reveal-flip:not(.is-visible)';
 
-    const observer = new IntersectionObserver(
+    const revealObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
+            revealObserver.unobserve(entry.target);
           }
         });
       },
       { threshold: 0.15, rootMargin: '0px 0px -60px' }
     );
 
-    elements.forEach((element) => observer.observe(element));
+    const observeNewElements = () => {
+      document.querySelectorAll(SELECTOR).forEach((el) => {
+        revealObserver.observe(el);
+      });
+    };
+
+    observeNewElements();
+
+    const domObserver = new MutationObserver(observeNewElements);
+    domObserver.observe(document.body, { childList: true, subtree: true });
 
     return () => {
-      observer.disconnect();
+      revealObserver.disconnect();
+      domObserver.disconnect();
     };
   }, [location.pathname, location.search]);
 
