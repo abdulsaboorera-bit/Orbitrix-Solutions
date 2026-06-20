@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faCalendarAlt, faClock, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import SEO from '../../SEO';
+import Breadcrumbs from '../../Breadcrumbs';
 import blogPosts from '../../../Data/blog';
 import Footer from '../../Footer';
 import './Blog.css';
@@ -72,7 +73,12 @@ const BlogArticle = () => {
         keywords={`${post.title}, ${post.category}, web development, SEO, Orbitrix Solutions`}
         schema={articleSchema}
         type="article"
+        articlePublishedTime={post.date}
+        articleSection={post.category}
+        dateModified={post.date}
       />
+
+      <Breadcrumbs />
 
       <article className="blog-article">
         <div className="blog-article-container">

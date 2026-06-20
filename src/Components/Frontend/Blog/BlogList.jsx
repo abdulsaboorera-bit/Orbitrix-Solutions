@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarAlt, faClock, faArrowRight, faSearch } from '@fortawesome/free-solid-svg-icons';
 import SEO from '../../SEO';
+import Breadcrumbs from '../../Breadcrumbs';
 import blogPosts, { categories } from '../../../Data/blog';
 import Footer from '../../Footer';
 import './Blog.css';
@@ -24,6 +25,8 @@ const BlogList = () => {
         description="Expert insights on web development, SEO, AI automation, and digital marketing. Learn strategies to grow your business online across the USA, Canada, UK, and Europe."
         keywords="web development blog, SEO tips, AI automation guide, digital marketing strategy, web development agency blog"
       />
+
+      <Breadcrumbs />
 
       <section className="blog-hero">
         <div className="blog-hero-container">

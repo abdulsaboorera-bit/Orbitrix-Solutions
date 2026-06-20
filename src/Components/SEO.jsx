@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-const SEO = ({ title, description, canonicalUrl, keywords, schema, type = 'website' }) => {
+const SEO = ({ title, description, canonicalUrl, keywords, schema, type = 'website', dateModified, articlePublishedTime, articleSection }) => {
   const location = useLocation();
 
   useEffect(() => {
@@ -64,7 +64,46 @@ const SEO = ({ title, description, canonicalUrl, keywords, schema, type = 'websi
     let ogType = document.querySelector('meta[property="og:type"]');
     if (ogType) ogType.setAttribute('content', type);
 
-    // 7. Inject structured data
+    // 7. Open Graph article tags
+    const existingArticleTags = document.querySelectorAll('meta[property^="article:"]');
+    existingArticleTags.forEach(el => el.remove());
+    if (type === 'article') {
+      if (articlePublishedTime) {
+        let pubTag = document.createElement('meta');
+        pubTag.setAttribute('property', 'article:published_time');
+        pubTag.setAttribute('content', articlePublishedTime);
+        document.head.appendChild(pubTag);
+      }
+      if (dateModified) {
+        let modTag = document.createElement('meta');
+        modTag.setAttribute('property', 'article:modified_time');
+        modTag.setAttribute('content', dateModified);
+        document.head.appendChild(modTag);
+      }
+      if (articleSection) {
+        let secTag = document.createElement('meta');
+        secTag.setAttribute('property', 'article:section');
+        secTag.setAttribute('content', articleSection);
+        document.head.appendChild(secTag);
+      }
+      let authorTag = document.createElement('meta');
+      authorTag.setAttribute('property', 'article:author');
+      authorTag.setAttribute('content', 'Orbitrix Solutions');
+      document.head.appendChild(authorTag);
+    }
+
+    // 8. dateModified meta tag
+    if (dateModified) {
+      let metaMod = document.querySelector('meta[itemprop="dateModified"]');
+      if (!metaMod) {
+        metaMod = document.createElement('meta');
+        metaMod.setAttribute('itemprop', 'dateModified');
+        document.head.appendChild(metaMod);
+      }
+      metaMod.setAttribute('content', dateModified);
+    }
+
+    // 9. Inject structured data
     // Remove existing dynamic schema
     const existingSchemas = document.querySelectorAll('script[data-dynamic-schema]');
     existingSchemas.forEach(el => el.remove());
@@ -82,7 +121,7 @@ const SEO = ({ title, description, canonicalUrl, keywords, schema, type = 'websi
       const dynamicSchemas = document.querySelectorAll('script[data-dynamic-schema]');
       dynamicSchemas.forEach(el => el.remove());
     };
-  }, [title, description, canonicalUrl, keywords, schema, type, location]);
+  }, [title, description, canonicalUrl, keywords, schema, type, dateModified, articlePublishedTime, articleSection, location]);
 
   return null;
 };

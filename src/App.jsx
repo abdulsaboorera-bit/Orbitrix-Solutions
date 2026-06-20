@@ -1,5 +1,5 @@
 
-import React, { useEffect, lazy, Suspense } from 'react';
+import React, { useEffect, lazy, Suspense, useCallback, useRef } from 'react';
 import './App.scss';
 import './Components/widgets.css';
 
@@ -15,45 +15,50 @@ const WhatsAppWidget = lazy(() => import('./Components/WhatsAppWidget'));
 
 const App = () => {
   const location = useLocation();
+  const observerRef = useRef(null);
+  const domObserverRef = useRef(null);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       import("bootstrap/dist/js/bootstrap.bundle.min.js");
-    }, 2000);
+    }, 3000);
     return () => clearTimeout(timer);
   }, []);
 
-  useEffect(() => {
-    const SELECTOR = '.reveal:not(.is-visible), .reveal-left:not(.is-visible), .reveal-right:not(.is-visible), .reveal-scale:not(.is-visible), .reveal-blur:not(.is-visible), .reveal-draw:not(.is-visible), .reveal-flip:not(.is-visible)';
+  const observeNewElements = useCallback(() => {
+    if (!observerRef.current) return;
+    document.querySelectorAll('.reveal:not(.is-visible), .reveal-left:not(.is-visible), .reveal-right:not(.is-visible), .reveal-scale:not(.is-visible), .reveal-blur:not(.is-visible), .reveal-draw:not(.is-visible), .reveal-flip:not(.is-visible)').forEach((el) => {
+      observerRef.current.observe(el);
+    });
+  }, []);
 
-    const revealObserver = new IntersectionObserver(
+  useEffect(() => {
+    if (observerRef.current) observerRef.current.disconnect();
+    if (domObserverRef.current) domObserverRef.current.disconnect();
+
+    observerRef.current = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
+        for (let i = 0; i < entries.length; i++) {
+          const entry = entries[i];
           if (entry.isIntersecting) {
             entry.target.classList.add('is-visible');
-            revealObserver.unobserve(entry.target);
+            observerRef.current.unobserve(entry.target);
           }
-        });
+        }
       },
-      { threshold: 0.15, rootMargin: '0px 0px -60px' }
+      { threshold: 0.15, rootMargin: '0px 0px -60px 0px' }
     );
-
-    const observeNewElements = () => {
-      document.querySelectorAll(SELECTOR).forEach((el) => {
-        revealObserver.observe(el);
-      });
-    };
 
     observeNewElements();
 
-    const domObserver = new MutationObserver(observeNewElements);
-    domObserver.observe(document.body, { childList: true, subtree: true });
+    domObserverRef.current = new MutationObserver(observeNewElements);
+    domObserverRef.current.observe(document.body, { childList: true, subtree: true });
 
     return () => {
-      revealObserver.disconnect();
-      domObserver.disconnect();
+      if (observerRef.current) observerRef.current.disconnect();
+      if (domObserverRef.current) domObserverRef.current.disconnect();
     };
-  }, [location.pathname, location.search]);
+  }, [location.pathname, location.search, observeNewElements]);
 
   return (
   

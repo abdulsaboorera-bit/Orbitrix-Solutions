@@ -1,9 +1,12 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import viteCompression from 'vite-plugin-compression';
 
 export default defineConfig({
   plugins: [
     react(),
+    viteCompression({ algorithm: 'brotliCompress' }),
+    viteCompression({ algorithm: 'gzip' }),
   ],
   resolve: {
     alias: {
@@ -44,7 +47,8 @@ export default defineConfig({
     },
     sourcemap: false,
     reportCompressedSize: true,
-    chunkSizeWarningLimit: 500,
+    chunkSizeWarningLimit: 400,
+    assetsInlineLimit: 4096,
   },
   css: {
     preprocessorOptions: {

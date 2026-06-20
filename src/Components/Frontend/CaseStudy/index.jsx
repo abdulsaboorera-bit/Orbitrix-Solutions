@@ -15,6 +15,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin, faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import SEO from '../../SEO';
+import Breadcrumbs from '../../Breadcrumbs';
 import Footer from '../../Footer';
 import { getProjectBySlug, getRelatedProjects, getAdjacentProjects } from '../../../Data/projects';
 import './index.css';
@@ -99,6 +100,8 @@ const CaseStudy = () => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
+
+      <Breadcrumbs />
 
       <article className="case-study-page" aria-label={`Case study: ${project.name}`}>
         {/* Hero */}

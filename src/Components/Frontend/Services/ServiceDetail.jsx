@@ -8,6 +8,7 @@ import {
   faGlobe,
 } from '@fortawesome/free-solid-svg-icons';
 import SEO from '../../SEO';
+import Breadcrumbs from '../../Breadcrumbs';
 import servicesData from './servicesData';
 import Cta from './Cta';
 import Footer from '../../Footer';
@@ -39,13 +40,37 @@ const ServiceDetail = () => {
 
   const otherServices = servicesData.filter((s) => s.id !== service.id);
 
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": service.title,
+    "description": service.description.substring(0, 300),
+    "provider": {
+      "@type": "Organization",
+      "name": "Orbitrix Solutions",
+      "url": "https://orbitrixsolutions.com"
+    },
+    "areaServed": [
+      { "@type": "Country", "name": "United States" },
+      { "@type": "Country", "name": "Canada" },
+      { "@type": "Country", "name": "United Kingdom" },
+      { "@type": "Country", "name": "Germany" },
+      { "@type": "Country", "name": "Netherlands" }
+    ],
+    "serviceType": service.title,
+    "url": `https://orbitrixsolutions.com/services/${slug}`
+  };
+
   return (
     <main id="main-content">
       <SEO
         title={`${service.title} | Orbitrix Solutions – Professional ${service.title} Services`}
         description={service.description.substring(0, 160)}
         keywords={` ${service.title}, ${service.title} USA, ${service.title} Canada, ${service.title} UK, Orbitrix Solutions ${service.title}`}
+        schema={serviceSchema}
       />
+
+      <Breadcrumbs />
 
       {/* Hero */}
       <section className="sd-hero">

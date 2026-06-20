@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle, faArrowRight, faRocket, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import SEO from '../../SEO';
+import Breadcrumbs from '../../Breadcrumbs';
 import Footer from '../../Footer';
 import './Industries.css';
 
@@ -179,13 +180,35 @@ const IndustryPage = () => {
 
   const otherIndustries = Object.entries(industryData).filter(([key]) => key !== industry);
 
+  const industrySchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": `Web Development for ${data.title.replace('Web Development for ', '')}`,
+    "description": data.description.substring(0, 300),
+    "provider": {
+      "@type": "Organization",
+      "name": "Orbitrix Solutions",
+      "url": "https://orbitrixsolutions.com"
+    },
+    "areaServed": [
+      { "@type": "Country", "name": "United States" },
+      { "@type": "Country", "name": "Canada" },
+      { "@type": "Country", "name": "United Kingdom" }
+    ],
+    "serviceType": "Industry-Specific Web Development",
+    "url": `https://orbitrixsolutions.com/industries/${industry}`
+  };
+
   return (
     <main id="main-content">
       <SEO
         title={`${data.title} | Orbitrix Solutions`}
         description={data.description.substring(0, 160)}
         keywords={`${data.title}, web development ${industry}, SEO ${industry}, Orbitrix Solutions ${industry}`}
+        schema={industrySchema}
       />
+
+      <Breadcrumbs />
 
       <section className="industry-hero">
         <div className="industry-hero-bg" aria-hidden="true">

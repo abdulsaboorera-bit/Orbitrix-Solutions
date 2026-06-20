@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRocket, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import SEO from '../../SEO';
+import Breadcrumbs from '../../Breadcrumbs';
 
 const industriesList = [
   {
@@ -45,6 +47,14 @@ const industriesList = [
 const Industries = () => {
   return (
     <div className="services-page">
+      <SEO
+        title="Industries We Serve | Orbitrix Solutions – Web Development for Every Industry"
+        description="Orbitrix Solutions serves startups, SaaS, e-commerce, healthcare, real estate, and small businesses with tailored web development, SEO, and digital marketing services."
+        keywords="web development for startups, SaaS web development, e-commerce web agency, healthcare web design, real estate website development, small business web agency"
+      />
+
+      <Breadcrumbs />
+
       <section className="services-hero">
         <div className="hero-bg" aria-hidden="true">
           <div className="orb orb-1"></div>

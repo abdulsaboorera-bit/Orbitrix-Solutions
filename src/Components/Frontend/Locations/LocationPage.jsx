@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle, faArrowRight, faGlobe, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import SEO from '../../SEO';
+import Breadcrumbs from '../../Breadcrumbs';
 import Footer from '../../Footer';
 import './Locations.css';
 
@@ -105,13 +106,34 @@ const LocationPage = () => {
 
   const otherLocations = Object.entries(locationData).filter(([key]) => key !== country);
 
+  const locationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": `Web Development Services in ${country.toUpperCase()}`,
+    "description": data.description.substring(0, 300),
+    "provider": {
+      "@type": "Organization",
+      "name": "Orbitrix Solutions",
+      "url": "https://orbitrixsolutions.com"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": country === 'usa' ? 'United States' : country.charAt(0).toUpperCase() + country.slice(1)
+    },
+    "serviceType": "Web Development, SEO, Digital Marketing",
+    "url": `https://orbitrixsolutions.com/locations/${country}`
+  };
+
   return (
     <main id="main-content">
       <SEO
         title={`${data.title} | Orbitrix Solutions`}
         description={data.description.substring(0, 160)}
         keywords={`web development ${country}, SEO agency ${country}, digital marketing ${country}, Orbitrix Solutions ${country}`}
+        schema={locationSchema}
       />
+
+      <Breadcrumbs />
 
       <section className="location-hero">
         <div className="location-hero-bg" aria-hidden="true">

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
@@ -13,7 +13,7 @@ const services = [
   { icon: faChartLine, label: 'SEO Services' },
 ];
 
-const Hero = () => {
+const Hero = memo(() => {
   const [wordIndex, setWordIndex] = useState(0);
   const [fadeState, setFadeState] = useState('fade-in');
   const [activeService, setActiveService] = useState(0);
@@ -119,6 +119,7 @@ const Hero = () => {
       </div>
     </section>
   );
-};
+});
 
+Hero.displayName = 'Hero';
 export default Hero;

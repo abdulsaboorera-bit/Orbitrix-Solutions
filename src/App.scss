@@ -479,11 +479,13 @@ body[data-theme='dark'] .site-nav {
   opacity: 0;
   transform: translateX(-40px);
   transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
 }
 
 .reveal-left.is-visible {
   opacity: 1;
   transform: translateX(0);
+  will-change: auto;
 }
 
 /* Slide in from right */
@@ -491,11 +493,13 @@ body[data-theme='dark'] .site-nav {
   opacity: 0;
   transform: translateX(40px);
   transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
 }
 
 .reveal-right.is-visible {
   opacity: 1;
   transform: translateX(0);
+  will-change: auto;
 }
 
 /* Scale up */
@@ -503,11 +507,13 @@ body[data-theme='dark'] .site-nav {
   opacity: 0;
   transform: scale(0.92);
   transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
 }
 
 .reveal-scale.is-visible {
   opacity: 1;
   transform: scale(1);
+  will-change: auto;
 }
 
 /* Fade up with subtle scale (default reveal enhanced) */
@@ -515,11 +521,13 @@ body[data-theme='dark'] .site-nav {
   opacity: 0;
   transform: translateY(24px) scale(0.98);
   transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
 }
 
 .reveal-blur.is-visible {
   opacity: 1;
   transform: translateY(0) scale(1);
+  will-change: auto;
 }
 
 /* Stagger children - add to parent, children animate sequentially */
@@ -548,11 +556,13 @@ body[data-theme='dark'] .site-nav {
   transform: scaleX(0);
   transform-origin: left center;
   transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
 }
 
 .reveal-draw.is-visible {
   opacity: 1;
   transform: scaleX(1);
+  will-change: auto;
 }
 
 /* Flip in */
@@ -560,11 +570,13 @@ body[data-theme='dark'] .site-nav {
   opacity: 0;
   transform: perspective(600px) rotateY(-8deg);
   transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
 }
 
 .reveal-flip.is-visible {
   opacity: 1;
   transform: perspective(600px) rotateY(0);
+  will-change: auto;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -1,16 +1,16 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import SEO from '../../SEO';
 import Hero from './Hero';
-import Services from './Services';
-import Pricing from './Pricing';
-import Process from './Process';
-import StatsCounter from './StatsCounter';
-import Testimonials from './Testimonials';
-import FAQ from './FAQ';
-import Cta from './Cta';
 import ClientLogos from './ClientLogos';
 import Footer from '../../Footer';
 import './index.css';
+
+const Services = lazy(() => import('./Services'));
+const Pricing = lazy(() => import('./Pricing'));
+const Process = lazy(() => import('./Process'));
+const StatsCounter = lazy(() => import('./StatsCounter'));
+const Testimonials = lazy(() => import('./Testimonials'));
+const FAQ = lazy(() => import('./FAQ'));
 
 const homeSchema = {
   "@context": "https://schema.org",
@@ -62,12 +62,14 @@ const index = () => {
       />
       <Hero />
       <ClientLogos />
-      <Services />
-      <Pricing />
-      <Process />
-      <StatsCounter />
-      <Testimonials />
-      <FAQ />
+      <Suspense fallback={null}>
+        <Services />
+        <Pricing />
+        <Process />
+        <StatsCounter />
+        <Testimonials />
+        <FAQ />
+      </Suspense>
       <Footer />
     </main>
   );

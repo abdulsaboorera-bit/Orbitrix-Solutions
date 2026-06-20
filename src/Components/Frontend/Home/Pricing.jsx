@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck, faArrowRight } from '@fortawesome/free-solid-svg-icons'
@@ -25,7 +25,7 @@ const plans = [
   },
 ]
 
-const Pricing = () => {
+const Pricing = memo(() => {
   return (
     <section className="home-section pricing-section reveal-blur" id="pricing">
       <div className="section-header reveal-blur">
@@ -71,6 +71,7 @@ const Pricing = () => {
       </div>
     </section>
   )
-}
+})
 
+Pricing.displayName = 'Pricing';
 export default Pricing

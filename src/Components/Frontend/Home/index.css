@@ -1,10 +1,4 @@
 /* Home styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 .reveal {
     opacity: 0;
     transform: translateY(30px);
@@ -15,6 +9,7 @@
 .reveal.is-visible {
     opacity: 1;
     transform: translateY(0);
+    will-change: auto;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -22,6 +17,7 @@
         opacity: 1;
         transform: none;
         transition: none;
+        will-change: auto;
     }
 }
 

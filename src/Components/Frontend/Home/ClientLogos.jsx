@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 const clients = [
   { name: 'Fonalize', url: 'https://fonalize.co.uk/' },
@@ -8,7 +8,7 @@ const clients = [
   { name: 'Imran Woodworking', url: 'https://imranwoodworking.com/' },
 ];
 
-const ClientLogos = () => {
+const ClientLogos = memo(() => {
   return (
     <section className="home-section client-logos-section reveal-blur">
       <div className="client-logos-header">
@@ -51,6 +51,7 @@ const ClientLogos = () => {
       </div>
     </section>
   );
-};
+});
 
+ClientLogos.displayName = 'ClientLogos';
 export default ClientLogos;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLightbulb, faPencilRuler, faCode, faRocket, faHeadset, faArrowDown } from '@fortawesome/free-solid-svg-icons';
 
@@ -60,7 +60,7 @@ const steps = [
   },
 ];
 
-const Process = () => {
+const Process = memo(() => {
   return (
     <section className="home-section process-section reveal-blur">
       <div className="section-header reveal-blur">
@@ -104,6 +104,7 @@ const Process = () => {
       </div>
     </section>
   );
-};
+});
 
+Process.displayName = 'Process';
 export default Process;
