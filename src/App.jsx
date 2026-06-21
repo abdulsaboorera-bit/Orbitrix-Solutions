@@ -27,9 +27,10 @@ const App = () => {
 
   const observeNewElements = useCallback(() => {
     if (!observerRef.current) return;
-    document.querySelectorAll('.reveal:not(.is-visible), .reveal-left:not(.is-visible), .reveal-right:not(.is-visible), .reveal-scale:not(.is-visible), .reveal-blur:not(.is-visible), .reveal-draw:not(.is-visible), .reveal-flip:not(.is-visible)').forEach((el) => {
-      observerRef.current.observe(el);
-    });
+    const pending = document.querySelectorAll('.reveal:not(.is-visible), .reveal-left:not(.is-visible), .reveal-right:not(.is-visible), .reveal-scale:not(.is-visible), .reveal-blur:not(.is-visible), .reveal-draw:not(.is-visible), .reveal-flip:not(.is-visible)');
+    for (let i = 0; i < pending.length; i++) {
+      observerRef.current.observe(pending[i]);
+    }
   }, []);
 
   useEffect(() => {
@@ -51,7 +52,13 @@ const App = () => {
 
     observeNewElements();
 
-    domObserverRef.current = new MutationObserver(observeNewElements);
+    domObserverRef.current = new MutationObserver(() => {
+      if (domObserverRef._timer) return;
+      domObserverRef._timer = requestAnimationFrame(() => {
+        domObserverRef._timer = null;
+        observeNewElements();
+      });
+    });
     domObserverRef.current.observe(document.body, { childList: true, subtree: true });
 
     return () => {

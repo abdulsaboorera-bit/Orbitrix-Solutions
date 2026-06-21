@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- Favicons -->
-    <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png" />
-    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180x180.png" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="theme-color" content="#1a8187" />
@@ -24,9 +24,12 @@
     <link rel="preconnect" href="https://maps.googleapis.com" />
     <link rel="preconnect" href="https://maps.gstatic.com" crossorigin />
 
-    <!-- Critical fonts: Outfit+Playfair Display+Source Sans 3 only (Poppins removed - unused) -->
+    <!-- Critical fonts: non-render-blocking with swap fallback -->
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" media="print" onload="this.media='all'" />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" />
+    </noscript>
 
     <!-- SEO Meta -->
     <title>Orbitrix Solutions | Web Dev, SEO & AI Agency</title>
@@ -41,9 +44,10 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Orbitrix Solutions | Web Dev, SEO & AI Agency" />
     <meta property="og:description" content="Orbitrix Solutions: a web development &amp; digital marketing agency offering SEO, AI automation, and custom web development to accelerate your business growth." />
-    <meta property="og:image" content="https://orbitrixsolutions.com/logo.png" />
+    <meta property="og:image" content="https://orbitrixsolutions.com/logo-optimized.webp" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/webp" />
     <meta property="og:url" content="https://orbitrixsolutions.com/" />
     <meta property="og:site_name" content="Orbitrix Solutions" />
     <meta property="og:locale" content="en_US" />
@@ -54,7 +58,7 @@
     <meta name="twitter:creator" content="@abdulsaboor" />
     <meta name="twitter:title" content="Orbitrix Solutions | Web Dev, SEO & AI Agency" />
     <meta name="twitter:description" content="Orbitrix Solutions: a web development &amp; digital marketing agency offering SEO, AI automation, and custom web development to accelerate your business growth." />
-    <meta name="twitter:image" content="https://orbitrixsolutions.com/logo.png" />
+    <meta name="twitter:image" content="https://orbitrixsolutions.com/logo-optimized.webp" />
 
     <!-- Google Tag Manager (deferred) -->
     <script>

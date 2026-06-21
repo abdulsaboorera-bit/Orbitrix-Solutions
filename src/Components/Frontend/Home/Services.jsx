@@ -82,7 +82,7 @@ const Services = () => {
   };
 
   return (
-    <section id="services" className="services-section reveal">
+    <section id="services" className="home-section services-section reveal">
       <div className="services-header reveal-blur">
         <h2>Our Digital Services</h2>
         <p>
