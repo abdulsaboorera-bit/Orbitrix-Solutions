@@ -25,7 +25,6 @@
     <link rel="preconnect" href="https://maps.gstatic.com" crossorigin />
 
     <!-- Critical fonts: non-render-blocking with swap fallback -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" media="print" onload="this.media='all'" />
     <noscript>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" />
@@ -60,7 +59,8 @@
     <meta name="twitter:description" content="Orbitrix Solutions: a web development &amp; digital marketing agency offering SEO, AI automation, and custom web development to accelerate your business growth." />
     <meta name="twitter:image" content="https://orbitrixsolutions.com/logo-optimized.webp" />
 
-    <!-- Google Tag Manager (deferred) -->
+    <!-- Google Tag Manager (deferred - uncomment with real ID when ready) -->
+    <!--
     <script>
       window.addEventListener('load', function() {
         var s = document.createElement('script');
@@ -73,6 +73,7 @@
         gtag('config', 'G-XXXXXXXXXX');
       });
     </script>
+    -->
 
     <!-- Schema.org structured data -->
     <script type="application/ld+json">
@@ -147,7 +148,70 @@
     </script>
   </head>
   <body>
-    <div id="root"></div>
+    <!-- Critical inline CSS for above-the-fold content (eliminates render-blocking) -->
+    <style>
+      *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+      html,body,#root{height:100%}
+      body{font-family:"Source Sans 3","Segoe UI",sans-serif;color:#0f2f2d;background:radial-gradient(1200px 600px at 10% -10%,rgba(26,129,135,.18),transparent 65%),radial-gradient(900px 500px at 90% 0%,rgba(24,72,50,.18),transparent 60%),#fdfaf3;overflow-x:clip}
+      h1,h2,h3,h4,h5,h6{font-family:"Playfair Display","Times New Roman",serif;color:#184832;letter-spacing:.02em}
+      a{color:inherit;text-decoration:none}
+      .hero-v2-section{padding:60px 5% 40px;background:linear-gradient(165deg,rgba(26,129,135,.06) 0%,rgba(253,250,243,.95) 40%,rgba(99,198,184,.08) 100%);min-height:80vh;display:flex;align-items:center;justify-content:center;position:relative}
+      .hero-v2-container{max-width:900px;margin:0 auto;text-align:center}
+      .hero-top-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(26,129,135,.08);border:1px solid rgba(26,129,135,.15);border-radius:999px;padding:8px 20px;font-size:.85rem;font-weight:600;color:#0b5c61;letter-spacing:.06em;text-transform:uppercase;margin-bottom:32px}
+      .badge-dot{width:8px;height:8px;border-radius:50%;background:#1a8187}
+      .hero-v2-heading{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,6vw,5rem);font-weight:700;line-height:1.05;color:#184832;margin-bottom:28px}
+      .hero-line{display:block}
+      .hero-ampersand{color:#1a8187;font-style:italic}
+      .hero-v2-description{font-size:clamp(1rem,1.5vw,1.2rem);color:rgba(15,47,45,.82);line-height:1.8;max-width:720px;margin:0 auto 36px}
+      .hero-service-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:40px}
+      .hero-service-pill{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:999px;border:1px solid rgba(26,129,135,.15);background:rgba(255,255,255,.85);font-size:.9rem;font-weight:600;color:rgba(15,47,45,.78)}
+      .hero-v2-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:16px}
+      .hero-btn{display:inline-flex;align-items:center;gap:10px;padding:16px 28px;border-radius:999px;font-size:1rem;font-weight:700;letter-spacing:.02em}
+      .hero-btn-primary{background:linear-gradient(135deg,#1aa356,#128c44);color:#fff;box-shadow:0 8px 24px rgba(26,163,86,.3)}
+      .hero-btn-secondary{background:rgba(26,129,135,.08);color:#0b5c61;border:1px solid rgba(26,129,135,.2)}
+      .site-nav{background-color:#fdfaf3;border-bottom:1px solid rgba(15,47,45,.08);padding:8px 0}
+      .site-nav .navbar-brand img{max-width:220px;height:auto;max-height:56px}
+      .site-nav .nav-link{font-size:1.05rem;font-weight:600;color:#184832}
+      .nav-btns .btn{color:#fff;padding:8px 16px;font-weight:600;border-radius:999px}
+      .nav-cta-primary{background:linear-gradient(135deg,#1a8187,#0b5c61)!important;border:2px solid #1a8187!important}
+      .nav-cta-whatsapp{background:#25D366!important;border:2px solid #25D366!important;display:inline-flex;align-items:center;gap:6px}
+      .spinner{width:32px;height:32px;border:3px solid rgba(26,129,135,.2);border-top-color:#1a8187;border-radius:50%;animation:spin .6s linear infinite;margin:20vh auto}
+      @keyframes spin{to{transform:rotate(360deg)}}
+    </style>
+
+    <div id="root">
+      <!-- Static skeleton rendered immediately for FCP/LCP, React replaces on mount -->
+      <div class="hero-skeleton">
+        <header class="site-nav" style="position:sticky;top:0;z-index:1050">
+          <nav style="display:flex;align-items:center;justify-content:space-between;padding:8px 5%;max-width:1400px;margin:0 auto">
+            <img src="/logo-nav.webp" alt="Orbitrix Solutions" width="220" height="56" style="max-height:56px" />
+          </nav>
+        </header>
+        <section class="hero-v2-section">
+          <div class="hero-v2-container">
+            <div class="hero-top-badge"><span class="badge-dot"></span> Full-Service Digital Agency</div>
+            <h1 class="hero-v2-heading">
+              <span class="hero-line">We Build</span>
+              <span class="hero-line">Websites <span class="hero-ampersand">&amp;</span> Brands</span>
+              <span class="hero-line">That <span style="color:#1a8187;font-weight:700">visions</span></span>
+            </h1>
+            <p class="hero-v2-description">Orbitrix Solutions is a full-service digital marketing company and web development agency helping businesses scale with professional SEO services, AI automation, custom web development, and data-driven digital marketing strategies.</p>
+            <div class="hero-service-pills">
+              <div class="hero-service-pill"><span>Web Development</span></div>
+              <div class="hero-service-pill"><span>Digital Marketing</span></div>
+              <div class="hero-service-pill"><span>AI Automation</span></div>
+              <div class="hero-service-pill"><span>SEO Services</span></div>
+            </div>
+            <div class="hero-v2-actions">
+              <a class="hero-btn hero-btn-primary" href="https://wa.me/qr/7GSRQFMD6AMZG1" target="_blank" rel="noreferrer">Get a Free Quote</a>
+              <a class="hero-btn hero-btn-secondary" href="/contact">Book a Consultation</a>
+            </div>
+          </div>
+        </section>
+        <div style="text-align:center;padding:40px"><div class="spinner"></div></div>
+      </div>
+    </div>
+
     <noscript>
       <nav>
         <a href="/">Home</a>
