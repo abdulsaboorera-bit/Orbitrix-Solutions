@@ -46,7 +46,7 @@ const faqData = [
   {
     question: 'Can you help with both website development and marketing?',
     answer:
-      'Yes, we are a full-service digital agency. We handle everything from web development (WordPress and React) to SEO, digital marketing, social media marketing, AI advertising, and automation. This integrated approach ensures all your digital efforts work together coherently.',
+      'Yes, we are a full-service digital agency. We handle everything from web development (WordPress and React) to SEO, digital marketing, social media account management, AI advertising, and automation. This integrated approach ensures all your digital efforts work together coherently.',
   },
   {
     question: 'Do you offer post-launch support and maintenance?',

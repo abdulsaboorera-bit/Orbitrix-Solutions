@@ -1,14 +1,10 @@
-import React, { useState, useRef } from 'react'
+import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSpinner, faCheckCircle, faExclamationCircle, faPaperPlane } from '@fortawesome/free-solid-svg-icons'
-import emailjs from '@emailjs/browser'
 
-const SERVICE_ID  = "service_XXXXXXX"
-const TEMPLATE_ID = "template_XXXXXXX"
-const PUBLIC_KEY  = "YOUR_PUBLIC_KEY"
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xpqgpzdq"
 
 const ContactForm = () => {
-  const formRef = useRef(null)
   const [form, setForm] = useState({ from_name: '', from_email: '', phone: '', service: '', message: '' })
   const [errors, setErrors] = useState({})
   const [status, setStatus] = useState('idle')
@@ -38,13 +34,29 @@ const ContactForm = () => {
     setErrorMsg('')
 
     try {
-      await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, PUBLIC_KEY)
-      setStatus('success')
-      setForm({ from_name: '', from_email: '', phone: '', service: '', message: '' })
-      setErrors({})
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: form.from_name,
+          email: form.from_email,
+          phone: form.phone,
+          service: form.service,
+          message: form.message,
+        }),
+      })
+
+      if (response.ok) {
+        setStatus('success')
+        setForm({ from_name: '', from_email: '', phone: '', service: '', message: '' })
+        setErrors({})
+      } else {
+        const data = await response.json()
+        throw new Error(data.error || 'Something went wrong. Please try again later.')
+      }
     } catch (err) {
       setStatus('error')
-      setErrorMsg(err?.text || 'Something went wrong. Please try again later.')
+      setErrorMsg(err?.message || 'Something went wrong. Please try again later.')
     }
   }
 
@@ -64,7 +76,7 @@ const ContactForm = () => {
         </p>
       </div>
 
-      <form ref={formRef} onSubmit={handleSubmit} noValidate className="cf-form">
+      <form onSubmit={handleSubmit} noValidate className="cf-form">
         <div className="cf-row">
           <div className="cf-field">
             <label htmlFor="cf-name">Full Name *</label>
@@ -123,7 +135,7 @@ const ContactForm = () => {
               <option value="seo">SEO Services</option>
               <option value="ai-automation">AI Automation</option>
               <option value="digital-marketing">Digital Marketing</option>
-              <option value="social-media">Social Media Marketing</option>
+              <option value="social-media">Social Media Account Management</option>
               <option value="other">Other</option>
             </select>
           </div>

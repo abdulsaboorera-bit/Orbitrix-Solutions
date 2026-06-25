@@ -229,20 +229,20 @@ const servicesData = [
     ],
     relatedLinks: [
       { label: 'SEO Services', slug: '/services/seo-services' },
-      { label: 'Social Media Marketing', slug: '/services/social-media-marketing' },
+      { label: 'Social Media Account Management', slug: '/services/social-media-account-management' },
     ],
   },
   {
-    id: 'social-media-marketing',
+    id: 'social-media-account-management',
     num: '06',
-    title: 'Social Media Marketing',
+    title: 'Social Media Account Management',
     icon: faShareAlt,
-    slug: '/services/social-media-marketing',
+    slug: '/services/social-media-account-management',
     summary:
       'Strategic social media management including content calendars, community engagement, paid social campaigns, influencer outreach, and growth analytics across all major platforms.',
     subtitle: 'Strategic Social Media Management That Builds Communities',
     description:
-      'Our social media marketing services help businesses build engaged communities, increase brand awareness, and drive traffic across Instagram, LinkedIn, Facebook, TikTok, X (Twitter), and other platforms. We create platform-specific content strategies, manage communities, and run paid social campaigns that deliver measurable growth.',
+      'Our social media account management services help businesses build engaged communities, increase brand awareness, and drive traffic across Instagram, LinkedIn, Facebook, TikTok, X (Twitter), and other platforms. We create platform-specific content strategies, manage communities, and run paid social campaigns that deliver measurable growth.',
     benefits: [
       'Platform-specific content strategy and calendar planning',
       'Community management and engagement optimization',
@@ -260,7 +260,7 @@ const servicesData = [
       'Lack of strategy for different social media platforms',
     ],
     internationalValue:
-      'For businesses targeting customers in the USA, Canada, UK, Germany, and Europe, our social media marketing services include market-specific content strategies that account for cultural differences, platform preferences, and local engagement patterns.',
+      'For businesses targeting customers in the USA, Canada, UK, Germany, and Europe, our social media account management services include market-specific content strategies that account for cultural differences, platform preferences, and local engagement patterns.',
     features: [
       { icon: faUsers, label: 'Community Building' },
       { icon: faPaintBrush, label: 'Content Creation' },

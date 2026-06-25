@@ -208,7 +208,7 @@ const serviceDetails = [
       'For businesses operating across the USA, Canada, UK, Germany, and the Netherlands, our digital marketing services create cohesive campaigns that resonate with local audiences while maintaining global brand consistency. We help businesses adapt their messaging for different markets.',
     relatedLinks: [
       { label: 'SEO Services', href: '#service-seo-services' },
-      { label: 'Social Media Marketing', href: '#service-social-media-marketing' },
+      { label: 'Social Media Account Management', href: '#service-social-media-account-management' },
     ],
     features: [
       { icon: faBullseye, label: 'Full Funnel' },
@@ -218,12 +218,12 @@ const serviceDetails = [
     ],
   },
   {
-    id: 'social-media-marketing',
-    title: 'Social Media Marketing',
+    id: 'social-media-account-management',
+    title: 'Social Media Account Management',
     subtitle: 'Strategic Social Media Management That Builds Communities',
     icon: faShareAlt,
     description:
-      'Our social media marketing services help businesses build engaged communities, increase brand awareness, and drive traffic across Instagram, LinkedIn, Facebook, TikTok, X (Twitter), and other platforms. We create platform-specific content strategies, manage communities, and run paid social campaigns that deliver measurable growth.',
+      'Our social media account management services help businesses build engaged communities, increase brand awareness, and drive traffic across Instagram, LinkedIn, Facebook, TikTok, X (Twitter), and other platforms. We create platform-specific content strategies, manage communities, and run paid social campaigns that deliver measurable growth.',
     benefits: [
       'Platform-specific content strategy and calendar planning',
       'Community management and engagement optimization',
@@ -241,7 +241,7 @@ const serviceDetails = [
       'Lack of strategy for different social media platforms',
     ],
     internationalValue:
-      'For businesses targeting customers in the USA, Canada, UK, Germany, and Europe, our social media marketing services include market-specific content strategies that account for cultural differences, platform preferences, and local engagement patterns.',
+      'For businesses targeting customers in the USA, Canada, UK, Germany, and Europe, our social media account management services include market-specific content strategies that account for cultural differences, platform preferences, and local engagement patterns.',
     relatedLinks: [
       { label: 'Digital Marketing', href: '#service-digital-marketing' },
       { label: 'AI Ads & Marketing', href: '#service-ai-ads-marketing' },
