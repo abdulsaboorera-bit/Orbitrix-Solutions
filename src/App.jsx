@@ -7,6 +7,7 @@ import { useLocation } from 'react-router-dom';
 import Navbar from './Components/Header/Navbar';
 import Routes from './Components/Routes';
 import ScrollToTop from './Components/ScrollToTop';
+import ErrorBoundary from './Components/ErrorBoundary';
 
 const WhatsAppWidget = lazy(() => import('./Components/WhatsAppWidget'));
 
@@ -92,7 +93,7 @@ const App = () => {
   }, [location.pathname, location.search, observeNewElements]);
 
   return (
-  
+  <ErrorBoundary>
   <>
   <ScrollToTop />
   <Navbar />
@@ -101,8 +102,8 @@ const App = () => {
   <Suspense fallback={null}>
     <WhatsAppWidget />
   </Suspense>
-
   </>
+  </ErrorBoundary>
   )
 }
 

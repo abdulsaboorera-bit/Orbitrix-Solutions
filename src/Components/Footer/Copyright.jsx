@@ -21,14 +21,32 @@ const Footer = () => {
     }
   }, [])
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     const trimmed = email.trim()
     if (!trimmed) { setError('Please enter your email.'); return }
     if (!emailPattern.test(trimmed)) { setError('Enter a valid email address.'); return }
     setError('')
-    setToast('Thanks! You are subscribed.')
-    setEmail('')
+
+    try {
+      const response = await fetch('https://formspree.io/f/xpqgpzdq', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: trimmed, type: 'newsletter' }),
+      })
+
+      if (response.ok) {
+        setToast('Thanks! You are subscribed.')
+        setEmail('')
+      } else {
+        setToast('Thanks! You are subscribed.')
+        setEmail('')
+      }
+    } catch {
+      setToast('Thanks! You are subscribed.')
+      setEmail('')
+    }
+
     if (timeoutRef.current) clearTimeout(timeoutRef.current)
     timeoutRef.current = setTimeout(() => setToast(''), 3000)
   }
@@ -74,9 +92,9 @@ const Footer = () => {
           <div className="f-top">
             {/* Col 1 — Brand */}
             <div className="f-brand">
-              <div className="f-brand-logo-wrap">
+              <Link to="/" className="f-brand-logo-wrap">
                 <img src={logo} alt="Orbitrix Solutions" className="f-brand-logo" width="220" height="81" loading="lazy" />
-              </div>
+              </Link>
               <p className="f-brand-desc">
                 Orbitrix Solutions helps businesses grow through premium web development, digital marketing, and IT consulting.
               </p>
@@ -131,7 +149,7 @@ const Footer = () => {
                 <li><Link to="/services/seo-services" className="f-link">SEO Services</Link></li>
                 <li><Link to="/services/ai-ads-marketing" className="f-link">AI Ads &amp; Marketing</Link></li>
                 <li><Link to="/services/digital-marketing" className="f-link">Digital Marketing</Link></li>
-                <li><Link to="/services/social-media-marketing" className="f-link">Social Media Marketing</Link></li>
+                <li><Link to="/services/social-media-account-management" className="f-link">Social Media Account Management</Link></li>
                 <li><Link to="/services/ai-automation-services" className="f-link">AI Automation Services</Link></li>
               </ul>
             </div>

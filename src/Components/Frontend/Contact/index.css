@@ -483,3 +483,106 @@
   from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* ── Testimonials ── */
+.contact-testimonials {
+  padding: 60px 6%;
+  text-align: center;
+}
+
+.contact-testimonials-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.contact-testimonials-container h2 {
+  margin-top: 12px;
+}
+
+.contact-testimonials-sub {
+  color: var(--orbit-muted-strong);
+  font-size: 1.05rem;
+  max-width: 560px;
+  margin: 8px auto 32px;
+}
+
+.contact-testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.contact-testimonial-card {
+  background: var(--orbit-white);
+  border-radius: 20px;
+  padding: 28px 24px;
+  border: 1px solid rgba(26, 129, 135, 0.1);
+  box-shadow: 0 12px 32px rgba(11, 92, 97, 0.08);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(11, 92, 97, 0.14);
+}
+
+.contact-testimonial-stars {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 16px;
+}
+
+.contact-testimonial-stars .star-icon {
+  color: #f59e0b;
+  font-size: 0.85rem;
+}
+
+.contact-testimonial-quote {
+  color: var(--orbit-muted-strong);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin: 0 0 20px;
+  font-style: italic;
+}
+
+.contact-testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.contact-testimonial-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--orbit-teal), var(--orbit-teal-strong));
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.contact-testimonial-author strong {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--orbit-deep);
+}
+
+.contact-testimonial-author span {
+  font-size: 0.8rem;
+  color: var(--orbit-muted);
+}
+
+@media (max-width: 768px) {
+  .contact-testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .contact-testimonials {
+    padding: 40px 5%;
+  }
+}

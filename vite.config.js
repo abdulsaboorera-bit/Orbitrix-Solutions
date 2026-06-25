@@ -31,9 +31,6 @@ export default defineConfig({
             if (id.includes('bootstrap')) {
               return 'bootstrap';
             }
-            if (id.includes('@emailjs')) {
-              return 'emailjs';
-            }
           }
         },
         entryFileNames: 'assets/[name]-[hash].js',

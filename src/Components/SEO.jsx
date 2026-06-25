@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-const SEO = ({ title, description, canonicalUrl, keywords, schema, type = 'website', dateModified, articlePublishedTime, articleSection }) => {
+const SEO = ({ title, description, canonicalUrl, keywords, schema, type = 'website', dateModified, articlePublishedTime, articleSection, image }) => {
   const location = useLocation();
+  const ogImage = image || 'https://orbitrixsolutions.com/logo-optimized.webp';
 
   useEffect(() => {
     // 1. Update Document Title
@@ -48,6 +49,12 @@ const SEO = ({ title, description, canonicalUrl, keywords, schema, type = 'websi
     // Update OG Url tag
     let ogUrl = document.querySelector('meta[property="og:url"]');
     if (ogUrl) ogUrl.setAttribute('content', canonical);
+
+    // Update OG and Twitter image tags
+    let ogImageTag = document.querySelector('meta[property="og:image"]');
+    if (ogImageTag) ogImageTag.setAttribute('content', ogImage);
+    let twitterImageTag = document.querySelector('meta[name="twitter:image"]');
+    if (twitterImageTag) twitterImageTag.setAttribute('content', ogImage);
 
     // 5. Update Keywords
     if (keywords) {

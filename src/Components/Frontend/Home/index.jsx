@@ -3,6 +3,7 @@ import SEO from '../../SEO';
 import Hero from './Hero';
 import ClientLogos from './ClientLogos';
 import Footer from '../../Footer';
+import Breadcrumbs from '../../Breadcrumbs';
 import './index.css';
 
 const Services = lazy(() => import('./Services'));
@@ -60,6 +61,7 @@ const index = () => {
         keywords="web development agency, digital marketing company, SEO services, AI automation, custom web development, React development, WordPress development"
         schema={homeSchema}
       />
+      <Breadcrumbs />
       <Hero />
       <ClientLogos />
       <Suspense fallback={null}>

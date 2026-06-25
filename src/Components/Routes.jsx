@@ -1,6 +1,5 @@
 import React, { Suspense, lazy } from 'react';
 import { Routes as RouterRoutes, Route } from 'react-router-dom';
-import ErrorBoundary from './ErrorBoundary';
 
 const Frontend = lazy(() => import('./Frontend'));
 const About = lazy(() => import('./Frontend/About'));
@@ -25,7 +24,6 @@ const PageLoader = () => (
 
 const AppRoutes = () => {
   return (
-    <ErrorBoundary>
       <Suspense fallback={<PageLoader />}>
         <RouterRoutes>
           <Route path="/" element={<Frontend />} />
@@ -44,7 +42,6 @@ const AppRoutes = () => {
           <Route path="*" element={<NotFound />} />
         </RouterRoutes>
       </Suspense>
-    </ErrorBoundary>
   );
 };
 

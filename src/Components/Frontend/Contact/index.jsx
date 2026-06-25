@@ -1,13 +1,35 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHouse, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faHouse, faPhone, faEnvelope, faStar } from '@fortawesome/free-solid-svg-icons'
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import SEO from '../../SEO'
 import ContactForm from './ContactForm'
 import FAQ from './FAQ'
 import Footer from '../../Footer'
+import Breadcrumbs from '../../Breadcrumbs'
 import './index.css'
+
+const testimonials = [
+  {
+    name: 'Ayesha Khan',
+    role: 'Founder, Bloom Studio',
+    quote: 'Orbitrix delivered a brand refresh and site rebuild that doubled our inbound leads in six weeks. Communication was sharp and proactive.',
+    rating: 5,
+  },
+  {
+    name: 'Hassan Raza',
+    role: 'Marketing Lead, Nova Logistics',
+    quote: 'The new SEO plan and landing pages improved our organic traffic and conversion rate almost immediately. The team moves fast and stays aligned.',
+    rating: 5,
+  },
+  {
+    name: 'Sara Malik',
+    role: 'COO, CarePulse',
+    quote: 'We needed a reliable partner for a tight deadline. Orbitrix shipped a clean, performant experience that impressed our stakeholders.',
+    rating: 5,
+  },
+]
 
 const contactSchema = {
   "@context": "https://schema.org",
@@ -73,6 +95,8 @@ const Index = () => {
         keywords="contact Orbitrix Solutions, free quote web development, SEO agency contact, digital marketing consultation, book a call"
         schema={contactSchema}
       />
+
+      <Breadcrumbs />
 
       {/* Hero */}
       <section className="contact-hero">
@@ -170,6 +194,36 @@ const Index = () => {
           <Link to="/about" className="contact-explore-btn">About Us</Link>
           <Link to="/projects" className="contact-explore-btn outline">Our Projects</Link>
           <Link to="/blog" className="contact-explore-btn outline">Blog</Link>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="contact-testimonials reveal-blur">
+        <div className="contact-testimonials-container">
+          <span className="about-label">TESTIMONIALS</span>
+          <h2>What Our Clients Say</h2>
+          <p className="contact-testimonials-sub">
+            Don't just take our word for it — hear directly from businesses growing with our services.
+          </p>
+          <div className="contact-testimonials-grid stagger-children">
+            {testimonials.map((t) => (
+              <div className="contact-testimonial-card reveal-scale" key={t.name}>
+                <div className="contact-testimonial-stars">
+                  {[...Array(t.rating)].map((_, i) => (
+                    <FontAwesomeIcon icon={faStar} key={i} className="star-icon" />
+                  ))}
+                </div>
+                <blockquote className="contact-testimonial-quote">"{t.quote}"</blockquote>
+                <div className="contact-testimonial-author">
+                  <div className="contact-testimonial-avatar">{t.name.charAt(0)}</div>
+                  <div>
+                    <strong>{t.name}</strong>
+                    <span>{t.role}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

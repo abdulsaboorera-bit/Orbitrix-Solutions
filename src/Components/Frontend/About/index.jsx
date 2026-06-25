@@ -1,10 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons'
+import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
 import SEO from '../../SEO'
 import Hero from './Hero'
 import Footer from '../../Footer'
+import Breadcrumbs from '../../Breadcrumbs'
 import './index.css'
 
 const teamMembers = [
@@ -70,6 +71,7 @@ const Index = () => {
         keywords="about Orbitrix Solutions, web development agency, digital marketing company, SEO services, AI automation"
         schema={aboutSchema}
       />
+      <Breadcrumbs />
       <Hero />
 
       {/* Values Section */}
@@ -118,7 +120,7 @@ const Index = () => {
                   )}
                   {member.github && (
                     <a href={member.github} target="_blank" rel="noopener noreferrer" aria-label={`${member.name} GitHub`}>
-                      <FontAwesomeIcon icon={faInstagram} />
+                      <FontAwesomeIcon icon={faGithub} />
                     </a>
                   )}
                 </div>

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faCalendarAlt, faClock, faArrowRight } from '@fortawesome/free-solid-svg-icons';
@@ -13,10 +13,6 @@ const BlogArticle = () => {
   const post = blogPosts.find((p) => p.slug === slug);
   const currentIndex = blogPosts.findIndex((p) => p.slug === slug);
   const nextPost = blogPosts[currentIndex + 1] || null;
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [slug]);
 
   if (!post) {
     return (
@@ -43,19 +39,20 @@ const BlogArticle = () => {
     "@type": "Article",
     "headline": post.title,
     "description": post.excerpt,
+    "image": post.image || "https://orbitrixsolutions.com/logo-optimized.webp",
     "datePublished": post.date,
     "dateModified": post.date,
     "author": {
-      "@type": "Organization",
-      "name": "Orbitrix Solutions",
-      "url": "https://orbitrixsolutions.com"
+      "@type": "Person",
+      "name": "Abdul Saboor",
+      "url": "https://orbitrixsolutions.com/about"
     },
     "publisher": {
       "@type": "Organization",
       "name": "Orbitrix Solutions",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://orbitrixsolutions.com/logo.png"
+        "url": "https://orbitrixsolutions.com/logo-optimized.webp"
       }
     },
     "mainEntityOfPage": {
