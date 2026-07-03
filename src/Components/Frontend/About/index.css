@@ -212,6 +212,13 @@
   color: var(--orbit-muted);
 }
 
+.about-ceo-role {
+  display: block;
+  color: var(--orbit-teal-strong);
+  font-weight: 600;
+  margin: 8px 0 16px;
+}
+
 .about-ceo-highlights {
   display: flex;
   flex-wrap: wrap;

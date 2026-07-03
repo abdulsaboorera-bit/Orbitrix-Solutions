@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import meeting from '../../../Images/meeting.webp'
-import ceoPic from '../../../Images/ceo pic.webp'
+import ceoPic from '../../../Images/AbdulSaboor.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHandshakeAngle, faBrain, faAward } from '@fortawesome/free-solid-svg-icons'
 
@@ -30,35 +30,28 @@ const Services = () => {
 
       <div className="about-ceo reveal-left">
         <div className="about-ceo-image">
-          <img src={ceoPic} alt="Abdul Saboor - Orbitrix Solutions Founder and CEO" width="910" height="886" loading="lazy" decoding="async" />
+          <img src={ceoPic} alt="Abdul Saboor - Founder and CEO of Orbitrix Solutions" width="711" height="648" loading="lazy" decoding="async" />
         </div>
         <div className="about-ceo-content reveal-right">
-          <h2>CEO Story</h2>
+          <span className="about-label">MEET OUR CEO</span>
+          <h2>Abdul Saboor</h2>
+          <span className="about-ceo-role">Founder &amp; CEO, Orbitrix Solutions</span>
           <p>
-            I started my journey with a passion for technology, creativity, and solving real business problems through
-            digital solutions. What began as an interest in web development and AI quickly turned into a mission to help
-            businesses grow with modern technology.
-          </p>
-          <p>
-            Today, I focus on building high-performing websites, AI-powered systems, and digital marketing strategies that
-            help brands stand out online. From WordPress and React development to SEO, AI ads, and social media growth, my
-            goal is to create solutions that are fast, scalable, and results-driven.
-          </p>
-          <p>
-            I believe technology should not only look impressive - it should deliver real impact. That mindset continues
-            to drive every project, partnership, and idea behind the company.
+            Full Stack Software Engineer, AI Solutions Developer, and technology entrepreneur leading Orbitrix Solutions in
+            delivering high-quality web applications, AI-powered automation, and scalable software solutions for clients
+            worldwide.
           </p>
           <div className="about-ceo-highlights">
-            <span>Product + marketing mindset</span>
-            <span>Performance-first delivery</span>
-            <span>AI-assisted growth systems</span>
+            <span>Full Stack Engineering</span>
+            <span>AI-Powered Automation</span>
+            <span>SEO &amp; Growth Strategy</span>
           </div>
           <div style={{ marginTop: '20px', display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-            <Link to="/projects" style={{ padding: '10px 20px', borderRadius: '8px', background: 'var(--orbit-teal)', color: '#fff', textDecoration: 'none', fontWeight: 600, fontSize: '0.9rem' }}>
-              See Our Work
-            </Link>
-            <Link to="/contact" style={{ padding: '10px 20px', borderRadius: '8px', border: '2px solid var(--orbit-teal)', color: 'var(--orbit-teal)', textDecoration: 'none', fontWeight: 600, fontSize: '0.9rem' }}>
-              Get in Touch
+            <Link
+              to="/about/ceo"
+              style={{ padding: '10px 20px', borderRadius: '8px', background: 'var(--orbit-teal)', color: '#fff', textDecoration: 'none', fontWeight: 600, fontSize: '0.9rem', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
+            >
+              Meet Our CEO →
             </Link>
           </div>
         </div>

@@ -6,6 +6,7 @@ import { faChevronRight, faHome } from '@fortawesome/free-solid-svg-icons';
 const routeLabels = {
   '/': 'Home',
   '/about': 'About Us',
+  '/about/ceo': 'Meet Our CEO',
   '/services': 'Services',
   '/projects': 'Projects',
   '/blog': 'Blog',

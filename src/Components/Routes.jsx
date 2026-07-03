@@ -3,6 +3,7 @@ import { Routes as RouterRoutes, Route } from 'react-router-dom';
 
 const Frontend = lazy(() => import('./Frontend'));
 const About = lazy(() => import('./Frontend/About'));
+const Ceo = lazy(() => import('./Frontend/About/Ceo'));
 const Services = lazy(() => import('./Frontend/Services'));
 const ServiceDetail = lazy(() => import('./Frontend/Services/ServiceDetail'));
 const Contact = lazy(() => import('./Frontend/Contact'));
@@ -28,6 +29,7 @@ const AppRoutes = () => {
         <RouterRoutes>
           <Route path="/" element={<Frontend />} />
           <Route path="/about" element={<About />} />
+          <Route path="/about/ceo" element={<Ceo />} />
           <Route path="/services" element={<Services />} />
           <Route path="/services/:slug" element={<ServiceDetail />} />
           <Route path="/projects" element={<Projects />} />
