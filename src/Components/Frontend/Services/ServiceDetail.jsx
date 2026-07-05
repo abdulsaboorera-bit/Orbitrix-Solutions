@@ -13,6 +13,7 @@ import servicesData from './servicesData';
 import Cta from './Cta';
 import Footer from '../../Footer';
 import './ServiceDetail.css';
+import './index.css';
 
 const ServiceDetail = () => {
   const { slug } = useParams();
