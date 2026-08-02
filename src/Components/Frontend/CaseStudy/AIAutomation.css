@@ -1145,7 +1145,28 @@
 
 @media (max-width: 480px) {
   .ai-agent-header-text h2 { font-size: 1.1rem; }
-  .ai-c { display: none; }
+  .ai-c {
+    display: flex;
+    width: 3px;
+    height: 18px;
+    flex-shrink: 0;
+    margin: 0 auto;
+  }
+  .ai-c span {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--orbit-teal);
+    opacity: 0;
+    left: -0.5px;
+  }
+  .ai-c.on span:nth-child(1) { animation: ai-dot-fly-v .9s ease-in-out 0s infinite; }
+  .ai-c.on span:nth-child(2) { animation: ai-dot-fly-v .9s ease-in-out .3s infinite; }
+  .ai-c.on span:nth-child(3) { animation: ai-dot-fly-v .9s ease-in-out .6s infinite; }
+  .ai-c:nth-child(6),
+  .ai-c:nth-child(4),
+  .ai-c:nth-child(8) { display: none; }
   .ai-n { width: 100%; max-width: 240px; }
   .ai-n__icon { width: 56px; height: 56px; font-size: 1.2rem; }
   .ai-r--1 { width: 74px; height: 74px; }
@@ -1159,4 +1180,11 @@
   .ai-platforms__sub { font-size: .78rem; }
   .ai-plat__card { padding: 16px 14px; }
   .ai-plat__icon { width: 42px; height: 42px; font-size: 1rem; }
+}
+
+@keyframes ai-dot-fly-v {
+  0% { left: 50%; top: 0; opacity: 0; transform: translateX(-50%); }
+  15% { opacity: .7; }
+  85% { opacity: .7; }
+  100% { left: 50%; top: calc(100% - 4px); opacity: 0; transform: translateX(-50%); }
 }
