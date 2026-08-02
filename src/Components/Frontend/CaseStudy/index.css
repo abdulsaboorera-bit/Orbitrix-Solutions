@@ -29,6 +29,129 @@
   background: linear-gradient(to top, rgba(10, 24, 22, 0.92) 0%, rgba(10, 24, 22, 0.5) 50%, rgba(10, 24, 22, 0.2) 100%);
 }
 
+/* AI Automation Hero - Gradient instead of image */
+.cs-hero-ai {
+  background: linear-gradient(135deg, #0b2f2d 0%, #1a8187 40%, #0b5c61 70%, #184832 100%);
+}
+
+.cs-hero-ai .cs-hero-image {
+  background: radial-gradient(ellipse at 30% 50%, rgba(99, 198, 184, 0.15) 0%, transparent 60%),
+              radial-gradient(ellipse at 70% 30%, rgba(26, 129, 135, 0.2) 0%, transparent 50%);
+}
+
+.cs-hero-ai .cs-hero-overlay {
+  background: linear-gradient(to top, rgba(10, 24, 22, 0.95) 0%, rgba(10, 24, 22, 0.6) 50%, rgba(10, 24, 22, 0.3) 100%);
+}
+
+/* ===== AI HERO DECORATIVE NODES ===== */
+.ai-hero-nodes {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.ai-hn {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: rgba(99, 198, 184, 0.25);
+  border: 1.5px solid rgba(99, 198, 184, 0.12);
+  background: rgba(99, 198, 184, 0.04);
+}
+
+.ai-hn--1 {
+  width: 64px; height: 64px;
+  font-size: 1.3rem;
+  top: 18%; right: 12%;
+  animation: ai-hn-float 5s ease-in-out infinite;
+}
+
+.ai-hn--2 {
+  width: 48px; height: 48px;
+  font-size: 1rem;
+  top: 35%; right: 22%;
+  animation: ai-hn-float 6s ease-in-out 0.8s infinite;
+}
+
+.ai-hn--3 {
+  width: 56px; height: 56px;
+  font-size: 1.1rem;
+  top: 55%; right: 8%;
+  animation: ai-hn-float 5.5s ease-in-out 1.5s infinite;
+}
+
+.ai-hn--4 {
+  width: 40px; height: 40px;
+  font-size: 0.85rem;
+  top: 22%; right: 35%;
+  animation: ai-hn-float 7s ease-in-out 0.4s infinite;
+}
+
+.ai-hn--5 {
+  width: 36px; height: 36px;
+  font-size: 0.8rem;
+  top: 65%; right: 28%;
+  animation: ai-hn-float 6.5s ease-in-out 2s infinite;
+  color: rgba(22, 163, 74, 0.25);
+  border-color: rgba(22, 163, 74, 0.12);
+  background: rgba(22, 163, 74, 0.04);
+}
+
+.ai-hn--6 {
+  width: 32px; height: 32px;
+  font-size: 0.75rem;
+  top: 42%; right: 42%;
+  animation: ai-hn-float 5.8s ease-in-out 1.2s infinite;
+  color: rgba(245, 158, 11, 0.25);
+  border-color: rgba(245, 158, 11, 0.12);
+  background: rgba(245, 158, 11, 0.04);
+}
+
+@keyframes ai-hn-float {
+  0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.5; }
+  50% { transform: translateY(-12px) rotate(8deg); opacity: 0.8; }
+}
+
+/* Decorative connecting lines */
+.ai-hn-line {
+  position: absolute;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(99, 198, 184, 0.15), transparent);
+}
+
+.ai-hn-l1 {
+  width: 120px;
+  top: 28%;
+  right: 18%;
+  transform: rotate(-15deg);
+  animation: ai-line-pulse 4s ease-in-out infinite;
+}
+
+.ai-hn-l2 {
+  width: 80px;
+  top: 50%;
+  right: 25%;
+  transform: rotate(10deg);
+  animation: ai-line-pulse 5s ease-in-out 1s infinite;
+}
+
+.ai-hn-l3 {
+  width: 100px;
+  top: 62%;
+  right: 12%;
+  transform: rotate(-8deg);
+  animation: ai-line-pulse 4.5s ease-in-out 0.5s infinite;
+}
+
+@keyframes ai-line-pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+}
+
 .cs-hero-content {
   position: relative;
   z-index: 2;

@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams, Navigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight, faExternalLinkAlt, faCode, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faExternalLinkAlt, faCode, faSearch, faRobot } from '@fortawesome/free-solid-svg-icons';
 import SEO from '../../SEO';
 import Footer from '../../Footer';
 import { projects } from '../../../Data/projects';
@@ -10,20 +10,37 @@ import './index.css';
 const categoryIcons = {
   'website-development': faCode,
   'seo': faSearch,
+  'ai-automation': faRobot,
 };
+
+const categoryLabels = {
+  'website-development': 'Web Development',
+  'seo': 'SEO',
+  'ai-automation': 'AI Automation',
+};
+
+const AI_AUTOMATION_SLUG = 'ai-social-media-automation';
 
 const Projects = () => {
   const [searchParams] = useSearchParams();
   const categoryFilter = searchParams.get('category');
+
+  // Redirect AI Automation category to case study page
+  if (categoryFilter === 'ai-automation') {
+    return <Navigate to={`/projects/${AI_AUTOMATION_SLUG}`} replace />;
+  }
+
+  // Filter out AI Automation from grid (it opens directly as case study)
+  const gridProjects = projects.filter((p) => p.category !== 'ai-automation');
   const filteredProjects = categoryFilter && categoryFilter !== 'all'
-    ? projects.filter((p) => p.category === categoryFilter)
-    : projects;
+    ? gridProjects.filter((p) => p.category === categoryFilter)
+    : gridProjects;
   return (
     <main id="main-content">
       <SEO
-        title="Our Projects | Web Dev & SEO Portfolio – Orbitrix Solutions"
-        description="Explore Orbitrix Solutions' portfolio of WordPress websites and SEO campaigns. Custom web development and search engine optimization projects with measurable results."
-        keywords="web development portfolio, WordPress development, custom websites, Orbitrix Solutions portfolio, responsive web design"
+        title="Our Projects | Web Dev, SEO & AI Automation Portfolio – Orbitrix Solutions"
+        description="Explore Orbitrix Solutions' portfolio of WordPress websites, SEO campaigns, and AI-powered social media automation. Custom web development, search engine optimization, and intelligent automation projects with measurable results."
+        keywords="web development portfolio, WordPress development, custom websites, SEO services, AI automation, social media automation, Orbitrix Solutions portfolio, responsive web design"
       />
 
       <section className="projects-page" aria-label="Projects">
@@ -33,13 +50,15 @@ const Projects = () => {
             <span className="about-label">OUR WORK</span>
             <h1>Our Work Speaks for Itself</h1>
             <p>
-              From custom WordPress builds to data-driven SEO campaigns,
+              From custom WordPress builds and data-driven SEO campaigns to AI-powered social media automation,
               every project we deliver is designed to perform and convert.
             </p>
             <div className="projects-hero-categories">
               <span className="projects-hero-cat">Web Development</span>
               <span className="projects-hero-cat-dot"></span>
               <span className="projects-hero-cat">SEO</span>
+              <span className="projects-hero-cat-dot"></span>
+              <span className="projects-hero-cat">AI Automation</span>
             </div>
           </div>
         </div>
@@ -47,7 +66,7 @@ const Projects = () => {
         {/* Category heading */}
         {categoryFilter && categoryFilter !== 'all' && (
           <div className="projects-category-heading">
-            Showing <strong>{filteredProjects.length}</strong> {categoryFilter === 'seo' ? 'SEO' : 'Web Development'} project{filteredProjects.length !== 1 ? 's' : ''}
+            Showing <strong>{filteredProjects.length}</strong> {categoryLabels[categoryFilter] || categoryFilter} project{filteredProjects.length !== 1 ? 's' : ''}
             <Link to="/projects" className="projects-category-clear">Clear filter</Link>
           </div>
         )}

@@ -12,13 +12,18 @@ import {
   faIndustry,
   faClipboardList,
   faChartLine,
+  faRobot,
+  faCheckCircle,
+  faBolt,
 } from '@fortawesome/free-solid-svg-icons';
-import { faLinkedin, faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedin, faFacebook } from '@fortawesome/free-brands-svg-icons';
 import SEO from '../../SEO';
 import Breadcrumbs from '../../Breadcrumbs';
 import Footer from '../../Footer';
+import AIAutomation from './AIAutomation';
 import { getProjectBySlug, getRelatedProjects, getAdjacentProjects } from '../../../Data/projects';
 import './index.css';
+import './AIAutomation.css';
 
 const AnimatedBar = ({ value, displayValue, label, delay }) => {
   const barRef = useRef(null);
@@ -90,9 +95,9 @@ const CaseStudy = () => {
   return (
     <main id="main-content">
       <SEO
-        title={`${project.name} Case Study | Orbitrix Solutions`}
-        description={project.shortDescription}
-        keywords={`${project.name}, ${project.categoryLabel}, case study, Orbitrix Solutions, ${project.technologies.join(', ')}`}
+        title={project.seoTitle || `${project.name} Case Study | Orbitrix Solutions`}
+        description={project.seoDescription || project.shortDescription}
+        keywords={project.seoKeywords || `${project.name}, ${project.categoryLabel}, case study, Orbitrix Solutions, ${project.technologies.join(', ')}`}
         canonicalUrl={shareUrl}
       />
 
@@ -105,11 +110,29 @@ const CaseStudy = () => {
 
       <article className="case-study-page" aria-label={`Case study: ${project.name}`}>
         {/* Hero */}
-        <section className="cs-hero" aria-label="Project hero">
+        <section className={`cs-hero ${project.slug === 'ai-social-media-automation' ? 'cs-hero-ai' : ''}`} aria-label="Project hero">
           <div className="cs-hero-image">
-            <img src={project.heroImage} alt={`${project.name} hero`} width="1900" height="900" loading="eager" decoding="async" />
+            {project.slug !== 'ai-social-media-automation' && (
+              <img src={project.heroImage} alt={`${project.name} hero`} width="1900" height="900" loading="eager" decoding="async" />
+            )}
             <div className="cs-hero-overlay"></div>
           </div>
+
+          {/* Decorative floating nodes for AI hero */}
+          {project.slug === 'ai-social-media-automation' && (
+            <div className="ai-hero-nodes" aria-hidden="true">
+              <span className="ai-hn ai-hn--1"><FontAwesomeIcon icon={faRobot} /></span>
+              <span className="ai-hn ai-hn--2"><FontAwesomeIcon icon={faShareAlt} /></span>
+              <span className="ai-hn ai-hn--3"><FontAwesomeIcon icon={faChartLine} /></span>
+              <span className="ai-hn ai-hn--4"><FontAwesomeIcon icon={faCogs} /></span>
+              <span className="ai-hn ai-hn--5"><FontAwesomeIcon icon={faCheckCircle} /></span>
+              <span className="ai-hn ai-hn--6"><FontAwesomeIcon icon={faBolt} /></span>
+              <span className="ai-hn-line ai-hn-l1"></span>
+              <span className="ai-hn-line ai-hn-l2"></span>
+              <span className="ai-hn-line ai-hn-l3"></span>
+            </div>
+          )}
+
           <div className="cs-hero-content">
             <span className="cs-category-badge">{project.categoryLabel}</span>
             <h1>{project.name}</h1>
@@ -155,6 +178,9 @@ const CaseStudy = () => {
               </div>
             </div>
           </div>
+
+          {/* AI Automation Visualization — right after meta bar */}
+          {project.slug === 'ai-social-media-automation' && <AIAutomation />}
 
           {/* Challenge */}
           <section className="cs-section reveal-left" aria-labelledby="cs-challenge">
@@ -316,15 +342,6 @@ const CaseStudy = () => {
                 aria-label="Share on Facebook"
               >
                 <FontAwesomeIcon icon={faFacebook} />
-              </a>
-              <a
-                href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(shareText)}`}
-                target="_blank"
-                rel="noreferrer"
-                className="cs-share-btn"
-                aria-label="Share on Twitter"
-              >
-                <FontAwesomeIcon icon={faTwitter} />
               </a>
             </div>
           </div>

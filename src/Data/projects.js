@@ -10,6 +10,7 @@ export const categories = [
   { slug: 'all', label: 'All Projects' },
   { slug: 'website-development', label: 'Website Development' },
   { slug: 'seo', label: 'SEO' },
+  { slug: 'ai-automation', label: 'AI Automation' },
 ];
 
 export const projects = [
@@ -290,6 +291,55 @@ export const projects = [
       { label: 'Review Score', before: '4.2', after: '4.9', unit: '★' },
       { label: 'Local Pack Position', before: '8th', after: '1st', unit: '' },
     ],
+  },
+  {
+    slug: 'ai-social-media-automation',
+    name: 'AI Social Media Automation',
+    url: '#',
+    category: 'ai-automation',
+    categoryLabel: 'AI Automation',
+    status: 'Live',
+    thumb: fonalizeImg,
+    shortDescription: 'An intelligent AI-powered social media automation system that researches trending growth topics, generates SEO-optimized posts with captions and descriptions, and auto-publishes across Facebook, Instagram, and LinkedIn.',
+    heroImage: fonalizeImg,
+    challenge: 'Managing social media manually was time-consuming and inconsistent. The business needed a way to maintain a consistent posting schedule with high-quality, growth-focused content without dedicating hours each day to content creation and platform management.',
+    approach: 'We designed an end-to-end AI automation workflow that handles everything from keyword research and trend analysis to content generation and scheduled publishing. The system uses AI to research trending growth topics, craft engaging captions and descriptions, optimize each post for SEO with meta-targeted keywords, and automatically publish to connected social media accounts at optimal times.',
+    solution: 'Built an intelligent AI agent pipeline that monitors industry trends, generates growth-focused social media content including posts, captions, and SEO descriptions, and publishes across multiple social platforms. The system includes automated scheduling, hashtag optimization, keyword targeting, and performance tracking to ensure maximum reach and engagement.',
+    results: [
+      { metric: '10x', label: 'Faster content creation' },
+      { metric: '95%', label: 'Posting consistency rate' },
+      { metric: '3x', label: 'Increase in social engagement' },
+    ],
+    technologies: ['AI Content Generation', 'Social Media APIs', 'Automated Scheduling', 'SEO Keyword Targeting', 'Trend Analysis'],
+    testimonial: {
+      quote: 'The AI automation completely transformed our social media presence. What used to take hours now happens automatically with better content and higher engagement.',
+      author: 'Orbitrix Automation Team',
+      role: 'Internal Project',
+    },
+    projectDetails: {
+      client: 'Orbitrix Solutions',
+      timeline: '4 weeks',
+      industry: 'Digital Marketing & AI',
+      deliverables: ['AI Content Pipeline', 'Social Media Integration', 'Automated Scheduling', 'SEO Optimization Engine', 'Performance Dashboard'],
+    },
+    chartData: [
+      { label: 'Week 1', value: 15, displayValue: '15 posts' },
+      { label: 'Week 2', value: 35, displayValue: '35 posts' },
+      { label: 'Week 3', value: 55, displayValue: '55 posts' },
+      { label: 'Week 4', value: 70, displayValue: '70 posts' },
+      { label: 'Week 5', value: 85, displayValue: '85 posts' },
+      { label: 'Week 6', value: 100, displayValue: '100 posts' },
+    ],
+    chartTitle: 'Automated Content Output (6 Weeks)',
+    chartMetric: 'Posts Published',
+    keyHighlights: [
+      { label: 'Content Creation Time', before: '4 hrs/post', after: '2 min/post', unit: '' },
+      { label: 'Monthly Posts', before: '8', after: '120+', unit: '' },
+      { label: 'Social Engagement Rate', before: '1.2%', after: '4.8%', unit: '' },
+    ],
+    seoKeywords: 'AI social media automation, automated social media posting, AI content generation, social media growth automation, automated Facebook posting, automated Instagram posting, automated LinkedIn posting, AI-powered marketing, social media scheduling AI, content automation tools, AI marketing automation, growth hacking automation, SEO content automation, social media management AI, AI post scheduler, automated content creation, social media ROI, AI digital marketing, social media automation agency, AI social media manager',
+    seoTitle: 'AI Social Media Automation | Automated Posting & Content Generation | Orbitrix Solutions',
+    seoDescription: 'AI-powered social media automation that researches trending topics, generates SEO-optimized posts, and auto-publishes across Facebook, Instagram, and LinkedIn. 10x faster content creation with 3x more engagement.',
   },
 ];
 
