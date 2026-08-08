@@ -2,7 +2,6 @@ import React, { memo } from 'react';
 
 const clients = [
   { name: 'Fonalize', url: 'https://fonalize.co.uk/' },
-  { name: 'Royal Beauty Salon', url: 'https://royalbeautysaloon.com/' },
   { name: 'Prime Safari Dubai', url: 'https://primesafaridubai.com/' },
   { name: 'B2B Mobile', url: 'https://www.b2bmobilewholesalers.com/' },
   { name: 'Imran Woodworking', url: 'https://imranwoodworking.com/' },

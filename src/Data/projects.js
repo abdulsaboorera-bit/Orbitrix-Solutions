@@ -1,6 +1,5 @@
 import fonalizeImg from '../Images/Fonalize.webp';
 import primeSafariImg from '../Images/PrimeSafariDubai.webp';
-import royalBeautyImg from '../Images/RoyalBeautySalon.webp';
 import stayImg from '../Images/Stay.webp';
 import b2bImg from '../Images/b2b-MobileWholesale.webp';
 import imranWoodImg from '../Images/imran-wood-working.webp';
@@ -43,37 +42,6 @@ export const projects = [
       timeline: '3 weeks',
       industry: 'Brand & Retail',
       deliverables: ['Custom Website', 'Responsive Design', 'SEO Setup', 'Performance Optimization'],
-    },
-  },
-  {
-    slug: 'royal-beauty-salon',
-    name: 'Royal Beauty Salon',
-    url: 'https://royalbeautysaloon.com/',
-    category: 'website-development',
-    categoryLabel: 'Website Development',
-    status: 'Live',
-    thumb: royalBeautyImg,
-    shortDescription: 'An elegant beauty salon website with booking integration, service showcases, and a premium visual experience that reflects the brand\'s luxury positioning.',
-    heroImage: royalBeautyImg,
-    challenge: 'Royal Beauty Salon wanted a website that matched their premium in-store experience. They needed online booking capability, service presentation, and a visual identity that communicated luxury and trust.',
-    approach: 'We designed a visually rich website with warm tones, elegant typography, and immersive imagery. The layout prioritizes service discovery and makes booking effortless.',
-    solution: 'Developed a custom WordPress site with a booking system, service gallery with before/after showcases, team profiles, and an integrated contact system. Optimized for local SEO to capture nearby searches.',
-    results: [
-      { metric: '5x', label: 'More online bookings' },
-      { metric: '40%', label: 'Increase in website traffic' },
-      { metric: '4.8', label: 'Google rating maintained' },
-    ],
-    technologies: ['WordPress', 'Custom Theme', 'Booking System', 'Local SEO', 'Image Optimization'],
-    testimonial: {
-      quote: 'Our new website looks stunning and our booking rate has increased significantly. Clients often mention how professional our online presence looks.',
-      author: 'Royal Beauty Team',
-      role: 'Client',
-    },
-    projectDetails: {
-      client: 'Royal Beauty Salon',
-      timeline: '4 weeks',
-      industry: 'Beauty & Wellness',
-      deliverables: ['Custom Website', 'Booking Integration', 'Local SEO', 'Content Strategy'],
     },
   },
   {
@@ -244,52 +212,6 @@ export const projects = [
       { label: 'Domain Authority', before: '12', after: '34', unit: '' },
       { label: 'Backlinks', before: '45', after: '280', unit: '+' },
       { label: 'Avg. Position', before: '38', after: '8.2', unit: '' },
-    ],
-  },
-  {
-    slug: 'royal-beauty-seo-campaign',
-    name: 'Royal Beauty Salon – SEO Campaign',
-    url: 'https://royalbeautysaloon.com/',
-    category: 'seo',
-    categoryLabel: 'SEO',
-    status: 'Live',
-    thumb: royalBeautyImg,
-    shortDescription: 'A local SEO campaign for Royal Beauty Salon that drove nearby customers to book appointments, boosting organic visibility and local search dominance.',
-    heroImage: royalBeautyImg,
-    challenge: 'Royal Beauty Salon relied heavily on walk-ins and word-of-mouth. Their online visibility was poor, and competing salons were capturing local search traffic that should have been theirs.',
-    approach: 'We focused on local SEO strategies including Google Business Profile optimization, local citation building, review management, and locally-targeted content. The goal was to dominate "salon near me" and service-specific local searches.',
-    solution: 'Optimized Google Business Profile with complete info, service categories, and regular posts. Built 30+ local citations across directories, collected and managed customer reviews, created location-specific service pages, and implemented local schema markup. Monthly reporting tracked local rank positions and traffic.',
-    results: [
-      { metric: '1st', label: 'Local pack ranking (salon near me)' },
-      { metric: '150%', label: 'Organic traffic from local searches' },
-      { metric: '3x', label: 'Booking inquiries from Google' },
-    ],
-    technologies: ['Local SEO', 'Google Business Profile', 'Citation Building', 'Review Management', 'Local Schema'],
-    testimonial: {
-      quote: 'We\'re now the first salon customers see when they search for beauty services nearby. Our bookings have increased and more customers mention finding us on Google.',
-      author: 'Royal Beauty Team',
-      role: 'Client',
-    },
-    projectDetails: {
-      client: 'Royal Beauty Salon',
-      timeline: 'Ongoing (initial results in 2 months)',
-      industry: 'Beauty & Wellness',
-      deliverables: ['Google Business Optimization', 'Local Citations', 'Review Management', 'Local Content', 'Monthly Reports'],
-    },
-    chartData: [
-      { label: 'Jan', value: 8, displayValue: '80' },
-      { label: 'Feb', value: 22, displayValue: '220' },
-      { label: 'Mar', value: 45, displayValue: '450' },
-      { label: 'Apr', value: 68, displayValue: '680' },
-      { label: 'May', value: 82, displayValue: '820' },
-      { label: 'Jun', value: 98, displayValue: '980' },
-    ],
-    chartTitle: 'Local Search Impressions (6 Months)',
-    chartMetric: 'Monthly Impressions',
-    keyHighlights: [
-      { label: 'Google Maps Views', before: '120/mo', after: '1,800/mo', unit: '' },
-      { label: 'Review Score', before: '4.2', after: '4.9', unit: '★' },
-      { label: 'Local Pack Position', before: '8th', after: '1st', unit: '' },
     ],
   },
   {
