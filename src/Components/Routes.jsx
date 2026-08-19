@@ -16,6 +16,7 @@ const LocationPage = lazy(() => import('./Frontend/Locations/LocationPage'));
 const Industries = lazy(() => import('./Frontend/Industries/Industries'));
 const IndustryPage = lazy(() => import('./Frontend/Industries/IndustryPage'));
 const Careers = lazy(() => import('./Frontend/Careers'));
+const ApplyPage = lazy(() => import('./Frontend/Careers/ApplyPage'));
 const ComparisonPage = lazy(() => import('./Frontend/Comparisons'));
 const Testimonials = lazy(() => import('./Frontend/Testimonials'));
 const PricingCalculator = lazy(() => import('./Frontend/PricingCalculator'));
@@ -48,6 +49,7 @@ const AppRoutes = () => {
           <Route path="/industries" element={<Industries />} />
           <Route path="/industries/:industry" element={<IndustryPage />} />
           <Route path="/careers" element={<Careers />} />
+          <Route path="/careers/apply" element={<ApplyPage />} />
           <Route path="/compare/:slug" element={<ComparisonPage />} />
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/pricing-calculator" element={<PricingCalculator />} />

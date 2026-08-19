@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../../SEO';
 import Breadcrumbs from '../../Breadcrumbs';
@@ -37,8 +37,91 @@ const openJobs = [
   },
 ];
 
+const cultureValues = [
+  {
+    icon: (
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" />
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+      </svg>
+    ),
+    title: 'Global Mindset',
+    desc: 'We collaborate across borders and timezones, bringing diverse perspectives to every project.',
+  },
+  {
+    icon: (
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2L2 7l10 5 10-5-10-5z" /><path d="M2 17l10 5 10-5" /><path d="M2 12l10 5 10-5" />
+      </svg>
+    ),
+    title: 'Own Your Impact',
+    desc: 'Every team member drives real results. Your work directly shapes client success and company growth.',
+  },
+  {
+    icon: (
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+      </svg>
+    ),
+    title: 'Relentless Quality',
+    desc: 'We obsess over craft. Pixel-perfect design, clean code, and results that exceed expectations.',
+  },
+  {
+    icon: (
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+        <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+      </svg>
+    ),
+    title: 'Always Learning',
+    desc: 'Stay ahead with new technologies, frameworks, and creative techniques. Growth never stops here.',
+  },
+  {
+    icon: (
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+        <circle cx="9" cy="7" r="4" />
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+      </svg>
+    ),
+    title: 'People First',
+    desc: 'Flexible hours, remote-first culture, and a team that genuinely cares about each other.',
+  },
+];
+
+/* Simple count-up hook */
+function useCountUp(end, duration = 1800) {
+  const [count, setCount] = useState(0);
+  const ref = useRef(null);
+  const started = useRef(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !started.current) {
+          started.current = true;
+          const startTime = performance.now();
+          const animate = (now) => {
+            const elapsed = now - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            setCount(Math.floor(eased * end));
+            if (progress < 1) requestAnimationFrame(animate);
+          };
+          requestAnimationFrame(animate);
+        }
+      },
+      { threshold: 0.3 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [end, duration]);
+
+  return [count, ref];
+}
+
 const Careers = () => {
-  const [selectedJob, setSelectedJob] = useState(null);
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -53,6 +136,10 @@ const Careers = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const formRef = useRef(null);
   const fileInputRef = useRef(null);
+
+  const [countries, countriesRef] = useCountUp(10, 1600);
+  const [projects, projectsRef] = useCountUp(80, 1800);
+  const [remote, remoteRef] = useCountUp(100, 1400);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -129,14 +216,6 @@ const Careers = () => {
     }
   };
 
-  const handleApplyClick = (job) => {
-    setSelectedJob(job);
-    setFormData((prev) => ({ ...prev, position: job.title }));
-    setTimeout(() => {
-      formRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 100);
-  };
-
   return (
     <main id="main-content">
       <SEO
@@ -152,6 +231,11 @@ const Careers = () => {
         <div className="careers-hero-bg" aria-hidden="true">
           <div className="careers-orb careers-orb-1"></div>
           <div className="careers-orb careers-orb-2"></div>
+          <div className="careers-particle"></div>
+          <div className="careers-particle"></div>
+          <div className="careers-particle"></div>
+          <div className="careers-particle"></div>
+          <div className="careers-particle"></div>
         </div>
         <div className="careers-hero-content">
           <span className="careers-badge">We Are Hiring</span>
@@ -161,18 +245,38 @@ const Careers = () => {
             Europe &amp; Dubai. We are always looking for talented people who want to make an impact.
           </p>
           <div className="careers-hero-stats">
-            <div className="careers-stat">
-              <strong>10+</strong>
+            <div className="careers-stat" ref={countriesRef}>
+              <strong>{countries}+</strong>
               <span>Countries Served</span>
             </div>
-            <div className="careers-stat">
-              <strong>80+</strong>
+            <div className="careers-stat" ref={projectsRef}>
+              <strong>{projects}+</strong>
               <span>Projects Delivered</span>
             </div>
-            <div className="careers-stat">
-              <strong>100%</strong>
+            <div className="careers-stat" ref={remoteRef}>
+              <strong>{remote}%</strong>
               <span>Remote Friendly</span>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Life at Orbitrix */}
+      <section className="careers-section careers-life-section">
+        <div className="careers-container">
+          <div className="careers-section-header">
+            <span className="careers-label">Our Culture</span>
+            <h2>Life at Orbitrix</h2>
+            <p>We believe great work comes from great people who love what they do. Here is what makes us different.</p>
+          </div>
+          <div className="careers-life-grid">
+            {cultureValues.map((item, i) => (
+              <div key={i} className="careers-life-card">
+                <div className="careers-life-icon">{item.icon}</div>
+                <h4>{item.title}</h4>
+                <p>{item.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -188,7 +292,7 @@ const Careers = () => {
 
           <div className="careers-jobs-list">
             {openJobs.map((job) => (
-              <div key={job.id} className={`careers-job-card ${selectedJob?.id === job.id ? 'active' : ''}`}>
+              <div key={job.id} className="careers-job-card">
                 <div className="careers-job-header">
                   <div className="careers-job-info">
                     <h3>{job.title}</h3>
@@ -207,13 +311,13 @@ const Careers = () => {
                       </span>
                     </div>
                   </div>
-                  <button
+                  <Link
+                    to="/careers/apply"
                     className="careers-apply-btn"
-                    onClick={() => handleApplyClick(job)}
                   >
                     Apply Now
                     <svg width="14" height="14" viewBox="0 0 448 512" fill="currentColor"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0-105.4 105.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
-                  </button>
+                  </Link>
                 </div>
                 <p className="careers-job-desc">{job.description}</p>
 
@@ -256,175 +360,6 @@ const Careers = () => {
               </div>
             )}
           </div>
-        </div>
-      </section>
-
-      {/* Application Form */}
-      <section className="careers-section careers-form-section" ref={formRef}>
-        <div className="careers-container">
-          <div className="careers-section-header">
-            <span className="careers-label">Application Form</span>
-            <h2>Apply for {selectedJob ? selectedJob.title : 'a Position'}</h2>
-            <p>Fill out the form below and upload your CV. All applications are reviewed within 5 business days.</p>
-          </div>
-
-          {submitStatus === 'success' ? (
-            <div className="careers-success">
-              <div className="careers-success-icon">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              </div>
-              <h3>Application Submitted Successfully!</h3>
-              <p>Thank you for your interest in joining Orbitrix Solutions. We will review your application and get back to you within 5 business days.</p>
-              <button className="careers-cta-btn" onClick={() => { setSubmitStatus(''); setSelectedJob(null); }}>
-                Submit Another Application
-              </button>
-            </div>
-          ) : (
-            <form className="careers-form" onSubmit={handleSubmit} encType="multipart/form-data">
-              <div className="careers-form-grid">
-                {/* Full Name */}
-                <div className="careers-field">
-                  <label htmlFor="fullName">Full Name <span className="required">*</span></label>
-                  <input
-                    type="text"
-                    id="fullName"
-                    name="fullName"
-                    placeholder="John Smith"
-                    value={formData.fullName}
-                    onChange={handleChange}
-                    className={errors.fullName ? 'has-error' : ''}
-                  />
-                  {errors.fullName && <span className="careers-field-error">{errors.fullName}</span>}
-                </div>
-
-                {/* Email */}
-                <div className="careers-field">
-                  <label htmlFor="email">Email Address <span className="required">*</span></label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="john@example.com"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className={errors.email ? 'has-error' : ''}
-                  />
-                  {errors.email && <span className="careers-field-error">{errors.email}</span>}
-                </div>
-
-                {/* Phone */}
-                <div className="careers-field">
-                  <label htmlFor="phone">Phone Number</label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    placeholder="+1 (555) 123-4567"
-                    value={formData.phone}
-                    onChange={handleChange}
-                  />
-                </div>
-
-                {/* Position */}
-                <div className="careers-field">
-                  <label htmlFor="position">Position Applied For <span className="required">*</span></label>
-                  <select
-                    id="position"
-                    name="position"
-                    value={formData.position}
-                    onChange={handleChange}
-                    className={errors.position ? 'has-error' : ''}
-                  >
-                    <option value="">Select a position</option>
-                    {openJobs.map((job) => (
-                      <option key={job.id} value={job.title}>{job.title}</option>
-                    ))}
-                  </select>
-                  {errors.position && <span className="careers-field-error">{errors.position}</span>}
-                </div>
-
-                {/* LinkedIn */}
-                <div className="careers-field careers-field-full">
-                  <label htmlFor="linkedin">LinkedIn Profile URL</label>
-                  <input
-                    type="url"
-                    id="linkedin"
-                    name="linkedin"
-                    placeholder="https://linkedin.com/in/yourprofile"
-                    value={formData.linkedin}
-                    onChange={handleChange}
-                  />
-                </div>
-
-                {/* CV Upload */}
-                <div className="careers-field careers-field-full">
-                  <label htmlFor="cv">CV / Resume <span className="required">*</span></label>
-                  <div className={`careers-file-upload ${errors.cv ? 'has-error' : ''} ${formData.cv ? 'has-file' : ''}`}>
-                    <input
-                      type="file"
-                      id="cv"
-                      ref={fileInputRef}
-                      accept=".pdf,.doc,.docx"
-                      onChange={handleFileChange}
-                      className="careers-file-input"
-                    />
-                    <div className="careers-file-label">
-                      {formData.cv ? (
-                        <>
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-                          <span className="careers-file-name">{formData.cv.name}</span>
-                          <span className="careers-file-size">({(formData.cv.size / 1024 / 1024).toFixed(2)} MB)</span>
-                        </>
-                      ) : (
-                        <>
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-                          <span>Click to upload your CV or drag and drop</span>
-                          <span className="careers-file-hint">PDF, DOC, or DOCX (Max 5MB)</span>
-                        </>
-                      )}
-                    </div>
-                  </div>
-                  {errors.cv && <span className="careers-field-error">{errors.cv}</span>}
-                </div>
-
-                {/* Cover Letter */}
-                <div className="careers-field careers-field-full">
-                  <label htmlFor="coverLetter">Cover Letter / Message</label>
-                  <textarea
-                    id="coverLetter"
-                    name="coverLetter"
-                    rows="5"
-                    placeholder="Tell us why you would be a great fit for this role and Orbitrix Solutions..."
-                    value={formData.coverLetter}
-                    onChange={handleChange}
-                  ></textarea>
-                </div>
-              </div>
-
-              <div className="careers-form-actions">
-                <button
-                  type="submit"
-                  className="careers-submit-btn"
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? (
-                    <>
-                      <span className="careers-spinner"></span>
-                      Submitting...
-                    </>
-                  ) : (
-                    <>
-                      Submit Application
-                      <svg width="16" height="16" viewBox="0 0 448 512" fill="currentColor"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0-105.4 105.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
-                    </>
-                  )}
-                </button>
-                {submitStatus === 'error' && (
-                  <p className="careers-form-error">Something went wrong. Please try again or email us directly at <a href="mailto:info@orbitrixsolutions.com">info@orbitrixsolutions.com</a></p>
-                )}
-              </div>
-            </form>
-          )}
         </div>
       </section>
 

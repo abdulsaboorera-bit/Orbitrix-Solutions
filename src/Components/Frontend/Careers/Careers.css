@@ -1,8 +1,85 @@
 /* ===== CAREERS PAGE ===== */
 
+/* Keyframe Animations */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-8px) rotate(1deg); }
+  66% { transform: translateY(4px) rotate(-1deg); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-14px); }
+}
+
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(48px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.9); opacity: 1; }
+  50% { transform: scale(1.15); opacity: 0.4; }
+  100% { transform: scale(0.9); opacity: 1; }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 15px rgba(26, 129, 135, 0.3), 0 0 30px rgba(26, 129, 135, 0.1); }
+  50% { box-shadow: 0 0 25px rgba(26, 129, 135, 0.5), 0 0 50px rgba(26, 129, 135, 0.2); }
+}
+
+@keyframes particle-drift {
+  0% { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.6; }
+  90% { opacity: 0.6; }
+  100% { transform: translate(var(--dx), var(--dy)) rotate(360deg); opacity: 0; }
+}
+
+@keyframes success-pop {
+  0% { transform: scale(0) rotate(-10deg); opacity: 0; }
+  60% { transform: scale(1.15) rotate(3deg); }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+@keyframes confetti-fall {
+  0% { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(120px) rotate(720deg); opacity: 0; }
+}
+
+@keyframes badge-glow {
+  0%, 100% { box-shadow: 0 0 10px rgba(26, 129, 135, 0.2); }
+  50% { box-shadow: 0 0 20px rgba(26, 129, 135, 0.4), 0 0 40px rgba(99, 198, 184, 0.2); }
+}
+
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 /* Hero */
 .careers-hero {
-  padding: 80px 6% 60px;
+  padding: 90px 6% 70px;
   background: linear-gradient(165deg, rgba(26, 129, 135, 0.06) 0%, rgba(253, 250, 243, 0.95) 40%, rgba(99, 198, 184, 0.08) 100%);
   position: relative;
   overflow: hidden;
@@ -12,6 +89,50 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
+}
+
+/* Floating particles */
+.careers-particle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.careers-particle:nth-child(1) {
+  width: 6px; height: 6px;
+  background: var(--orbit-teal);
+  top: 15%; left: 8%;
+  animation: particle-drift 8s ease-in-out infinite;
+  --dx: 60px; --dy: -40px;
+}
+.careers-particle:nth-child(2) {
+  width: 4px; height: 4px;
+  background: var(--orbit-teal-strong);
+  top: 30%; right: 12%;
+  animation: particle-drift 10s ease-in-out infinite 1s;
+  --dx: -50px; --dy: 30px;
+}
+.careers-particle:nth-child(3) {
+  width: 5px; height: 5px;
+  background: rgba(99, 198, 184, 0.6);
+  bottom: 20%; left: 20%;
+  animation: particle-drift 9s ease-in-out infinite 2s;
+  --dx: 40px; --dy: -50px;
+}
+.careers-particle:nth-child(4) {
+  width: 3px; height: 3px;
+  background: var(--orbit-teal);
+  top: 55%; right: 25%;
+  animation: particle-drift 11s ease-in-out infinite 3s;
+  --dx: -30px; --dy: -25px;
+}
+.careers-particle:nth-child(5) {
+  width: 7px; height: 7px;
+  background: rgba(99, 198, 184, 0.4);
+  top: 70%; left: 45%;
+  animation: particle-drift 12s ease-in-out infinite 0.5s;
+  --dx: 20px; --dy: -60px;
 }
 
 .careers-orb {
@@ -26,6 +147,7 @@
   background: radial-gradient(circle, rgba(26, 129, 135, 0.12), transparent 70%);
   top: -15%;
   right: -5%;
+  animation: float-slow 8s ease-in-out infinite;
 }
 
 .careers-orb-2 {
@@ -34,6 +156,7 @@
   background: radial-gradient(circle, rgba(99, 198, 184, 0.1), transparent 70%);
   bottom: -10%;
   left: -3%;
+  animation: float-slow 10s ease-in-out infinite 2s;
 }
 
 .careers-hero-content {
@@ -44,27 +167,56 @@
   z-index: 2;
 }
 
+/* Animated Hiring Badge */
 .careers-badge {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: rgba(26, 129, 135, 0.08);
-  border: 1px solid rgba(26, 129, 135, 0.15);
+  position: relative;
   border-radius: 999px;
-  padding: 8px 20px;
+  padding: 10px 24px;
   font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--orbit-teal-strong);
-  letter-spacing: 0.06em;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
+  background: linear-gradient(135deg, var(--orbit-teal), #34c6c0, var(--orbit-teal-strong), var(--orbit-teal));
+  background-size: 300% 300%;
+  animation: gradient-shift 4s ease infinite, badge-glow 3s ease-in-out infinite;
+  z-index: 1;
+  overflow: visible;
+}
+
+.careers-badge::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--orbit-teal), #34c6c0, rgba(99,198,184,0.5), var(--orbit-teal));
+  background-size: 300% 300%;
+  animation: gradient-shift 3s ease infinite;
+  z-index: -1;
+  opacity: 0.6;
+  filter: blur(4px);
+}
+
+.careers-badge::after {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(26,129,135,0.15), rgba(99,198,184,0.1));
+  background-size: 300% 300%;
+  animation: pulse-ring 2.5s ease-in-out infinite;
+  z-index: -2;
 }
 
 .careers-hero-content h1 {
   font-size: clamp(2rem, 4.5vw, 3.2rem);
   color: var(--orbit-deep);
   margin-bottom: 16px;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.15;
 }
 
@@ -73,13 +225,14 @@
   color: var(--orbit-muted-strong);
   line-height: 1.7;
   max-width: 640px;
-  margin: 0 auto 32px;
+  margin: 0 auto 36px;
 }
 
+/* Stats with count animation */
 .careers-hero-stats {
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 48px;
   flex-wrap: wrap;
 }
 
@@ -87,23 +240,31 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  animation: slideInUp 0.6s ease-out both;
 }
+.careers-stat:nth-child(2) { animation-delay: 0.15s; }
+.careers-stat:nth-child(3) { animation-delay: 0.3s; }
 
 .careers-stat strong {
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--orbit-teal);
+  font-size: 2.4rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--orbit-teal), var(--orbit-teal-strong));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: countUp 0.8s ease-out both;
 }
 
 .careers-stat span {
   font-size: 0.88rem;
   color: var(--orbit-muted);
   font-weight: 600;
+  margin-top: 4px;
 }
 
 /* Sections */
 .careers-section {
-  padding: 60px 6%;
+  padding: 70px 6%;
 }
 
 .careers-container {
@@ -113,7 +274,7 @@
 
 .careers-section-header {
   text-align: center;
-  margin-bottom: 48px;
+  margin-bottom: 52px;
 }
 
 .careers-label {
@@ -132,7 +293,7 @@
   font-size: clamp(1.8rem, 3.5vw, 2.5rem);
   color: var(--orbit-deep);
   margin-bottom: 12px;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.2;
 }
 
@@ -144,31 +305,59 @@
   margin: 0 auto;
 }
 
-/* Job Cards */
+/* ===== GLASSMORPHISM JOB CARDS ===== */
 .careers-jobs-list {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 28px;
 }
 
 .careers-job-card {
-  background: var(--orbit-white);
-  border: 1px solid rgba(26, 129, 135, 0.1);
-  border-radius: 20px;
-  padding: 32px;
-  box-shadow: 0 8px 24px rgba(8, 34, 34, 0.05);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(26, 129, 135, 0.12);
+  border-radius: 24px;
+  padding: 36px;
+  box-shadow:
+    0 8px 32px rgba(8, 34, 34, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: slideInUp 0.7s ease-out both;
+  overflow: hidden;
 }
 
+.careers-job-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--orbit-teal), #34c6c0, rgba(99,198,184,0.5));
+  background-size: 200% 100%;
+  animation: gradient-shift 4s ease infinite;
+  border-radius: 24px 24px 0 0;
+}
+
+.careers-job-card:nth-child(2) { animation-delay: 0.15s; }
+
 .careers-job-card:hover {
-  border-color: rgba(26, 129, 135, 0.2);
-  box-shadow: 0 16px 40px rgba(8, 34, 34, 0.08);
-  transform: translateY(-2px);
+  border-color: rgba(26, 129, 135, 0.25);
+  box-shadow:
+    0 20px 60px rgba(8, 34, 34, 0.1),
+    0 0 0 1px rgba(26, 129, 135, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  transform: translateY(-4px);
 }
 
 .careers-job-card.active {
   border-color: var(--orbit-teal);
-  box-shadow: 0 16px 40px rgba(26, 129, 135, 0.12);
+  box-shadow:
+    0 20px 60px rgba(26, 129, 135, 0.15),
+    0 0 0 1px rgba(26, 129, 135, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
 .careers-job-header {
@@ -183,7 +372,7 @@
   font-size: 1.5rem;
   color: var(--orbit-deep);
   margin-bottom: 10px;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .careers-job-meta {
@@ -209,11 +398,12 @@
   flex-shrink: 0;
 }
 
+/* Apply Button with shimmer */
 .careers-apply-btn {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 12px 24px;
+  padding: 12px 28px;
   border-radius: 999px;
   background: linear-gradient(135deg, var(--orbit-teal), var(--orbit-teal-strong));
   color: #fff;
@@ -222,13 +412,34 @@
   border: none;
   cursor: pointer;
   white-space: nowrap;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 0 8px 24px rgba(26, 129, 135, 0.3);
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+.careers-apply-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+  animation: shimmer 3s ease-in-out infinite;
+  pointer-events: none;
 }
 
 .careers-apply-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 32px rgba(26, 129, 135, 0.4);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 16px 40px rgba(26, 129, 135, 0.45);
 }
 
 .careers-apply-btn svg {
@@ -236,7 +447,7 @@
 }
 
 .careers-apply-btn:hover svg {
-  transform: translateX(3px);
+  transform: translateX(4px);
 }
 
 .careers-job-desc {
@@ -277,7 +488,7 @@
 }
 
 .careers-detail-block li::before {
-  content: '✓';
+  content: '\2713';
   position: absolute;
   left: 0;
   color: var(--orbit-teal);
@@ -289,9 +500,11 @@
 .careers-no-jobs {
   text-align: center;
   padding: 60px 24px;
-  background: var(--orbit-white);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(26, 129, 135, 0.1);
-  border-radius: 20px;
+  border-radius: 24px;
 }
 
 .careers-no-jobs h3 {
@@ -308,6 +521,107 @@
   margin-right: auto;
 }
 
+/* ===== LIFE AT ORBITRIX SECTION ===== */
+.careers-life-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.careers-life-section::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(26, 129, 135, 0.06), transparent 70%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.careers-life-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.careers-life-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(26, 129, 135, 0.1);
+  border-radius: 20px;
+  padding: 32px 20px;
+  text-align: center;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: slideInUp 0.6s ease-out both;
+  overflow: hidden;
+}
+
+.careers-life-card::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--orbit-teal), rgba(99,198,184,0.5));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.careers-life-card:nth-child(1) { animation-delay: 0s; }
+.careers-life-card:nth-child(2) { animation-delay: 0.1s; }
+.careers-life-card:nth-child(3) { animation-delay: 0.2s; }
+.careers-life-card:nth-child(4) { animation-delay: 0.3s; }
+.careers-life-card:nth-child(5) { animation-delay: 0.4s; }
+
+.careers-life-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(26, 129, 135, 0.12);
+  border-color: rgba(26, 129, 135, 0.2);
+}
+
+.careers-life-card:hover::before {
+  opacity: 1;
+}
+
+.careers-life-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(26, 129, 135, 0.1), rgba(99, 198, 184, 0.08));
+  color: var(--orbit-teal);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  transition: all 0.4s ease;
+}
+
+.careers-life-card:hover .careers-life-icon {
+  transform: scale(1.12) rotate(-3deg);
+  background: linear-gradient(135deg, var(--orbit-teal), var(--orbit-teal-strong));
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(26, 129, 135, 0.3);
+}
+
+.careers-life-card h4 {
+  font-size: 1rem;
+  color: var(--orbit-deep);
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.careers-life-card p {
+  font-size: 0.85rem;
+  color: var(--orbit-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
 /* Application Form */
 .careers-form-section {
   background: linear-gradient(180deg, rgba(26, 129, 135, 0.03), transparent);
@@ -316,10 +630,12 @@
 .careers-form {
   max-width: 800px;
   margin: 0 auto;
-  background: var(--orbit-white);
-  border: 1px solid rgba(26, 129, 135, 0.1);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(26, 129, 135, 0.12);
   border-radius: 24px;
-  padding: 40px;
+  padding: 44px;
   box-shadow: 0 16px 48px rgba(8, 34, 34, 0.06);
 }
 
@@ -460,7 +776,7 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 16px 36px;
+  padding: 16px 40px;
   border-radius: 999px;
   background: linear-gradient(135deg, var(--orbit-teal), var(--orbit-teal-strong));
   color: #fff;
@@ -470,6 +786,20 @@
   cursor: pointer;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 0 10px 28px rgba(26, 129, 135, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.careers-submit-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  animation: shimmer 3s ease-in-out infinite;
+  pointer-events: none;
 }
 
 .careers-submit-btn:hover:not(:disabled) {
@@ -520,22 +850,53 @@
   padding: 60px 24px;
   max-width: 560px;
   margin: 0 auto;
-  background: var(--orbit-white);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(26, 129, 135, 0.15);
   border-radius: 24px;
   box-shadow: 0 16px 48px rgba(8, 34, 34, 0.06);
+  animation: success-pop 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Confetti dots */
+.careers-success::before,
+.careers-success::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--orbit-teal);
+  opacity: 0;
+}
+
+.careers-success.show-confetti::before {
+  top: 20%;
+  left: 15%;
+  animation: confetti-fall 1.5s ease-out 0.2s both;
+  background: #34c6c0;
+}
+.careers-success.show-confetti::after {
+  top: 15%;
+  right: 18%;
+  animation: confetti-fall 1.8s ease-out 0.4s both;
+  background: var(--orbit-teal-strong);
 }
 
 .careers-success-icon {
-  width: 80px;
-  height: 80px;
+  width: 88px;
+  height: 88px;
   border-radius: 50%;
-  background: rgba(26, 129, 135, 0.1);
+  background: linear-gradient(135deg, rgba(26, 129, 135, 0.15), rgba(99, 198, 184, 0.1));
   color: var(--orbit-teal);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 24px;
+  animation: pulse-ring 2s ease-in-out infinite;
 }
 
 .careers-success h3 {
@@ -566,6 +927,20 @@
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 0 8px 24px rgba(26, 129, 135, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.careers-cta-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  animation: shimmer 3s ease-in-out infinite;
+  pointer-events: none;
 }
 
 .careers-cta-btn:hover {
@@ -587,36 +962,46 @@
 }
 
 .careers-perk-card {
-  background: var(--orbit-white);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-radius: 20px;
   padding: 28px 24px;
   text-align: center;
   border: 1px solid rgba(26, 129, 135, 0.08);
   box-shadow: 0 8px 24px rgba(8, 34, 34, 0.04);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: slideInUp 0.6s ease-out both;
 }
 
+.careers-perk-card:nth-child(2) { animation-delay: 0.1s; }
+.careers-perk-card:nth-child(3) { animation-delay: 0.2s; }
+.careers-perk-card:nth-child(4) { animation-delay: 0.3s; }
+
 .careers-perk-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 40px rgba(26, 129, 135, 0.1);
-  border-color: rgba(26, 129, 135, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(26, 129, 135, 0.1);
+  border-color: rgba(26, 129, 135, 0.2);
 }
 
 .careers-perk-icon {
-  width: 52px;
-  height: 52px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
-  background: rgba(26, 129, 135, 0.1);
+  background: linear-gradient(135deg, rgba(26, 129, 135, 0.1), rgba(99, 198, 184, 0.08));
   color: var(--orbit-teal);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 16px;
-  transition: transform 0.3s ease;
+  transition: all 0.4s ease;
 }
 
 .careers-perk-card:hover .careers-perk-icon {
-  transform: scale(1.1);
+  transform: scale(1.15) rotate(-5deg);
+  background: linear-gradient(135deg, var(--orbit-teal), var(--orbit-teal-strong));
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(26, 129, 135, 0.3);
 }
 
 .careers-perk-card h4 {
@@ -633,7 +1018,13 @@
   margin: 0;
 }
 
-/* Responsive */
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .careers-life-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (max-width: 992px) {
   .careers-perks-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -642,23 +1033,27 @@
   .careers-form {
     padding: 28px;
   }
+
+  .careers-life-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
   .careers-hero {
-    padding: 48px 4% 40px;
+    padding: 56px 4% 48px;
   }
 
   .careers-hero-stats {
-    gap: 24px;
+    gap: 28px;
   }
 
   .careers-stat strong {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 
   .careers-section {
-    padding: 40px 4%;
+    padding: 48px 4%;
   }
 
   .careers-job-header {
@@ -679,6 +1074,10 @@
   }
 
   .careers-perks-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .careers-life-grid {
     grid-template-columns: 1fr;
   }
 }

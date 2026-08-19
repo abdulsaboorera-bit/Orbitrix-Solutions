@@ -435,25 +435,26 @@ const servicesData = [
     icon: faRobot,
     slug: '/services/ai-automation-services',
     summary:
-      'Intelligent automation solutions using AI to streamline business workflows, automate repetitive tasks, and create data-driven decision systems for operational efficiency.',
-    subtitle: 'Intelligent Automation Solutions for Operational Excellence',
+      'Intelligent AI automation solutions for salons, clinics, and businesses — including AI voice agents, smart chatbots, automated email routing, blog auto-publishing, and social media automation built on n8n and custom AI models.',
+    subtitle: 'Intelligent AI Automation for Salons, Clinics & Businesses',
     description:
-      'As a leading AI automation agency, Orbitrix Solutions implements intelligent automation solutions that streamline business workflows, automate repetitive tasks, and create data-driven decision systems. Our AI automation services help businesses reduce operational costs, eliminate manual errors, and free up teams to focus on high-value strategic work.',
+      'Orbitrix Solutions builds intelligent AI automation systems that handle the repetitive, time-consuming tasks killing your productivity. From AI voice agents that answer calls and book appointments 24/7, to smart chatbots, email auto-responders, blog auto-publishers, and social media auto-posters — our solutions run on n8n workflows and custom AI models, giving businesses a fully automated back office.',
     benefits: [
-      'Custom AI workflow automation for business processes',
-      'Chatbot and virtual assistant development',
-      'Automated data collection and analysis pipelines',
-      'Email automation and lead scoring systems',
-      'Content generation and curation automation',
-      'Integration of AI tools with existing business systems',
-      'Ongoing monitoring and optimization of automated processes',
+      'AI Voice Agents that answer calls and book appointments 24/7 for salons and clinics',
+      'Custom AI Chatbots trained on your business data with direct API key integration',
+      'AI Email Auto-Responder that detects intent, routes to departments, and auto-replies',
+      'Blog Auto-Publisher using n8n workflows to auto-generate and post SEO-optimized blogs',
+      'AI Social Media Auto-Poster that creates content and posts across Facebook, Instagram, and LinkedIn',
+      'Unified n8n orchestration connecting all automation modules',
+      'Ongoing monitoring, optimization, and scaling of automated workflows',
     ],
     problemsSolved: [
-      'Repetitive manual tasks consuming valuable team time',
-      'Human errors in data entry and processing',
-      'Inability to scale operations without proportional cost increases',
-      'Slow response times to customer inquiries',
-      'Difficulty making data-driven decisions without proper analytics',
+      'Missed phone calls from customers after hours or during busy periods',
+      'Slow email response times causing lost leads and poor customer experience',
+      'Hours wasted manually creating and scheduling blog content',
+      'Inconsistent social media posting due to time constraints',
+      'Manual appointment booking consuming staff time and leading to no-shows',
+      'Multiple disconnected tools creating fragmented, inefficient workflows',
     ],
     internationalValue:
       'For international businesses operating across multiple time zones in the USA, Canada, UK, Germany, and the Netherlands, AI automation services provide 24/7 operational capability without the overhead of round-the-clock staffing. Our automation solutions help businesses serve global customers efficiently.',
@@ -469,28 +470,28 @@ const servicesData = [
     ],
     faq: [
       {
-        question: 'What processes can be automated with AI?',
-        answer: 'Almost any repetitive, rules-based task can be automated. Common examples include data entry and processing, email responses and follow-ups, lead scoring and qualification, report generation, customer support through AI chatbots, invoice processing, and social media posting. We assess your workflows to identify the highest-impact automation opportunities.',
+        question: 'What AI voice agents do you build?',
+        answer: 'We build custom AI voice agents for salons, clinics, and service businesses that answer incoming calls 24/7. The agent can greet callers, answer common questions (hours, pricing, services), and book appointments directly into your calendar system. It integrates with WhatsApp and phone systems for seamless customer experience.',
+      },
+      {
+        question: 'How are your chatbots different from standard chat widgets?',
+        answer: 'Our chatbots are custom-built and integrated via direct API keys — not hosted on third-party platforms that take ownership of your data. They\'re trained on your specific business information, can handle complex queries, and connect to your CRM and booking systems for real-time actions like scheduling or order tracking.',
+      },
+      {
+        question: 'What does the AI Email Auto-Responder do?',
+        answer: 'The AI Email Auto-Responder reads incoming emails, detects the customer\'s intent (inquiry, complaint, quote request, support ticket), routes the email to the appropriate department, and sends an intelligent auto-reply. It eliminates the lag between a customer writing in and your team responding.',
+      },
+      {
+        question: 'How does the Blog Auto-Publisher work?',
+        answer: 'Our n8n-powered blog auto-publisher generates SEO-optimized blog posts based on trending topics and your business niche. It researches keywords, writes the content, adds images, and publishes directly to your CMS — all on autopilot. You can review before publishing or set it to auto-post on a schedule.',
+      },
+      {
+        question: 'Can I use individual services or do I need the full suite?',
+        answer: 'Each service works independently. You can start with just AI voice agents for your salon, or just the email auto-responder for your clinic. Most clients start with one module and expand as they see the results. The full suite is for businesses wanting end-to-end automation across all touchpoints.',
       },
       {
         question: 'How much does AI automation cost?',
-        answer: 'Implementation costs vary based on complexity. Simple workflow automations may cost $2,000-$5,000, while custom AI systems with integrations and machine learning capabilities range from $10,000-$50,000. We provide ROI projections before starting so you can see how quickly the automation pays for itself through time and cost savings.',
-      },
-      {
-        question: 'Will automation replace my employees?',
-        answer: 'AI automation handles repetitive, mundane tasks so your team can focus on strategic, creative, and relationship-building work. In most cases, automation augments your team rather than replacing them. We help you identify which roles will evolve and how to retrain your team for higher-value activities.',
-      },
-      {
-        question: 'How long does implementation take?',
-        answer: 'Basic automations like email sequences or chatbots can be set up in 1-2 weeks. Complex workflow automations with multiple integrations typically take 4-8 weeks. Enterprise-scale AI systems with custom machine learning models may take 2-4 months. We break implementation into phases so you start seeing value early.',
-      },
-      {
-        question: 'What tools and platforms do you integrate with?',
-        answer: 'We integrate with hundreds of platforms including Salesforce, HubSpot, Slack, Google Workspace, Shopify, WordPress, Zapier, Make (Integromat), and custom APIs. Our team evaluates your existing tech stack and recommends the best integration approach to ensure seamless data flow between systems.',
-      },
-      {
-        question: 'Do you provide ongoing support after implementation?',
-        answer: 'Yes, we offer ongoing support and optimization plans. AI systems improve over time as they process more data, so we monitor performance, fine-tune models, and adapt automations as your business needs evolve. Support plans include regular check-ins, performance reviews, and priority troubleshooting.',
+        answer: 'Pricing depends on which modules you need. A single AI voice agent or chatbot starts at $2,000-$5,000. The full automation suite with voice, chatbot, email, blog, and social media typically ranges from $8,000-$20,000 depending on integrations and complexity. We provide ROI projections so you can see how quickly the automation pays for itself.',
       },
     ],
   },
