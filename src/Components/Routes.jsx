@@ -16,6 +16,13 @@ const LocationPage = lazy(() => import('./Frontend/Locations/LocationPage'));
 const Industries = lazy(() => import('./Frontend/Industries/Industries'));
 const IndustryPage = lazy(() => import('./Frontend/Industries/IndustryPage'));
 const Careers = lazy(() => import('./Frontend/Careers'));
+const ComparisonPage = lazy(() => import('./Frontend/Comparisons'));
+const Testimonials = lazy(() => import('./Frontend/Testimonials'));
+const PricingCalculator = lazy(() => import('./Frontend/PricingCalculator'));
+const SeoAudit = lazy(() => import('./Frontend/SeoAudit'));
+const PrivacyPolicy = lazy(() => import('./Frontend/PrivacyPolicy'));
+const Partners = lazy(() => import('./Frontend/Partners'));
+const Webinars = lazy(() => import('./Frontend/Webinars'));
 const NotFound = lazy(() => import('./Frontend/NotFound'));
 
 const PageLoader = () => (
@@ -41,8 +48,15 @@ const AppRoutes = () => {
           <Route path="/industries" element={<Industries />} />
           <Route path="/industries/:industry" element={<IndustryPage />} />
           <Route path="/careers" element={<Careers />} />
+          <Route path="/compare/:slug" element={<ComparisonPage />} />
+          <Route path="/testimonials" element={<Testimonials />} />
+          <Route path="/pricing-calculator" element={<PricingCalculator />} />
+          <Route path="/free-seo-audit" element={<SeoAudit />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/partners" element={<Partners />} />
+          <Route path="/webinars" element={<Webinars />} />
           <Route path="*" element={<NotFound />} />
         </RouterRoutes>
       </Suspense>

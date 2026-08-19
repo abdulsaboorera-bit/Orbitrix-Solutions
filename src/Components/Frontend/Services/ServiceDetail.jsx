@@ -10,7 +10,10 @@ import {
 import SEO from '../../SEO';
 import Breadcrumbs from '../../Breadcrumbs';
 import servicesData from './servicesData';
+import serviceLocations from '../Locations/serviceLocations';
+import ServiceLocationPage from '../Locations/ServiceLocationPage';
 import Cta from './Cta';
+import FAQ from './FAQ';
 import Footer from '../../Footer';
 import './ServiceDetail.css';
 import './index.css';
@@ -22,6 +25,10 @@ const ServiceDetail = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [slug]);
+
+  if (serviceLocations[slug]) {
+    return <ServiceLocationPage />;
+  }
 
   if (!service) {
     return (
@@ -62,6 +69,21 @@ const ServiceDetail = () => {
     "url": `https://orbitrixsolutions.com/services/${slug}`
   };
 
+  const faqSchema = service.faq
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": service.faq.map((item) => ({
+          "@type": "Question",
+          "name": item.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": item.answer,
+          },
+        })),
+      }
+    : null;
+
   return (
     <main id="main-content">
       <SEO
@@ -70,6 +92,10 @@ const ServiceDetail = () => {
         keywords={` ${service.title}, ${service.title} USA, ${service.title} Canada, ${service.title} UK, Orbitrix Solutions ${service.title}`}
         schema={serviceSchema}
       />
+
+      {faqSchema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      )}
 
       <Breadcrumbs />
 
@@ -189,6 +215,9 @@ const ServiceDetail = () => {
           </div>
         </div>
       </section>
+
+      {/* FAQ */}
+      {service.faq && <FAQ data={service.faq} />}
 
       {/* Other Services */}
       <section className="sd-other-services">

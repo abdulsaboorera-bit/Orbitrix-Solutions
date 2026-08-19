@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-const SEO = ({ title, description, canonicalUrl, keywords, schema, type = 'website', dateModified, articlePublishedTime, articleSection, image }) => {
+const SEO = ({ title, description, canonicalUrl, keywords, schema, type = 'website', dateModified, articlePublishedTime, articleSection, image, hreflang }) => {
   const location = useLocation();
   const ogImage = image || 'https://orbitrixsolutions.com/logo-optimized.webp';
 
@@ -123,12 +123,30 @@ const SEO = ({ title, description, canonicalUrl, keywords, schema, type = 'websi
       document.head.appendChild(script);
     }
 
+    // 10. Inject hreflang alternate links
+    const existingHreflang = document.querySelectorAll('link[data-hreflang]');
+    existingHreflang.forEach(el => el.remove());
+    if (hreflang && Array.isArray(hreflang)) {
+      hreflang.forEach(({ lang, url }) => {
+        if (lang && url) {
+          const link = document.createElement('link');
+          link.setAttribute('rel', 'alternate');
+          link.setAttribute('hreflang', lang);
+          link.setAttribute('href', url);
+          link.setAttribute('data-hreflang', 'true');
+          document.head.appendChild(link);
+        }
+      });
+    }
+
     // Cleanup
     return () => {
       const dynamicSchemas = document.querySelectorAll('script[data-dynamic-schema]');
       dynamicSchemas.forEach(el => el.remove());
+      const dynamicHreflang = document.querySelectorAll('link[data-hreflang]');
+      dynamicHreflang.forEach(el => el.remove());
     };
-  }, [title, description, canonicalUrl, keywords, schema, type, dateModified, articlePublishedTime, articleSection, location]);
+  }, [title, description, canonicalUrl, keywords, schema, type, dateModified, articlePublishedTime, articleSection, location, hreflang]);
 
   return null;
 };

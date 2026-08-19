@@ -10,6 +10,7 @@ import ScrollToTop from './Components/ScrollToTop';
 import ErrorBoundary from './Components/ErrorBoundary';
 
 const WhatsAppWidget = lazy(() => import('./Components/WhatsAppWidget'));
+const LiveChat = lazy(() => import('./Components/LiveChat'));
 
 const StickySocial = () => (
   <div className="sticky-social">
@@ -101,6 +102,7 @@ const App = () => {
   <StickySocial />
   <Suspense fallback={null}>
     <WhatsAppWidget />
+    <LiveChat />
   </Suspense>
   </>
   </ErrorBoundary>

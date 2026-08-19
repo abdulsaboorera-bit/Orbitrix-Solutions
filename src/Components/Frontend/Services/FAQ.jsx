@@ -55,7 +55,8 @@ const faqData = [
   },
 ];
 
-const FAQ = () => {
+const FAQ = ({ data }) => {
+  const faqItems = data || faqData;
   const [activeIndex, setActiveIndex] = useState(null);
 
   const toggleFAQ = (index) => {
@@ -66,7 +67,7 @@ const FAQ = () => {
     const faqSchema = {
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
-      mainEntity: faqData.map((faq) => ({
+      mainEntity: faqItems.map((faq) => ({
         '@type': 'Question',
         name: faq.question,
         acceptedAnswer: {
@@ -88,7 +89,7 @@ const FAQ = () => {
         existingScript.remove();
       }
     };
-  }, []);
+  }, [faqItems]);
 
   return (
     <section id="faq" className="faq-services-section">
@@ -105,7 +106,7 @@ const FAQ = () => {
         </div>
 
         <div className="faq-services-list">
-          {faqData.map((faq, index) => (
+          {faqItems.map((faq, index) => (
             <article
               key={index}
               className={`faq-services-item ${activeIndex === index ? 'active' : ''}`}

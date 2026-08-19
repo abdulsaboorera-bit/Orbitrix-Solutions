@@ -138,6 +138,8 @@ const Footer = () => {
                 <li><Link to="/projects" className="f-link">Projects</Link></li>
                 <li><Link to="/careers" className="f-link">Careers</Link></li>
                 <li><Link to="/contact" className="f-link">Contact Us</Link></li>
+                <li><Link to="/webinars" className="f-link">Webinars</Link></li>
+                <li><Link to="/partners" className="f-link">Partners</Link></li>
                 <li><Link to="/terms-and-conditions" className="f-link">Terms &amp; Conditions</Link></li>
               </ul>
             </div>
@@ -156,7 +158,17 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Col 4 — Contact & Newsletter */}
+            {/* Col 4 — Tools */}
+            <div className="f-col">
+              <h4 className="f-col-title">Tools</h4>
+              <ul className="f-links">
+                <li><Link to="/free-seo-audit" className="f-link">Free SEO Audit</Link></li>
+                <li><Link to="/pricing-calculator" className="f-link">Pricing Calculator</Link></li>
+                <li><Link to="/testimonials" className="f-link">Testimonials</Link></li>
+              </ul>
+            </div>
+
+            {/* Col 5 — Contact & Newsletter */}
             <div className="f-col f-col-contact">
               <h4 className="f-col-title">Stay Connected</h4>
               <div className="f-contact-items">
@@ -204,7 +216,7 @@ const Footer = () => {
             </div>
             <div className="f-bottom-links">
               <Link to="/terms-and-conditions" className="f-bottom-link">Terms</Link>
-              <Link to="/terms-and-conditions" className="f-bottom-link">Privacy</Link>
+              <Link to="/privacy-policy" className="f-bottom-link">Privacy</Link>
               <a className="f-bottom-link" href="https://www.linkedin.com/in/abdul-saboor-5677643b4/" target="_blank" rel="noreferrer">LinkedIn</a>
               <a className="f-bottom-link" href="https://github.com/abdulsaboorera-bit" target="_blank" rel="noreferrer">GitHub</a>
             </div>
