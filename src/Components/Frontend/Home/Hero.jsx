@@ -1,7 +1,7 @@
 import React, { useState, useEffect, memo } from 'react';
 import { Link } from 'react-router-dom';
 
-const words = ['visions', 'ideas', 'products', 'strategies'];
+const words = ['growth', 'revenue', 'success', 'dominance'];
 
 const CodeIcon = () => <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 448 512" fill="currentColor"><path d="M0 93.7l183.6-25.3v177.4H0V93.7zm0 324.6l183.6 25.3V268.4H0v149.9zm203.8 28L448 480V268.4H203.8v177.9zm0-380.6v180.1H448V32L203.8 65.7z"/></svg>;
 const BullhornIcon = () => <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 512 512" fill="currentColor"><path d="M480.1 209.9l-22.9-22.9-93.7 93.7c-13.3 13.3-38.5 13.3-51.8 0l-69.4-69.4c-13.3-13.3-13.3-38.5 0-51.8l93.7-93.7-93.7-93.7c-13.3-13.3-13.3-38.5 0-51.8l69.4-69.4c13.3-13.3 38.5-13.3 51.8 0l93.7 93.7 93.7-93.7c13.3-13.3 38.5-13.3 51.8 0l69.4 69.4c13.3 13.3 13.3 38.5 0 51.8l-93.7 93.7 93.7 93.7c13.3 13.3 13.3 38.5 0 51.8l-69.4 69.4c-13.3 13.3-38.5 13.3-51.8 0l-93.7-93.7zM16 160h48c8.8 0 16 7.2 16 16v160c0 8.8-7.2 16-16 16H16c-8.8 0-16-7.2-16-16V176c0-8.8 7.2-16 16-16z"/></svg>;
@@ -65,17 +65,17 @@ const Hero = memo(() => {
         {/* Top badge */}
         <div className="hero-top-badge">
           <span className="badge-dot"></span>
-          Full-Service Digital Agency
+          Trusted by Businesses Worldwide
         </div>
 
         {/* Main headline */}
         <h1 className="hero-v2-heading">
-          <span className="hero-line hero-line-1">We Build</span>
+          <span className="hero-line hero-line-1">Elevate Your Brand</span>
           <span className="hero-line hero-line-2">
-            Websites <span className="hero-ampersand">&amp;</span> Brands
+            With Digital <span className="hero-ampersand">&amp;</span> Technical
           </span>
           <span className="hero-line hero-line-3">
-            That{' '}
+            Excellence That{' '}
             <span className="hero-word-rotator-wrapper">
               <span className={`hero-word-rotator-text ${fadeState}`}>
                 {words[wordIndex]}
@@ -87,9 +87,9 @@ const Hero = memo(() => {
 
         {/* Description */}
         <p className="hero-v2-description">
-          Orbitrix Solutions is a full-service digital marketing company and web development
-          agency helping businesses scale with professional SEO services, AI automation,
-          custom web development, and data-driven digital marketing strategies.
+          We help ambitious businesses in the USA, UK, Canada, Europe &amp; beyond
+          build high-performance websites, rank #1 on Google, and automate operations
+          with AI — so you can focus on what matters most: serving your customers.
         </p>
 
         {/* Service pills - rotating highlight */}
@@ -117,12 +117,12 @@ const Hero = memo(() => {
             rel="noreferrer"
           >
             <WhatsappIcon />
-            <span>Get a Free Quote</span>
+            <span>Get Your Free Strategy Session</span>
             <ArrowRightIcon className="btn-arrow-icon" />
           </a>
-          <Link className="hero-btn hero-btn-secondary" to="/about/ceo">
+          <Link className="hero-btn hero-btn-secondary" to="/projects">
             <UserIcon />
-            <span>About CEO</span>
+            <span>See Our Results</span>
           </Link>
         </div>
       </div>

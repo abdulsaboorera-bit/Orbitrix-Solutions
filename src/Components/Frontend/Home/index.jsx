@@ -2,6 +2,7 @@ import React, { lazy, Suspense } from 'react';
 import SEO from '../../SEO';
 import Hero from './Hero';
 import ClientLogos from './ClientLogos';
+import IndustryExperience from './IndustryExperience';
 import Footer from '../../Footer';
 import Breadcrumbs from '../../Breadcrumbs';
 import './index.css';
@@ -56,14 +57,15 @@ const index = () => {
   return (
     <main id="main-content">
       <SEO
-        title="Orbitrix Solutions | Web Dev, SEO & AI Agency"
-        description="Orbitrix Solutions: a web development &amp; digital marketing agency offering SEO, AI automation, and custom web development to accelerate your business growth."
-        keywords="web development agency, digital marketing company, SEO services, AI automation, custom web development, React development, WordPress development"
+        title="Orbitrix Solutions | Web Development, SEO & AI Agency for Global Businesses"
+        description="Orbitrix Solutions helps businesses in the USA, UK, Canada & Europe build high-performance websites, rank #1 on Google, and automate operations with AI. Get your free strategy session."
+        keywords="web development agency USA, SEO services UK, digital marketing company Canada, AI automation Europe, custom web development, React development, WordPress development, web agency for businesses"
         schema={homeSchema}
       />
       <Breadcrumbs />
       <Hero />
       <ClientLogos />
+      <IndustryExperience />
       <Suspense fallback={null}>
         <Services />
         <Pricing />

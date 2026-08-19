@@ -58,14 +58,15 @@ const Footer = () => {
         <div className="f-cta-glow" />
         <div className="f-cta-inner">
           <h2 className="f-cta-title">
-            Ready to <span className="f-cta-gradient">Scale Your Business</span>?
+            Ready to <span className="f-cta-gradient">Outperform Your Competition</span>?
           </h2>
           <p className="f-cta-sub">
-            Let's build something exceptional together. From concept to launch, our web development agency and digital marketing company deliver digital experiences that drive real growth.
+            Your competitors are investing in their digital presence. Don't let them capture your customers first.
+            Let's build a website and strategy that positions you as the obvious choice.
           </p>
           <div className="f-cta-actions">
             <Link to="/contact" className="f-cta-btn primary">
-              Get a Free Quote
+              Get Your Free Strategy Session
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
@@ -93,10 +94,10 @@ const Footer = () => {
             {/* Col 1 — Brand */}
             <div className="f-brand">
               <Link to="/" className="f-brand-logo-wrap">
-                <img src={logo} alt="Orbitrix Solutions" className="f-brand-logo" width="220" height="81" loading="lazy" />
+                <img src={logo} alt="Orbitrix Solutions" className="f-brand-logo" width="220" height="56" loading="lazy" style={{ objectFit: 'contain' }} />
               </Link>
               <p className="f-brand-desc">
-                Orbitrix Solutions helps businesses grow through premium web development, digital marketing, and IT consulting.
+                We help ambitious businesses across the USA, UK, Canada, and Europe build high-performance digital presences that attract more customers and drive measurable growth.
               </p>
               <div className="f-trust-badges">
                 <div className="f-trust-badge">
@@ -135,6 +136,7 @@ const Footer = () => {
                 <li><Link to="/" className="f-link">Home</Link></li>
                 <li><Link to="/about" className="f-link">About Us</Link></li>
                 <li><Link to="/projects" className="f-link">Projects</Link></li>
+                <li><Link to="/careers" className="f-link">Careers</Link></li>
                 <li><Link to="/contact" className="f-link">Contact Us</Link></li>
                 <li><Link to="/terms-and-conditions" className="f-link">Terms &amp; Conditions</Link></li>
               </ul>

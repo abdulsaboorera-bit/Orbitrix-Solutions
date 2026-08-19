@@ -3,6 +3,7 @@ import primeSafariImg from '../Images/PrimeSafariDubai.webp';
 import stayImg from '../Images/Stay.webp';
 import b2bImg from '../Images/b2b-MobileWholesale.webp';
 import imranWoodImg from '../Images/imran-wood-working.webp';
+import sawapakImg from '../Images/Sawapak.webp';
 
 
 export const categories = [
@@ -166,6 +167,37 @@ export const projects = [
       timeline: '3 weeks',
       industry: 'Manufacturing',
       deliverables: ['Custom Website', 'Project Gallery', 'Local SEO', 'Lead Capture Forms'],
+    },
+  },
+  {
+    slug: 'sawa-industries',
+    name: 'SAWA Industries',
+    url: 'https://www.sawapak.com/',
+    category: 'website-development',
+    categoryLabel: 'Website Development',
+    status: 'Live',
+    thumb: sawapakImg,
+    shortDescription: 'A full-spectrum e-commerce platform for SAWA Industries featuring sublimation textile printing services, product catalog, and seamless shopping experience for sportswear, apparel, and swimwear.',
+    heroImage: sawapakImg,
+    challenge: 'SAWA Industries needed a professional e-commerce platform to showcase their full range of textile printing services — sublimation, screen printing, DTF, DTG, UV, and embroidery — while making it easy for global customers to browse products and request quotes.',
+    approach: 'We designed a visually rich, product-focused platform with category-based browsing, high-quality product galleries, and a streamlined quote request system. The site needed to convey the quality and vibrancy of their printing work.',
+    solution: 'Built a custom Next.js e-commerce platform with product categorization (Apparel, Sports Wears, Swimwear), quote request forms, WhatsApp integration, and responsive design. Optimized for international SEO to reach clients across 30+ countries.',
+    results: [
+      { metric: '500+', label: 'Happy clients worldwide' },
+      { metric: '30+', label: 'Countries served' },
+      { metric: '50K+', label: 'Products delivered' },
+    ],
+    technologies: ['Next.js', 'E-commerce', 'Product Catalog', 'Quote System', 'WhatsApp Integration', 'International SEO'],
+    testimonial: {
+      quote: 'Orbitrix Solutions delivered a stunning e-commerce platform that perfectly showcases our textile printing capabilities. The site has helped us reach clients across 30+ countries.',
+      author: 'SAWA Industries Team',
+      role: 'Client',
+    },
+    projectDetails: {
+      client: 'SAWA Industries',
+      timeline: '6 weeks',
+      industry: 'Textile & Manufacturing',
+      deliverables: ['E-commerce Platform', 'Product Catalog', 'Quote Request System', 'SEO Strategy', 'WhatsApp Integration'],
     },
   },
   {

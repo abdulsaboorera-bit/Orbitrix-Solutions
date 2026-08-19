@@ -78,6 +78,76 @@ const locationData = {
     ],
     cta: 'Let us help your Dutch business grow online. Start with a free consultation.',
   },
+  france: {
+    title: 'Web Development Agency in France',
+    subtitle: 'Solutions Numériques Pour Entreprises Françaises — De Paris à Lyon',
+    description: 'Orbitrix Solutions helps French businesses build powerful digital presences with custom web development, SEO optimization, and AI-driven marketing strategies. We understand the French market and deliver solutions that resonate with French consumers.',
+    services: ['Custom Web Development', 'French Market SEO', 'E-commerce Solutions', 'Digital Marketing Strategy', 'AI Automation', 'Bilingual Content Strategy'],
+    cities: ['Paris', 'Lyon', 'Marseille', 'Toulouse', 'Nice', 'Nantes', 'Strasbourg', 'Bordeaux'],
+    localSeo: 'We optimize for Google.fr and understand French search patterns. Our SEO strategies include French-language keyword research, local citation building, and compliance with CNIL data protection regulations.',
+    stats: [
+      { value: '12+', label: 'French Projects' },
+      { value: '35%', label: 'Average Traffic Increase' },
+      { value: '24h', label: 'Response Time' },
+    ],
+    cta: 'Prêt à digitaliser votre entreprise française? Contactez-nous pour une consultation gratuite.',
+  },
+  spain: {
+    title: 'Web Development Agency in Spain',
+    subtitle: 'Desarrollo Web y Marketing Digital Para Empresas Españolas',
+    description: 'Orbitrix Solutions partners with Spanish businesses to deliver web development, SEO, and digital marketing services tailored for the Spanish market. From Barcelona to Madrid, we help Spanish companies achieve digital excellence.',
+    services: ['Custom Web Development', 'Spanish Market SEO', 'E-commerce Platforms', 'Social Media Marketing', 'AI-Powered Analytics', 'Bilingual Content Strategy'],
+    cities: ['Madrid', 'Barcelona', 'Valencia', 'Seville', 'Bilbao', 'Málaga', 'Zaragoza', 'Palma'],
+    localSeo: 'We optimize for Google.es and understand Spanish search behavior. Our local SEO strategies help Spanish businesses rank in their target cities and attract customers from their specific regions.',
+    stats: [
+      { value: '10+', label: 'Spanish Projects' },
+      { value: '28%', label: 'Average Conversion Boost' },
+      { value: '24h', label: 'Response Time' },
+    ],
+    cta: 'Impulsa tu empresa española con soluciones digitales modernas. Contáctanos hoy.',
+  },
+  ireland: {
+    title: 'Web Development Agency in Ireland',
+    subtitle: 'Digital Growth Partner for Irish Businesses Across the Emerald Isle',
+    description: 'Orbitrix Solutions serves Irish businesses with web development, SEO, and digital marketing services designed for the Irish market. From Dublin to Cork, Galway to Limerick, we help Irish companies build powerful digital presences.',
+    services: ['Responsive Web Design', 'Irish Market SEO', 'E-commerce Development', 'PPC Management', 'AI Automation Solutions', 'Content Marketing'],
+    cities: ['Dublin', 'Cork', 'Galway', 'Limerick', 'Waterford', 'Kilkenny', 'Sligo', 'Drogheda'],
+    localSeo: 'We optimize for Google.ie and understand Irish search patterns. Our local SEO strategies help Irish businesses dominate local search results and attract customers from their target regions.',
+    stats: [
+      { value: '8+', label: 'Irish Projects' },
+      { value: '32%', label: 'Average Lead Increase' },
+      { value: '24h', label: 'Response Time' },
+    ],
+    cta: 'Ready to grow your Irish business online? Let us discuss your goals today.',
+  },
+  australia: {
+    title: 'Web Development Agency in Australia',
+    subtitle: 'Full-Service Digital Solutions for Australian Businesses from Sydney to Melbourne',
+    description: 'Orbitrix Solutions partners with Australian businesses to deliver web development, SEO, and digital marketing services that generate real results. Whether you are in Sydney, Melbourne, Brisbane, or Perth, we understand the Australian market.',
+    services: ['Custom Web Development', 'Australian Market SEO', 'E-commerce Solutions', 'Google Ads Management', 'AI Automation', 'Social Media Marketing'],
+    cities: ['Sydney', 'Melbourne', 'Brisbane', 'Perth', 'Adelaide', 'Gold Coast', 'Canberra', 'Hobart'],
+    localSeo: 'We optimize for Google.com.au and understand Australian search behavior. Our local SEO strategies help Australian businesses rank in their target cities and attract customers from their specific regions.',
+    stats: [
+      { value: '15+', label: 'Australian Projects' },
+      { value: '30%', label: 'Average Traffic Increase' },
+      { value: '24h', label: 'Response Time' },
+    ],
+    cta: 'Ready to grow your Australian business online? Contact us for a free consultation.',
+  },
+  dubai: {
+    title: 'Web Development Agency in Dubai & UAE',
+    subtitle: 'Premium Digital Solutions for Businesses in Dubai, Abu Dhabi & Across the UAE',
+    description: 'Orbitrix Solutions delivers premium web development, SEO, and digital marketing services for businesses in the UAE. From Dubai to Abu Dhabi, we understand the unique dynamics of the Middle Eastern market and deliver solutions that drive growth.',
+    services: ['Premium Web Development', 'UAE Market SEO', 'E-commerce Platforms', 'Google Ads & Social Advertising', 'AI Automation Solutions', 'Arabic & English Bilingual Sites'],
+    cities: ['Dubai', 'Abu Dhabi', 'Sharjah', 'Ajman', 'Ras Al Khaimah', 'Fujairah', 'Umm Al Quwain', 'Al Ain'],
+    localSeo: 'We optimize for Google.ae and understand UAE search patterns. Our strategies help businesses in Dubai and across the Emirates rank locally and attract high-value customers.',
+    stats: [
+      { value: '20+', label: 'UAE Projects' },
+      { value: '40%', label: 'Average ROI Increase' },
+      { value: '24h', label: 'Response Time' },
+    ],
+    cta: 'Elevate your Dubai business with world-class digital solutions. Contact us today.',
+  },
 };
 
 const LocationPage = () => {
@@ -116,10 +186,10 @@ const LocationPage = () => {
       "name": "Orbitrix Solutions",
       "url": "https://orbitrixsolutions.com"
     },
-    "areaServed": {
-      "@type": "Country",
-      "name": country === 'usa' ? 'United States' : country.charAt(0).toUpperCase() + country.slice(1)
-    },
+      "areaServed": {
+        "@type": "Country",
+        "name": country === 'usa' ? 'United States' : country === 'uk' ? 'United Kingdom' : country === 'dubai' ? 'United Arab Emirates' : country.charAt(0).toUpperCase() + country.slice(1)
+      },
     "serviceType": "Web Development, SEO, Digital Marketing",
     "url": `https://orbitrixsolutions.com/locations/${country}`
   };
@@ -147,7 +217,7 @@ const LocationPage = () => {
           </Link>
           <div className="location-badge">
             <FontAwesomeIcon icon={faGlobe} />
-            {country.toUpperCase()}
+            {country === 'dubai' ? 'UAE' : country.toUpperCase()}
           </div>
           <h1>{data.title}</h1>
           <p className="location-subtitle">{data.subtitle}</p>
@@ -215,7 +285,7 @@ const LocationPage = () => {
               <div className="location-other-links">
                 {otherLocations.map(([key, loc]) => (
                   <Link key={key} to={`/locations/${key}`} className="location-other-link">
-                    {loc.title.replace('Web Development Agency in the ', '')}
+                    {loc.title.replace('Web Development Agency in the ', '').replace('Web Development Agency in ', '')}
                     <FontAwesomeIcon icon={faArrowRight} />
                   </Link>
                 ))}

@@ -129,9 +129,12 @@ body[data-theme='dark'] .site-nav {
 }
 
 .site-nav .navbar-brand img {
+  width: auto;
   max-width: 220px;
   height: auto;
   max-height: 56px;
+  object-fit: contain;
+  display: block;
 }
 
 .site-nav .nav-link {

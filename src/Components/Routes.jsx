@@ -15,6 +15,7 @@ const BlogArticle = lazy(() => import('./Frontend/Blog/BlogArticle'));
 const LocationPage = lazy(() => import('./Frontend/Locations/LocationPage'));
 const Industries = lazy(() => import('./Frontend/Industries/Industries'));
 const IndustryPage = lazy(() => import('./Frontend/Industries/IndustryPage'));
+const Careers = lazy(() => import('./Frontend/Careers'));
 const NotFound = lazy(() => import('./Frontend/NotFound'));
 
 const PageLoader = () => (
@@ -39,6 +40,7 @@ const AppRoutes = () => {
           <Route path="/locations/:country" element={<LocationPage />} />
           <Route path="/industries" element={<Industries />} />
           <Route path="/industries/:industry" element={<IndustryPage />} />
+          <Route path="/careers" element={<Careers />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
           <Route path="*" element={<NotFound />} />

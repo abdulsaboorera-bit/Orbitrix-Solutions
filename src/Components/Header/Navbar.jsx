@@ -59,7 +59,7 @@ const Navbar = () => {
       <nav className="site-nav navbar navbar-expand-lg w-100" aria-label="Main navigation">
         <div className="container-fluid px-4">
           <Link className="navbar-brand m-0" to="/" aria-label="Orbitrix Solutions Home">
-            <img src={logo} alt="Orbitrix Solutions logo" width="220" height="81" loading="eager" />
+            <img src={logo} alt="Orbitrix Solutions logo" width="220" height="56" loading="eager" style={{ objectFit: 'contain' }} />
           </Link>
 
           <button
@@ -155,10 +155,15 @@ const Navbar = () => {
                   Blog
                 </Link>
               </li>
+              <li className="nav-item" role="none">
+                <Link className={`nav-link ${isActive('/careers') ? 'active' : ''}`} to="/careers" role="menuitem" aria-current={isActive('/careers') ? 'page' : undefined}>
+                  Careers
+                </Link>
+              </li>
             </ul>
 
             <div className="nav-btns d-flex ms-lg-3 align-items-center gap-2">
-              <Link className="btn nav-cta-primary" to="/contact">Get a Free Quote</Link>
+              <Link className="btn nav-cta-primary" to="/contact">Get Your Free Strategy Session</Link>
               <a className="btn nav-cta-whatsapp" href="https://wa.me/qr/7GSRQFMD6AMZG1" target="_blank" rel="noopener noreferrer">
                 <WhatsappIconNav /> Book a Consultation
               </a>
