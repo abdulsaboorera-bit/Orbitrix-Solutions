@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useSearchParams, Navigate } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faExternalLinkAlt, faCode, faSearch, faRobot } from '@fortawesome/free-solid-svg-icons';
 import SEO from '../../SEO';
@@ -19,22 +19,13 @@ const categoryLabels = {
   'ai-automation': 'AI Automation',
 };
 
-const AI_AUTOMATION_SLUG = 'ai-social-media-automation';
-
 const Projects = () => {
   const [searchParams] = useSearchParams();
   const categoryFilter = searchParams.get('category');
 
-  // Redirect AI Automation category to case study page
-  if (categoryFilter === 'ai-automation') {
-    return <Navigate to={`/projects/${AI_AUTOMATION_SLUG}`} replace />;
-  }
-
-  // Filter out AI Automation from grid (it opens directly as case study)
-  const gridProjects = projects.filter((p) => p.category !== 'ai-automation');
   const filteredProjects = categoryFilter && categoryFilter !== 'all'
-    ? gridProjects.filter((p) => p.category === categoryFilter)
-    : gridProjects;
+    ? projects.filter((p) => p.category === categoryFilter)
+    : projects;
   return (
     <main id="main-content">
       <SEO
