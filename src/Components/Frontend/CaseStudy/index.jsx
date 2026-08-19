@@ -112,8 +112,11 @@ const CaseStudy = () => {
         {/* Hero */}
         <section className={`cs-hero ${project.slug === 'ai-social-media-automation' ? 'cs-hero-ai' : ''}`} aria-label="Project hero">
           <div className="cs-hero-image">
-            {project.slug !== 'ai-social-media-automation' && (
+            {project.heroImage && project.slug !== 'ai-social-media-automation' && (
               <img src={project.heroImage} alt={`${project.name} hero`} width="1900" height="900" loading="eager" decoding="async" />
+            )}
+            {!project.heroImage && project.slug !== 'ai-social-media-automation' && (
+              <div style={{ width: '100%', height: '100%', background: 'linear-gradient(135deg, #0b5c61 0%, #1aa18a 50%, #63c6b8 100%)' }}></div>
             )}
             <div className="cs-hero-overlay"></div>
           </div>
@@ -372,7 +375,13 @@ const CaseStudy = () => {
                 {related.map((rel) => (
                   <Link to={`/projects/${rel.slug}`} key={rel.slug} className="cs-related-card">
                     <div className="cs-related-thumb">
-                      <img src={rel.thumb} alt={`${rel.name} preview`} loading="lazy" width="800" height="380" decoding="async" />
+                      {rel.thumb ? (
+                        <img src={rel.thumb} alt={`${rel.name} preview`} loading="lazy" width="800" height="380" decoding="async" />
+                      ) : (
+                        <div style={{ width: '100%', height: '100%', background: 'linear-gradient(135deg, #0b5c61 0%, #1aa18a 50%, #63c6b8 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontWeight: 700, fontSize: '0.95rem' }}>
+                          {rel.name}
+                        </div>
+                      )}
                     </div>
                     <div className="cs-related-body">
                       <span className="cs-related-category">{rel.categoryLabel}</span>

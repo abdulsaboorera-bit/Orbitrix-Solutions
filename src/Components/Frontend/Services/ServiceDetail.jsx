@@ -164,6 +164,27 @@ const ServiceDetail = () => {
                 </ul>
               </div>
 
+              {service.keyDeliverables && (
+                <div className="sd-key-deliverables">
+                  <h3>Key Deliverables</h3>
+                  <div className="sd-deliverables-grid">
+                    {service.keyDeliverables.map((deliverable, i) => (
+                      <div
+                        className="sd-deliverable-card"
+                        key={i}
+                        style={{ animationDelay: `${i * 0.1}s` }}
+                      >
+                        <div className="sd-deliverable-icon">
+                          <FontAwesomeIcon icon={deliverable.icon} />
+                        </div>
+                        <h4>{deliverable.title}</h4>
+                        <p>{deliverable.description}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               <div className="sd-problems">
                 <h3>Problems We Solve</h3>
                 <ul>

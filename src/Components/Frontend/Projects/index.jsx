@@ -88,7 +88,13 @@ const Projects = () => {
             >
               <Link to={`/projects/${project.slug}`} className="project-card-link" aria-label={`View case study: ${project.name}`}>
                 <div className="project-thumb">
-                  <img src={project.thumb} alt={`${project.name} preview`} loading="lazy" width="800" height="380" decoding="async" />
+                  {project.thumb ? (
+                    <img src={project.thumb} alt={`${project.name} preview`} loading="lazy" width="800" height="380" decoding="async" />
+                  ) : (
+                    <div className="project-thumb-placeholder" style={{ width: '100%', height: '100%', background: 'linear-gradient(135deg, #0b5c61 0%, #1aa18a 50%, #63c6b8 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontWeight: 700, fontSize: '1.1rem', letterSpacing: '0.05em' }}>
+                      {project.name}
+                    </div>
+                  )}
                   <span className={`project-status ${project.status === 'Live' ? 'live' : 'progress'}`}>
                     {project.status}
                   </span>

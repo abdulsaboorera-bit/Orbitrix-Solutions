@@ -28,6 +28,9 @@ import {
   faHashtag,
   faClipboardList,
   faDollarSign,
+  faPhone,
+  faComments,
+  faPen,
 } from '@fortawesome/free-solid-svg-icons';
 import { faWordpress } from '@fortawesome/free-brands-svg-icons';
 
@@ -493,6 +496,14 @@ const servicesData = [
         question: 'How much does AI automation cost?',
         answer: 'Pricing depends on which modules you need. A single AI voice agent or chatbot starts at $2,000-$5,000. The full automation suite with voice, chatbot, email, blog, and social media typically ranges from $8,000-$20,000 depending on integrations and complexity. We provide ROI projections so you can see how quickly the automation pays for itself.',
       },
+    ],
+    keyDeliverables: [
+      { title: 'AI Voice Agents', description: '24/7 phone system that answers calls, books appointments, and handles FAQs for salons, clinics, and businesses.', icon: faPhone },
+      { title: 'Custom Chatbots', description: 'Website chatbots powered by your own AI model with custom API key integration. Not a template — built for your business.', icon: faComments },
+      { title: 'Email Auto-Responder', description: 'Smart email routing that detects intent, auto-replies, and forwards to the right department instantly.', icon: faEnvelope },
+      { title: 'Blog Auto-Publisher', description: 'Automated n8n workflow that generates SEO-optimized blog posts and publishes them to your website.', icon: faPen },
+      { title: 'Social Media Auto-Poster', description: 'AI generates content and auto-posts across Facebook, Instagram, LinkedIn, and other platforms.', icon: faShareAlt },
+      { title: 'n8n Workflow Orchestration', description: 'Custom automation workflows connecting your tools, CRMs, and services on the n8n platform.', icon: faCogs },
     ],
   },
 ];
