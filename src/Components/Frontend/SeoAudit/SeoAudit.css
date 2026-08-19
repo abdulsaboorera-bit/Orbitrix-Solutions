@@ -209,6 +209,43 @@
   margin-bottom: 40px;
 }
 
+/* Core Web Vitals */
+.seo-audit-metrics {
+  background: var(--orbit-white);
+  border: 1px solid rgba(26, 129, 135, 0.1);
+  border-radius: 20px;
+  padding: 28px 32px;
+  margin-bottom: 40px;
+  box-shadow: 0 8px 24px rgba(8, 34, 34, 0.04);
+}
+
+.seo-audit-metrics h3 {
+  font-size: 1.2rem;
+  color: var(--orbit-deep);
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.seo-audit-metrics-list {
+  display: grid;
+  gap: 10px;
+}
+
+.seo-audit-metric {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.95rem;
+  color: var(--orbit-muted-strong);
+  font-family: 'Source Sans 3', monospace;
+}
+
+.seo-audit-metric-icon {
+  color: var(--orbit-teal);
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
 .seo-audit-score-card {
   background: var(--orbit-white);
   border-radius: 20px;
@@ -427,10 +464,23 @@
   .seo-audit-cta-card {
     padding: 36px 24px;
   }
+  .seo-audit-metrics {
+    padding: 20px;
+  }
 }
 
 @media (max-width: 480px) {
   .seo-audit-score-grid {
     grid-template-columns: 1fr 1fr;
   }
+  .seo-audit-metric {
+    font-size: 0.85rem;
+  }
+}
+
+.seo-audit-error {
+  color: #dc3545;
+  font-size: 0.92rem;
+  margin-top: 12px;
+  text-align: center;
 }
