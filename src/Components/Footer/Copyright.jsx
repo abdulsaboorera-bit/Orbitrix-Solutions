@@ -162,9 +162,18 @@ const Footer = () => {
             <div className="f-col">
               <h4 className="f-col-title">Tools</h4>
               <ul className="f-links">
+                <li><Link to="/tools" className="f-link">View All Tools</Link></li>
                 <li><Link to="/free-seo-audit" className="f-link">Free SEO Audit</Link></li>
                 <li><Link to="/pricing-calculator" className="f-link">Pricing Calculator</Link></li>
-                <li><Link to="/testimonials" className="f-link">Testimonials</Link></li>
+                <li><Link to="/tools/speed-test" className="f-link">Speed Test</Link></li>
+                <li><Link to="/tools/meta-tag-generator" className="f-link">Meta Tag Generator</Link></li>
+                <li><Link to="/tools/schema-generator" className="f-link">Schema Generator</Link></li>
+                <li><Link to="/tools/robots-txt-generator" className="f-link">Robots.txt Generator</Link></li>
+                <li><Link to="/tools/sitemap-generator" className="f-link">Sitemap Generator</Link></li>
+                <li><Link to="/tools/email-signature-generator" className="f-link">Email Signature</Link></li>
+                <li><Link to="/tools/color-palette-generator" className="f-link">Color Palette</Link></li>
+                <li><Link to="/tools/privacy-policy-generator" className="f-link">Privacy Policy Generator</Link></li>
+                <li><Link to="/tools/terms-generator" className="f-link">Terms Generator</Link></li>
               </ul>
             </div>
 

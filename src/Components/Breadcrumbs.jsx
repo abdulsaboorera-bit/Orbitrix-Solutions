@@ -13,6 +13,10 @@ const routeLabels = {
   '/contact': 'Contact',
   '/terms-and-conditions': 'Terms & Conditions',
   '/industries': 'Industries',
+  '/tools': 'Free Tools',
+  '/tools/privacy-policy-generator': 'Privacy Policy Generator',
+  '/tools/terms-generator': 'Terms & Conditions Generator',
+  '/tools/color-palette-generator': 'Color Palette Generator',
 };
 
 const Breadcrumbs = () => {

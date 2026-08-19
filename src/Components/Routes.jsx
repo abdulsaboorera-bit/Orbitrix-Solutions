@@ -21,9 +21,19 @@ const ComparisonPage = lazy(() => import('./Frontend/Comparisons'));
 const Testimonials = lazy(() => import('./Frontend/Testimonials'));
 const PricingCalculator = lazy(() => import('./Frontend/PricingCalculator'));
 const SeoAudit = lazy(() => import('./Frontend/SeoAudit'));
+const MetaTagGenerator = lazy(() => import('./Frontend/Tools/MetaTagGenerator/MetaTagGenerator'));
+const SchemaGenerator = lazy(() => import('./Frontend/Tools/SchemaGenerator/SchemaGenerator'));
+const SpeedTest = lazy(() => import('./Frontend/Tools/SpeedTest/SpeedTest'));
 const PrivacyPolicy = lazy(() => import('./Frontend/PrivacyPolicy'));
 const Partners = lazy(() => import('./Frontend/Partners'));
 const Webinars = lazy(() => import('./Frontend/Webinars'));
+const ToolsHub = lazy(() => import('./Frontend/Tools/ToolsHub'));
+const PrivacyPolicyGenerator = lazy(() => import('./Frontend/Tools/PrivacyPolicyGenerator'));
+const TermsGenerator = lazy(() => import('./Frontend/Tools/TermsGenerator'));
+const ColorPaletteGenerator = lazy(() => import('./Frontend/Tools/ColorPaletteGenerator'));
+const RobotsTxtGenerator = lazy(() => import('./Frontend/Tools/RobotsTxtGenerator'));
+const SitemapGenerator = lazy(() => import('./Frontend/Tools/SitemapGenerator'));
+const EmailSignatureGenerator = lazy(() => import('./Frontend/Tools/EmailSignatureGenerator'));
 const NotFound = lazy(() => import('./Frontend/NotFound'));
 
 const PageLoader = () => (
@@ -54,11 +64,21 @@ const AppRoutes = () => {
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/pricing-calculator" element={<PricingCalculator />} />
           <Route path="/free-seo-audit" element={<SeoAudit />} />
+          <Route path="/tools/meta-tag-generator" element={<MetaTagGenerator />} />
+          <Route path="/tools/schema-generator" element={<SchemaGenerator />} />
+          <Route path="/tools/speed-test" element={<SpeedTest />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/partners" element={<Partners />} />
           <Route path="/webinars" element={<Webinars />} />
+          <Route path="/tools/robots-txt-generator" element={<RobotsTxtGenerator />} />
+          <Route path="/tools/sitemap-generator" element={<SitemapGenerator />} />
+          <Route path="/tools/email-signature-generator" element={<EmailSignatureGenerator />} />
+          <Route path="/tools" element={<ToolsHub />} />
+          <Route path="/tools/privacy-policy-generator" element={<PrivacyPolicyGenerator />} />
+          <Route path="/tools/terms-generator" element={<TermsGenerator />} />
+          <Route path="/tools/color-palette-generator" element={<ColorPaletteGenerator />} />
           <Route path="*" element={<NotFound />} />
         </RouterRoutes>
       </Suspense>
