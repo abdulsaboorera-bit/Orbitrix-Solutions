@@ -40,6 +40,9 @@ const ContactForm = () => {
         body: JSON.stringify({
           name: form.from_name,
           email: form.from_email,
+          _replyto: form.from_email,
+          _subject: `New Contact: ${form.from_name} - ${form.service || 'General Inquiry'}`,
+          _captcha: 'false',
           phone: form.phone,
           service: form.service,
           message: form.message,

@@ -208,13 +208,15 @@ const Careers = () => {
       const formDataToSend = new FormData();
       formDataToSend.append('fullName', formData.fullName);
       formDataToSend.append('email', formData.email);
+      formDataToSend.append('_replyto', formData.email);
+      formDataToSend.append('_subject', `Job Application: ${formData.position} - ${formData.fullName}`);
+      formDataToSend.append('_captcha', 'false');
       formDataToSend.append('phone', formData.phone || 'Not provided');
       formDataToSend.append('position', formData.position);
       formDataToSend.append('linkedin', formData.linkedin || 'Not provided');
       formDataToSend.append('coverLetter', formData.coverLetter || 'Not provided');
       formDataToSend.append('cv', formData.cv);
       formDataToSend.append('type', 'job-application');
-      formDataToSend.append('_subject', `Job Application: ${formData.position} - ${formData.fullName}`);
 
       const response = await fetch('https://formspree.io/f/xpqgpzdq', {
         method: 'POST',

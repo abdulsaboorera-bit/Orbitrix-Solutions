@@ -110,6 +110,9 @@ const ApplyPage = () => {
       const payload = {
         fullName: formData.fullName,
         email: formData.email,
+        _replyto: formData.email,
+        _subject: `Job Application: ${formData.position} - ${formData.fullName}`,
+        _captcha: 'false',
         phone: formData.phone || 'Not provided',
         position: formData.position,
         linkedin: formData.linkedin || 'Not provided',
@@ -117,7 +120,6 @@ const ApplyPage = () => {
         cvLink: formData.cvLink || (formData.cv ? formData.cv.name : 'Not provided'),
         referralSource: formData.referralSource || 'Not provided',
         type: 'job-application',
-        _subject: `Job Application: ${formData.position} - ${formData.fullName}`,
       };
 
       let response;
