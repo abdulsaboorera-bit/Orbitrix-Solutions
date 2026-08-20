@@ -39,6 +39,19 @@ const TEMPLATES = {
   },
 };
 
+const robotsTxtSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Free Robots.txt Generator",
+  "url": "https://orbitrixsolutions.com/tools/robots-txt-generator",
+  "applicationCategory": "UtilityApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+};
+
 const RobotsTxtGenerator = () => {
   const [websiteUrl, setWebsiteUrl] = useState('');
   const [selectedEngines, setSelectedEngines] = useState(['all']);
@@ -191,6 +204,7 @@ const RobotsTxtGenerator = () => {
         title="Free Robots.txt Generator | Create SEO Robots File | Orbitrix Solutions"
         description="Generate a valid robots.txt file for your website. Control search engine crawling with allow/disallow rules, sitemaps, and common templates."
         keywords="robots.txt generator, create robots.txt, SEO tool, search engine crawler, robots file generator"
+        schema={robotsTxtSchema}
       />
 
       <section className="robotstxt-hero">

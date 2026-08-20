@@ -18,6 +18,19 @@ import SEO from '../../../SEO';
 import Footer from '../../../Footer';
 import './MetaTagGenerator.css';
 
+const metaTagGeneratorSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Free Meta Tag Generator",
+  "url": "https://orbitrixsolutions.com/tools/meta-tag-generator",
+  "applicationCategory": "UtilityApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+};
+
 const MetaTagGenerator = () => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
@@ -151,6 +164,7 @@ ${getMetaTags().split('\n').map(l => '  ' + l).join('\n')}
         title="Free Meta Tag Generator | Create SEO Meta Tags | Orbitrix Solutions"
         description="Generate optimized HTML meta tags for your website. Create Open Graph, Twitter Card, and canonical meta tags with our free tool."
         keywords="meta tag generator, SEO meta tags, Open Graph tags, Twitter Card tags, meta description generator, HTML meta tags"
+        schema={metaTagGeneratorSchema}
       />
 
       <section className="mtg-hero">

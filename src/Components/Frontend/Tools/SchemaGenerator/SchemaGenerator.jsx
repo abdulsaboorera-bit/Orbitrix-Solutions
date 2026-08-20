@@ -78,6 +78,19 @@ const defaultService = {
   areaServed: '',
 };
 
+const schemaGeneratorAppSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Free Schema Markup Generator",
+  "url": "https://orbitrixsolutions.com/tools/schema-generator",
+  "applicationCategory": "UtilityApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+};
+
 const SchemaGenerator = () => {
   const [schemaType, setSchemaType] = useState('Article');
   const [article, setArticle] = useState(defaultArticle);
@@ -682,6 +695,7 @@ const SchemaGenerator = () => {
         title="Free Schema Markup Generator | Create JSON-LD Structured Data | Orbitrix Solutions"
         description="Generate valid Schema.org JSON-LD markup for your website. Supports Article, Local Business, Product, FAQ, Organization, and more."
         keywords="schema markup generator, JSON-LD generator, structured data, schema.org, rich snippets, SEO schema"
+        schema={schemaGeneratorAppSchema}
       />
 
       <section className="sg-hero">

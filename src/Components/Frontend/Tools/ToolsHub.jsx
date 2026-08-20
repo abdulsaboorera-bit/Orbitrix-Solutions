@@ -8,6 +8,61 @@ import Footer from '../../Footer';
 import toolsData from './toolsData';
 import './ToolsHub.css';
 
+const toolsHubSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://orbitrixsolutions.com/tools/#webpage",
+      "url": "https://orbitrixsolutions.com/tools/",
+      "name": "Free Digital Tools for Your Business | SEO, Legal & Design Tools",
+      "isPartOf": { "@id": "https://orbitrixsolutions.com/#website" },
+      "about": { "@id": "https://orbitrixsolutions.com/#organization" },
+      "description": "Professional free tools to help you optimize your website, generate legal documents, create color palettes, and grow your business. 100% free, no signup required.",
+      "breadcrumb": { "@id": "https://orbitrixsolutions.com/tools/#breadcrumb" },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://orbitrixsolutions.com/tools/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://orbitrixsolutions.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://orbitrixsolutions.com/tools/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://orbitrixsolutions.com/tools/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Are these tools really free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, all tools on Orbitrix Solutions are 100% free to use. No signup or payment required."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What tools does Orbitrix Solutions offer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We offer a Privacy Policy Generator, Terms & Conditions Generator, Color Palette Generator, Meta Tag Generator, Free SEO Audit Tool, Pricing Calculator, and Schema Markup Generator."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use the generated content for commercial purposes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, you can use the generated content for personal and commercial projects. For legal documents, we recommend reviewing with a legal professional."
+          }
+        }
+      ]
+    }
+  ]
+};
+
 const ToolsHub = () => {
   return (
     <div className="th-page">
@@ -15,6 +70,7 @@ const ToolsHub = () => {
         title="Free Digital Tools for Your Business | SEO, Legal & Design Tools | Orbitrix Solutions"
         description="Professional free tools to help you optimize your website, generate legal documents, create color palettes, and grow your business. 100% free, no signup required."
         keywords="free SEO tools, privacy policy generator, terms generator, color palette generator, meta tag generator, free website tools"
+        schema={toolsHubSchema}
       />
 
       <Breadcrumbs />

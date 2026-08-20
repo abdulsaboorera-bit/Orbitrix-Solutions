@@ -121,6 +121,25 @@ function useCountUp(end, duration = 1800) {
   return [count, ref];
 }
 
+const jobPostingSchema = {
+  "@context": "https://schema.org",
+  "@type": "JobPosting",
+  "title": "Graphic Designer",
+  "description": "We are looking for a talented Graphic Designer to join Orbitrix Solutions. You will create visually compelling designs for web, social media, and marketing materials that help our clients stand out in competitive markets. Responsibilities include designing UI/UX mockups, creating social media graphics, developing brand identities, and collaborating with developers to implement visual designs.",
+  "datePosted": "2026-08-19",
+  "validThrough": "2026-12-31",
+  "employmentType": "FULL_TIME",
+  "hiringOrganization": {
+    "@type": "Organization",
+    "name": "Orbitrix Solutions",
+    "sameAs": "https://orbitrixsolutions.com"
+  },
+  "jobLocation": {
+    "@type": "Place",
+    "address": "Remote"
+  }
+};
+
 const Careers = () => {
   const [formData, setFormData] = useState({
     fullName: '',
@@ -222,6 +241,7 @@ const Careers = () => {
         title="Careers at Orbitrix Solutions | Join Our Global Team"
         description="Join Orbitrix Solutions and work on exciting projects with clients across the USA, UK, Canada, Europe & Dubai. View open positions and apply today."
         keywords="Orbitrix Solutions careers, web development jobs, remote jobs, graphic designer hiring, digital agency careers, SEO jobs remote"
+        schema={jobPostingSchema}
       />
 
       <Breadcrumbs />

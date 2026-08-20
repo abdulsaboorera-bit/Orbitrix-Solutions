@@ -199,6 +199,28 @@ const useReveal = () => {
   }, [])
 }
 
+const partnersSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://orbitrixsolutions.com/#organization",
+  "name": "Orbitrix Solutions",
+  "url": "https://orbitrixsolutions.com",
+  "logo": { "@type": "ImageObject", "url": "https://orbitrixsolutions.com/logo.png" },
+  "sameAs": [
+    "https://www.linkedin.com/in/abdul-saboor-5677643b4/",
+    "https://github.com/abdulsaboorera-bit",
+    "https://www.instagram.com/orbitrix_solutions"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+923284678752",
+    "email": "info@orbitrixsolutions.com",
+    "contactType": "customer service"
+  },
+  "address": { "@type": "PostalAddress", "addressLocality": "Lahore", "addressCountry": "PK" },
+  "description": "Orbitrix Solutions is a web development, SEO, and AI automation agency serving clients across the USA, UK, Canada, Europe, and Dubai."
+};
+
 const Partners = () => {
   useReveal()
   const formRef = useRef(null)
@@ -269,6 +291,7 @@ const Partners = () => {
         title="Partner With Orbitrix Solutions | Agency, Technology & Referral Partnerships"
         description="Join the Orbitrix Solutions partner network. White-label our services, integrate with your platform, or earn referral commissions. Grow your business with us."
         keywords="Orbitrix Solutions partnership, agency partner, referral program, white label web development, technology partner, digital agency partnership"
+        schema={partnersSchema}
       />
 
       {/* ─── HERO ─── */}

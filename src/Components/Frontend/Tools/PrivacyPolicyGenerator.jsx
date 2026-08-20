@@ -183,6 +183,19 @@ const generatePrivacyPolicy = (data) => {
   return policy;
 };
 
+const privacyPolicySchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Free Privacy Policy Generator",
+  "url": "https://orbitrixsolutions.com/tools/privacy-policy-generator",
+  "applicationCategory": "UtilityApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+};
+
 const PrivacyPolicyGenerator = () => {
   const [companyName, setCompanyName] = useState('');
   const [websiteUrl, setWebsiteUrl] = useState('');
@@ -257,6 +270,7 @@ const PrivacyPolicyGenerator = () => {
         title="Free Privacy Policy Generator | Create a Privacy Policy | Orbitrix Solutions"
         description="Generate a professional, customizable privacy policy for your website in seconds. Free tool with support for cookies, analytics, and data collection disclosures."
         keywords="privacy policy generator, free privacy policy, GDPR privacy policy, website privacy policy, create privacy policy"
+        schema={privacyPolicySchema}
       />
 
       <section className="ppg-hero">

@@ -77,6 +77,19 @@ const ScoreCircle = ({ score, label, size = 120 }) => {
   );
 };
 
+const speedTestSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Free Website Speed Test",
+  "url": "https://orbitrixsolutions.com/free-seo-audit",
+  "applicationCategory": "UtilityApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+};
+
 const SpeedTest = () => {
   const [url, setUrl] = useState('');
   const [strategy, setStrategy] = useState('mobile');
@@ -264,6 +277,7 @@ const SpeedTest = () => {
         title="Free Website Speed Test | Check Page Speed & Core Web Vitals | Orbitrix Solutions"
         description="Test your website speed and Core Web Vitals for free. Get FCP, LCP, TBT, CLS scores and actionable performance recommendations."
         keywords="website speed test, page speed, Core Web Vitals, FCP, LCP, TBT, CLS, performance test, Google PageSpeed"
+        schema={speedTestSchema}
       />
 
       <section className="st-hero">

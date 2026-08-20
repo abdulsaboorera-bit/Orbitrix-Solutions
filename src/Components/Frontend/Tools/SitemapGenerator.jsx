@@ -10,6 +10,19 @@ const PRIORITY_OPTIONS = ['1.0', '0.9', '0.8', '0.7', '0.6', '0.5', '0.4', '0.3'
 
 const getTodayDate = () => new Date().toISOString().split('T')[0];
 
+const sitemapGeneratorSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Free XML Sitemap Generator",
+  "url": "https://orbitrixsolutions.com/tools/sitemap-generator",
+  "applicationCategory": "UtilityApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+};
+
 const SitemapGenerator = () => {
   const [websiteUrl, setWebsiteUrl] = useState('');
   const [urls, setUrls] = useState([
@@ -144,6 +157,7 @@ const SitemapGenerator = () => {
         title="Free XML Sitemap Generator | Create Sitemap for SEO | Orbitrix Solutions"
         description="Generate a valid XML sitemap for your website. Add multiple URLs with lastmod, changefreq, and priority settings for better search engine indexing."
         keywords="xml sitemap generator, create sitemap, SEO sitemap tool, website sitemap"
+        schema={sitemapGeneratorSchema}
       />
 
       <section className="sitemap-hero">

@@ -203,6 +203,19 @@ const generateTerms = (data) => {
   return terms;
 };
 
+const termsGeneratorSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Free Terms & Conditions Generator",
+  "url": "https://orbitrixsolutions.com/tools/terms-generator",
+  "applicationCategory": "UtilityApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+};
+
 const TermsGenerator = () => {
   const [companyName, setCompanyName] = useState('');
   const [websiteUrl, setWebsiteUrl] = useState('');
@@ -271,6 +284,7 @@ const TermsGenerator = () => {
         title="Free Terms & Conditions Generator | Create Terms of Service | Orbitrix Solutions"
         description="Generate professional terms and conditions for your website or app. Customizable for e-commerce, SaaS, content, service providers, and marketplaces."
         keywords="terms and conditions generator, terms of service, terms of use, legal terms generator, website terms"
+        schema={termsGeneratorSchema}
       />
 
       <section className="tg-hero">

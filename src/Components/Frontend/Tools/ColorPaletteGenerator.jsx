@@ -153,6 +153,19 @@ const palettes = [
   { name: 'Monochromatic', generator: generateMonochromatic, icon: faPaintBrush },
 ];
 
+const colorPaletteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Free Color Palette Generator",
+  "url": "https://orbitrixsolutions.com/tools/color-palette-generator",
+  "applicationCategory": "UtilityApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+};
+
 const ColorPaletteGenerator = () => {
   const [baseColor, setBaseColor] = useState('#1a8187');
   const [copiedColor, setCopiedColor] = useState(null);
@@ -254,6 +267,7 @@ const ColorPaletteGenerator = () => {
         title="Free Color Palette Generator | Create Beautiful Color Schemes | Orbitrix Solutions"
         description="Generate stunning color palettes using color theory. Export as CSS custom properties, Tailwind config, or JSON. Supports complementary, analogous, triadic, and more."
         keywords="color palette generator, color scheme generator, CSS color palette, Tailwind colors, complementary colors, color wheel"
+        schema={colorPaletteSchema}
       />
 
       <section className="cpg-hero">

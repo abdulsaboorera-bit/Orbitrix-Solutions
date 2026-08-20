@@ -109,6 +109,19 @@ const getSignatureHTML = (data, template) => {
 </table>`;
 };
 
+const emailSignatureSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Free Email Signature Generator",
+  "url": "https://orbitrixsolutions.com/tools/email-signature-generator",
+  "applicationCategory": "UtilityApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+};
+
 const EmailSignatureGenerator = () => {
   const [data, setData] = useState({
     fullName: '',
@@ -205,6 +218,7 @@ const EmailSignatureGenerator = () => {
         title="Free Email Signature Generator | Professional Email Signatures | Orbitrix Solutions"
         description="Create professional email signatures with your branding. Choose from multiple templates, add social links, and copy to any email client."
         keywords="email signature generator, professional email signature, email signature template, business email signature"
+        schema={emailSignatureSchema}
       />
 
       <section className="esign-hero">
