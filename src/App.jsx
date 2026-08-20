@@ -11,6 +11,7 @@ import ErrorBoundary from './Components/ErrorBoundary';
 
 const WhatsAppWidget = lazy(() => import('./Components/WhatsAppWidget'));
 const LiveChat = lazy(() => import('./Components/LiveChat'));
+const CookieConsent = lazy(() => import('./Components/CookieConsent'));
 
 const StickySocial = () => (
   <div className="sticky-social">
@@ -103,6 +104,7 @@ const App = () => {
   <Suspense fallback={null}>
     <WhatsAppWidget />
     <LiveChat />
+    <CookieConsent />
   </Suspense>
   </>
   </ErrorBoundary>

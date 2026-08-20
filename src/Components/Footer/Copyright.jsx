@@ -226,6 +226,7 @@ const Footer = () => {
             <div className="f-bottom-links">
               <Link to="/terms-and-conditions" className="f-bottom-link">Terms</Link>
               <Link to="/privacy-policy" className="f-bottom-link">Privacy</Link>
+              <button className="f-bottom-link" onClick={() => window.__reopenCookieConsent && window.__reopenCookieConsent()}>Cookie Settings</button>
               <a className="f-bottom-link" href="https://www.linkedin.com/in/abdul-saboor-5677643b4/" target="_blank" rel="noreferrer">LinkedIn</a>
               <a className="f-bottom-link" href="https://github.com/abdulsaboorera-bit" target="_blank" rel="noreferrer">GitHub</a>
             </div>

@@ -342,6 +342,11 @@ const PrivacyPolicy = () => {
                 <p>Marketing cookies are used to track visitors across websites. The intention is to display ads that are relevant and engaging for the individual user. These cookies may be set through our site by our advertising partners, including Google Ads and Facebook Pixel.</p>
                 <p>These third-party advertisers may use this information to build a profile of your interests and show you relevant advertisements on other sites.</p>
               </AccordionItem>
+              <AccordionItem title="Google AdSense">
+                <p>We use Google AdSense to display advertisements on our website. Google AdSense is a service provided by Google LLC that uses cookies to serve ads based on your prior visits to our website and other websites on the internet.</p>
+                <p>Google's use of advertising cookies enables it and its partners to serve advertisements based on your visit to our site and/or other sites on the internet. You may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer">Google Ads Settings</a> or by visiting <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener noreferrer">www.aboutads.info</a>.</p>
+                <p>Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to your website or other websites. Google's use of advertising cookies enables it and its partners to serve advertisements based on your visit to this site and/or other sites on the internet. Users may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer">Google Ads Settings</a>.</p>
+              </AccordionItem>
               <AccordionItem title="Managing Your Cookie Preferences">
                 <p>You can control and manage cookies through your browser settings. Most browsers allow you to refuse or accept cookies, delete existing cookies, and set preferences for certain websites. Please note that disabling certain cookies may impact the functionality of our website.</p>
                 <p>For detailed instructions on managing cookies in your browser, visit your browser's help documentation or <a href="https://www.allaboutcookies.org/" target="_blank" rel="noopener noreferrer">www.allaboutcookies.org</a>.</p>
@@ -397,6 +402,17 @@ const PrivacyPolicy = () => {
                   </div>
                   <p>Google Analytics helps us understand website usage patterns. Google may access the data collected through cookies to provide analytics services. We have enabled IP anonymization to limit data collection. You can review Google's <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a> for more details.</p>
                 </div>
+              </div>
+              <div className="pp-glass-card">
+                <div className="pp-glass-card-header">
+                  <span className="pp-glass-card-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                    </svg>
+                  </span>
+                  <h4>Google AdSense Partners</h4>
+                </div>
+                <p>We work with Google as an advertising partner. Google uses cookies (including the DoubleClick cookie) to serve ads on our site. Google's use of the DoubleClick cookie enables it and its partners to serve ads based on your visit to our site and/or other sites on the internet. You may opt out of the use of the DoubleClick cookie for interest-based advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer">Google Ads Settings</a>.</p>
               </div>
               <div className="pp-glass-legal">
                 <p><strong>Legal Basis for Sharing:</strong> We may also share your information when required by law, to respond to legal processes, to protect our rights, or to protect the personal safety of our users or the public.</p>
