@@ -152,6 +152,11 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className="nav-item" role="none">
+                <Link className={`nav-link ${isActive('/tools') ? 'active' : ''}`} to="/tools" role="menuitem" aria-current={isActive('/tools') ? 'page' : undefined}>
+                  Free Tools
+                </Link>
+              </li>
+              <li className="nav-item" role="none">
                 <Link className={`nav-link ${isActive('/careers') ? 'active' : ''}`} to="/careers" role="menuitem" aria-current={isActive('/careers') ? 'page' : undefined}>
                   Careers
                 </Link>
