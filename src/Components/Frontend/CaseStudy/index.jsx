@@ -21,9 +21,23 @@ import SEO from '../../SEO';
 import Breadcrumbs from '../../Breadcrumbs';
 import Footer from '../../Footer';
 import AIAutomation from './AIAutomation';
+import AIVoiceAgent from './AIVoiceAgent';
+import AIChatbot from './AIChatbot';
+import AIEmailAutomation from './AIEmailAutomation';
+import AIBlogPublisher from './AIBlogPublisher';
+import AISocialMediaPoster from './AISocialMediaPoster';
 import { getProjectBySlug, getRelatedProjects, getAdjacentProjects } from '../../../Data/projects';
 import './index.css';
 import './AIAutomation.css';
+
+const AI_AUTOMATION_SLUGS = [
+  'ai-automation-suite',
+  'ai-voice-agent-salon',
+  'ai-whatsapp-chatbot',
+  'ai-email-autoresponder',
+  'ai-blog-autopublisher',
+  'ai-social-media-poster',
+];
 
 const AnimatedBar = ({ value, displayValue, label, delay }) => {
   const barRef = useRef(null);
@@ -110,19 +124,19 @@ const CaseStudy = () => {
 
       <article className="case-study-page" aria-label={`Case study: ${project.name}`}>
         {/* Hero */}
-        <section className={`cs-hero ${project.slug === 'ai-social-media-automation' ? 'cs-hero-ai' : ''}`} aria-label="Project hero">
+        <section className={`cs-hero ${AI_AUTOMATION_SLUGS.includes(project.slug) ? 'cs-hero-ai' : ''}`} aria-label="Project hero">
           <div className="cs-hero-image">
-            {project.heroImage && project.slug !== 'ai-social-media-automation' && (
+            {project.heroImage && !AI_AUTOMATION_SLUGS.includes(project.slug) && (
               <img src={project.heroImage} alt={`${project.name} hero`} width="1900" height="900" loading="eager" decoding="async" />
             )}
-            {!project.heroImage && project.slug !== 'ai-social-media-automation' && (
+            {!project.heroImage && !AI_AUTOMATION_SLUGS.includes(project.slug) && (
               <div style={{ width: '100%', height: '100%', background: 'linear-gradient(135deg, #0b5c61 0%, #1aa18a 50%, #63c6b8 100%)' }}></div>
             )}
             <div className="cs-hero-overlay"></div>
           </div>
 
           {/* Decorative floating nodes for AI hero */}
-          {project.slug === 'ai-social-media-automation' && (
+          {AI_AUTOMATION_SLUGS.includes(project.slug) && (
             <div className="ai-hero-nodes" aria-hidden="true">
               <span className="ai-hn ai-hn--1"><FontAwesomeIcon icon={faRobot} /></span>
               <span className="ai-hn ai-hn--2"><FontAwesomeIcon icon={faShareAlt} /></span>
@@ -183,7 +197,12 @@ const CaseStudy = () => {
           </div>
 
           {/* AI Automation Visualization — right after meta bar */}
-          {project.slug === 'ai-social-media-automation' && <AIAutomation />}
+          {project.slug === 'ai-automation-suite' && <AIAutomation />}
+          {project.slug === 'ai-voice-agent-salon' && <AIVoiceAgent />}
+          {project.slug === 'ai-whatsapp-chatbot' && <AIChatbot />}
+          {project.slug === 'ai-email-autoresponder' && <AIEmailAutomation />}
+          {project.slug === 'ai-blog-autopublisher' && <AIBlogPublisher />}
+          {project.slug === 'ai-social-media-poster' && <AISocialMediaPoster />}
 
           {/* Challenge */}
           <section className="cs-section reveal-left" aria-labelledby="cs-challenge">
