@@ -210,9 +210,18 @@ const ApplyPage = () => {
                 Thank you for your interest in joining Orbitrix Solutions. We will review your
                 application and get back to you within 5 business days.
               </p>
-              <Link to="/careers" className="careers-cta-btn">
-                Back to Careers
-              </Link>
+              <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
+                <Link to="/careers" className="careers-cta-btn">
+                  Back to Careers
+                </Link>
+                <a
+                  href={`mailto:info@orbitrixsolutions.com?subject=Job Application: ${formData.position || 'Graphic Designer'} - ${formData.fullName || 'Applicant'}&body=Name: ${formData.fullName}%0AEmail: ${formData.email}%0APhone: ${formData.phone || 'Not provided'}%0APosition: ${formData.position}%0ALinkedin: ${formData.linkedin || 'Not provided'}%0ACover Letter: ${formData.coverLetter || 'Not provided'}`}
+                  className="careers-cta-btn"
+                  style={{ background: 'linear-gradient(135deg, #25D366, #128C7E)' }}
+                >
+                  Also Email Us Directly
+                </a>
+              </div>
             </div>
           ) : (
             <form className="careers-form" onSubmit={handleSubmit} encType="multipart/form-data">
@@ -403,6 +412,15 @@ const ApplyPage = () => {
                     </>
                   )}
                 </button>
+
+                <div style={{ textAlign: 'center', marginTop: 16 }}>
+                  <p style={{ fontSize: '0.88rem', color: 'var(--orbit-muted)', margin: 0 }}>
+                    Or email your application directly to{' '}
+                    <a href="mailto:info@orbitrixsolutions.com?subject=Job Application" style={{ color: 'var(--orbit-teal)', fontWeight: 600 }}>
+                      info@orbitrixsolutions.com
+                    </a>
+                  </p>
+                </div>
 
                 {submitStatus === 'error' && (
                   <div style={{ marginTop: 20 }}>
