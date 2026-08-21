@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b5c61"/>
+      <stop offset="100%" stop-color="#1a8187"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg4)"/>
+  <g transform="translate(120,185)">
+    <rect x="0" y="0" width="160" height="100" rx="10" fill="#0b5c61" opacity="0.85"/>
+    <rect x="15" y="15" width="130" height="70" rx="4" fill="none" stroke="#63c6b8" stroke-width="2"/>
+    <path d="M15,20 L80,55 L145,20" fill="none" stroke="#63c6b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="25" y="30" width="40" height="4" rx="2" fill="#63c6b8" opacity="0.3"/>
+    <rect x="25" y="40" width="60" height="4" rx="2" fill="#63c6b8" opacity="0.2"/>
+  </g>
+  <line x1="280" y1="235" x2="330" y2="235" stroke="#63c6b8" stroke-width="2" stroke-dasharray="5,4" opacity="0.6"/>
+  <polygon points="330,228 345,235 330,242" fill="#63c6b8" opacity="0.6"/>
+  <g transform="translate(350,155)">
+    <rect x="0" y="0" width="120" height="120" rx="14" fill="#0b5c61" opacity="0.9"/>
+    <circle cx="60" cy="50" r="24" fill="none" stroke="#63c6b8" stroke-width="2.5"/>
+    <path d="M50,45 Q60,35 70,45" fill="none" stroke="#63c6b8" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="60" cy="53" r="4" fill="#63c6b8"/>
+    <rect x="25" y="85" width="70" height="6" rx="3" fill="#63c6b8" opacity="0.3"/>
+    <rect x="30" y="98" width="60" height="5" rx="2.5" fill="#63c6b8" opacity="0.2"/>
+  </g>
+  <line x1="470" y1="215" x2="510" y2="155" stroke="#63c6b8" stroke-width="2" stroke-dasharray="5,4" opacity="0.5"/>
+  <line x1="470" y1="235" x2="510" y2="235" stroke="#63c6b8" stroke-width="2" stroke-dasharray="5,4" opacity="0.5"/>
+  <line x1="470" y1="255" x2="510" y2="315" stroke="#63c6b8" stroke-width="2" stroke-dasharray="5,4" opacity="0.5"/>
+  <polygon points="510,148 525,155 510,162" fill="#63c6b8" opacity="0.5"/>
+  <polygon points="510,228 525,235 510,242" fill="#63c6b8" opacity="0.5"/>
+  <polygon points="510,308 525,315 510,322" fill="#63c6b8" opacity="0.5"/>
+  <g transform="translate(530,115)">
+    <rect x="0" y="0" width="130" height="70" rx="8" fill="#0b5c61" opacity="0.8"/>
+    <rect x="12" y="12" width="30" height="24" rx="4" fill="#63c6b8" opacity="0.35"/>
+    <path d="M18,24 L27,24 M22.5,19 L22.5,29" fill="none" stroke="#63c6b8" stroke-width="2" stroke-linecap="round"/>
+    <rect x="52" y="15" width="55" height="5" rx="2.5" fill="#63c6b8" opacity="0.4"/>
+    <rect x="52" y="25" width="40" height="5" rx="2.5" fill="#63c6b8" opacity="0.3"/>
+  </g>
+  <g transform="translate(530,205)">
+    <rect x="0" y="0" width="130" height="70" rx="8" fill="#0b5c61" opacity="0.8"/>
+    <rect x="12" y="12" width="30" height="24" rx="4" fill="#63c6b8" opacity="0.35"/>
+    <path d="M18,24 L27,24 M22.5,19 L22.5,29" fill="none" stroke="#63c6b8" stroke-width="2" stroke-linecap="round"/>
+    <rect x="52" y="15" width="55" height="5" rx="2.5" fill="#63c6b8" opacity="0.4"/>
+    <rect x="52" y="25" width="40" height="5" rx="2.5" fill="#63c6b8" opacity="0.3"/>
+  </g>
+  <g transform="translate(530,295)">
+    <rect x="0" y="0" width="130" height="70" rx="8" fill="#0b5c61" opacity="0.8"/>
+    <rect x="12" y="12" width="30" height="24" rx="4" fill="#63c6b8" opacity="0.35"/>
+    <path d="M18,24 L27,24 M22.5,19 L22.5,29" fill="none" stroke="#63c6b8" stroke-width="2" stroke-linecap="round"/>
+    <rect x="52" y="15" width="55" height="5" rx="2.5" fill="#63c6b8" opacity="0.4"/>
+    <rect x="52" y="25" width="40" height="5" rx="2.5" fill="#63c6b8" opacity="0.3"/>
+  </g>
+  <circle cx="700" cy="80" r="3" fill="#63c6b8" opacity="0.2"/>
+  <circle cx="90" cy="380" r="2.5" fill="#63c6b8" opacity="0.2"/>
+  <circle cx="730" cy="400" r="2" fill="#63c6b8" opacity="0.15"/>
+</svg>
