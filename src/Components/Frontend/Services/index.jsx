@@ -15,7 +15,7 @@ const servicesSchema = {
   "name": "Orbitrix Solutions",
   "description": "Professional web development, SEO, AI automation, and digital marketing services for businesses in the USA, Canada, UK, Germany, and beyond.",
   "url": "https://orbitrixsolutions.com/services",
-  "serviceType": ["Web Development", "SEO Services", "AI Automation", "Digital Marketing", "Social Media Account Management"],
+  "serviceType": ["Web Development", "SEO Services", "AI Automation", "n8n Automation", "Digital Marketing", "Social Media Account Management"],
   "areaServed": [
     "United States", "Canada", "United Kingdom", "Germany", "Netherlands"
   ],
@@ -30,9 +30,9 @@ const Services = () => {
   return (
     <main id="main-content">
       <SEO
-        title="Services | Orbitrix Solutions – Web Development, SEO & AI Automation Agency"
-        description="Explore professional web development, SEO services, AI automation, digital marketing, and social media management services by Orbitrix Solutions for businesses in the USA, Canada, UK, Germany & beyond."
-        keywords="web development company USA, web development company Canada, React development company, WordPress development agency, SEO agency USA, digital marketing agency USA, AI automation services, AI automation agency, global digital solutions company"
+        title="Web Development, SEO & AI Automation Services | Orbitrix"
+        description="Custom React & WordPress development, data-driven SEO, AI voice agents, chatbots, n8n automation & digital marketing. 80+ projects across 15 countries. Free consultation."
+        keywords="web development services, React development, WordPress development, SEO services, AI automation, n8n automation, digital marketing agency"
         schema={servicesSchema}
       />
       <Breadcrumbs />

@@ -57,9 +57,9 @@ const index = () => {
   return (
     <main id="main-content">
       <SEO
-        title="Orbitrix Solutions | Web Development, SEO & AI Agency for Global Businesses"
-        description="Orbitrix Solutions helps businesses in the USA, UK, Canada & Europe build high-performance websites, rank #1 on Google, and automate operations with AI. Get your free strategy session."
-        keywords="web development agency USA, SEO services UK, digital marketing company Canada, AI automation Europe, custom web development, React development, WordPress development, web agency for businesses"
+        title="Orbitrix Solutions | Web Dev, SEO & AI Automation Agency"
+        description="Orbitrix Solutions builds custom React & WordPress websites, runs data-driven SEO, and deploys AI voice agents & n8n automation for US, UK & Canadian businesses. Free strategy call."
+        keywords="web development agency, React development, WordPress development, SEO services, AI automation agency, n8n automation, AI voice agents, digital marketing"
         schema={homeSchema}
       />
       <Breadcrumbs />

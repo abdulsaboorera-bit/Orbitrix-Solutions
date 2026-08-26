@@ -48,9 +48,9 @@ const Industries = () => {
   return (
     <div className="services-page">
       <SEO
-        title="Industries We Serve | Orbitrix Solutions – Web Development for Every Industry"
-        description="Orbitrix Solutions serves startups, SaaS, e-commerce, healthcare, real estate, and small businesses with tailored web development, SEO, and digital marketing services."
-        keywords="web development for startups, SaaS web development, e-commerce web agency, healthcare web design, real estate website development, small business web agency"
+        title="Industry-Specific Web Development | Startups, SaaS, Healthcare, E-commerce"
+        description="Orbitrix Solutions builds custom websites for startups, SaaS, e-commerce, healthcare, real estate, construction, law firms, restaurants & dental practices. Industry-specific solutions."
+        keywords="web development for startups, SaaS web development, healthcare web design, e-commerce development, dental practice website, law firm web development"
       />
 
       <Breadcrumbs />

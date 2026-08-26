@@ -16,6 +16,40 @@ export const categories = [
 
 export const projects = [
   {
+    slug: 'royal-beauty-salon',
+    name: 'Royal Beauty Salon',
+    url: '#',
+    category: 'website-development',
+    categoryLabel: 'Website Development',
+    status: 'Live',
+    thumb: getSalonsImg,
+    shortDescription: 'A modern website for Royal Beauty Salon featuring online booking, service showcase, and a premium design that reflects the salon brand and attracts new clients.',
+    heroImage: getSalonsImg,
+    challenge: 'Royal Beauty Salon needed a professional website that would showcase their services, enable online booking, and establish a premium brand presence to attract new clients in a competitive beauty market.',
+    approach: 'We designed a luxury-focused website with elegant visuals, intuitive navigation, and a seamless booking flow. The site needed to convey the premium quality of the salon experience.',
+    solution: 'Built a custom WordPress website with service showcases, online appointment booking, gallery sections, and responsive design. Optimized for local SEO to attract beauty clients searching online.',
+    results: [
+      { metric: '3x', label: 'More booking inquiries' },
+      { metric: '< 2s', label: 'Page load time' },
+      { metric: '95%', label: 'Mobile usability score' },
+    ],
+    technologies: ['WordPress', 'Custom Theme', 'Online Booking', 'Local SEO', 'Responsive Design'],
+    testimonial: {
+      quote: 'The website perfectly captures the premium feel of our salon. Online bookings have increased significantly since launch.',
+      author: 'Royal Beauty Salon',
+      role: 'Owner',
+    },
+    projectDetails: {
+      client: 'Royal Beauty Salon',
+      timeline: '3 weeks',
+      industry: 'Beauty & Wellness',
+      deliverables: ['Custom Website', 'Online Booking', 'Service Showcase', 'Local SEO'],
+    },
+    seoTitle: 'Royal Beauty Salon: Website Redesign Case Study | Orbitrix',
+    seoDescription: 'How Orbitrix Solutions built a modern, high-converting website for Royal Beauty Salon with online booking, premium design & local SEO. View the full case study.',
+    seoKeywords: 'salon website design, beauty salon website, salon online booking, salon website development, beauty business website, salon web design agency',
+  },
+  {
     slug: 'fonalize-brand-website',
     name: 'Fonalize',
     url: 'https://fonalize.co.uk/',

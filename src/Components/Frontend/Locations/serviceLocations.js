@@ -4,10 +4,10 @@ const serviceLocations = {
     location: 'the USA',
     locationShort: 'USA',
     slug: 'web-development-usa',
-    title: 'Web Development Agency in the USA',
-    subtitle: 'Professional Custom Web Development Services for Businesses Across the United States',
+    title: 'US Web Development Agency | Custom React & WordPress Sites',
+    subtitle: 'Custom Web Development for US Startups & Businesses — From $3K',
     description:
-      'Orbitrix Solutions delivers high-performance web development services for businesses across the United States. From startup MVPs in San Francisco to enterprise platforms in New York, we build custom websites and web applications that drive measurable growth for American companies.',
+      'Orbitrix Solutions builds custom React & WordPress websites for businesses across the United States. From startup MVPs in San Francisco to enterprise platforms in New York, we deliver fast, conversion-optimized websites from $3K.',
     services: [
       'Custom Website Development',
       'React & Next.js Applications',

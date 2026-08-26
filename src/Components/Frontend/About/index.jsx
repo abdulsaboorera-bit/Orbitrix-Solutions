@@ -66,9 +66,9 @@ const Index = () => {
   return (
     <main id="main-content">
       <SEO
-        title="About Us | Orbitrix Solutions – Web & SEO Agency"
-        description="Learn about Orbitrix Solutions, a results-driven web development and digital marketing agency offering SEO, AI automation, and custom web development."
-        keywords="about Orbitrix Solutions, web development agency, digital marketing company, SEO services, AI automation"
+        title="About Orbitrix Solutions | 80+ Projects, 15 Countries, Web & AI Agency"
+        description="Orbitrix Solutions is a web development, SEO & AI automation agency with 80+ projects delivered across 15+ countries. Meet our team and see our work."
+        keywords="about Orbitrix Solutions, web development agency, AI automation agency, SEO services, React development, WordPress development"
         schema={aboutSchema}
       />
       <Breadcrumbs />

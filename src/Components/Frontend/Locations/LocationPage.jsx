@@ -9,9 +9,9 @@ import './Locations.css';
 
 const locationData = {
   usa: {
-    title: 'Web Development Agency in the USA',
-    subtitle: 'Professional Web Development, SEO & Digital Marketing Services for Businesses Across the United States',
-    description: 'Orbitrix Solutions provides comprehensive web development, SEO, and digital marketing services for businesses across the United States. From startups in San Francisco to enterprises in New York, we help American businesses build powerful digital presences that drive growth.',
+    title: 'Web Development & AI Automation for US Businesses',
+    subtitle: 'Custom React & WordPress Websites, SEO, and AI Automation for Startups & Enterprises Across the United States',
+    description: 'Orbitrix Solutions builds custom React & WordPress websites, runs data-driven SEO campaigns, and deploys AI voice agents & n8n automation for businesses across the United States. From startups in San Francisco to enterprises in New York.',
     services: ['Custom Web Development', 'React & WordPress Development', 'SEO Services for US Markets', 'Google Ads & Meta Advertising', 'Digital Marketing Strategy', 'AI Automation Solutions'],
     cities: ['New York', 'Los Angeles', 'Chicago', 'Houston', 'San Francisco', 'Miami', 'Austin', 'Seattle'],
     localSeo: 'We specialize in local SEO for US businesses, helping you dominate Google Business Profile rankings, attract local customers, and build trust in your community. Our US-focused SEO strategies target the keywords your customers are actually searching for.',
@@ -199,7 +199,7 @@ const LocationPage = () => {
       <SEO
         title={`${data.title} | Orbitrix Solutions`}
         description={data.description.substring(0, 160)}
-        keywords={`web development ${country}, SEO agency ${country}, digital marketing ${country}, Orbitrix Solutions ${country}`}
+        keywords={`web development ${country}, SEO agency ${country}, AI automation ${country}, digital marketing ${country}, Orbitrix Solutions ${country}`}
         schema={locationSchema}
       />
 

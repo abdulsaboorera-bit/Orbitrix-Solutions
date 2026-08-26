@@ -48,11 +48,31 @@ const ServiceDetail = () => {
 
   const otherServices = servicesData.filter((s) => s.id !== service.id);
 
+  const serviceTitles = {
+    'wordpress-development': 'Custom WordPress Development from $3K | Fast, Secure Sites',
+    'react-development': 'React Web Development Agency | Modern SPAs & PWAs',
+    'seo-services': 'Data-Driven SEO Services | Rank Higher on Google',
+    'ai-ads-marketing': 'AI-Powered Ads & Marketing | Maximize Your ROI',
+    'digital-marketing': 'Digital Marketing for US Businesses | ROI-First Strategies',
+    'social-media-account-management': 'Social Media Management | Content, Growth & Paid Social',
+    'ai-automation-services': 'AI Automation Agency | Voice Agents, Chatbots & n8n Workflows',
+  };
+
+  const serviceDescriptions = {
+    'wordpress-development': 'Custom WordPress websites from $3K-$15K. Responsive themes, WooCommerce, speed optimization & SEO. 80+ projects across 15 countries. Free quote.',
+    'react-development': 'Modern React & Next.js applications with enterprise-grade performance. SPAs, PWAs, API integration. Built for startups & enterprises. Free consultation.',
+    'seo-services': 'Data-driven SEO strategies: technical audits, keyword research, content strategy & link building. 35+ keywords on page 1 for clients. Free SEO audit.',
+    'ai-ads-marketing': 'AI-powered Google Ads, Meta Ads & LinkedIn campaigns with automated bid optimization. Lower CPA, higher ROAS. Free ad audit.',
+    'digital-marketing': 'Full-funnel digital marketing: brand strategy, email automation, CRO & analytics. Measurable ROI for US, UK & Canadian businesses.',
+    'social-media-account-management': 'Strategic social media management: content calendars, community engagement, paid social & growth analytics. 3-5 posts/week per platform.',
+    'ai-automation-services': 'AI voice agents, custom chatbots, email auto-responders & n8n workflows. $2K-$20K. Save 20+ hours/week. Free automation audit.',
+  };
+
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": service.title,
-    "description": service.description.substring(0, 300),
+    "description": (serviceDescriptions[service.id] || service.description).substring(0, 300),
     "provider": {
       "@type": "Organization",
       "name": "Orbitrix Solutions",
@@ -87,9 +107,9 @@ const ServiceDetail = () => {
   return (
     <main id="main-content">
       <SEO
-        title={`${service.title} | Orbitrix Solutions – Professional ${service.title} Services`}
-        description={service.description.substring(0, 160)}
-        keywords={` ${service.title}, ${service.title} USA, ${service.title} Canada, ${service.title} UK, Orbitrix Solutions ${service.title}`}
+        title={serviceTitles[service.id] || `${service.title} | Orbitrix Solutions`}
+        description={(serviceDescriptions[service.id] || service.description).substring(0, 160)}
+        keywords={`${service.title}, ${service.title} agency, ${service.title} services, Orbitrix Solutions ${service.title}`}
         schema={serviceSchema}
       />
 
